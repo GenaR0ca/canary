@@ -1,15 +1,9 @@
--- Mubia Online: scrolls que enseñan las magias MU. Cada clase solo puede usar el suyo.
+-- Mubia Online: scrolls que enseñan las magias MU. Cada clase solo puede usar los suyos.
 
 local scrollAction = Action()
 
 function scrollAction.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	local spell
-	for _, def in pairs(Mubia.Spells) do
-		if def.scrollId == item:getId() then
-			spell = def
-			break
-		end
-	end
+	local spell = Mubia.SpellByScroll[item:getId()]
 	if not spell then
 		return false
 	end
@@ -40,7 +34,7 @@ function scrollAction.onUse(player, item, fromPosition, target, toPosition, isHo
 	return true
 end
 
-for _, def in pairs(Mubia.Spells) do
+for _, def in ipairs(Mubia.SpellList) do
 	scrollAction:id(def.scrollId)
 end
 scrollAction:register()

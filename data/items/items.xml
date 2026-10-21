@@ -701,9 +701,11 @@
 		<attribute key="decayTo" value="328"/>
 		<attribute key="weight" value="150"/>
 	</item>
-	<item id="347" article="a" name="scroll of twisting slash">
+	<item id="347" article="a" name="scroll">
 		<attribute key="primarytype" value="documents and papers"/>
-		<attribute key="description" value="Dark Knight. Usalo para aprender la magia Twisting Slash"/>
+		<attribute key="description" value="The correspondence written on this scroll could be considered quite compromising"/>
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxtextlen" value="511"/>
 		<attribute key="weight" value="50"/>
 	</item>
 	<item id="348" name="intelligence reports">
@@ -1080,14 +1082,16 @@
 		<attribute key="maxtextlen" value="511"/>
 		<attribute key="weight" value="150"/>
 	</item>
-	<item id="639" article="a" name="scroll of evil spirit">
+	<item id="639" article="a" name="scroll">
 		<attribute key="primarytype" value="documents and papers"/>
-		<attribute key="description" value="Dark Wizard. Usalo para aprender la magia Evil Spirit"/>
+		<attribute key="writeable" value="1"/>
 		<attribute key="weight" value="50"/>
 	</item>
-	<item id="640" article="a" name="scroll of multi-shot">
+	<item id="640" article="a" name="scroll">
 		<attribute key="primarytype" value="documents and papers"/>
-		<attribute key="description" value="Fairy Elf. Usalo para aprender la magia Multi-Shot"/>
+		<attribute key="writeable" value="1"/>
+		<attribute key="writeonceitemid" value="639"/>
+		<attribute key="maxtextlen" value="511"/>
 		<attribute key="weight" value="50"/>
 	</item>
 	<item id="641" article="a" name="piece of paper">
@@ -15952,10 +15956,10 @@
 		<attribute key="primarytype" value="rubbish"/>
 		<attribute key="weight" value="250"/>
 	</item>
-	<item id="5952" article="a" name="scroll of energy ball">
+	<item id="5952" article="a" name="poem scroll">
 		<attribute key="primarytype" value="documents and papers"/>
-		<attribute key="description" value="Dark Wizard. Usalo para aprender la magia Energy Ball"/>
-		<attribute key="weight" value="50"/>
+		<attribute key="description" value="The correspondence written on this scroll could be considered quite compromising."/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="5953" article="a" name="raven herb">
 		<attribute key="primarytype" value="plants and herbs"/>
@@ -16861,10 +16865,10 @@
 		<attribute key="primarytype" value="documents and papers"/>
 		<attribute key="weight" value="830"/>
 	</item>
-	<item id="6119" article="a" name="scroll of penetration">
+	<item id="6119" article="a" name="poem scroll">
 		<attribute key="primarytype" value="documents and papers"/>
-		<attribute key="description" value="Fairy Elf. Usalo para aprender la magia Penetration"/>
-		<attribute key="weight" value="50"/>
+		<attribute key="description" value="It contains a love poem, written by an unknown elven poet"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="6120" name="Dragha's spellbook">
 		<attribute key="description" value="It apparently belonged to someone called Dragha, the apprentice of a voodoomaster"/>
@@ -84432,5 +84436,205 @@ Granted by TibiaGoals.com"/>
 	<item id="51978" article="a" name="bounty talisman">
 		<attribute key="primarytype" value="extra slot"/>
 		<attribute key="weight" value="75"/>
+	</item>
+	<item id="60001" article="a" name="scroll of twisting slash">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Knight. Giro con el arma que golpea a todos alrededor. Usalo para aprender Twisting Slash. Palabras: twisting slash"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60002" article="a" name="scroll of impale">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Knight. Estocada con lanza que atraviesa a los enemigos en linea. Usalo para aprender Impale. Palabras: impale"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60003" article="a" name="scroll of swell life">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Knight. Aumenta por un tiempo la vida maxima tuya y de tu party. Usalo para aprender Swell Life. Palabras: swell life"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60004" article="a" name="scroll of death stab">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Knight. Estocada devastadora reforzada con la energia del viento. Usalo para aprender Death Stab. Palabras: death stab"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60005" article="a" name="scroll of rageful blow">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Knight. Golpe que hace temblar la tierra y golpea a todos los enemigos cercanos. Usalo para aprender Rageful Blow. Palabras: rageful blow"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60006" article="a" name="scroll of strike of destruction">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Knight. Esfera de hielo muy poderosa que reduce la velocidad del enemigo. Usalo para aprender Strike of Destruction. Palabras: strike of destruction"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60101" article="a" name="scroll of energy ball">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Bola de energia contra un objetivo. Usalo para aprender Energy Ball. Palabras: energy ball"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60102" article="a" name="scroll of fire ball">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Enorme bola de fuego contra un objetivo. Usalo para aprender Fire Ball. Palabras: fire ball"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60103" article="a" name="scroll of power wave">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Ola de fuerza sacada de la tierra hacia el enemigo. Usalo para aprender Power Wave. Palabras: power wave"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60104" article="a" name="scroll of lightning">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Relampago que golpea al enemigo y lo empuja. Usalo para aprender Lightning. Palabras: lightning"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60105" article="a" name="scroll of teleport">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Te transporta varias casillas hacia donde miras. Usalo para aprender Teleport. Palabras: teleport"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60106" article="a" name="scroll of meteorite">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Un meteorito cae del cielo sobre el enemigo. Usalo para aprender Meteorite. Palabras: meteorite"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60107" article="a" name="scroll of ice">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Hielo que congela al enemigo y reduce su velocidad. Usalo para aprender Ice. Palabras: ice"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60108" article="a" name="scroll of poison">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Algas venenosas que hacen perder vida lentamente. Usalo para aprender Poison. Palabras: poison"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60109" article="a" name="scroll of flame">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Pilar de llamas que quema de forma continua. Usalo para aprender Flame. Palabras: flame"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60110" article="a" name="scroll of twister">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Ciclones que confunden al enemigo. Usalo para aprender Twister. Palabras: twister"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60111" article="a" name="scroll of evil spirit">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Espiritus malignos que golpean a todos alrededor. Usalo para aprender Evil Spirit. Palabras: evil spirit"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60112" article="a" name="scroll of hellfire">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Fuego del infierno que brota del suelo alrededor tuyo. Usalo para aprender Hellfire. Palabras: hellfire"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60113" article="a" name="scroll of aqua beam">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Rayo de agua que atraviesa a varios enemigos. Usalo para aprender Aqua Beam. Palabras: aqua beam"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60114" article="a" name="scroll of cometfall">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Rayo de energia que cae del cielo sobre los enemigos. Usalo para aprender Cometfall. Palabras: cometfall"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60115" article="a" name="scroll of inferno">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Anillo de fuego a tu alrededor que quema a todos. Usalo para aprender Inferno. Palabras: inferno"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60116" article="a" name="scroll of soul barrier">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Esfera de energia que reduce los golpes que recibes segun tu energia. Usalo para aprender Soul Barrier. Palabras: soul barrier"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60117" article="a" name="scroll of ice storm">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Tormenta de hielo muy poderosa que reduce la velocidad. Usalo para aprender Ice Storm. Palabras: ice storm"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60118" article="a" name="scroll of decay">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Wizard. Bolas de veneno muy poderosas que envenenan al enemigo. Usalo para aprender Decay. Palabras: decay"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60201" article="a" name="scroll of multi-shot">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Abanico de cinco flechas hacia donde miras. Usalo para aprender Multi-Shot. Palabras: multi shot"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60202" article="a" name="scroll of penetration">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Flecha que atraviesa a todos en linea recta. Usalo para aprender Penetration. Palabras: penetration"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60203" article="a" name="scroll of heal">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Cura la vida tuya o del miembro de tu party mas herido. Usalo para aprender Heal. Palabras: heal"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60204" article="a" name="scroll of greater defense">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Aumenta la defensa tuya y de tu party. Usalo para aprender Greater Defense. Palabras: greater defense"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60205" article="a" name="scroll of greater damage">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Aumenta el ataque tuyo y de tu party. Usalo para aprender Greater Damage. Palabras: greater damage"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60206" article="a" name="scroll of summon goblin">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Invoca un Goblin que te ayuda a pelear. Usalo para aprender Summon Goblin. Palabras: summon goblin"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60207" article="a" name="scroll of summon stone golem">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Invoca un Stone Golem que te ayuda a pelear. Usalo para aprender Summon Stone Golem. Palabras: summon stone golem"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60208" article="a" name="scroll of summon assassin">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Invoca un Assassin que te ayuda a pelear. Usalo para aprender Summon Assassin. Palabras: summon assassin"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60209" article="a" name="scroll of summon elite yeti">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Invoca un Elite Yeti que te ayuda a pelear. Usalo para aprender Summon Elite Yeti. Palabras: summon elite yeti"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60210" article="a" name="scroll of summon dark knight">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Invoca un Dark Knight que te ayuda a pelear. Usalo para aprender Summon Dark Knight. Palabras: summon dark knight"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60211" article="a" name="scroll of summon bali">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Invoca un Bali que te ayuda a pelear. Usalo para aprender Summon Bali. Palabras: summon bali"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60212" article="a" name="scroll of summon soldier">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Invoca un Soldier que te ayuda a pelear. Usalo para aprender Summon Soldier. Palabras: summon soldier"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60213" article="a" name="scroll of ice arrow">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Flecha de hielo que congela al enemigo un par de segundos. Usalo para aprender Ice Arrow. Palabras: ice arrow"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60214" article="a" name="scroll of recovery">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Recupera el mana tuyo y de tu party. Usalo para aprender Recovery. Palabras: recovery"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60215" article="a" name="scroll of focus shot">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Concentra el disparo en un objetivo y golpea 3 o 4 veces seguidas. Usalo para aprender Focus Shot. Palabras: focus shot"/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60216" article="a" name="scroll of starfall">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Fairy Elf. Rayo de energia del cielo muy poderoso. Usalo para aprender Starfall. Palabras: starfall"/>
+		<attribute key="weight" value="50"/>
 	</item>
 </items>

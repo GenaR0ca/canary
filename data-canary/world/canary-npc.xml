@@ -16,6 +16,15 @@
 		<npc name="Canary" x="0" y="-1" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1944" centery="1343" centerz="7" radius="1">
-		<npc name="Mubia Guide" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Potion Girl Amy" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1940" centery="1341" centerz="7" radius="1">
+		<npc name="Hanzo the Blacksmith" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1946" centery="1341" centerz="7" radius="1">
+		<npc name="Pasi the Mage" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1940" centery="1349" centerz="7" radius="1">
+		<npc name="Elf Lala" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 </npcs>
