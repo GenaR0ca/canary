@@ -7,6 +7,7 @@ Mubia.Config = {
 	pointsPerLevel = 5,
 	maxStat = 32767,
 	startLevel = 1, -- nivel con el que empieza todo personaje nuevo
+	testLevel = 50, -- PRUEBAS: sube una vez a este nivel a todos los personajes (0 = desactivado)
 	resetLevel = 400,
 	resetPointsPerReset = 500, -- puntos extra por cada reset acumulado
 	resetCostZen = 0,
@@ -174,6 +175,21 @@ function Mubia.applyStartLevel(player)
 	end
 	stats.points = (player:getLevel() - 1) * Mubia.Config.pointsPerLevel
 	Mubia.saveStats(player, stats)
+	return true
+end
+
+-- PRUEBAS: una sola vez por personaje, lo sube a Mubia.Config.testLevel (gana los puntos de esos niveles).
+function Mubia.applyTestLevel(player)
+	local target = Mubia.Config.testLevel
+	local store = kv(player)
+	if target <= 0 or not Mubia.getClass(player) or store:get("testLevelApplied") == target then
+		return false
+	end
+	store:set("testLevelApplied", target)
+	if player:getLevel() >= target then
+		return false
+	end
+	player:addExperience(Game.getExperienceForLevel(target) - player:getExperience(), false)
 	return true
 end
 
@@ -432,6 +448,18 @@ Mubia.Spells = {
 		vocations = { "dark wizard;true", "soul master;true" },
 		baseDamage = 45,
 	},
+	energyBall = {
+		name = "Energy Ball",
+		words = "energy ball",
+		mana = 1,
+		level = 1,
+		classId = Mubia.CLASS_DW,
+		scrollId = 5952,
+		vocations = { "dark wizard;true", "soul master;true" },
+		baseDamage = 3,
+		needTarget = true,
+		range = 5,
+	},
 	multiShot = {
 		name = "Multi-Shot",
 		words = "multi shot",
@@ -441,6 +469,17 @@ Mubia.Spells = {
 		scrollId = 640,
 		vocations = { "fairy elf;true", "muse elf;true" },
 		baseDamage = 40,
+	},
+	penetration = {
+		name = "Penetration",
+		words = "penetration",
+		mana = 9,
+		level = 1,
+		classId = Mubia.CLASS_ELF,
+		scrollId = 6119,
+		vocations = { "fairy elf;true", "muse elf;true" },
+		baseDamage = 70,
+		needDirection = true,
 	},
 }
 

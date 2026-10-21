@@ -61,6 +61,14 @@ local function registerMuSpell(def, combat)
 	spell:isAggressive(true)
 	spell:cooldown(0)
 	spell:groupCooldown(0)
+	if def.needTarget then
+		spell:needTarget(true)
+		spell:range(def.range or 5)
+		spell:blockWalls(true)
+	end
+	if def.needDirection then
+		spell:needDirection(true)
+	end
 	spell:vocation(unpack(def.vocations))
 	spell:register()
 end
@@ -152,6 +160,62 @@ do
 			end
 			origin:sendDistanceEffect(target, CONST_ANI_ARROW)
 		end
+	end
+
+	registerMuSpell(def, combat)
+end
+
+-- Energy Ball (Dark Wizard): bola de energía a un objetivo.
+-- Daño mágico (ENE) + daño base de la magia.
+do
+	local def = Mubia.Spells.energyBall
+	local combat = Combat()
+	combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+	combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ENERGYHIT)
+	combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_ENERGYBALL)
+
+	function mubiaEnergyBallValues(player, level, magicLevel)
+		local class, stats = getStatsAndClass(player)
+		if not class or not class.magic then
+			return 0, 0
+		end
+		local minDamage, maxDamage = class.magic(stats)
+		return -(minDamage + def.baseDamage), -(maxDamage + def.baseDamage)
+	end
+
+	combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "mubiaEnergyBallValues")
+	registerMuSpell(def, combat)
+end
+
+-- Penetration (Fairy Elf): flecha que atraviesa a todos en línea recta.
+-- Daño físico + arma + daño base de la magia.
+do
+	local def = Mubia.Spells.penetration
+	local combat = Combat()
+	combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+	combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_HITAREA)
+	combat:setArea(createCombatArea(AREA_BEAM8))
+
+	function mubiaPenetrationValues(player, level, magicLevel)
+		local class, stats = getStatsAndClass(player)
+		if not class then
+			return 0, 0
+		end
+		local minDamage, maxDamage = class.damage(stats)
+		local weaponAttack = Mubia.getWeaponAttack(player)
+		minDamage = minDamage + weaponAttack * 0.8 + def.baseDamage
+		maxDamage = maxDamage + weaponAttack + def.baseDamage
+		return -math.floor(minDamage), -math.floor(maxDamage)
+	end
+
+	combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "mubiaPenetrationValues")
+
+	-- flecha que vuela 8 casillas hacia donde mira, solo visual
+	def.onCast = function(player)
+		local origin = player:getPosition()
+		local target = Position(origin)
+		target:getNextPosition(player:getDirection(), 8)
+		origin:sendDistanceEffect(target, CONST_ANI_ARROW)
 	end
 
 	registerMuSpell(def, combat)

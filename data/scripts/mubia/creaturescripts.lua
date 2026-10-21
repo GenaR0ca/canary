@@ -9,6 +9,9 @@ function mubiaLogin.onLogin(player)
 		if Mubia.applyStartLevel(player) then
 			Mubia.sendMessage(player, MESSAGE_LOGIN, string.format("Mubia ahora empieza en nivel %d: tu personaje volvió a ese nivel con los stats base de su clase.", Mubia.Config.startLevel))
 		end
+		if Mubia.applyTestLevel(player) then
+			Mubia.sendMessage(player, MESSAGE_LOGIN, string.format("Modo pruebas: tu personaje subió a nivel %d.", Mubia.Config.testLevel))
+		end
 		Mubia.recalc(player)
 		local stats = Mubia.getStats(player)
 		if stats.points > 0 then
