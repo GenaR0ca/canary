@@ -6,7 +6,7 @@ local allLootConfig = {
 -- Custom loot for specific monsters (this has the same usage options as normal monster loot)
 local customLootConfig = {
 	["Dragon"] = { items = {
-		{ name = "platinum coin", chance = 1000, maxCount = 1 },
+		{ name = "zen bar", chance = 1000, maxCount = 1 },
 	} },
 }
 
