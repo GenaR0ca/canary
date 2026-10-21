@@ -183,8 +183,8 @@ forgeTierLossReduction = 50
 forgeAmountMultiplier = 3
 forgeMinSlivers = 3
 forgeMaxSlivers = 7
-forgeInfluencedLimit = 300
-forgeFiendishLimit = 4
+forgeInfluencedLimit = 0
+forgeFiendishLimit = 0
 forgeFiendishIntervalType = "hour"
 forgeFiendishIntervalTime = "1"
 
@@ -473,7 +473,7 @@ resetSessionsOnStartup = false
 -- NOTE: disableLegacyRaids: set to true to disable legacy XML raids
 allowChangeOutfit = true
 toggleMountInProtectionZone = false
-freePremium = false
+freePremium = true
 kickIdlePlayerAfterMinutes = 15
 maxMessageBuffer = 4
 toggleLearnSpells = true

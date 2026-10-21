@@ -47,6 +47,6 @@ spell:mana(400)
 spell:isSelfTarget(true)
 spell:cooldown(12 * 1000)
 spell:groupCooldown(2 * 1000, 12 * 1000)
-spell:vocation("sorcerer;true", "master sorcerer;true")
+spell:vocation("dark wizard;true", "soul master;true")
 
 spell:register()

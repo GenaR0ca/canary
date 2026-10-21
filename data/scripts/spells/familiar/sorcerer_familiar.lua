@@ -16,5 +16,5 @@ spell:cooldown(0) -- calculated in CreateFamiliarSpell
 spell:groupCooldown(2 * 1000)
 
 spell:isAggressive(false)
-spell:vocation("sorcerer;true", "master sorcerer;true")
+spell:vocation("dark wizard;true", "soul master;true")
 spell:register()

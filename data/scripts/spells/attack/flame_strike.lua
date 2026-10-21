@@ -32,5 +32,5 @@ spell:blockWalls(true)
 spell:cooldown(2 * 1000)
 spell:groupCooldown(2 * 1000)
 
-spell:vocation("sorcerer;true", "druid;true", "master sorcerer;true", "elder druid;true")
+spell:vocation("dark wizard;true", "druid;true", "soul master;true", "elder druid;true")
 spell:register()

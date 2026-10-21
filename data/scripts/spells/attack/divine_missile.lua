@@ -32,5 +32,5 @@ spell:blockWalls(true)
 spell:cooldown(2 * 1000)
 spell:groupCooldown(2 * 1000)
 
-spell:vocation("paladin;true", "royal paladin;true")
+spell:vocation("fairy elf;true", "muse elf;true")
 spell:register()

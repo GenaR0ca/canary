@@ -30,6 +30,6 @@ spell:isSelfTarget(true)
 spell:cooldown(1000)
 spell:groupCooldown(1000)
 spell:isAggressive(false)
-spell:vocation("knight;true", "elite knight;true")
+spell:vocation("dark knight;true", "blade knight;true")
 
 spell:register()

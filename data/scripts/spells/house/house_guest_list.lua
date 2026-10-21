@@ -19,7 +19,7 @@ end
 spell:name("House Guest List")
 spell:words("aleta sio")
 spell:group("support")
-spell:vocation("druid;true", "elder druid;true", "knight;true", "elite knight;true", "paladin;true", "royal paladin;true", "sorcerer;true", "master sorcerer;true", "monk;true", "exalted monk;true")
+spell:vocation("druid;true", "elder druid;true", "dark knight;true", "blade knight;true", "fairy elf;true", "muse elf;true", "dark wizard;true", "soul master;true", "monk;true", "exalted monk;true")
 spell:level(8)
 spell:cooldown(2 * 1000)
 spell:groupCooldown(2 * 1000)
