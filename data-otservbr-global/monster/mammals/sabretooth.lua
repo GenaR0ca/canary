@@ -74,7 +74,7 @@ monster.voices = {
 
 monster.loot = {
 	{ name = "Sabretooth Fur", chance = 23640 },
-	{ name = "Crystal Coin", chance = 23350, minCount = 1, maxCount = 2 },
+	{ name = "zen crystal", chance = 23350, minCount = 1, maxCount = 2 },
 	{ name = "Elven Amulet", chance = 5010 },
 	{ name = "Wand of Inferno", chance = 4720 },
 	{ name = "Dragon Necklace", chance = 3850 },

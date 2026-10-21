@@ -72,7 +72,7 @@ monster.loot = {
 	{ name = "Energy Bar", chance = 100000 },
 	{ name = "Gold Token", chance = 100000, maxCount = 2 },
 	{ name = "Piggy Bank", chance = 100000 },
-	{ name = "Platinum Coin", chance = 100000, maxCount = 5 },
+	{ name = "zen bar", chance = 100000, maxCount = 5 },
 	{ name = "Silver Token", chance = 100000, maxCount = 2 },
 	{ name = "Mysterious Remains", chance = 100000 },
 	{ name = "Yellow Gem", chance = 69230, maxCount = 2 },
@@ -93,7 +93,7 @@ monster.loot = {
 	{ name = "Berserk Potion", chance = 7690, maxCount = 10 },
 	{ id = 23543, chance = 7690 }, -- Collar of Green Plasma
 	{ id = 23544, chance = 7690 }, -- Collar of Red Plasma
-	{ name = "Crystal Coin", chance = 7690, maxCount = 2 },
+	{ name = "zen crystal", chance = 7690, maxCount = 2 },
 	{ name = "Ornate Locket", chance = 7690 },
 	{ name = "Pomegranate", chance = 7690 },
 	{ id = 23533, chance = 7690 }, -- Ring of Red Plasma
