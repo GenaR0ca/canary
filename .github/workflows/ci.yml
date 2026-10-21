@@ -180,7 +180,8 @@ jobs:
   build-macos:
     name: Build - macOS
     needs: [changes, checks, tests-lua]
-    if: needs.changes.outputs.full_matrix == 'true' && needs.checks.result == 'success' && needs.tests-lua.result == 'success' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false)
+    # Mubia: el servidor corre en Windows/Linux; macOS solo se compila a mano (Run workflow)
+    if: github.event_name == 'workflow_dispatch' && needs.changes.outputs.full_matrix == 'true' && needs.checks.result == 'success' && needs.tests-lua.result == 'success'
     permissions:
       contents: read
       packages: write
