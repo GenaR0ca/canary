@@ -71,7 +71,7 @@ monster.light = {
 }
 
 monster.loot = {
-	{ name = "crystal coin", chance = 11755, maxCount = 1 },
+	{ name = "zen crystal", chance = 11755, maxCount = 1 },
 	{ name = "lichen gobbler", chance = 9121, maxCount = 1 },
 	{ name = "white mushroom", chance = 12998, maxCount = 3 },
 	{ name = "rotten roots", chance = 9791, maxCount = 1 },

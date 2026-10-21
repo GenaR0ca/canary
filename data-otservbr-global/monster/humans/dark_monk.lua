@@ -81,7 +81,7 @@ monster.loot = {
 	{ id = 2815, chance = 1790 }, -- scroll
 	{ name = "brown flask", chance = 380 },
 	{ id = 2914, chance = 550 }, -- lamp
-	{ name = "gold coin", chance = 14600, maxCount = 18 },
+	{ name = "zen", chance = 14600, maxCount = 18 },
 	{ id = 3050, chance = 120 }, -- power ring
 	{ name = "life crystal", chance = 990 },
 	{ name = "ankh", chance = 900 },

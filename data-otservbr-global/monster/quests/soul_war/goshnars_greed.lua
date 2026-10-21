@@ -76,7 +76,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "crystal coin", chance = 55000, minCount = 70, maxCount = 75 },
+	{ name = "zen crystal", chance = 55000, minCount = 70, maxCount = 75 },
 	{ id = 281, chance = 1150 }, -- giant shimmering pearl (green)
 	{ name = "giant sapphire", chance = 10000, maxCount = 1 },
 	{ name = "giant topaz", chance = 10000, maxCount = 1 },

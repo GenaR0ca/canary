@@ -84,9 +84,9 @@ monster.loot = {
 	{ id = 3007, chance = 1500 }, -- crystal ring
 	{ name = "ancient tiara", chance = 300 },
 	{ name = "white pearl", chance = 7000 },
-	{ name = "gold coin", chance = 50000, maxCount = 90 },
-	{ name = "gold coin", chance = 50000, maxCount = 80 },
-	{ name = "gold coin", chance = 50000, maxCount = 65 },
+	{ name = "zen", chance = 50000, maxCount = 90 },
+	{ name = "zen", chance = 50000, maxCount = 80 },
+	{ name = "zen", chance = 50000, maxCount = 65 },
 	{ name = "blue note", chance = 100000 },
 	{ name = "crystal mace", chance = 500 },
 	{ name = "blue robe", chance = 2500 },

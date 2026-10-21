@@ -74,7 +74,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 100000, maxCount = 63 },
+	{ name = "zen bar", chance = 100000, maxCount = 63 },
 	{ name = "mastermind potion", chance = 100000 },
 	{ name = "stone skin amulet", chance = 100000 },
 	{ id = 27713, chance = 100000 }, -- heavy crystal fragment
@@ -105,7 +105,7 @@ monster.loot = {
 	{ name = "small emerald", chance = 10420 },
 	{ name = "muck rod", chance = 10420 },
 	{ name = "gold token", chance = 10420 },
-	{ name = "crystal coin", chance = 6250 },
+	{ name = "zen crystal", chance = 6250 },
 	{ name = "gnome shield", chance = 4170 },
 	{ name = "crystalline armor", chance = 4170 },
 	{ name = "gnome sword", chance = 4170 },

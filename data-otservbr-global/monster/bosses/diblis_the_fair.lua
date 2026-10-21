@@ -79,12 +79,12 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "gold coin", chance = 100000 },
+	{ name = "zen", chance = 100000 },
 	{ name = "vampire lord token", chance = 100000 },
 	{ name = "blood preservation", chance = 94000 },
 	{ name = "vampire shield", chance = 22000 },
 	{ name = "strong health potion", chance = 18000 },
-	{ name = "platinum coin", chance = 12000, maxCount = 5 },
+	{ name = "zen bar", chance = 12000, maxCount = 5 },
 	{ id = 3098, chance = 12000 }, -- ring of healing
 	{ id = 3114, chance = 12000 }, -- skull
 	{ name = "spellbook of lost souls", chance = 2000 },

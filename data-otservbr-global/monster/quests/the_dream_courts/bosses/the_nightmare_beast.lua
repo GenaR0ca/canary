@@ -87,7 +87,7 @@ monster.loot = {
 	{ name = "blue gem", chance = 6450 },
 	{ name = "bullseye potion", chance = 32259, maxCount = 19 },
 	{ name = "chaos mace", chance = 10380 },
-	{ name = "crystal coin", chance = 22580, maxCount = 3 },
+	{ name = "zen crystal", chance = 22580, maxCount = 3 },
 	{ name = "dark whispers", chance = 3230 },
 	{ name = "dragon figurine", chance = 7550 },
 	{ name = "energy bar", chance = 91510 },
@@ -106,7 +106,7 @@ monster.loot = {
 	{ id = 49271, chance = 12900, maxCount = 18 }, -- transcendence potion
 	{ name = "piggy bank", chance = 100000 },
 	{ name = "piggy bank", chance = 94340 },
-	{ name = "platinum coin", chance = 100000, maxCount = 9 },
+	{ name = "zen bar", chance = 100000, maxCount = 9 },
 	{ name = "purple tendril lantern", chance = 6600 },
 	{ name = "ring of the sky", chance = 4720 },
 	{ name = "royal star", chance = 48390, maxCount = 193 },

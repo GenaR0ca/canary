@@ -60,7 +60,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "gold coin", chance = 37000, maxCount = 70 },
+	{ name = "zen", chance = 37000, maxCount = 70 },
 	{ name = "candlestick", chance = 2100 },
 	{ name = "bread", chance = 14000 },
 	{ id = 3509, chance = 1000 }, -- inkwell

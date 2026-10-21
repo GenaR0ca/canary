@@ -79,7 +79,7 @@ monster.voices = {
 
 monster.loot = {
 	{ name = "energy bar", chance = 100000 },
-	{ name = "platinum coin", chance = 87000, maxCount = 9 },
+	{ name = "zen bar", chance = 87000, maxCount = 9 },
 	{ name = "green gem", chance = 85000 },
 	{ name = "supreme health potion", chance = 53700, maxCount = 14 },
 	{ name = "ultimate mana potion", chance = 48150, maxCount = 20 },
@@ -94,7 +94,7 @@ monster.loot = {
 	{ id = 49271, chance = 18500, maxCount = 10 }, -- transcendence potion
 	{ name = "magma coat", chance = 16600 },
 	{ name = "terra rod", chance = 1100 },
-	{ name = "crystal coin", chance = 9200 },
+	{ name = "zen crystal", chance = 9200 },
 	{ name = "violet gem", chance = 9000 },
 	{ name = "terra legs", chance = 8500 },
 	{ name = "terra hood", chance = 7400 },

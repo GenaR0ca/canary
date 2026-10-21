@@ -43,7 +43,7 @@ monster.flags = {
 }
 
 monster.loot = {
-	{ name = "crystal coin", chance = 96300, maxCount = 3 },
+	{ name = "zen crystal", chance = 96300, maxCount = 3 },
 	{ name = "diamond", chance = 55560, maxCount = 2 },
 	{ name = "ultimate mana potion", chance = 51850, maxCount = 6 },
 	{ name = "white gem", chance = 51850, maxCount = 2 },

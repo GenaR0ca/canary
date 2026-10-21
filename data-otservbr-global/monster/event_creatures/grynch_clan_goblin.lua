@@ -109,7 +109,7 @@ monster.loot = {
 	{ id = 2983, chance = 500 }, -- flower bowl
 	{ id = 2992, chance = 7000, maxCount = 5 }, -- snowball
 	{ name = "piggy bank", chance = 1000 },
-	{ name = "gold coin", chance = 22500, maxCount = 22 },
+	{ name = "zen", chance = 22500, maxCount = 22 },
 	{ name = "scarab coin", chance = 500, maxCount = 2 },
 	{ id = 3047, chance = 4000 }, -- magic light wand
 	{ name = "blank rune", chance = 5000 },

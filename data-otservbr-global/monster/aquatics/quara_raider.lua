@@ -87,7 +87,7 @@ monster.loot = {
 	{ name = "Abyss Hammer", chance = 170 },
 	{ name = "Preserved Light Blue Seed", chance = 110 },
 	{ name = "Preserved Purple Seed", chance = 110 },
-	{ name = "platinum coin", chance = 10000, maxCount = 25 },
+	{ name = "zen bar", chance = 10000, maxCount = 25 },
 }
 
 monster.attacks = {

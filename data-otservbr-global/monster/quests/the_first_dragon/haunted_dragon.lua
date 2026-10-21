@@ -79,9 +79,9 @@ monster.voices = {
 monster.loot = {
 	{ name = "black pearl", chance = 22780, maxCount = 2 },
 	{ name = "small sapphire", chance = 28370, maxCount = 2 },
-	{ name = "gold coin", chance = 35500, maxCount = 100 },
-	{ name = "gold coin", chance = 55500, maxCount = 98 },
-	{ name = "platinum coin", chance = 52000, maxCount = 5 },
+	{ name = "zen", chance = 35500, maxCount = 100 },
+	{ name = "zen", chance = 55500, maxCount = 98 },
+	{ name = "zen bar", chance = 52000, maxCount = 5 },
 	{ name = "life crystal", chance = 2500 },
 	{ name = "hardened bone", chance = 14180 },
 	{ id = 6299, chance = 1150 }, -- death ring

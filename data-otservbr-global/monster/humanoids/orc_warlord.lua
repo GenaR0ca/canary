@@ -79,7 +79,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "gold coin", chance = 18000, maxCount = 45 },
+	{ name = "zen", chance = 18000, maxCount = 45 },
 	{ id = 3049, chance = 90 }, -- stealth ring
 	{ name = "gold ring", chance = 30 },
 	{ name = "protection amulet", chance = 2190 },

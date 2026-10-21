@@ -89,7 +89,7 @@ monster.voices = {
 monster.loot = {
 	{ id = 2828, chance = 700 }, -- book
 	{ name = "small diamond", chance = 210 },
-	{ name = "gold coin", chance = 43380, maxCount = 40 },
+	{ name = "zen", chance = 43380, maxCount = 40 },
 	{ name = "wand of vortex", chance = 450 },
 	{ name = "garlic necklace", chance = 420 },
 	{ id = 3097, chance = 500 }, -- dwarven ring

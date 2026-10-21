@@ -68,7 +68,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "gold coin", chance = 100000, maxCount = 60 },
+	{ name = "zen", chance = 100000, maxCount = 60 },
 	{ name = "witch broom", chance = 100000 },
 	{ name = "cape", chance = 64500 },
 	{ id = 3012, chance = 41670 }, -- wolf tooth chain

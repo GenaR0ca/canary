@@ -85,7 +85,7 @@ monster.loot = {
 	{ name = "Crystal Crossbow", chance = 470 },
 	{ name = "Rift Lance", chance = 350 },
 	{ name = "Mantassin Tail", chance = 230 },
-	{ name = "platinum coin", chance = 10000, maxCount = 25 },
+	{ name = "zen bar", chance = 10000, maxCount = 25 },
 	{ name = "Glacier Robe", chance = 1000 },
 	{ name = "Preserved Light Blue Seed", chance = 110 },
 	{ name = "Preserved Purple Seed", chance = 110 },

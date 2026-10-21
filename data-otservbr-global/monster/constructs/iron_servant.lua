@@ -79,7 +79,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "gold coin", chance = 82000, maxCount = 55 },
+	{ name = "zen", chance = 82000, maxCount = 55 },
 	{ name = "halberd", chance = 1000 },
 	{ name = "gear wheel", chance = 4840 },
 	{ id = 8894, chance = 200 }, -- heavily rusted armor

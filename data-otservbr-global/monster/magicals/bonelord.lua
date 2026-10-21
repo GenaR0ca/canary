@@ -93,7 +93,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "gold coin", chance = 99400, maxCount = 48 },
+	{ name = "zen", chance = 99400, maxCount = 48 },
 	{ id = 3059, chance = 4990 }, -- spellbook
 	{ name = "terra rod", chance = 510 },
 	{ name = "two handed sword", chance = 3950 },

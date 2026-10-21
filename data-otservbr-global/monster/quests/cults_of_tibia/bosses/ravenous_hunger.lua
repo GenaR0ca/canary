@@ -88,12 +88,12 @@ monster.loot = {
 	{ name = "great spirit potion", chance = 33230, maxCount = 5 },
 	{ name = "yellow gem", chance = 12000 },
 	{ id = 282, chance = 5000 }, -- giant shimmering pearl (brown)
-	{ name = "platinum coin", chance = 68299, maxCount = 30 },
+	{ name = "zen bar", chance = 68299, maxCount = 30 },
 	{ name = "lightning legs", chance = 18000 },
 	{ name = "sacred tree amulet", chance = 15000 },
 	{ name = "wood cape", chance = 9000 },
 	{ name = "gold token", chance = 1532 },
-	{ name = "gold coin", chance = 100000, maxCount = 200 },
+	{ name = "zen", chance = 100000, maxCount = 200 },
 	{ name = "small emerald", chance = 19000, maxCount = 10 },
 	{ name = "great mana potion", chance = 31230, maxCount = 5 },
 	{ id = 3039, chance = 12000 }, -- red gem

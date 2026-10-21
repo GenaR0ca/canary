@@ -73,8 +73,8 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "gold coin", chance = 100000, maxCount = 329 },
-	{ name = "platinum coin", chance = 100000, maxCount = 35 },
+	{ name = "zen", chance = 100000, maxCount = 329 },
+	{ name = "zen bar", chance = 100000, maxCount = 35 },
 	{ id = 3100, chance = 100000 }, -- ring of healing
 	{ name = "wand of starstorm", chance = 100000 },
 	{ name = "mastermind potion", chance = 100000 },

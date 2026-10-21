@@ -99,7 +99,7 @@ monster.loot = {
 	{ name = "moonlight rod", chance = 5260 },
 	{ name = "necrotic rod", chance = 2630 },
 	{ name = "orb", chance = 2630 },
-	{ name = "platinum coin", chance = 83330, maxCount = 19 },
+	{ name = "zen bar", chance = 83330, maxCount = 19 },
 	{ name = "red crystal fragment", chance = 16670 },
 	{ name = "small sapphire", chance = 33330, maxCount = 4 },
 	{ name = "snakebite rod", chance = 7020 },

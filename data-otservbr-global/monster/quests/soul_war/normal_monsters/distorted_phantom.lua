@@ -83,7 +83,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "crystal coin", chance = 74920 },
+	{ name = "zen crystal", chance = 74920 },
 	{ name = "great spirit potion", chance = 27010, maxCount = 5 },
 	{ name = "distorted heart", chance = 6750 },
 	{ id = 23529, chance = 4820 }, -- ring of blue plasma

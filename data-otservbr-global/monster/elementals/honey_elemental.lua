@@ -79,9 +79,9 @@ monster.voices = {
 
 monster.loot = {
 	{ name = "small diamond", chance = 3010 },
-	{ name = "gold coin", chance = 100000, maxCount = 100 },
+	{ name = "zen", chance = 100000, maxCount = 100 },
 	{ name = "small emerald", chance = 3760, maxCount = 2 },
-	{ name = "platinum coin", chance = 85000, maxCount = 6 },
+	{ name = "zen bar", chance = 85000, maxCount = 6 },
 	{ id = 5902, chance = 3870 }, -- honeycomb
 	{ id = 48253, chance = 1180 }, -- beijinho
 	{ id = 818, chance = 1070 }, -- magma boots

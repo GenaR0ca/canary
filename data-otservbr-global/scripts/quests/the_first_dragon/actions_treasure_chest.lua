@@ -30,7 +30,7 @@ local UniqueTable = {
 		count = 3,
 	},
 	[14008] = {
-		name = "platinum coin",
+		name = "zen bar",
 		count = 3,
 	},
 	[14009] = {
