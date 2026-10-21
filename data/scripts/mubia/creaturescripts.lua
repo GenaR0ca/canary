@@ -9,7 +9,7 @@ function mubiaLogin.onLogin(player)
 		Mubia.recalc(player)
 		local stats = Mubia.getStats(player)
 		if stats.points > 0 then
-			player:sendTextMessage(MESSAGE_LOGIN, string.format("Tienes %d puntos para repartir. Usa /addstr, /addagi, /addvit o /addene (ejemplo: /addstr 10). Escribe /stats para ver tus stats.", stats.points))
+			Mubia.sendMessage(player, MESSAGE_LOGIN, string.format("Tienes %d puntos para repartir. Usa /addstr, /addagi, /addvit o /addene (ejemplo: /addstr 10). Escribe /stats para ver tus stats.", stats.points))
 		end
 		addEvent(function(playerId)
 			local p = Player(playerId)
@@ -33,7 +33,7 @@ function mubiaAdvance.onAdvance(player, skill, oldLevel, newLevel)
 	if newLevel > oldLevel then
 		local gained = (newLevel - oldLevel) * Mubia.Config.pointsPerLevel
 		Mubia.addPoints(player, gained)
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("Has ganado %d puntos de stats.", gained))
+		Mubia.sendMessage(player, MESSAGE_EVENT_ADVANCE, string.format("Has ganado %d puntos de stats.", gained))
 	end
 	Mubia.recalc(player)
 	player:addHealth(player:getMaxHealth())
@@ -55,7 +55,7 @@ function mubiaOpcode.onExtendedOpcode(player, opcode, buffer)
 	local action, stat, amount = buffer:match("^(%a+):?(%a*):?(%d*)$")
 	if action == "add" then
 		local ok, message = Mubia.addStat(player, stat, amount)
-		player:sendTextMessage(ok and MESSAGE_EVENT_ADVANCE or MESSAGE_FAILURE, message)
+		Mubia.sendMessage(player, ok and MESSAGE_EVENT_ADVANCE or MESSAGE_FAILURE, message)
 	elseif action == "get" then
 		Mubia.sendStats(player)
 	end

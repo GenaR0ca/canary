@@ -67,6 +67,17 @@ Mubia.Classes = {
 	},
 }
 
+-- El cliente muestra los textos en Latin-1: convierte las letras con tilde y la ñ desde UTF-8.
+function Mubia.toLatin1(text)
+	return (text:gsub("([\194\195])([\128-\191])", function(lead, byte)
+		return string.char((lead:byte() - 194) * 64 + byte:byte())
+	end))
+end
+
+function Mubia.sendMessage(player, messageType, text)
+	player:sendTextMessage(messageType, Mubia.toLatin1(text))
+end
+
 function Mubia.getClass(player)
 	local vocation = player:getVocation()
 	if not vocation then
