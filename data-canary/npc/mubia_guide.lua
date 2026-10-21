@@ -31,6 +31,15 @@ npcConfig.flags = {
 	floorchange = false,
 }
 
+-- Tienda gratis (escribir "trade"): items custom de Mubia + pociones, todo a precio 0
+npcConfig.shop = {
+	{ itemName = "health potion", clientId = 266, buy = 0 },
+	{ itemName = "mana potion", clientId = 268, buy = 0 },
+}
+for _, gift in ipairs(Mubia.GiftItems) do
+	table.insert(npcConfig.shop, { itemName = ItemType(gift.id):getName(), clientId = gift.id, buy = 0 })
+end
+
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 
@@ -58,6 +67,14 @@ npcType.onCloseChannel = function(npc, player)
 	npcHandler:onCloseChannel(npc, player)
 end
 
+npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
+	npc:sellItem(player, itemId, amount, subType, 0, ignore, inBackpacks)
+end
+
+npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name, totalCost) end
+
+npcType.onCheckItem = function(npc, player, clientId, subType) end
+
 local function giveGifts(npc, player)
 	local names = {}
 	for _, gift in ipairs(Mubia.GiftItems) do
@@ -75,7 +92,7 @@ local function giveGifts(npc, player)
 end
 
 local function greetCallback(npc, player)
-	npcHandler:setMessage(MESSAGE_GREET, Mubia.toLatin1("¡Hola |PLAYERNAME|! Te regalo los items nuevos de Mubia. Di {regalos} para recibirlos."))
+	npcHandler:setMessage(MESSAGE_GREET, Mubia.toLatin1("¡Hola |PLAYERNAME|! Te regalo los items nuevos de Mubia. Di {regalos} para recibirlos o {trade} para elegir items y pociones gratis."))
 	return true
 end
 

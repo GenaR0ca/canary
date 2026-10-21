@@ -12,7 +12,7 @@ end
 -- Comprueba la espera entre magias (AGI). Devuelve false si todavía no puede lanzar.
 local function checkCastSpeed(player, class, stats)
 	local playerId = player:getId()
-	local now = os.mtime()
+	local now = systemTime()
 	local nextCast = Mubia.nextCast[playerId] or 0
 	if now < nextCast then
 		player:sendCancelMessage(RETURNVALUE_YOUAREEXHAUSTED)
