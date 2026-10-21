@@ -1146,6 +1146,11 @@ int PlayerFunctions::luaPlayerGetAttackSpeed(lua_State* L) {
 	return 1;
 }
 
+/***
+ * @function Player:setAttackSpeed
+ * @param ms number
+ * @return true|nil
+ */
 int PlayerFunctions::luaPlayerSetAttackSpeed(lua_State* L) {
 	// player:setAttackSpeed(milliseconds) -- 0 vuelve a la velocidad de la vocacion
 	const auto &player = Lua::getUserdataShared<Player>(L, 1, "Player");
