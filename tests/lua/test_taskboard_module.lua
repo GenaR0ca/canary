@@ -1555,7 +1555,7 @@ end)
 
 test("default task board items use the current Canary ids", function()
 	local expectedItems = {
-		{ id = 3031, name = "gold coin" },
+		{ id = 3031, name = "zen" },
 		{ id = 3582, name = "ham" },
 		{ id = 3577, name = "meat" },
 		{ id = 3592, name = "grapes" },

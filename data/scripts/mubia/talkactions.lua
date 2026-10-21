@@ -25,12 +25,7 @@ function showStats.onSay(player, words, param)
 
 	local stats = Mubia.getStats(player)
 	local minDamage, maxDamage = class.damage(stats)
-	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format(
-		"%s | Nivel %d | Resets %d\nSTR %d | AGI %d | VIT %d | ENE %d | Puntos libres: %d\nDaño %d-%d | Defensa %d | Vida %d | Mana %d",
-		class.name, player:getLevel(), stats.resets,
-		stats.str, stats.agi, stats.vit, stats.ene, stats.points,
-		minDamage, maxDamage, class.defense(stats), player:getMaxHealth(), player:getMaxMana()
-	))
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("%s | Nivel %d | Resets %d\nSTR %d | AGI %d | VIT %d | ENE %d | Puntos libres: %d\nDaño %d-%d | Defensa %d | Vida %d | Mana %d", class.name, player:getLevel(), stats.resets, stats.str, stats.agi, stats.vit, stats.ene, stats.points, minDamage, maxDamage, class.defense(stats), player:getMaxHealth(), player:getMaxMana()))
 	Mubia.sendStats(player)
 	return true
 end

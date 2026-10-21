@@ -184,7 +184,7 @@ return function(api)
 			{
 				kind = 0,
 				id = 3043,
-				name = "crystal coin",
+				name = "zen crystal",
 				description = "A compact reward for a successful hunt.",
 				price = 100,
 			},
