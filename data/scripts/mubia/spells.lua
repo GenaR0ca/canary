@@ -61,7 +61,7 @@ local function registerMuSpell(def, combat)
 	spell:isAggressive(true)
 	spell:cooldown(0)
 	spell:groupCooldown(0)
-	spell:vocation(table.unpack(def.vocations))
+	spell:vocation(unpack(def.vocations))
 	spell:register()
 end
 
