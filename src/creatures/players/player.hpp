@@ -1721,6 +1721,7 @@ private:
 	uint64_t experience = 0;
 	uint64_t manaSpent = 0;
 	uint64_t lastAttack = 0;
+	uint32_t attackSpeedOverride = 0;
 	std::unordered_map<uint8_t, uint64_t> lastConditionTime;
 	uint64_t lastAggressiveAction = 0;
 	uint64_t bankBalance = 0;
@@ -1915,6 +1916,10 @@ private:
 	bool isPromoted() const;
 
 	uint32_t getAttackSpeed() const;
+	// Mubia: velocidad de ataque calculada en Lua a partir de AGI (0 = la de la vocacion)
+	void setAttackSpeedOverride(uint32_t ms) {
+		attackSpeedOverride = ms;
+	}
 
 	static double_t getPercentLevel(uint64_t count, uint64_t nextLevelCount);
 	double getLostPercent() const;

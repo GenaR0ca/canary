@@ -155,6 +155,8 @@ void PlayerFunctions::init(lua_State* L) {
 
 	Lua::registerMethod(L, "Player", "getCapacity", PlayerFunctions::luaPlayerGetCapacity);
 	Lua::registerMethod(L, "Player", "setCapacity", PlayerFunctions::luaPlayerSetCapacity);
+	Lua::registerMethod(L, "Player", "getAttackSpeed", PlayerFunctions::luaPlayerGetAttackSpeed);
+	Lua::registerMethod(L, "Player", "setAttackSpeed", PlayerFunctions::luaPlayerSetAttackSpeed);
 
 	Lua::registerMethod(L, "Player", "isTraining", PlayerFunctions::luaPlayerGetIsTraining);
 	Lua::registerMethod(L, "Player", "setTraining", PlayerFunctions::luaPlayerSetTraining);
@@ -1126,6 +1128,29 @@ int PlayerFunctions::luaPlayerSetCapacity(lua_State* L) {
 	if (player) {
 		player->capacity = Lua::getNumber<uint32_t>(L, 2);
 		player->sendStats();
+		Lua::pushBoolean(L, true);
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int PlayerFunctions::luaPlayerGetAttackSpeed(lua_State* L) {
+	// player:getAttackSpeed()
+	const auto &player = Lua::getUserdataShared<Player>(L, 1, "Player");
+	if (player) {
+		lua_pushnumber(L, player->getAttackSpeed());
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int PlayerFunctions::luaPlayerSetAttackSpeed(lua_State* L) {
+	// player:setAttackSpeed(milliseconds) -- 0 vuelve a la velocidad de la vocacion
+	const auto &player = Lua::getUserdataShared<Player>(L, 1, "Player");
+	if (player) {
+		player->setAttackSpeedOverride(Lua::getNumber<uint32_t>(L, 2));
 		Lua::pushBoolean(L, true);
 	} else {
 		lua_pushnil(L);

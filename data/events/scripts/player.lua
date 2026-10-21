@@ -605,6 +605,11 @@ function Player:onLoseExperience(exp)
 end
 
 function Player:onGainSkillTries(skill, tries)
+	-- Mubia Online: no hay skills de Tibia, el daño sale de los stats MU (STR/AGI/VIT/ENE)
+	if Mubia then
+		return 0
+	end
+
 	-- Dawnport skills limit
 	if IsRunningGlobalDatapack() and isSkillGrowthLimited(self, skill) then
 		return 0

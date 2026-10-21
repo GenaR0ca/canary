@@ -701,11 +701,9 @@
 		<attribute key="decayTo" value="328"/>
 		<attribute key="weight" value="150"/>
 	</item>
-	<item id="347" article="a" name="scroll">
+	<item id="347" article="a" name="scroll of twisting slash">
 		<attribute key="primarytype" value="documents and papers"/>
-		<attribute key="description" value="The correspondence written on this scroll could be considered quite compromising"/>
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxtextlen" value="511"/>
+		<attribute key="description" value="Dark Knight. Usalo para aprender la magia Twisting Slash"/>
 		<attribute key="weight" value="50"/>
 	</item>
 	<item id="348" name="intelligence reports">
@@ -1082,16 +1080,14 @@
 		<attribute key="maxtextlen" value="511"/>
 		<attribute key="weight" value="150"/>
 	</item>
-	<item id="639" article="a" name="scroll">
+	<item id="639" article="a" name="scroll of evil spirit">
 		<attribute key="primarytype" value="documents and papers"/>
-		<attribute key="writeable" value="1"/>
+		<attribute key="description" value="Dark Wizard. Usalo para aprender la magia Evil Spirit"/>
 		<attribute key="weight" value="50"/>
 	</item>
-	<item id="640" article="a" name="scroll">
+	<item id="640" article="a" name="scroll of multi-shot">
 		<attribute key="primarytype" value="documents and papers"/>
-		<attribute key="writeable" value="1"/>
-		<attribute key="writeonceitemid" value="639"/>
-		<attribute key="maxtextlen" value="511"/>
+		<attribute key="description" value="Fairy Elf. Usalo para aprender la magia Multi-Shot"/>
 		<attribute key="weight" value="50"/>
 	</item>
 	<item id="641" article="a" name="piece of paper">

@@ -11,6 +11,10 @@ Mubia.Config = {
 	resetCostZen = 0,
 	minDamageAfterDefense = 0.1, -- el golpe nunca baja de este % aunque la defensa sea alta
 	opcode = 80, -- opcode extendido para la ventana de stats del cliente
+	-- velocidad: tiempo entre golpes/magias = base / (1 + (AGI / divisor de la clase) / 25)
+	attackSpeedBase = 2000,
+	castSpeedBase = 1500,
+	minAttackSpeed = 300,
 }
 
 Mubia.STATS = { "str", "agi", "vit", "ene" }
@@ -33,12 +37,19 @@ Mubia.Classes = {
 		base = { str = 28, agi = 20, vit = 25, ene = 10 },
 		hp = { base = 110, perLevel = 2, perVit = 3 },
 		mana = { base = 20, perLevel = 0.5, perEne = 1 },
+		-- daño físico (golpe normal y skills de arma)
 		damage = function(s)
 			return math.floor(s.str / 6), math.floor(s.str / 4)
 		end,
 		defense = function(s)
 			return math.floor(s.agi / 3)
 		end,
+		-- en MU las skills del DK pegan 200% + ENE/10 %
+		skillMultiplier = function(s)
+			return (200 + s.ene / 10) / 100
+		end,
+		attackSpeedDiv = 15,
+		magicSpeedDiv = 20,
 	},
 	[Mubia.CLASS_DW] = {
 		name = "Dark Wizard",
@@ -46,12 +57,17 @@ Mubia.Classes = {
 		hp = { base = 60, perLevel = 1, perVit = 2 },
 		mana = { base = 60, perLevel = 2, perEne = 2 },
 		damage = function(s)
-			-- daño de magia (wizardry)
+			return math.floor(s.str / 8), math.floor(s.str / 4)
+		end,
+		-- daño mágico (wizardry)
+		magic = function(s)
 			return math.floor(s.ene / 9), math.floor(s.ene / 4)
 		end,
 		defense = function(s)
 			return math.floor(s.agi / 4)
 		end,
+		attackSpeedDiv = 20,
+		magicSpeedDiv = 10,
 	},
 	[Mubia.CLASS_ELF] = {
 		name = "Fairy Elf",
@@ -64,6 +80,8 @@ Mubia.Classes = {
 		defense = function(s)
 			return math.floor(s.agi / 10)
 		end,
+		attackSpeedDiv = 30,
+		magicSpeedDiv = 30,
 	},
 }
 
@@ -144,7 +162,22 @@ function Mubia.getMaxMana(player, class, stats)
 	return math.max(0, math.floor(mana.base + mana.perLevel * (player:getLevel() - 1) + mana.perEne * (stats.ene - class.base.ene)))
 end
 
--- Recalcula vida y mana máximas a partir de nivel y stats.
+local function speedFromAgi(base, agi, divisor)
+	local value = math.floor(base / (1 + (agi / divisor) / 25))
+	return math.max(Mubia.Config.minAttackSpeed, value)
+end
+
+-- Milisegundos entre golpes normales (AGI la baja).
+function Mubia.getAttackSpeed(class, stats)
+	return speedFromAgi(Mubia.Config.attackSpeedBase, stats.agi, class.attackSpeedDiv)
+end
+
+-- Milisegundos de espera entre magias MU (AGI la baja).
+function Mubia.getCastSpeed(class, stats)
+	return speedFromAgi(Mubia.Config.castSpeedBase, stats.agi, class.magicSpeedDiv)
+end
+
+-- Recalcula vida, mana y velocidad de ataque a partir de nivel y stats.
 function Mubia.recalc(player)
 	local class = Mubia.getClass(player)
 	if not class then
@@ -157,6 +190,10 @@ function Mubia.recalc(player)
 
 	player:setMaxHealth(maxHealth)
 	player:setMaxMana(maxMana)
+	-- setAttackSpeed existe desde el canary.exe de Mubia con velocidad por AGI
+	if player.setAttackSpeed then
+		player:setAttackSpeed(Mubia.getAttackSpeed(class, stats))
+	end
 	if player:getHealth() > maxHealth then
 		player:addHealth(maxHealth - player:getHealth())
 	end
@@ -217,7 +254,7 @@ function Mubia.getDefense(player)
 	return class.defense(Mubia.getStats(player))
 end
 
-local function getWeaponAttack(player)
+function Mubia.getWeaponAttack(player)
 	local attack = 0
 	for _, slot in ipairs({ CONST_SLOT_LEFT, CONST_SLOT_RIGHT }) do
 		local item = player:getSlotItem(slot)
@@ -235,6 +272,9 @@ local function isHealthDamage(combatType)
 	return combatType ~= COMBAT_HEALING and combatType ~= COMBAT_LIFEDRAIN and combatType ~= COMBAT_MANADRAIN and combatType ~= COMBAT_NONE
 end
 
+-- Jugadores lanzando ahora mismo una magia MU: su daño ya viene calculado.
+Mubia.castingSpell = Mubia.castingSpell or {}
+
 -- Sustituye el daño de Tibia por el de MU. Se llama desde Creature:onDrainHealth.
 function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSecondary, damageSecondary)
 	if not attacker or not target or not isHealthDamage(typePrimary) then
@@ -242,9 +282,10 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 	end
 
 	local attackerPlayer = attacker:getPlayer()
-	if attackerPlayer and Mubia.getClass(attackerPlayer) and damagePrimary > 0 then
+	local isMuSpell = attackerPlayer and Mubia.castingSpell[attackerPlayer:getId()]
+	if attackerPlayer and not isMuSpell and Mubia.getClass(attackerPlayer) and damagePrimary > 0 then
 		local minDamage, maxDamage = Mubia.getDamageRange(attackerPlayer)
-		local weaponAttack = getWeaponAttack(attackerPlayer)
+		local weaponAttack = Mubia.getWeaponAttack(attackerPlayer)
 		minDamage = minDamage + math.floor(weaponAttack * 0.8)
 		maxDamage = maxDamage + weaponAttack
 		damagePrimary = math.random(math.max(1, minDamage), math.max(1, maxDamage))
@@ -322,9 +363,17 @@ function Mubia.sendStats(player)
 		minDamage = minDamage,
 		maxDamage = maxDamage,
 		defense = class.defense(stats),
+		minMagic = 0,
+		maxMagic = 0,
+		attackSpeed = Mubia.getAttackSpeed(class, stats),
+		castSpeed = Mubia.getCastSpeed(class, stats),
 		maxHealth = player:getMaxHealth(),
 		maxMana = player:getMaxMana(),
 	}
+
+	if class.magic then
+		data.minMagic, data.maxMagic = class.magic(stats)
+	end
 
 	local parts = {}
 	for key, value in pairs(data) do
@@ -336,3 +385,36 @@ function Mubia.sendStats(player)
 	end
 	player:sendExtendedOpcode(Mubia.Config.opcode, "{" .. table.concat(parts, ",") .. "}")
 end
+
+-- Magias MU (se registran en data/scripts/mubia/spells.lua y se aprenden con scrolls.lua)
+Mubia.Spells = {
+	twistingSlash = {
+		name = "Twisting Slash",
+		words = "twisting slash",
+		mana = 10,
+		level = 1,
+		classId = Mubia.CLASS_DK,
+		scrollId = 347,
+		vocations = { "dark knight;true", "blade knight;true" },
+	},
+	evilSpirit = {
+		name = "Evil Spirit",
+		words = "evil spirit",
+		mana = 40,
+		level = 1,
+		classId = Mubia.CLASS_DW,
+		scrollId = 639,
+		vocations = { "dark wizard;true", "soul master;true" },
+		baseDamage = 45,
+	},
+	multiShot = {
+		name = "Multi-Shot",
+		words = "multi shot",
+		mana = 10,
+		level = 1,
+		classId = Mubia.CLASS_ELF,
+		scrollId = 640,
+		vocations = { "fairy elf;true", "muse elf;true" },
+		baseDamage = 40,
+	},
+}

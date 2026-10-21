@@ -7344,6 +7344,9 @@ bool Player::isPromoted() const {
 }
 
 uint32_t Player::getAttackSpeed() const {
+	if (attackSpeedOverride > 0) {
+		return attackSpeedOverride;
+	}
 	return vocation->getAttackSpeed();
 }
 

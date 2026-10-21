@@ -25,7 +25,18 @@ function showStats.onSay(player, words, param)
 
 	local stats = Mubia.getStats(player)
 	local minDamage, maxDamage = class.damage(stats)
-	Mubia.sendMessage(player, MESSAGE_EVENT_ADVANCE, string.format("%s | Nivel %d | Resets %d\nSTR %d | AGI %d | VIT %d | ENE %d | Puntos libres: %d\nDaño %d-%d | Defensa %d | Vida %d | Mana %d", class.name, player:getLevel(), stats.resets, stats.str, stats.agi, stats.vit, stats.ene, stats.points, minDamage, maxDamage, class.defense(stats), player:getMaxHealth(), player:getMaxMana()))
+	local magicText = "-"
+	if class.magic then
+		local minMagic, maxMagic = class.magic(stats)
+		magicText = string.format("%d-%d", minMagic, maxMagic)
+	end
+	local lines = {
+		string.format("%s | Nivel %d | Resets %d", class.name, player:getLevel(), stats.resets),
+		string.format("STR %d | AGI %d | VIT %d | ENE %d | Puntos libres: %d", stats.str, stats.agi, stats.vit, stats.ene, stats.points),
+		string.format("Daño físico %d-%d | Daño mágico %s | Defensa %d", minDamage, maxDamage, magicText, class.defense(stats)),
+		string.format("Vel. ataque %.2fs | Vel. magia %.2fs | Vida %d | Mana %d", Mubia.getAttackSpeed(class, stats) / 1000, Mubia.getCastSpeed(class, stats) / 1000, player:getMaxHealth(), player:getMaxMana()),
+	}
+	Mubia.sendMessage(player, MESSAGE_EVENT_ADVANCE, table.concat(lines, "\n"))
 	Mubia.sendStats(player)
 	return true
 end
