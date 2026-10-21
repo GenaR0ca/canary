@@ -6,6 +6,7 @@ Mubia = Mubia or {}
 Mubia.Config = {
 	pointsPerLevel = 5,
 	maxStat = 32767,
+	startLevel = 1, -- nivel con el que empieza todo personaje nuevo
 	resetLevel = 400,
 	resetPointsPerReset = 500, -- puntos extra por cada reset acumulado
 	resetCostZen = 0,
@@ -149,6 +150,30 @@ function Mubia.initPlayer(player)
 	end
 	Mubia.saveStats(player, stats)
 	store:set("initialized", true)
+	return true
+end
+
+-- Una sola vez por personaje: lo deja en el nivel inicial con los stats base de su clase.
+-- Sirve para los personajes creados antes de que Mubia empezara en nivel 1.
+function Mubia.applyStartLevel(player)
+	local class = Mubia.getClass(player)
+	local store = kv(player)
+	if not class or store:get("startLevelApplied") then
+		return false
+	end
+	store:set("startLevelApplied", true)
+
+	local stats = Mubia.getStats(player)
+	if stats.resets > 0 or player:getLevel() <= Mubia.Config.startLevel then
+		return false
+	end
+
+	player:removeExperience(player:getExperience() - Game.getExperienceForLevel(Mubia.Config.startLevel), false)
+	for _, key in ipairs(Mubia.STATS) do
+		stats[key] = class.base[key]
+	end
+	stats.points = (player:getLevel() - 1) * Mubia.Config.pointsPerLevel
+	Mubia.saveStats(player, stats)
 	return true
 end
 
@@ -418,3 +443,13 @@ Mubia.Spells = {
 		baseDamage = 40,
 	},
 }
+
+-- Items custom que regala el NPC del templo (Mubia Guide) para probar.
+-- Agregar aquí cada item nuevo: { id = itemId, count = cantidad }
+Mubia.GiftItems = {}
+for _, def in pairs(Mubia.Spells) do
+	table.insert(Mubia.GiftItems, { id = def.scrollId, count = 1 })
+end
+table.sort(Mubia.GiftItems, function(a, b)
+	return a.id < b.id
+end)

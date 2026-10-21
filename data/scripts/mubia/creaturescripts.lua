@@ -6,6 +6,9 @@ function mubiaLogin.onLogin(player)
 	player:registerEvent("MubiaAdvance")
 	player:registerEvent("MubiaExtendedOpcode")
 	if Mubia.initPlayer(player) then
+		if Mubia.applyStartLevel(player) then
+			Mubia.sendMessage(player, MESSAGE_LOGIN, string.format("Mubia ahora empieza en nivel %d: tu personaje volvió a ese nivel con los stats base de su clase.", Mubia.Config.startLevel))
+		end
 		Mubia.recalc(player)
 		local stats = Mubia.getStats(player)
 		if stats.points > 0 then
