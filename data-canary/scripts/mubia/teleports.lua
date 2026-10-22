@@ -1,5 +1,6 @@
 -- Mubia Online: teleports del templo de Strongarm a la zona de NPCs (Nahag Village)
--- a la zona de entrenamiento (Montag), a Lorencia, a Noria y a Devias, cada uno con su teleport de vuelta.
+-- a la zona de entrenamiento (Montag), a Lorencia, a Noria y a Devias. Todos menos Devias tienen teleport de vuelta
+-- (desde Devias se vuelve con el menú de ciudades, tecla M).
 -- Se crean al arrancar el servidor (no se guardan en el mapa). Va en data-canary porque usa el mapa canary.otbm.
 
 local TEMPLE = Position(1943, 1345, 7)
@@ -13,7 +14,6 @@ Mubia.Teleports = {
 	{ position = Position(4804, 5086, 7), destination = TEMPLE, description = "Teleport de vuelta al templo." },
 	{ position = Position(927, 657, 7), destination = TEMPLE, description = "Teleport de vuelta al templo de Strongarm." },
 	{ position = Position(1291, 645, 7), destination = TEMPLE, description = "Teleport de vuelta al templo de Strongarm." },
-	{ position = Position(1590, 740, 7), destination = TEMPLE, description = "Teleport de vuelta al templo de Strongarm." },
 	{ position = Position(5006, 5003, 7), destination = TEMPLE, description = "Teleport de vuelta al templo." },
 }
 
