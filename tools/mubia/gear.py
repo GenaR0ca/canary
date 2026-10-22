@@ -373,11 +373,24 @@ def build_xml(items):
         s = s[: s.index(BEGIN)] + s[s.index(END) + len(END):]
     for item in items:
         assert f'id="{item["id"]}"' not in s, item["id"]
+    # Items de Tibia con el mismo nombre que uno de MU: pasan a llamarse "... (tibia)", así el loot
+    # de los monstruos (que busca por nombre) da el item de MU y no hay nombres repetidos.
+    mu_names = {i["name"].lower() for i in items}
+    renamed = 0
+
+    def rename(m):
+        nonlocal renamed
+        if m.group(2) in mu_names:
+            renamed += 1
+            return f'{m.group(1)}name="{m.group(2)} (tibia)"'
+        return m.group(0)
+
+    s = re.sub(r'(<item (?:id|fromid)="\d+"[^>]*?)name="([^"]+)"', rename, s)
     block = BEGIN + "".join(xml_item(i) for i in items) + END
     i = s.rindex("</items>")
     s = s[:i] + block + s[i:]
     open(XML, "w", encoding="utf-8").write(s)
-    print(f"items.xml: {len(items)} items de MU")
+    print(f"items.xml: {len(items)} items de MU, {renamed} items de Tibia renombrados")
 
 
 # --- mubia_gear.lua ----------------------------------------------------------------------------------

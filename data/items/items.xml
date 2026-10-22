@@ -8185,7 +8185,7 @@
 			<attribute key="vocation" value="Dark Knight;true, Elite Knight"/>
 		</attribute>
 	</item>
-	<item id="3266" article="a" name="battle axe">
+	<item id="3266" article="a" name="battle axe (tibia)">
 		<attribute key="primarytype" value="axe weapons"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
@@ -8209,7 +8209,7 @@
 			<attribute key="slot" value="hand"/>
 		</attribute>
 	</item>
-	<item id="3268" article="a" name="hand axe">
+	<item id="3268" article="a" name="hand axe (tibia)">
 		<attribute key="primarytype" value="axe weapons"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="attack" value="10"/>
@@ -8263,7 +8263,7 @@
 			<attribute key="slot" value="hand"/>
 		</attribute>
 	</item>
-	<item id="3272" article="a" name="rapier">
+	<item id="3272" article="a" name="rapier (tibia)">
 		<attribute key="primarytype" value="sword weapons"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="attack" value="10"/>
@@ -8298,7 +8298,7 @@
 			<attribute key="slot" value="hand"/>
 		</attribute>
 	</item>
-	<item id="3275" article="a" name="double axe">
+	<item id="3275" article="a" name="double axe (tibia)">
 		<attribute key="primarytype" value="axe weapons"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
@@ -8385,7 +8385,7 @@
 			<attribute key="slot" value="hand"/>
 		</attribute>
 	</item>
-	<item id="3281" article="a" name="giant sword">
+	<item id="3281" article="a" name="giant sword (tibia)">
 		<attribute key="primarytype" value="sword weapons"/>
 		<attribute key="description" value="This sword has been forged by ancient giants"/>
 		<attribute key="weaponType" value="sword"/>
@@ -8406,7 +8406,7 @@
 			<attribute key="vocation" value="Dark Knight;true, Elite Knight"/>
 		</attribute>
 	</item>
-	<item id="3282" article="a" name="morning star">
+	<item id="3282" article="a" name="morning star (tibia)">
 		<attribute key="primarytype" value="club weapons"/>
 		<attribute key="weaponType" value="club"/>
 		<attribute key="attack" value="25"/>
@@ -8455,7 +8455,7 @@
 			<attribute key="slot" value="hand"/>
 		</attribute>
 	</item>
-	<item id="3286" article="a" name="mace">
+	<item id="3286" article="a" name="mace (tibia)">
 		<attribute key="primarytype" value="club weapons"/>
 		<attribute key="weaponType" value="club"/>
 		<attribute key="attack" value="16"/>
@@ -8556,7 +8556,7 @@
 			<attribute key="slot" value="hand"/>
 		</attribute>
 	</item>
-	<item id="3294" article="a" name="short sword">
+	<item id="3294" article="a" name="short sword (tibia)">
 		<attribute key="primarytype" value="sword weapons"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="attack" value="11"/>
@@ -8602,7 +8602,7 @@
 			<attribute key="vocation" value="Dark Knight;true, Elite Knight"/>
 		</attribute>
 	</item>
-	<item id="3297" article="a" name="serpent sword">
+	<item id="3297" article="a" name="serpent sword (tibia)">
 		<attribute key="primarytype" value="sword weapons"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="elementearth" value="8"/>
@@ -8641,7 +8641,7 @@
 			<attribute key="slot" value="hand"/>
 		</attribute>
 	</item>
-	<item id="3300" article="a" name="katana">
+	<item id="3300" article="a" name="katana (tibia)">
 		<attribute key="primarytype" value="sword weapons"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="attack" value="16"/>
@@ -8672,7 +8672,7 @@
 			<attribute key="vocation" value="Dark Knight;true, Elite Knight"/>
 		</attribute>
 	</item>
-	<item id="3302" article="a" name="dragon lance">
+	<item id="3302" article="a" name="dragon lance (tibia)">
 		<attribute key="primarytype" value="axe weapons"/>
 		<attribute key="description" value="The extraordinary sharp blade penetrates every armor"/>
 		<attribute key="weaponType" value="axe"/>
@@ -9019,7 +9019,7 @@
 			<attribute key="slot" value="hand"/>
 		</attribute>
 	</item>
-	<item id="3324" article="a" name="skull staff">
+	<item id="3324" article="a" name="skull staff (tibia)">
 		<attribute key="primarytype" value="club weapons"/>
 		<attribute key="description" value="The staff longs for death"/>
 		<attribute key="weaponType" value="club"/>
@@ -9407,7 +9407,7 @@
 			<attribute key="slot" value="hand"/>
 		</attribute>
 	</item>
-	<item id="3349" article="a" name="crossbow">
+	<item id="3349" article="a" name="crossbow (tibia)">
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
@@ -9425,7 +9425,7 @@
 			<attribute key="weaponType" value="distance"/>
 		</attribute>
 	</item>
-	<item id="3350" article="a" name="bow">
+	<item id="3350" article="a" name="bow (tibia)">
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
@@ -9484,7 +9484,7 @@
 			<attribute key="slot" value="head"/>
 		</attribute>
 	</item>
-	<item id="3357" article="a" name="plate armor">
+	<item id="3357" article="a" name="plate armor (tibia)">
 		<attribute key="primarytype" value="armors"/>
 		<attribute key="armor" value="10"/>
 		<attribute key="weight" value="12000"/>
@@ -9509,7 +9509,7 @@
 			<attribute key="slot" value="armor"/>
 		</attribute>
 	</item>
-	<item id="3359" article="a" name="brass armor">
+	<item id="3359" article="a" name="brass armor (tibia)">
 		<attribute key="primarytype" value="armors"/>
 		<attribute key="armor" value="8"/>
 		<attribute key="weight" value="8000"/>
@@ -9535,7 +9535,7 @@
 			<attribute key="vocation" value="Dark Knight;true, Paladin;true, Elite Knight, Royal Paladin"/>
 		</attribute>
 	</item>
-	<item id="3361" article="a" name="leather armor">
+	<item id="3361" article="a" name="leather armor (tibia)">
 		<attribute key="primarytype" value="armors"/>
 		<attribute key="armor" value="4"/>
 		<attribute key="weight" value="6000"/>
@@ -9703,7 +9703,7 @@
 			<attribute key="slot" value="head"/>
 		</attribute>
 	</item>
-	<item id="3377" article="a" name="scale armor">
+	<item id="3377" article="a" name="scale armor (tibia)">
 		<attribute key="primarytype" value="armors"/>
 		<attribute key="armor" value="9"/>
 		<attribute key="weight" value="10500"/>
@@ -10345,7 +10345,7 @@
 			<attribute key="slot" value="shield"/>
 		</attribute>
 	</item>
-	<item id="3428" article="a" name="tower shield">
+	<item id="3428" article="a" name="tower shield (tibia)">
 		<attribute key="primarytype" value="shields"/>
 		<attribute key="weaponType" value="shield"/>
 		<attribute key="defense" value="32"/>
@@ -10712,7 +10712,7 @@
 		<attribute key="primarytype" value="tools"/>
 		<attribute key="weight" value="1000"/>
 	</item>
-	<item id="3462" article="a" name="small axe">
+	<item id="3462" article="a" name="small axe (tibia)">
 		<attribute key="primarytype" value="tools"/>
 		<attribute key="weight" value="2000"/>
 	</item>
@@ -10970,7 +10970,7 @@
 			<attribute key="slot" value="feet"/>
 		</attribute>
 	</item>
-	<item id="3552" name="leather boots">
+	<item id="3552" name="leather boots (tibia)">
 		<attribute key="primarytype" value="boots"/>
 		<attribute key="armor" value="1"/>
 		<attribute key="weight" value="900"/>
@@ -25274,7 +25274,7 @@
 	<item fromid="9512" toid="9513" article="a" name="Carlin shield">
 		<attribute key="primarytype" value="wall hangings"/>
 	</item>
-	<item fromid="9514" toid="9515" article="a" name="serpent shield">
+	<item fromid="9514" toid="9515" article="a" name="serpent shield (tibia)">
 		<attribute key="primarytype" value="wall hangings"/>
 	</item>
 	<item fromid="9516" toid="9517" article="a" name="stone ledge">
@@ -26584,7 +26584,7 @@
 	<item id="10322" article="a" name="statue">
 		<attribute key="allowdistread" value="1"/>
 	</item>
-	<item id="10323" name="guardian boots">
+	<item id="10323" name="guardian boots (tibia)">
 		<attribute key="primarytype" value="boots"/>
 		<attribute key="absorbpercentphysical" value="2"/>
 		<attribute key="absorbpercentholy" value="-2"/>
