@@ -84637,19 +84637,19 @@ Granted by TibiaGoals.com"/>
 		<attribute key="description" value="Fairy Elf. Rayo de energia del cielo muy poderoso. Usalo para aprender Starfall. Palabras: starfall"/>
 		<attribute key="weight" value="50"/>
 	</item>
-	<item id="60301" article="a" name="jewel of bless">
-		<attribute key="primarytype" value="valuables"/>
-		<attribute key="description" value="Usalo sobre un item (Usar con...) para subirlo de +0 a +6. Exito 100%."/>
-		<attribute key="weight" value="10"/>
-	</item>
-	<item id="60302" article="a" name="jewel of soul">
+	<item id="60301" article="a" name="jewel of soul">
 		<attribute key="primarytype" value="valuables"/>
 		<attribute key="description" value="Usalo sobre un item +6 o mas (Usar con...) para subirlo hasta +15. Puede fallar."/>
 		<attribute key="weight" value="10"/>
 	</item>
-	<item id="60303" article="a" name="jewel of life">
+	<item id="60302" article="a" name="jewel of life">
 		<attribute key="primarytype" value="valuables"/>
 		<attribute key="description" value="Usalo sobre un item (Usar con...) para darle o subirle la opcion adicional (+4 a +28). Puede fallar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60303" article="a" name="jewel of bless">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usalo sobre un item (Usar con...) para subirlo de +0 a +6. Exito 100%."/>
 		<attribute key="weight" value="10"/>
 	</item>
 	<item id="60401" name="wings of satan">

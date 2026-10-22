@@ -22,9 +22,9 @@ Mubia.ItemConfig = {
 -- Slot de alas (lo define canary.exe desde la fase 2; 12 por si el .exe todavía es el viejo)
 CONST_SLOT_WINGS = CONST_SLOT_WINGS or 12
 
-Mubia.JEWEL_OF_BLESS = 60301
-Mubia.JEWEL_OF_SOUL = 60302
-Mubia.JEWEL_OF_LIFE = 60303
+Mubia.JEWEL_OF_BLESS = 60303
+Mubia.JEWEL_OF_SOUL = 60301
+Mubia.JEWEL_OF_LIFE = 60302
 
 -- Alas MU: aumentan el daño y absorben un % del daño recibido; ambos suben con el nivel del item.
 Mubia.Wings = {

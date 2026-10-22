@@ -4752,7 +4752,8 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 			if (allowPutItemsOnAmmoSlot) {
 				ret = RETURNVALUE_NOERROR;
 			} else {
-				if ((slotPosition & SLOTP_AMMO)) {
+				// Mubia: el slot de munición también sirve de segundo anillo (MU usa dos anillos)
+				if ((slotPosition & SLOTP_AMMO) || (slotPosition & SLOTP_RING)) {
 					ret = RETURNVALUE_NOERROR;
 				}
 			}
