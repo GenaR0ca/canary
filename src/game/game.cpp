@@ -4152,6 +4152,8 @@ Slots_t getSlotType(const ItemType &it) {
 			slot = CONST_SLOT_WINGS;
 		} else if (slotPosition & SLOTP_GLOVES) {
 			slot = CONST_SLOT_GLOVES;
+		} else if (slotPosition & SLOTP_PET) {
+			slot = CONST_SLOT_PET;
 		} else if (slotPosition & SLOTP_TWO_HAND || slotPosition & SLOTP_LEFT) {
 			slot = CONST_SLOT_LEFT;
 		}

@@ -86117,4 +86117,48 @@ Granted by TibiaGoals.com"/>
 		<attribute key="weight" value="2000"/>
 	</item>
 	<!-- Mubia: fin de items de MU -->
+	<!-- Mubia: inventario y mascotas (generado por tools/mubia/pets.py) -->
+	<item id="60500" name="inventario">
+		<attribute key="primarytype" value="containers"/>
+		<attribute key="containersize" value="40"/>
+		<attribute key="description" value="Tu inventario de MU. Se abre con la tecla I."/>
+		<attribute key="weight" value="0"/>
+	</item>
+	<item id="60501" name="guardian angel">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60502" name="imp">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60503" name="horn of uniria">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60504" name="horn of dinorant">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60505" name="horn of fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60506" name="demon">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60507" name="spirit of guardian">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60508" name="pet skeleton">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60509" name="pet panda">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<!-- Mubia: fin de inventario y mascotas -->
 </items>

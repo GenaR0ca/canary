@@ -140,9 +140,10 @@ function Mubia.setItemOption(item, option)
 	Mubia.refreshItemText(item)
 end
 
--- Bonus de los items equipados: daño físico, daño mágico, % de daño mágico (bastones), defensa y alas
+-- Bonus de los items equipados: daño físico, daño mágico, % de daño mágico (bastones), defensa, alas y mascota
 function Mubia.getEquipmentBonus(player)
-	local bonus = { attack = 0, wizardry = 0, magicRise = 0, defense = 0, wingDamage = 0, wingAbsorb = 0 }
+	local pet = Mubia.getPet and Mubia.getPet(player) or {}
+	local bonus = { attack = 0, wizardry = 0, magicRise = 0, defense = 0, wingDamage = 0, wingAbsorb = 0, petDamage = pet.damage or 0, petAbsorb = pet.absorb or 0 }
 	local slots = { CONST_SLOT_HEAD, CONST_SLOT_ARMOR, CONST_SLOT_LEGS, CONST_SLOT_FEET, CONST_SLOT_GLOVES, CONST_SLOT_LEFT, CONST_SLOT_RIGHT, CONST_SLOT_WINGS }
 	for _, slot in ipairs(slots) do
 		local item = player:getSlotItem(slot)
@@ -231,6 +232,9 @@ end
 
 -- Texto extra al mirar un item de MU: clase, defensa o daño y requisitos
 function Mubia.getGearLookText(player, item)
+	if Mubia.Pets and Mubia.Pets[item:getId()] then
+		return Mubia.getPetLookText(item)
+	end
 	local gear = Mubia.Gear[item:getId()]
 	if not gear then
 		return nil

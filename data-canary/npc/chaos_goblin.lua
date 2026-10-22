@@ -1,4 +1,4 @@
--- Mubia Online: Chaos Goblin, regala (gratis mientras probamos) las joyas de MU y las alas de cada clase.
+-- Mubia Online: Chaos Goblin, regala (gratis mientras probamos) las joyas de MU, las alas de cada clase y las mascotas.
 
 local npcType = Game.createNpcType("Chaos Goblin")
 local npcConfig = {}
@@ -27,7 +27,16 @@ Mubia.registerShopNpc(npcType, npcConfig, {
 		{ itemName = "wings of storm", clientId = 60407, buy = 0 },
 		{ itemName = "wings of eternal", clientId = 60408, buy = 0 },
 		{ itemName = "wings of illusion", clientId = 60409, buy = 0 },
+		{ itemName = "guardian angel", clientId = 60501, buy = 0 },
+		{ itemName = "imp", clientId = 60502, buy = 0 },
+		{ itemName = "horn of uniria", clientId = 60503, buy = 0 },
+		{ itemName = "horn of dinorant", clientId = 60504, buy = 0 },
+		{ itemName = "horn of fenrir", clientId = 60505, buy = 0 },
+		{ itemName = "demon", clientId = 60506, buy = 0 },
+		{ itemName = "spirit of guardian", clientId = 60507, buy = 0 },
+		{ itemName = "pet skeleton", clientId = 60508, buy = 0 },
+		{ itemName = "pet panda", clientId = 60509, buy = 0 },
 	},
-	greeting = "¡Hola |PLAYERNAME|! Tengo Jewels of Bless, Soul y Life y alas para cada clase. Di {trade}, todo es gratis.",
-	voice = "¡Joyas y alas gratis! Di {trade}.",
+	greeting = "¡Hola |PLAYERNAME|! Tengo Jewels of Bless, Soul y Life, alas para cada clase y mascotas. Di {trade}, todo es gratis.",
+	voice = "¡Joyas, alas y mascotas gratis! Di {trade}.",
 })
