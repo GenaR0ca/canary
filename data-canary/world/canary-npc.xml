@@ -25,19 +25,19 @@
 		<npc name="Chaos Goblin" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<!-- Lorencia (MU) -->
-	<npc centerx="958" centery="619" centerz="7" radius="1">
+	<npc centerx="936" centery="652" centerz="7" radius="1">
 		<npc name="Hanzo the Blacksmith" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="921" centery="659" centerz="7" radius="1">
+	<npc centerx="911" centery="670" centerz="7" radius="1">
 		<npc name="Pasi the Mage" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="959" centery="659" centerz="7" radius="1">
+	<npc centerx="936" centery="670" centerz="7" radius="1">
 		<npc name="Potion Girl Amy" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="918" centery="632" centerz="7" radius="1">
+	<npc centerx="912" centery="650" centerz="7" radius="1">
 		<npc name="Elf Lala" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="932" centery="645" centerz="7" radius="1">
+	<npc centerx="924" centery="672" centerz="7" radius="1">
 		<npc name="Chaos Goblin" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 </npcs>
