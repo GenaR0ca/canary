@@ -1,10 +1,10 @@
-local npcName = "Canary"
+local internalNpcName = "Canary"
 
-local npcType = Game.createNpcType(npcName)
+local npcType = Game.createNpcType(internalNpcName)
 local npcConfig = {}
 
-npcConfig.name = npcName
-npcConfig.description = npcName
+npcConfig.name = internalNpcName
+npcConfig.description = internalNpcName
 
 npcConfig.health = 100
 npcConfig.maxHealth = npcConfig.health
