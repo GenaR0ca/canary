@@ -1107,4 +1107,643 @@
 		<monster name="Stone Golem" x="0" y="1" z="7" spawntime="60" />
 		<monster name="Stone Golem" x="-1" y="0" z="7" spawntime="60" />
 	</monster>
+	<!-- Devias (MU) -->
+	<monster centerx="1782" centery="758" centerz="7" radius="3">
+		<monster name="Ice Queen" x="0" y="0" z="7" spawntime="600" />
+	</monster>
+	<monster centerx="1658" centery="762" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="Worm" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1644" centery="749" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Worm" x="1" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1642" centery="718" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="3" y="2" z="7" spawntime="60" />
+		<monster name="Worm" x="3" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1675" centery="709" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="Worm" x="2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1673" centery="744" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Worm" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1668" centery="696" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="-3" y="-3" z="7" spawntime="60" />
+		<monster name="Worm" x="-2" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1682" centery="751" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="-3" y="-3" z="7" spawntime="60" />
+		<monster name="Worm" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1678" centery="722" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Worm" x="2" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1661" centery="685" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Worm" x="1" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1624" centery="688" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Worm" x="1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1683" centery="688" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Worm" x="3" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1643" centery="730" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Worm" x="-3" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1630" centery="699" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="1" y="3" z="7" spawntime="60" />
+		<monster name="Worm" x="-2" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1641" centery="708" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Worm" x="-2" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1671" centery="686" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="3" y="2" z="7" spawntime="60" />
+		<monster name="Worm" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1684" centery="740" centerz="7" radius="3">
+		<monster name="Worm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Worm" x="-2" y="3" z="7" spawntime="60" />
+		<monster name="Worm" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1573" centery="670" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="3" y="2" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1585" centery="651" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="-1" y="3" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1569" centery="637" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1565" centery="680" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1602" centery="689" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="3" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="1" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1587" centery="682" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1600" centery="646" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="0" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1609" centery="626" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="0" y="3" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="3" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1586" centery="670" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1596" centery="631" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="1" y="3" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1610" centery="656" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="-1" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1567" centery="694" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1615" centery="643" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="-1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1597" centery="655" centerz="7" radius="3">
+		<monster name="Ice Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Ice Monster" x="0" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1679" centery="650" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Hommerd" x="1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1642" centery="633" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Hommerd" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1672" centery="660" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-3" y="3" z="7" spawntime="60" />
+		<monster name="Hommerd" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1696" centery="630" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1674" centery="669" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="0" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1671" centery="636" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1667" centery="651" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-3" y="2" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1685" centery="643" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-1" y="3" z="7" spawntime="60" />
+		<monster name="Hommerd" x="3" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1696" centery="666" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1648" centery="666" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Hommerd" x="3" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1635" centery="646" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="2" y="3" z="7" spawntime="60" />
+		<monster name="Hommerd" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1679" centery="620" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="Hommerd" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1646" centery="676" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Hommerd" x="1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1660" centery="669" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-3" y="1" z="7" spawntime="60" />
+		<monster name="Hommerd" x="0" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1646" centery="656" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-1" y="3" z="7" spawntime="60" />
+		<monster name="Hommerd" x="3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1662" centery="616" centerz="7" radius="3">
+		<monster name="Hommerd" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hommerd" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="Hommerd" x="0" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1588" centery="551" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Assassin" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1632" centery="568" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="1" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1601" centery="552" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Assassin" x="-2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1568" centery="591" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="-1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1607" centery="593" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Assassin" x="1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1635" centery="545" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Assassin" x="-1" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1568" centery="576" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="3" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="-1" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1622" centery="532" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="0" y="3" z="7" spawntime="60" />
+		<monster name="Assassin" x="-2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1633" centery="591" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="Assassin" x="-3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1646" centery="539" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1582" centery="591" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Assassin" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1644" centery="551" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="-3" y="3" z="7" spawntime="60" />
+		<monster name="Assassin" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1617" centery="569" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Assassin" x="-1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1571" centery="553" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Assassin" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1611" centery="537" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Assassin" x="0" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1622" centery="543" centerz="7" radius="3">
+		<monster name="Assassin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Assassin" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Assassin" x="-3" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1755" centery="620" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Yeti" x="1" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1765" centery="665" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1720" centery="582" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="-3" y="-3" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1667" centery="605" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Yeti" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1767" centery="628" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="Yeti" x="-2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1759" centery="648" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1736" centery="681" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="2" z="7" spawntime="60" />
+		<monster name="Yeti" x="0" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1758" centery="673" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Yeti" x="1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1778" centery="681" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="3" z="7" spawntime="60" />
+		<monster name="Yeti" x="0" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1776" centery="651" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1671" centery="533" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="-3" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1747" centery="684" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1654" centery="555" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="Yeti" x="-1" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1741" centery="622" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="3" z="7" spawntime="60" />
+		<monster name="Yeti" x="-2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1702" centery="608" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Yeti" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1715" centery="681" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="1" y="3" z="7" spawntime="60" />
+		<monster name="Yeti" x="-3" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1696" centery="596" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Yeti" x="-1" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1697" centery="539" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="-2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1748" centery="606" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Yeti" x="0" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1712" centery="620" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Yeti" x="-2" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1727" centery="664" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Yeti" x="3" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1662" centery="541" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Yeti" x="-3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1699" centery="582" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Yeti" x="0" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1785" centery="673" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1715" centery="651" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Yeti" x="-3" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1760" centery="657" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1714" centery="553" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="3" z="7" spawntime="60" />
+		<monster name="Yeti" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1702" centery="646" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Yeti" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1730" centery="618" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="3" y="2" z="7" spawntime="60" />
+		<monster name="Yeti" x="2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1735" centery="641" centerz="7" radius="3">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Yeti" x="0" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1745" centery="586" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="2" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1772" centery="568" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1805" centery="565" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1739" centery="595" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1792" centery="559" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="2" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1765" centery="575" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="3" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1767" centery="585" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="3" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1805" centery="579" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1745" centery="558" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="3" y="3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="2" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1800" centery="597" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-1" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1806" centery="537" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1775" centery="594" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1795" centery="545" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1766" centery="552" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1786" centery="581" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1785" centery="597" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1783" centery="551" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1777" centery="534" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="1" y="3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="3" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1721" centery="725" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-2" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1714" centery="742" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1761" centery="743" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="3" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1745" centery="748" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1774" centery="717" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1708" centery="730" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1750" centery="697" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1749" centery="762" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1702" centery="712" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1719" centery="710" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1727" centery="749" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1803" centery="717" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1696" centery="691" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="3" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1720" centery="735" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="3" y="3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1789" centery="730" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="2" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1794" centery="740" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-2" y="3" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1772" centery="735" centerz="7" radius="3">
+		<monster name="Elite Yeti" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Yeti" x="1" y="-1" z="7" spawntime="60" />
+	</monster>
 </monsters>
