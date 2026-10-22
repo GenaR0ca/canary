@@ -1,289 +1,694 @@
 <?xml version="1.0"?>
 <monsters>
-	<monster centerx="1939" centery="1353" centerz="7" radius="3">
-		<monster name="Bat" x="-1" y="0" z="7" spawntime="60" />
-		<monster name="Bat" x="2" y="1" z="7" spawntime="60" />
-		<monster name="Cave Rat" x="0" y="1" z="7" spawntime="60" />
+	<monster centerx="881" centery="534" centerz="7" radius="3">
+		<monster name="Skeleton Warrior" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="-2" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1943" centery="1362" centerz="7" radius="3">
-		<monster name="Cave Rat" x="-1" y="-2" z="7" spawntime="60" />
-		<monster name="Spider" x="2" y="0" z="7" spawntime="60" />
-		<monster name="Cave Rat" x="1" y="-1" z="7" spawntime="60" />
+	<monster centerx="969" centery="534" centerz="7" radius="3">
+		<monster name="Skeleton Warrior" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="-3" y="1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1949" centery="1350" centerz="7" radius="3">
-		<monster name="Bat" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Bat" x="-1" y="0" z="7" spawntime="60" />
-		<monster name="Spider" x="1" y="0" z="7" spawntime="60" />
+	<monster centerx="949" centery="544" centerz="7" radius="3">
+		<monster name="Skeleton Warrior" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="3" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1954" centery="1358" centerz="7" radius="3">
-		<monster name="Cave Rat" x="0" y="2" z="7" spawntime="60" />
-		<monster name="Spider" x="-2" y="-2" z="7" spawntime="60" />
-		<monster name="Bat" x="0" y="-2" z="7" spawntime="60" />
+	<monster centerx="1016" centery="563" centerz="7" radius="3">
+		<monster name="Skeleton Warrior" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="0" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1929" centery="1356" centerz="7" radius="3">
-		<monster name="Cave Rat" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Cave Rat" x="1" y="-1" z="7" spawntime="60" />
-		<monster name="Bat" x="-2" y="2" z="7" spawntime="60" />
+	<monster centerx="893" centery="573" centerz="7" radius="3">
+		<monster name="Lich" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Lich" x="0" y="3" z="7" spawntime="60" />
+		<monster name="Lich" x="1" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1933" centery="1346" centerz="7" radius="3">
-		<monster name="Spider" x="1" y="-1" z="7" spawntime="60" />
-		<monster name="Cave Rat" x="0" y="-2" z="7" spawntime="60" />
-		<monster name="Bat" x="2" y="0" z="7" spawntime="60" />
+	<monster centerx="908" centery="579" centerz="7" radius="3">
+		<monster name="Lich" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Lich" x="2" y="2" z="7" spawntime="60" />
+		<monster name="Lich" x="1" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1961" centery="1352" centerz="7" radius="3">
+	<monster centerx="916" centery="584" centerz="7" radius="3">
+		<monster name="Elite Bull Fighter" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="971" centery="585" centerz="7" radius="3">
+		<monster name="Lich" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Lich" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Lich" x="3" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="847" centery="587" centerz="7" radius="3">
+		<monster name="Skeleton Warrior" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="-3" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="878" centery="587" centerz="7" radius="3">
+		<monster name="Lich" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Lich" x="-1" y="3" z="7" spawntime="60" />
+		<monster name="Lich" x="0" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="960" centery="592" centerz="7" radius="3">
+		<monster name="Elite Bull Fighter" x="-3" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="938" centery="593" centerz="7" radius="3">
+		<monster name="Hound" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Hound" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Hound" x="-1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="883" centery="597" centerz="7" radius="3">
+		<monster name="Hound" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Hound" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Hound" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="916" centery="597" centerz="7" radius="3">
+		<monster name="Bull Fighter" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="0" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="869" centery="601" centerz="7" radius="3">
+		<monster name="Elite Bull Fighter" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="824" centery="604" centerz="7" radius="3">
+		<monster name="Skeleton Warrior" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="3" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="932" centery="611" centerz="7" radius="3">
+		<monster name="Budge Dragon" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="2" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="898" centery="612" centerz="7" radius="3">
+		<monster name="Budge Dragon" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="2" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="881" centery="613" centerz="7" radius="3">
+		<monster name="Bull Fighter" x="-3" y="-3" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="-1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="969" centery="614" centerz="7" radius="3">
+		<monster name="Bull Fighter" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1014" centery="616" centerz="7" radius="3">
+		<monster name="Giant" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Giant" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Giant" x="2" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="851" centery="620" centerz="7" radius="3">
+		<monster name="Lich" x="-3" y="-3" z="7" spawntime="60" />
+		<monster name="Lich" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="Lich" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="898" centery="622" centerz="7" radius="3">
+		<monster name="Budge Dragon" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="841" centery="623" centerz="7" radius="3">
+		<monster name="Lich" x="-3" y="1" z="7" spawntime="60" />
+		<monster name="Lich" x="-3" y="3" z="7" spawntime="60" />
+		<monster name="Lich" x="3" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="884" centery="623" centerz="7" radius="3">
+		<monster name="Bull Fighter" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="-3" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="963" centery="623" centerz="7" radius="3">
+		<monster name="Budge Dragon" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="987" centery="623" centerz="7" radius="3">
+		<monster name="Hound" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Hound" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Hound" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="868" centery="628" centerz="7" radius="3">
+		<monster name="Hound" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Hound" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Hound" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="890" centery="630" centerz="7" radius="3">
+		<monster name="Spider" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Spider" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Spider" x="0" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="879" centery="631" centerz="7" radius="3">
+		<monster name="Budge Dragon" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="968" centery="635" centerz="7" radius="3">
+		<monster name="Budge Dragon" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="1" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="985" centery="639" centerz="7" radius="3">
+		<monster name="Bull Fighter" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="-1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1001" centery="643" centerz="7" radius="3">
+		<monster name="Elite Bull Fighter" x="-3" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="-1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="886" centery="644" centerz="7" radius="3">
+		<monster name="Spider" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Spider" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Spider" x="-3" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="983" centery="649" centerz="7" radius="3">
+		<monster name="Bull Fighter" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="888" centery="654" centerz="7" radius="3">
+		<monster name="Spider" x="-3" y="-2" z="7" spawntime="60" />
 		<monster name="Spider" x="-1" y="1" z="7" spawntime="60" />
-		<monster name="Bat" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Spider" x="-1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1017" centery="657" centerz="7" radius="3">
+		<monster name="Lich" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Lich" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="Lich" x="-3" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1035" centery="657" centerz="7" radius="3">
+		<monster name="Skeleton Warrior" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="-3" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="852" centery="659" centerz="7" radius="3">
+		<monster name="Hound" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Hound" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Hound" x="1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="879" centery="660" centerz="7" radius="3">
+		<monster name="Budge Dragon" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="0" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="888" centery="663" centerz="7" radius="3">
+		<monster name="Spider" x="-2" y="-2" z="7" spawntime="60" />
 		<monster name="Spider" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Spider" x="-3" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1933" centery="1365" centerz="7" radius="3">
-		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Skeleton" x="0" y="-2" z="7" spawntime="60" />
-		<monster name="Troll" x="-1" y="-1" z="7" spawntime="60" />
+	<monster centerx="1005" centery="667" centerz="7" radius="3">
+		<monster name="Elite Bull Fighter" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="-3" y="1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1946" centery="1372" centerz="7" radius="3">
-		<monster name="Wolf" x="2" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin" x="-2" y="0" z="7" spawntime="60" />
-		<monster name="Skeleton" x="-1" y="0" z="7" spawntime="60" />
+	<monster centerx="820" centery="668" centerz="7" radius="3">
+		<monster name="Giant" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Giant" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Giant" x="-1" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1948" centery="1338" centerz="7" radius="3">
-		<monster name="Troll" x="1" y="0" z="7" spawntime="60" />
-		<monster name="Troll" x="2" y="0" z="7" spawntime="60" />
-		<monster name="Skeleton" x="1" y="-1" z="7" spawntime="60" />
+	<monster centerx="858" centery="669" centerz="7" radius="3">
+		<monster name="Hound" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Hound" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Hound" x="2" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1922" centery="1348" centerz="7" radius="3">
-		<monster name="Wolf" x="2" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Troll" x="0" y="0" z="7" spawntime="60" />
+	<monster centerx="882" centery="670" centerz="7" radius="3">
+		<monster name="Spider" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Spider" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Spider" x="-1" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1937" centery="1336" centerz="7" radius="3">
-		<monster name="Goblin" x="0" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Skeleton" x="2" y="-1" z="7" spawntime="60" />
+	<monster centerx="1027" centery="673" centerz="7" radius="3">
+		<monster name="Giant" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Giant" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Giant" x="-2" y="1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1956" centery="1369" centerz="7" radius="3">
-		<monster name="Wolf" x="0" y="-2" z="7" spawntime="60" />
-		<monster name="Skeleton" x="-2" y="2" z="7" spawntime="60" />
-		<monster name="Troll" x="2" y="-1" z="7" spawntime="60" />
+	<monster centerx="993" centery="675" centerz="7" radius="3">
+		<monster name="Hound" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Hound" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Hound" x="-3" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1919" centery="1359" centerz="7" radius="3">
-		<monster name="Skeleton" x="2" y="1" z="7" spawntime="60" />
-		<monster name="Skeleton" x="2" y="-1" z="7" spawntime="60" />
-		<monster name="Wolf" x="0" y="0" z="7" spawntime="60" />
+	<monster centerx="1005" centery="676" centerz="7" radius="3">
+		<monster name="Elite Bull Fighter" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="1" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1927" centery="1339" centerz="7" radius="3">
-		<monster name="Goblin" x="1" y="0" z="7" spawntime="60" />
-		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Wolf" x="1" y="-1" z="7" spawntime="60" />
+	<monster centerx="868" centery="679" centerz="7" radius="3">
+		<monster name="Bull Fighter" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="2" y="2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="0" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1963" centery="1363" centerz="7" radius="3">
-		<monster name="Skeleton" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Skeleton" x="1" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-2" y="0" z="7" spawntime="60" />
+	<monster centerx="891" centery="679" centerz="7" radius="3">
+		<monster name="Spider" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Spider" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Spider" x="3" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1949" centery="1326" centerz="7" radius="3">
-		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Troll" x="1" y="1" z="7" spawntime="60" />
+	<monster centerx="980" centery="680" centerz="7" radius="3">
+		<monster name="Bull Fighter" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="0" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1956" centery="1333" centerz="7" radius="3">
-		<monster name="Troll" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Skeleton" x="-1" y="2" z="7" spawntime="60" />
+	<monster centerx="852" centery="681" centerz="7" radius="3">
+		<monster name="Elite Bull Fighter" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="-3" y="3" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="-2" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1970" centery="1357" centerz="7" radius="3">
-		<monster name="Goblin" x="2" y="2" z="7" spawntime="60" />
-		<monster name="Troll" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Goblin" x="0" y="1" z="7" spawntime="60" />
+	<monster centerx="835" centery="683" centerz="7" radius="3">
+		<monster name="Giant" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Giant" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Giant" x="2" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1923" centery="1368" centerz="7" radius="3">
-		<monster name="Skeleton" x="2" y="-1" z="7" spawntime="60" />
-		<monster name="Wolf" x="-1" y="-2" z="7" spawntime="60" />
-		<monster name="Skeleton" x="-2" y="0" z="7" spawntime="60" />
+	<monster centerx="817" centery="686" centerz="7" radius="3">
+		<monster name="Giant" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Giant" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Giant" x="2" y="-1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1930" centery="1375" centerz="7" radius="3">
-		<monster name="Skeleton" x="-1" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Skeleton" x="0" y="2" z="7" spawntime="60" />
+	<monster centerx="901" centery="690" centerz="7" radius="3">
+		<monster name="Spider" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Spider" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Spider" x="-3" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1964" centery="1338" centerz="7" radius="3">
-		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Troll" x="-1" y="-2" z="7" spawntime="60" />
-		<monster name="Wolf" x="2" y="0" z="7" spawntime="60" />
+	<monster centerx="889" centery="696" centerz="7" radius="3">
+		<monster name="Budge Dragon" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="2" y="1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1932" centery="1328" centerz="7" radius="3">
-		<monster name="Troll" x="2" y="2" z="7" spawntime="60" />
-		<monster name="Troll" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="0" y="1" z="7" spawntime="60" />
+	<monster centerx="949" centery="696" centerz="7" radius="3">
+		<monster name="Spider" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Spider" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Spider" x="2" y="0" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1968" centery="1371" centerz="7" radius="3">
-		<monster name="Goblin" x="-2" y="-1" z="7" spawntime="60" />
-		<monster name="Skeleton" x="2" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin" x="-1" y="-1" z="7" spawntime="60" />
+	<monster centerx="997" centery="698" centerz="7" radius="3">
+		<monster name="Elite Bull Fighter" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="-2" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1921" centery="1332" centerz="7" radius="3">
-		<monster name="Goblin" x="-1" y="1" z="7" spawntime="60" />
-		<monster name="Skeleton" x="-2" y="-2" z="7" spawntime="60" />
-		<monster name="Troll" x="-1" y="-1" z="7" spawntime="60" />
+	<monster centerx="1009" centery="698" centerz="7" radius="3">
+		<monster name="Giant" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Giant" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="Giant" x="-3" y="-1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1945" centery="1317" centerz="7" radius="3">
-		<monster name="Troll" x="0" y="1" z="7" spawntime="60" />
-		<monster name="Skeleton" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Wolf" x="0" y="-2" z="7" spawntime="60" />
+	<monster centerx="906" centery="699" centerz="7" radius="3">
+		<monster name="Spider" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Spider" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Spider" x="1" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1956" centery="1320" centerz="7" radius="3">
-		<monster name="Wolf" x="-2" y="1" z="7" spawntime="60" />
-		<monster name="Troll" x="0" y="1" z="7" spawntime="60" />
-		<monster name="Wolf" x="0" y="2" z="7" spawntime="60" />
+	<monster centerx="926" centery="702" centerz="7" radius="3">
+		<monster name="Spider" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Spider" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Spider" x="1" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1976" centery="1366" centerz="7" radius="3">
-		<monster name="Goblin" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Troll" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
+	<monster centerx="897" centery="704" centerz="7" radius="3">
+		<monster name="Budge Dragon" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="2" y="-1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1920" centery="1378" centerz="7" radius="3">
-		<monster name="Wolf" x="2" y="2" z="7" spawntime="60" />
-		<monster name="Wolf" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Wolf" x="1" y="-1" z="7" spawntime="60" />
+	<monster centerx="954" centery="706" centerz="7" radius="3">
+		<monster name="Bull Fighter" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="0" y="0" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1975" centery="1349" centerz="7" radius="3">
-		<monster name="Wolf" x="2" y="0" z="7" spawntime="60" />
-		<monster name="Skeleton" x="0" y="1" z="7" spawntime="60" />
-		<monster name="Troll" x="2" y="2" z="7" spawntime="60" />
+	<monster centerx="945" centery="708" centerz="7" radius="3">
+		<monster name="Budge Dragon" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Budge Dragon" x="2" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1982" centery="1358" centerz="7" radius="3">
-		<monster name="Wolf" x="-2" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-1" y="-2" z="7" spawntime="60" />
-		<monster name="Troll" x="-2" y="2" z="7" spawntime="60" />
+	<monster centerx="1019" centery="709" centerz="7" radius="3">
+		<monster name="Skeleton Warrior" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="-3" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1967" centery="1328" centerz="7" radius="3">
-		<monster name="Skeleton" x="-1" y="1" z="7" spawntime="60" />
-		<monster name="Skeleton" x="1" y="0" z="7" spawntime="60" />
-		<monster name="Skeleton" x="2" y="2" z="7" spawntime="60" />
+	<monster centerx="907" centery="713" centerz="7" radius="3">
+		<monster name="Bull Fighter" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="3" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1974" centery="1335" centerz="7" radius="3">
-		<monster name="Troll" x="-1" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Troll" x="1" y="2" z="7" spawntime="60" />
+	<monster centerx="857" centery="714" centerz="7" radius="3">
+		<monster name="Lich" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Lich" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Lich" x="1" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1926" centery="1321" centerz="7" radius="3">
-		<monster name="Troll" x="0" y="-2" z="7" spawntime="60" />
-		<monster name="Troll" x="2" y="-2" z="7" spawntime="60" />
-		<monster name="Skeleton" x="-2" y="-1" z="7" spawntime="60" />
+	<monster centerx="916" centery="715" centerz="7" radius="3">
+		<monster name="Bull Fighter" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Bull Fighter" x="-1" y="-1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1950" centery="1309" centerz="7" radius="3">
-		<monster name="Goblin" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="0" y="1" z="7" spawntime="60" />
-		<monster name="Troll" x="2" y="2" z="7" spawntime="60" />
+	<monster centerx="881" centery="720" centerz="7" radius="3">
+		<monster name="Hound" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Hound" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Hound" x="-2" y="0" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1915" centery="1325" centerz="7" radius="3">
-		<monster name="Toad" x="-1" y="-1" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="-1" y="1" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="-1" y="-2" z="7" spawntime="60" />
+	<monster centerx="894" centery="722" centerz="7" radius="3">
+		<monster name="Hound" x="-3" y="-3" z="7" spawntime="60" />
+		<monster name="Hound" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Hound" x="-2" y="1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1933" centery="1315" centerz="7" radius="3">
-		<monster name="Salamander" x="-2" y="-1" z="7" spawntime="60" />
-		<monster name="Salamander" x="1" y="2" z="7" spawntime="60" />
-		<monster name="Toad" x="0" y="-1" z="7" spawntime="60" />
+	<monster centerx="1027" centery="724" centerz="7" radius="3">
+		<monster name="Skeleton Warrior" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton Warrior" x="0" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1981" centery="1341" centerz="7" radius="3">
-		<monster name="Azure Frog" x="-2" y="2" z="7" spawntime="60" />
-		<monster name="Salamander" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="0" y="-2" z="7" spawntime="60" />
+	<monster centerx="873" centery="725" centerz="7" radius="3">
+		<monster name="Elite Bull Fighter" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="1" y="3" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="3" y="3" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1983" centery="1372" centerz="7" radius="3">
-		<monster name="Salamander" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="-2" y="0" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="-1" y="0" z="7" spawntime="60" />
+	<monster centerx="914" centery="725" centerz="7" radius="3">
+		<monster name="Hound" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Hound" x="3" y="0" z="7" spawntime="60" />
+		<monster name="Hound" x="2" y="1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1988" centery="1351" centerz="7" radius="3">
-		<monster name="Salamander" x="-2" y="1" z="7" spawntime="60" />
-		<monster name="Salamander" x="-2" y="-2" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="0" y="1" z="7" spawntime="60" />
+	<monster centerx="955" centery="728" centerz="7" radius="3">
+		<monster name="Elite Bull Fighter" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="-2" y="0" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1961" centery="1311" centerz="7" radius="3">
-		<monster name="Salamander" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Toad" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Salamander" x="-1" y="-2" z="7" spawntime="60" />
+	<monster centerx="926" centery="734" centerz="7" radius="3">
+		<monster name="Hound" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Hound" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Hound" x="-1" y="1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1989" centery="1364" centerz="7" radius="3">
-		<monster name="Azure Frog" x="1" y="2" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="-1" y="0" z="7" spawntime="60" />
-		<monster name="Salamander" x="-1" y="-2" z="7" spawntime="60" />
+	<monster centerx="889" centery="735" centerz="7" radius="3">
+		<monster name="Elite Bull Fighter" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Bull Fighter" x="2" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1941" centery="1305" centerz="7" radius="3">
-		<monster name="Azure Frog" x="-2" y="-1" z="7" spawntime="60" />
-		<monster name="Toad" x="2" y="-2" z="7" spawntime="60" />
-		<monster name="Toad" x="1" y="1" z="7" spawntime="60" />
+	<monster centerx="989" centery="739" centerz="7" radius="3">
+		<monster name="Giant" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Giant" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Giant" x="3" y="-1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1969" centery="1317" centerz="7" radius="3">
-		<monster name="Salamander" x="0" y="-2" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="-2" y="0" z="7" spawntime="60" />
-		<monster name="Salamander" x="1" y="-1" z="7" spawntime="60" />
+	<monster centerx="938" centery="740" centerz="7" radius="3">
+		<monster name="Lich" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Lich" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Lich" x="-1" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1983" centery="1330" centerz="7" radius="3">
-		<monster name="Azure Frog" x="0" y="2" z="7" spawntime="60" />
-		<monster name="Salamander" x="1" y="2" z="7" spawntime="60" />
-		<monster name="Salamander" x="1" y="-1" z="7" spawntime="60" />
+	<monster centerx="930" centery="746" centerz="7" radius="3">
+		<monster name="Lich" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Lich" x="3" y="0" z="7" spawntime="60" />
+		<monster name="Lich" x="-3" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1923" centery="1311" centerz="7" radius="3">
-		<monster name="Azure Frog" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Salamander" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Salamander" x="1" y="-1" z="7" spawntime="60" />
+	<monster centerx="892" centery="757" centerz="7" radius="3">
+		<monster name="Giant" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="Giant" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Giant" x="0" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="948" centery="763" centerz="7" radius="3">
+		<monster name="Giant" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Giant" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Giant" x="3" y="3" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="1953" centery="1299" centerz="7" radius="3">
-		<monster name="Azure Frog" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="Salamander" x="2" y="-1" z="7" spawntime="60" />
 		<monster name="Azure Frog" x="-1" y="0" z="7" spawntime="60" />
-		<monster name="Salamander" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="-2" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1991" centery="1338" centerz="7" radius="3">
-		<monster name="Toad" x="0" y="-2" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Salamander" x="2" y="-1" z="7" spawntime="60" />
+	<monster centerx="1988" centery="1300" centerz="7" radius="3">
+		<monster name="Toad" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="-1" y="0" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="1964" centery="1301" centerz="7" radius="3">
 		<monster name="Azure Frog" x="0" y="-2" z="7" spawntime="60" />
 		<monster name="Azure Frog" x="0" y="-1" z="7" spawntime="60" />
 		<monster name="Salamander" x="-1" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1996" centery="1346" centerz="7" radius="3">
+	<monster centerx="1976" centery="1302" centerz="7" radius="3">
+		<monster name="Azure Frog" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Toad" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Salamander" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1941" centery="1305" centerz="7" radius="3">
+		<monster name="Toad" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Toad" x="1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1983" centery="1308" centerz="7" radius="3">
 		<monster name="Toad" x="-1" y="-1" z="7" spawntime="60" />
-		<monster name="Salamander" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Salamander" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Toad" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1950" centery="1309" centerz="7" radius="3">
+		<monster name="Goblin" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Goblin" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Troll" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1923" centery="1311" centerz="7" radius="3">
+		<monster name="Salamander" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Salamander" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="0" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1961" centery="1311" centerz="7" radius="3">
+		<monster name="Salamander" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Salamander" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Toad" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1992" centery="1313" centerz="7" radius="3">
+		<monster name="Salamander" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Salamander" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Salamander" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1933" centery="1315" centerz="7" radius="3">
+		<monster name="Salamander" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Toad" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Salamander" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1945" centery="1317" centerz="7" radius="3">
+		<monster name="Wolf" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Troll" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1969" centery="1317" centerz="7" radius="3">
+		<monster name="Salamander" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Salamander" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="-2" y="0" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="1981" centery="1319" centerz="7" radius="3">
 		<monster name="Azure Frog" x="0" y="-2" z="7" spawntime="60" />
 		<monster name="Toad" x="-1" y="-1" z="7" spawntime="60" />
 		<monster name="Toad" x="-2" y="0" z="7" spawntime="60" />
 	</monster>
+	<monster centerx="1956" centery="1320" centerz="7" radius="3">
+		<monster name="Wolf" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="Troll" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Wolf" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1926" centery="1321" centerz="7" radius="3">
+		<monster name="Troll" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Troll" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton" x="-2" y="-1" z="7" spawntime="60" />
+	</monster>
 	<monster centerx="1990" centery="1324" centerz="7" radius="3">
 		<monster name="Salamander" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="2" y="1" z="7" spawntime="60" />
 		<monster name="Azure Frog" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1915" centery="1325" centerz="7" radius="3">
+		<monster name="Azure Frog" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Toad" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="-1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1949" centery="1326" centerz="7" radius="3">
+		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Troll" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Goblin" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1932" centery="1328" centerz="7" radius="3">
+		<monster name="Goblin" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Troll" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Troll" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1967" centery="1328" centerz="7" radius="3">
+		<monster name="Skeleton" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1983" centery="1330" centerz="7" radius="3">
+		<monster name="Salamander" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Salamander" x="1" y="2" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="1997" centery="1331" centerz="7" radius="3">
 		<monster name="Salamander" x="-2" y="1" z="7" spawntime="60" />
 		<monster name="Azure Frog" x="2" y="1" z="7" spawntime="60" />
 		<monster name="Salamander" x="-1" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1976" centery="1302" centerz="7" radius="3">
-		<monster name="Toad" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="-2" y="-2" z="7" spawntime="60" />
-		<monster name="Salamander" x="1" y="2" z="7" spawntime="60" />
+	<monster centerx="1921" centery="1332" centerz="7" radius="3">
+		<monster name="Skeleton" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Troll" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Goblin" x="-1" y="1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1983" centery="1308" centerz="7" radius="3">
-		<monster name="Salamander" x="2" y="0" z="7" spawntime="60" />
-		<monster name="Toad" x="0" y="2" z="7" spawntime="60" />
+	<monster centerx="1956" centery="1333" centerz="7" radius="3">
+		<monster name="Troll" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Goblin" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1974" centery="1335" centerz="7" radius="3">
+		<monster name="Troll" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Troll" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1937" centery="1336" centerz="7" radius="3">
+		<monster name="Goblin" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Goblin" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1948" centery="1338" centerz="7" radius="3">
+		<monster name="Skeleton" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Troll" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Troll" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1964" centery="1338" centerz="7" radius="3">
+		<monster name="Troll" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Wolf" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1991" centery="1338" centerz="7" radius="3">
+		<monster name="Toad" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Salamander" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="0" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1927" centery="1339" centerz="7" radius="3">
+		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Wolf" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Goblin" x="1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1981" centery="1341" centerz="7" radius="3">
+		<monster name="Azure Frog" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Salamander" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1933" centery="1346" centerz="7" radius="3">
+		<monster name="Cave Rat" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Spider" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Bat" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1996" centery="1346" centerz="7" radius="3">
+		<monster name="Azure Frog" x="0" y="-2" z="7" spawntime="60" />
 		<monster name="Toad" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Salamander" x="0" y="0" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1992" centery="1313" centerz="7" radius="3">
-		<monster name="Salamander" x="0" y="1" z="7" spawntime="60" />
-		<monster name="Salamander" x="1" y="2" z="7" spawntime="60" />
-		<monster name="Salamander" x="0" y="-2" z="7" spawntime="60" />
+	<monster centerx="1922" centery="1348" centerz="7" radius="3">
+		<monster name="Troll" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Wolf" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Goblin" x="-1" y="2" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="1988" centery="1300" centerz="7" radius="3">
-		<monster name="Toad" x="-2" y="-1" z="7" spawntime="60" />
+	<monster centerx="1975" centery="1349" centerz="7" radius="3">
+		<monster name="Wolf" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Troll" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1949" centery="1350" centerz="7" radius="3">
+		<monster name="Bat" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Spider" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Bat" x="1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1988" centery="1351" centerz="7" radius="3">
+		<monster name="Salamander" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Salamander" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1961" centery="1352" centerz="7" radius="3">
+		<monster name="Spider" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Bat" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Spider" x="-1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1939" centery="1353" centerz="7" radius="3">
+		<monster name="Bat" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Cave Rat" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Bat" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1929" centery="1356" centerz="7" radius="3">
+		<monster name="Cave Rat" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Cave Rat" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Bat" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1970" centery="1357" centerz="7" radius="3">
+		<monster name="Troll" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Goblin" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Goblin" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1954" centery="1358" centerz="7" radius="3">
+		<monster name="Spider" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Bat" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Cave Rat" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1982" centery="1358" centerz="7" radius="3">
+		<monster name="Goblin" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Wolf" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Troll" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1919" centery="1359" centerz="7" radius="3">
+		<monster name="Skeleton" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Wolf" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1943" centery="1362" centerz="7" radius="3">
+		<monster name="Cave Rat" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Cave Rat" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Spider" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1963" centery="1363" centerz="7" radius="3">
+		<monster name="Skeleton" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Goblin" x="-2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1989" centery="1364" centerz="7" radius="3">
+		<monster name="Salamander" x="-1" y="-2" z="7" spawntime="60" />
 		<monster name="Azure Frog" x="-1" y="0" z="7" spawntime="60" />
-		<monster name="Azure Frog" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1933" centery="1365" centerz="7" radius="3">
+		<monster name="Skeleton" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Troll" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1976" centery="1366" centerz="7" radius="3">
+		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Goblin" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Troll" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1923" centery="1368" centerz="7" radius="3">
+		<monster name="Wolf" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton" x="-2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1956" centery="1369" centerz="7" radius="3">
+		<monster name="Wolf" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Troll" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1968" centery="1371" centerz="7" radius="3">
+		<monster name="Skeleton" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Goblin" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Goblin" x="-1" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1946" centery="1372" centerz="7" radius="3">
+		<monster name="Wolf" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Goblin" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton" x="-1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1983" centery="1372" centerz="7" radius="3">
+		<monster name="Azure Frog" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Azure Frog" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Salamander" x="0" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1930" centery="1375" centerz="7" radius="3">
+		<monster name="Skeleton" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Goblin" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Skeleton" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1920" centery="1378" centerz="7" radius="3">
+		<monster name="Wolf" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Wolf" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Wolf" x="2" y="2" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="5019" centery="5006" centerz="7" radius="1">
 		<monster name="Training Monk" x="0" y="0" z="7" spawntime="60" />
@@ -291,410 +696,415 @@
 	<monster centerx="5021" centery="5008" centerz="7" radius="1">
 		<monster name="Walking Training Monk" x="0" y="0" z="7" spawntime="60" />
 	</monster>
-	<!-- Lorencia (MU) -->
-	<monster centerx="952" centery="600" centerz="7" radius="3">
-		<monster name="Spider" x="0" y="-3" z="7" spawntime="60" />
-		<monster name="Spider" x="-3" y="-1" z="7" spawntime="60" />
-		<monster name="Spider" x="-2" y="2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="902" centery="630" centerz="7" radius="3">
-		<monster name="Spider" x="1" y="0" z="7" spawntime="60" />
-		<monster name="Spider" x="-2" y="2" z="7" spawntime="60" />
-		<monster name="Spider" x="1" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="976" centery="635" centerz="7" radius="3">
-		<monster name="Spider" x="3" y="0" z="7" spawntime="60" />
-		<monster name="Spider" x="-3" y="2" z="7" spawntime="60" />
-		<monster name="Spider" x="2" y="-1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="969" centery="606" centerz="7" radius="3">
-		<monster name="Spider" x="-1" y="-1" z="7" spawntime="60" />
-		<monster name="Spider" x="-3" y="1" z="7" spawntime="60" />
-		<monster name="Spider" x="0" y="0" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="930" centery="684" centerz="7" radius="3">
-		<monster name="Spider" x="-3" y="-2" z="7" spawntime="60" />
-		<monster name="Spider" x="2" y="3" z="7" spawntime="60" />
-		<monster name="Spider" x="-1" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="929" centery="603" centerz="7" radius="3">
-		<monster name="Spider" x="2" y="-3" z="7" spawntime="60" />
-		<monster name="Spider" x="-3" y="3" z="7" spawntime="60" />
-		<monster name="Spider" x="-2" y="0" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="916" centery="603" centerz="7" radius="3">
-		<monster name="Spider" x="0" y="1" z="7" spawntime="60" />
-		<monster name="Spider" x="2" y="1" z="7" spawntime="60" />
-		<monster name="Spider" x="1" y="0" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="922" centery="596" centerz="7" radius="3">
-		<monster name="Spider" x="3" y="0" z="7" spawntime="60" />
-		<monster name="Spider" x="2" y="3" z="7" spawntime="60" />
-		<monster name="Spider" x="2" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="918" centery="677" centerz="7" radius="3">
-		<monster name="Spider" x="1" y="-3" z="7" spawntime="60" />
-		<monster name="Spider" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Spider" x="-3" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="898" centery="652" centerz="7" radius="3">
-		<monster name="Spider" x="-1" y="3" z="7" spawntime="60" />
-		<monster name="Spider" x="-3" y="1" z="7" spawntime="60" />
-		<monster name="Spider" x="-3" y="-1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="912" centery="688" centerz="7" radius="3">
-		<monster name="Budge Dragon" x="1" y="-3" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="2" y="-2" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="3" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="987" centery="643" centerz="7" radius="3">
-		<monster name="Budge Dragon" x="3" y="-2" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="2" y="3" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="0" y="0" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="948" centery="584" centerz="7" radius="3">
-		<monster name="Budge Dragon" x="3" y="2" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="-1" y="3" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="-1" y="0" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="983" centery="615" centerz="7" radius="3">
-		<monster name="Budge Dragon" x="2" y="-2" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="1" y="3" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="1" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="956" centery="692" centerz="7" radius="3">
-		<monster name="Budge Dragon" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="0" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="892" centery="664" centerz="7" radius="3">
-		<monster name="Budge Dragon" x="1" y="3" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="3" y="-3" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="0" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="903" centery="672" centerz="7" radius="3">
-		<monster name="Budge Dragon" x="2" y="3" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="2" y="-2" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="-3" y="0" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="901" centery="682" centerz="7" radius="3">
-		<monster name="Budge Dragon" x="1" y="-3" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="-2" y="3" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="-2" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="967" centery="689" centerz="7" radius="3">
-		<monster name="Budge Dragon" x="3" y="-3" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="1" y="-3" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="-1" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="909" centery="595" centerz="7" radius="3">
-		<monster name="Budge Dragon" x="-3" y="0" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="2" y="1" z="7" spawntime="60" />
-		<monster name="Budge Dragon" x="1" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="885" centery="679" centerz="7" radius="3">
-		<monster name="Bull Fighter" x="-3" y="-1" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="0" y="-3" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="-2" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="996" centery="612" centerz="7" radius="3">
-		<monster name="Bull Fighter" x="-2" y="3" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="0" y="-2" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="-3" y="-1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="982" centery="588" centerz="7" radius="3">
-		<monster name="Bull Fighter" x="0" y="3" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="-1" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="985" centery="673" centerz="7" radius="3">
-		<monster name="Bull Fighter" x="-2" y="1" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="-2" y="3" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="2" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="1007" centery="635" centerz="7" radius="3">
-		<monster name="Bull Fighter" x="-2" y="2" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="1" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="977" centery="679" centerz="7" radius="3">
-		<monster name="Bull Fighter" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="-3" y="0" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="1" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="960" centery="703" centerz="7" radius="3">
-		<monster name="Bull Fighter" x="3" y="1" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="1" y="-3" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="-3" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="882" centery="622" centerz="7" radius="3">
-		<monster name="Bull Fighter" x="-3" y="-1" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="3" y="-2" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="-3" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="997" centery="626" centerz="7" radius="3">
-		<monster name="Bull Fighter" x="-3" y="1" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="-2" y="3" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="-3" y="3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="922" centery="691" centerz="7" radius="3">
-		<monster name="Bull Fighter" x="-3" y="-2" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="0" y="-2" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="-2" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="981" centery="602" centerz="7" radius="3">
-		<monster name="Bull Fighter" x="3" y="-3" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="3" y="-2" z="7" spawntime="60" />
-		<monster name="Bull Fighter" x="-1" y="3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="983" centery="695" centerz="7" radius="3">
-		<monster name="Hound" x="2" y="-1" z="7" spawntime="60" />
-		<monster name="Hound" x="0" y="3" z="7" spawntime="60" />
-		<monster name="Hound" x="3" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="979" centery="705" centerz="7" radius="3">
-		<monster name="Hound" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Hound" x="3" y="2" z="7" spawntime="60" />
-		<monster name="Hound" x="-3" y="2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="914" centery="575" centerz="7" radius="3">
-		<monster name="Hound" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Hound" x="1" y="2" z="7" spawntime="60" />
-		<monster name="Hound" x="-3" y="-1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="937" centery="574" centerz="7" radius="3">
-		<monster name="Hound" x="-2" y="-1" z="7" spawntime="60" />
-		<monster name="Hound" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Hound" x="1" y="0" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="873" centery="656" centerz="7" radius="3">
-		<monster name="Hound" x="3" y="-2" z="7" spawntime="60" />
-		<monster name="Hound" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Hound" x="-3" y="3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="1012" centery="663" centerz="7" radius="3">
-		<monster name="Hound" x="2" y="-3" z="7" spawntime="60" />
-		<monster name="Hound" x="3" y="-2" z="7" spawntime="60" />
-		<monster name="Hound" x="-3" y="2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="952" centery="712" centerz="7" radius="3">
-		<monster name="Hound" x="-3" y="3" z="7" spawntime="60" />
-		<monster name="Hound" x="2" y="-3" z="7" spawntime="60" />
-		<monster name="Hound" x="3" y="-1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="892" centery="698" centerz="7" radius="3">
-		<monster name="Hound" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Hound" x="-1" y="-3" z="7" spawntime="60" />
-		<monster name="Hound" x="3" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="986" centery="683" centerz="7" radius="3">
-		<monster name="Hound" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Hound" x="1" y="2" z="7" spawntime="60" />
-		<monster name="Hound" x="1" y="-1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="997" centery="679" centerz="7" radius="3">
-		<monster name="Hound" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Hound" x="1" y="-1" z="7" spawntime="60" />
-		<monster name="Hound" x="3" y="3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="962" centery="713" centerz="7" radius="3">
-		<monster name="Hound" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Hound" x="0" y="1" z="7" spawntime="60" />
-		<monster name="Hound" x="1" y="2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="940" centery="555" centerz="7" radius="3">
-		<monster name="Elite Bull Fighter" x="-1" y="0" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="1" y="3" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="-2" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="1006" centery="686" centerz="7" radius="3">
-		<monster name="Elite Bull Fighter" x="-3" y="-3" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="3" y="2" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="-3" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="995" centery="575" centerz="7" radius="3">
-		<monster name="Elite Bull Fighter" x="-2" y="3" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="-1" y="1" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="-2" y="-1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="1010" centery="610" centerz="7" radius="3">
-		<monster name="Elite Bull Fighter" x="2" y="-2" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="1" y="-3" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="0" y="2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="914" centery="566" centerz="7" radius="3">
-		<monster name="Elite Bull Fighter" x="3" y="3" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="-2" y="-1" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="3" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="875" centery="689" centerz="7" radius="3">
-		<monster name="Elite Bull Fighter" x="-1" y="3" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="2" y="-1" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="-2" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="889" centery="709" centerz="7" radius="3">
-		<monster name="Elite Bull Fighter" x="-2" y="-3" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="-2" y="0" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="2" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="870" centery="608" centerz="7" radius="3">
-		<monster name="Elite Bull Fighter" x="3" y="0" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="-3" y="1" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="1" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="872" centery="589" centerz="7" radius="3">
-		<monster name="Elite Bull Fighter" x="-1" y="-3" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="0" y="3" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="-3" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="909" centery="714" centerz="7" radius="3">
-		<monster name="Elite Bull Fighter" x="1" y="0" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="3" y="-3" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="3" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="883" centery="700" centerz="7" radius="3">
-		<monster name="Elite Bull Fighter" x="-3" y="-2" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="-1" y="1" z="7" spawntime="60" />
-		<monster name="Elite Bull Fighter" x="-3" y="2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="845" centery="658" centerz="7" radius="3">
-		<monster name="Lich" x="1" y="2" z="7" spawntime="60" />
-		<monster name="Lich" x="1" y="-1" z="7" spawntime="60" />
-		<monster name="Lich" x="2" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="953" centery="730" centerz="7" radius="3">
-		<monster name="Lich" x="-3" y="2" z="7" spawntime="60" />
-		<monster name="Lich" x="0" y="1" z="7" spawntime="60" />
-		<monster name="Lich" x="-3" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="880" centery="571" centerz="7" radius="3">
-		<monster name="Lich" x="2" y="-3" z="7" spawntime="60" />
-		<monster name="Lich" x="2" y="-2" z="7" spawntime="60" />
-		<monster name="Lich" x="2" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="850" centery="647" centerz="7" radius="3">
-		<monster name="Lich" x="2" y="-1" z="7" spawntime="60" />
-		<monster name="Lich" x="-3" y="-3" z="7" spawntime="60" />
-		<monster name="Lich" x="2" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="990" centery="721" centerz="7" radius="3">
-		<monster name="Lich" x="1" y="-3" z="7" spawntime="60" />
-		<monster name="Lich" x="3" y="-1" z="7" spawntime="60" />
-		<monster name="Lich" x="0" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="891" centery="557" centerz="7" radius="3">
-		<monster name="Lich" x="-2" y="-2" z="7" spawntime="60" />
-		<monster name="Lich" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Lich" x="-3" y="-1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="1001" centery="567" centerz="7" radius="3">
-		<monster name="Lich" x="3" y="1" z="7" spawntime="60" />
-		<monster name="Lich" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Lich" x="-1" y="2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="968" centery="731" centerz="7" radius="3">
-		<monster name="Lich" x="2" y="2" z="7" spawntime="60" />
-		<monster name="Lich" x="-2" y="-1" z="7" spawntime="60" />
-		<monster name="Lich" x="3" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="908" centery="549" centerz="7" radius="3">
-		<monster name="Lich" x="1" y="-3" z="7" spawntime="60" />
-		<monster name="Lich" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Lich" x="2" y="0" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="1010" centery="699" centerz="7" radius="3">
-		<monster name="Lich" x="2" y="-2" z="7" spawntime="60" />
-		<monster name="Lich" x="-3" y="-3" z="7" spawntime="60" />
-		<monster name="Lich" x="-1" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="1045" centery="636" centerz="7" radius="3">
-		<monster name="Giant" x="3" y="2" z="7" spawntime="60" />
-		<monster name="Giant" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Giant" x="-1" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="926" centery="733" centerz="7" radius="3">
-		<monster name="Giant" x="-3" y="1" z="7" spawntime="60" />
-		<monster name="Giant" x="-3" y="2" z="7" spawntime="60" />
-		<monster name="Giant" x="1" y="-1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="882" centery="555" centerz="7" radius="3">
-		<monster name="Giant" x="-2" y="2" z="7" spawntime="60" />
-		<monster name="Giant" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Giant" x="2" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="848" centery="608" centerz="7" radius="3">
-		<monster name="Giant" x="2" y="-3" z="7" spawntime="60" />
-		<monster name="Giant" x="-3" y="0" z="7" spawntime="60" />
-		<monster name="Giant" x="-1" y="2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="995" centery="551" centerz="7" radius="3">
-		<monster name="Giant" x="1" y="0" z="7" spawntime="60" />
-		<monster name="Giant" x="-1" y="-3" z="7" spawntime="60" />
-		<monster name="Giant" x="3" y="3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="947" centery="741" centerz="7" radius="3">
-		<monster name="Giant" x="1" y="0" z="7" spawntime="60" />
-		<monster name="Giant" x="3" y="0" z="7" spawntime="60" />
-		<monster name="Giant" x="-3" y="2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="885" centery="729" centerz="7" radius="3">
-		<monster name="Giant" x="-1" y="-1" z="7" spawntime="60" />
-		<monster name="Giant" x="0" y="1" z="7" spawntime="60" />
-		<monster name="Giant" x="-3" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="1026" centery="707" centerz="7" radius="3">
-		<monster name="Giant" x="-2" y="1" z="7" spawntime="60" />
-		<monster name="Giant" x="2" y="-1" z="7" spawntime="60" />
-		<monster name="Giant" x="3" y="-2" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="1037" centery="675" centerz="7" radius="3">
-		<monster name="Giant" x="0" y="2" z="7" spawntime="60" />
-		<monster name="Giant" x="2" y="1" z="7" spawntime="60" />
-		<monster name="Giant" x="-1" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="884" centery="541" centerz="7" radius="3">
-		<monster name="Skeleton Warrior" x="1" y="0" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="-2" y="-2" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="-2" y="3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="854" centery="711" centerz="7" radius="3">
-		<monster name="Skeleton Warrior" x="-1" y="0" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="3" y="-1" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="2" y="3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="814" centery="649" centerz="7" radius="3">
-		<monster name="Skeleton Warrior" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="-1" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="966" centery="743" centerz="7" radius="3">
-		<monster name="Skeleton Warrior" x="0" y="1" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="-3" y="-2" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="-1" y="1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="869" centery="553" centerz="7" radius="3">
-		<monster name="Skeleton Warrior" x="-1" y="-1" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="-3" y="2" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="1" y="3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="811" centery="660" centerz="7" radius="3">
-		<monster name="Skeleton Warrior" x="-3" y="0" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="3" y="-2" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="1" y="-3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="1049" centery="586" centerz="7" radius="3">
-		<monster name="Skeleton Warrior" x="1" y="-3" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="-2" y="-3" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="-1" y="-1" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="816" centery="682" centerz="7" radius="3">
-		<monster name="Skeleton Warrior" x="3" y="-1" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="-3" y="0" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="-2" y="3" z="7" spawntime="60" />
-	</monster>
-	<monster centerx="963" centery="764" centerz="7" radius="3">
-		<monster name="Skeleton Warrior" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="3" y="3" z="7" spawntime="60" />
-		<monster name="Skeleton Warrior" x="-3" y="3" z="7" spawntime="60" />
+	<!-- Noria (MU) -->
+	<monster centerx="1286" centery="691" centerz="7" radius="3">
+		<monster name="Goblin" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Goblin" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Goblin" x="-3" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1255" centery="615" centerz="7" radius="3">
+		<monster name="Goblin" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Goblin" x="-2" y="3" z="7" spawntime="60" />
+		<monster name="Goblin" x="2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1331" centery="667" centerz="7" radius="3">
+		<monster name="Goblin" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Goblin" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Goblin" x="0" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1334" centery="658" centerz="7" radius="3">
+		<monster name="Goblin" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Goblin" x="0" y="3" z="7" spawntime="60" />
+		<monster name="Goblin" x="-1" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1302" centery="685" centerz="7" radius="3">
+		<monster name="Goblin" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Goblin" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Goblin" x="-2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1308" centery="692" centerz="7" radius="3">
+		<monster name="Goblin" x="1" y="3" z="7" spawntime="60" />
+		<monster name="Goblin" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Goblin" x="1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1248" centery="632" centerz="7" radius="3">
+		<monster name="Goblin" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Goblin" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="Goblin" x="-2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1265" centery="679" centerz="7" radius="3">
+		<monster name="Goblin" x="3" y="3" z="7" spawntime="60" />
+		<monster name="Goblin" x="-3" y="1" z="7" spawntime="60" />
+		<monster name="Goblin" x="-3" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1241" centery="638" centerz="7" radius="3">
+		<monster name="Goblin" x="0" y="3" z="7" spawntime="60" />
+		<monster name="Goblin" x="3" y="0" z="7" spawntime="60" />
+		<monster name="Goblin" x="3" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1252" centery="680" centerz="7" radius="3">
+		<monster name="Goblin" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Goblin" x="-3" y="3" z="7" spawntime="60" />
+		<monster name="Goblin" x="1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1337" centery="678" centerz="7" radius="3">
+		<monster name="Chain Scorpion" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="0" y="3" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="-1" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1253" centery="691" centerz="7" radius="3">
+		<monster name="Chain Scorpion" x="-1" y="3" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1241" centery="668" centerz="7" radius="3">
+		<monster name="Chain Scorpion" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1271" centery="693" centerz="7" radius="3">
+		<monster name="Chain Scorpion" x="-1" y="3" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="-3" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1231" centery="633" centerz="7" radius="3">
+		<monster name="Chain Scorpion" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="2" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1284" centery="705" centerz="7" radius="3">
+		<monster name="Chain Scorpion" x="3" y="3" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="3" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1337" centery="633" centerz="7" radius="3">
+		<monster name="Chain Scorpion" x="3" y="0" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="3" y="2" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1312" centery="594" centerz="7" radius="3">
+		<monster name="Chain Scorpion" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="2" y="3" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1321" centery="611" centerz="7" radius="3">
+		<monster name="Chain Scorpion" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="-2" y="3" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="-1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1302" centery="596" centerz="7" radius="3">
+		<monster name="Chain Scorpion" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="Chain Scorpion" x="-1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1283" centery="714" centerz="7" radius="3">
+		<monster name="Elite Goblin" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1287" centery="582" centerz="7" radius="3">
+		<monster name="Elite Goblin" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1354" centery="670" centerz="7" radius="3">
+		<monster name="Elite Goblin" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="3" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1224" centery="645" centerz="7" radius="3">
+		<monster name="Elite Goblin" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="-2" y="3" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="3" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1336" centery="696" centerz="7" radius="3">
+		<monster name="Elite Goblin" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="3" y="2" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1247" centery="592" centerz="7" radius="3">
+		<monster name="Elite Goblin" x="-1" y="3" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="3" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1343" centery="625" centerz="7" radius="3">
+		<monster name="Elite Goblin" x="-1" y="3" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="2" y="2" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="0" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1303" centery="709" centerz="7" radius="3">
+		<monster name="Elite Goblin" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1254" centery="703" centerz="7" radius="3">
+		<monster name="Elite Goblin" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1242" centery="694" centerz="7" radius="3">
+		<monster name="Elite Goblin" x="1" y="2" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="3" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1276" centery="588" centerz="7" radius="3">
+		<monster name="Elite Goblin" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Elite Goblin" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1280" centery="575" centerz="7" radius="3">
+		<monster name="Beetle Monster" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="-3" y="1" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="2" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1299" centery="570" centerz="7" radius="3">
+		<monster name="Beetle Monster" x="-3" y="-3" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="1" y="3" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="2" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1362" centery="618" centerz="7" radius="3">
+		<monster name="Beetle Monster" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1227" centery="608" centerz="7" radius="3">
+		<monster name="Beetle Monster" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="2" y="3" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="1" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1305" centery="581" centerz="7" radius="3">
+		<monster name="Beetle Monster" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1226" centery="682" centerz="7" radius="3">
+		<monster name="Beetle Monster" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="3" y="3" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="-2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1261" centery="718" centerz="7" radius="3">
+		<monster name="Beetle Monster" x="2" y="3" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1362" centery="660" centerz="7" radius="3">
+		<monster name="Beetle Monster" x="-3" y="1" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="1" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1365" centery="630" centerz="7" radius="3">
+		<monster name="Beetle Monster" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="-2" y="3" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="-3" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1271" centery="579" centerz="7" radius="3">
+		<monster name="Beetle Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1217" centery="651" centerz="7" radius="3">
+		<monster name="Beetle Monster" x="-3" y="3" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Beetle Monster" x="2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1240" centery="585" centerz="7" radius="3">
+		<monster name="Hunter" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Hunter" x="2" y="3" z="7" spawntime="60" />
+		<monster name="Hunter" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1217" centery="601" centerz="7" radius="3">
+		<monster name="Hunter" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Hunter" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="Hunter" x="1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1315" centery="732" centerz="7" radius="3">
+		<monster name="Hunter" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="Hunter" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Hunter" x="3" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1207" centery="656" centerz="7" radius="3">
+		<monster name="Hunter" x="3" y="1" z="7" spawntime="60" />
+		<monster name="Hunter" x="0" y="3" z="7" spawntime="60" />
+		<monster name="Hunter" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1332" centery="714" centerz="7" radius="3">
+		<monster name="Hunter" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Hunter" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Hunter" x="0" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1205" centery="632" centerz="7" radius="3">
+		<monster name="Hunter" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Hunter" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Hunter" x="3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1319" centery="565" centerz="7" radius="3">
+		<monster name="Hunter" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Hunter" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Hunter" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1296" centery="733" centerz="7" radius="3">
+		<monster name="Hunter" x="2" y="2" z="7" spawntime="60" />
+		<monster name="Hunter" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Hunter" x="-3" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1375" centery="633" centerz="7" radius="3">
+		<monster name="Hunter" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Hunter" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Hunter" x="3" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1294" centery="561" centerz="7" radius="3">
+		<monster name="Hunter" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Hunter" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="Hunter" x="1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1371" centery="620" centerz="7" radius="3">
+		<monster name="Hunter" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Hunter" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Hunter" x="3" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1296" centery="746" centerz="7" radius="3">
+		<monster name="Forest Monster" x="1" y="3" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="3" y="1" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="0" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1335" centery="735" centerz="7" radius="3">
+		<monster name="Forest Monster" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1371" centery="686" centerz="7" radius="3">
+		<monster name="Forest Monster" x="1" y="2" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1368" centery="594" centerz="7" radius="3">
+		<monster name="Forest Monster" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1262" centery="741" centerz="7" radius="3">
+		<monster name="Forest Monster" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1283" centery="554" centerz="7" radius="3">
+		<monster name="Forest Monster" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="1" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1223" centery="708" centerz="7" radius="3">
+		<monster name="Forest Monster" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1383" centery="661" centerz="7" radius="3">
+		<monster name="Forest Monster" x="-3" y="-3" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="-3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1231" centery="565" centerz="7" radius="3">
+		<monster name="Forest Monster" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="-1" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1246" centery="727" centerz="7" radius="3">
+		<monster name="Forest Monster" x="-3" y="1" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="Forest Monster" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1303" centery="539" centerz="7" radius="3">
+		<monster name="Agon" x="-1" y="3" z="7" spawntime="60" />
+		<monster name="Agon" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Agon" x="3" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1259" centery="753" centerz="7" radius="3">
+		<monster name="Agon" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Agon" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="Agon" x="3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1366" centery="715" centerz="7" radius="3">
+		<monster name="Agon" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Agon" x="-3" y="2" z="7" spawntime="60" />
+		<monster name="Agon" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1339" centery="561" centerz="7" radius="3">
+		<monster name="Agon" x="-3" y="2" z="7" spawntime="60" />
+		<monster name="Agon" x="-1" y="3" z="7" spawntime="60" />
+		<monster name="Agon" x="-1" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1271" centery="754" centerz="7" radius="3">
+		<monster name="Agon" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Agon" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Agon" x="-2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1387" centery="640" centerz="7" radius="3">
+		<monster name="Agon" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Agon" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Agon" x="-3" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1366" centery="572" centerz="7" radius="3">
+		<monster name="Agon" x="2" y="3" z="7" spawntime="60" />
+		<monster name="Agon" x="-1" y="3" z="7" spawntime="60" />
+		<monster name="Agon" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1387" centery="671" centerz="7" radius="3">
+		<monster name="Agon" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Agon" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Agon" x="3" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1184" centery="628" centerz="7" radius="3">
+		<monster name="Agon" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Agon" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Agon" x="3" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1179" centery="712" centerz="7" radius="3">
+		<monster name="Stone Golem" x="2" y="2" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1285" centery="767" centerz="7" radius="3">
+		<monster name="Stone Golem" x="1" y="3" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1368" centery="563" centerz="7" radius="3">
+		<monster name="Stone Golem" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="-3" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1384" centery="569" centerz="7" radius="3">
+		<monster name="Stone Golem" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="-2" y="3" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="-2" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1242" centery="749" centerz="7" radius="3">
+		<monster name="Stone Golem" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="-3" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1357" centery="735" centerz="7" radius="3">
+		<monster name="Stone Golem" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="-2" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1281" centery="532" centerz="7" radius="3">
+		<monster name="Stone Golem" x="3" y="3" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="0" y="3" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="1" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1395" centery="696" centerz="7" radius="3">
+		<monster name="Stone Golem" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="1" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1209" centery="537" centerz="7" radius="3">
+		<monster name="Stone Golem" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="1" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1375" centery="547" centerz="7" radius="3">
+		<monster name="Stone Golem" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="-1" y="0" z="7" spawntime="60" />
 	</monster>
 </monsters>

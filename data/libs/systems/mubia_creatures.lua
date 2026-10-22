@@ -1,7 +1,8 @@
 -- Mubia Online: armado común de monstruos y NPCs. Cada criatura tiene su propio archivo
 -- (con Game.createMonsterType("Nombre") y monster.outfit) para que el editor de mapas la reconozca.
 
--- Monstruo salvaje de MU (Lorencia, etc.). cfg: level, health, damage = {min, max}, defense, speed, corpse, magic
+-- Monstruo salvaje de MU (Lorencia, Noria, etc.). cfg: level, health, damage = {min, max}, defense, speed, corpse,
+-- magic (ataca con magia a distancia) o ranged (dispara flechas a distancia)
 function Mubia.registerWildMonster(mType, monster, cfg)
 	monster.description = monster.description or ("a " .. mType:name():lower())
 	monster.experience = cfg.level * 3
@@ -32,7 +33,7 @@ function Mubia.registerWildMonster(mType, monster, cfg)
 		canPushItems = true,
 		canPushCreatures = false,
 		staticAttackChance = 90,
-		targetDistance = cfg.magic and 4 or 1,
+		targetDistance = (cfg.magic or cfg.ranged) and 4 or 1,
 		runHealth = 0,
 		healthHidden = false,
 		isBlockable = false,
@@ -54,6 +55,10 @@ function Mubia.registerWildMonster(mType, monster, cfg)
 	if cfg.magic then
 		monster.attacks = {
 			{ name = "combat", interval = 2000, chance = 100, type = COMBAT_ENERGYDAMAGE, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2], range = 5, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = true },
+		}
+	elseif cfg.ranged then
+		monster.attacks = {
+			{ name = "combat", interval = 2000, chance = 100, type = COMBAT_PHYSICALDAMAGE, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2], range = 5, shootEffect = CONST_ANI_ARROW, target = true },
 		}
 	else
 		monster.attacks = {
@@ -211,6 +216,7 @@ function Mubia.registerTrainingMonk(mType, monster, cfg)
 end
 
 -- NPC de la zona de NPCs: vende gratis los scrolls de su clase (classId) o lo que diga shop.
+-- Opcionales: greeting y voice (textos propios del NPC).
 -- Di "magias" para recibir todos los scrolls de la clase de una vez.
 Mubia.NpcPotions = {
 	{ itemName = "health potion", clientId = 266, buy = 0 },
@@ -237,20 +243,29 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 	for _, def in ipairs(spells) do
 		table.insert(npcConfig.shop, { itemName = def.scrollName, clientId = def.scrollId, buy = 0 })
 	end
-
-	if className then
-		npcConfig.voices = {
-			interval = 15000,
-			chance = 20,
-			{ text = Mubia.toLatin1(string.format("¡Scrolls de magias de %s gratis! Di {trade}.", className)) },
-		}
-	else
-		npcConfig.voices = {
-			interval = 15000,
-			chance = 20,
-			{ text = Mubia.toLatin1("¡Pociones de vida y de mana gratis! Di {trade}.") },
-		}
+	-- sets, armas y escudos de MU de la clase (gratis para probar)
+	if config.classId then
+		local gearIds = {}
+		for itemId, gear in pairs(Mubia.Gear) do
+			if table.contains(gear.classes, config.classId) then
+				gearIds[#gearIds + 1] = itemId
+			end
+		end
+		table.sort(gearIds)
+		for _, itemId in ipairs(gearIds) do
+			table.insert(npcConfig.shop, { itemName = Mubia.Gear[itemId].name:lower(), clientId = itemId, buy = 0 })
+		end
 	end
+
+	local voice = config.voice
+	if not voice then
+		voice = className and string.format("¡Scrolls de magias y equipo de %s gratis! Di {trade}.", className) or "¡Pociones de vida y de mana gratis! Di {trade}."
+	end
+	npcConfig.voices = {
+		interval = 15000,
+		chance = 20,
+		{ text = Mubia.toLatin1(voice) },
+	}
 
 	local keywordHandler = KeywordHandler:new()
 	local npcHandler = NpcHandler:new(keywordHandler)
@@ -303,10 +318,10 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 		end
 	end
 
-	local greeting
-	if className then
+	local greeting = config.greeting
+	if not greeting and className then
 		greeting = string.format("¡Hola |PLAYERNAME|! Enseño las magias de %s. Di {trade} para elegir scrolls gratis o {magias} para llevarte todos.", className)
-	else
+	elseif not greeting then
 		greeting = "¡Hola |PLAYERNAME|! Di {trade} para llevarte pociones de vida y de mana gratis."
 	end
 

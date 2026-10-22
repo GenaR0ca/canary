@@ -180,6 +180,10 @@ int MoveEventFunctions::luaMoveEventSlot(lua_State* L) {
 			moveevent->setSlot(SLOTP_RING);
 		} else if (slotName == "ammo") {
 			moveevent->setSlot(SLOTP_AMMO);
+		} else if (slotName == "wings") {
+			moveevent->setSlot(SLOTP_WINGS);
+		} else if (slotName == "gloves") {
+			moveevent->setSlot(SLOTP_GLOVES);
 		} else {
 			g_logger().warn("[MoveEventFunctions::luaMoveEventSlot] - "
 			                "Unknown slot type: {}",

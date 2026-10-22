@@ -313,6 +313,12 @@ void ItemParse::parseSlotType(const std::string &stringValue, pugi::xml_attribut
 			itemType.slotPosition |= SLOTP_AMMO;
 		} else if (subStringValue == "hand") {
 			itemType.slotPosition |= SLOTP_HAND;
+		} else if (subStringValue == "wings") {
+			// Mubia: las alas solo van en su slot
+			itemType.slotPosition = SLOTP_WINGS;
+		} else if (subStringValue == "gloves") {
+			// Mubia: los guantes solo van en su slot
+			itemType.slotPosition = SLOTP_GLOVES;
 		} else {
 			g_logger().warn("[itemParseSlotType - Items::parseItemNode] - Unknown slotType {}", valueAttribute.as_string());
 		}
@@ -1096,6 +1102,10 @@ void ItemParse::createAndRegisterScript(ItemType &itemType, pugi::xml_node attri
 					moveevent->setSlot(SLOTP_RING);
 				} else if (slotName == "ammo") {
 					moveevent->setSlot(SLOTP_AMMO);
+				} else if (slotName == "wings") {
+					moveevent->setSlot(SLOTP_WINGS);
+				} else if (slotName == "gloves") {
+					moveevent->setSlot(SLOTP_GLOVES);
 				} else if (slotName == "two-handed" || slotName == "dualwielding") {
 					moveevent->setSlot(SLOTP_TWO_HAND);
 				} else {

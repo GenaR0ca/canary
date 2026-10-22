@@ -437,8 +437,14 @@ enum SlotPositionBits : uint32_t {
 	SLOTP_AMMO = 1 << 9,
 	SLOTP_DEPOT = 1 << 10,
 	SLOTP_TWO_HAND = 1 << 11,
+	SLOTP_WINGS = 1 << 12, // Mubia: alas de MU
+	SLOTP_GLOVES = 1 << 13, // Mubia: guantes de MU
 	SLOTP_HAND = (SLOTP_LEFT | SLOTP_RIGHT)
 };
+
+// Mubia: ids de los sets, armas y escudos de MU (tools/mubia/gear.py). Los de Tibia no se pueden equipar.
+constexpr uint16_t MUBIA_GEAR_FIRST_ID = 61001;
+constexpr uint16_t MUBIA_GEAR_LAST_ID = 63999;
 
 enum TileFlags_t : uint32_t {
 	TILESTATE_NONE = 0,

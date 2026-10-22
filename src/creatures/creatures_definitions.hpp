@@ -383,9 +383,11 @@ enum Slots_t : uint8_t {
 	CONST_SLOT_RING = 9,
 	CONST_SLOT_AMMO = 10,
 	CONST_SLOT_STORE_INBOX = 11,
+	CONST_SLOT_WINGS = 12, // Mubia: alas de MU
+	CONST_SLOT_GLOVES = 13, // Mubia: guantes de los sets de MU
 
 	CONST_SLOT_FIRST = CONST_SLOT_HEAD,
-	CONST_SLOT_LAST = CONST_SLOT_STORE_INBOX,
+	CONST_SLOT_LAST = CONST_SLOT_GLOVES,
 };
 
 enum charmCategory_t {

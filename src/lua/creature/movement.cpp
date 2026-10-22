@@ -186,10 +186,17 @@ std::shared_ptr<MoveEvent> MoveEvents::getEvent(const std::shared_ptr<Item> &ite
 			slotp = SLOTP_FEET;
 			break;
 		case CONST_SLOT_AMMO:
-			slotp = SLOTP_AMMO;
+			// Mubia: segundo anillo, sus efectos de anillo también se activan acá
+			slotp = SLOTP_AMMO | SLOTP_RING;
 			break;
 		case CONST_SLOT_RING:
 			slotp = SLOTP_RING;
+			break;
+		case CONST_SLOT_WINGS:
+			slotp = SLOTP_WINGS;
+			break;
+		case CONST_SLOT_GLOVES:
+			slotp = SLOTP_GLOVES;
 			break;
 		default:
 			slotp = 0;
