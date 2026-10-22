@@ -45,4 +45,19 @@
 	<npc centerx="1288" centery="652" centerz="7" radius="1">
 		<npc name="Chaos Goblin" x="0" y="0" z="7" spawntime="60" />
 	</npc>
+	<npc centerx="1607" centery="708" centerz="7" radius="1">
+		<npc name="Zienna the Weapons Merchant" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1601" centery="745" centerz="7" radius="1">
+		<npc name="Izabel the Wizard" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1604" centery="734" centerz="7" radius="1">
+		<npc name="Guild Master" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1585" centery="725" centerz="7" radius="1">
+		<npc name="Spirit of Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1600" centery="702" centerz="7" radius="1">
+		<npc name="Sevina the Priestess" x="0" y="0" z="7" spawntime="60" />
+	</npc>
 </npcs>
