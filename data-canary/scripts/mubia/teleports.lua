@@ -1,6 +1,6 @@
 -- Mubia Online: teleports del templo de Strongarm a la zona de NPCs (Nahag Village)
 -- y a la zona de entrenamiento (Montag), cada uno con su teleport de vuelta.
--- Se crean al arrancar el servidor (no se guardan en el mapa).
+-- Se crean al arrancar el servidor (no se guardan en el mapa). Va en data-canary porque usa el mapa canary.otbm.
 
 local TEMPLE = Position(1943, 1345, 7)
 
