@@ -584,3 +584,22 @@ function Mubia.getBuff(creature, name)
 	end
 	return buff.value
 end
+
+-- Las magias de Tibia quedan sin uso para los jugadores: se registran como "hay que aprenderla"
+-- y nadie las aprende (los monstruos que usan alguna por nombre la siguen pudiendo lanzar).
+-- Solo las magias MU (Mubia.SpellList) se aprenden, con su scroll.
+do
+	local muSpellNames = {}
+	for _, def in ipairs(Mubia.SpellList) do
+		muSpellNames[def.name:lower()] = true
+	end
+
+	local register = Spell.register
+	function Spell.register(self)
+		local name = self:name()
+		if type(name) == "string" and name ~= "" and not muSpellNames[name:lower()] then
+			self:needLearn(true)
+		end
+		return register(self)
+	end
+end
