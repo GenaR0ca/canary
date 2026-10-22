@@ -195,6 +195,9 @@ std::shared_ptr<MoveEvent> MoveEvents::getEvent(const std::shared_ptr<Item> &ite
 		case CONST_SLOT_WINGS:
 			slotp = SLOTP_WINGS;
 			break;
+		case CONST_SLOT_GLOVES:
+			slotp = SLOTP_GLOVES;
+			break;
 		default:
 			slotp = 0;
 			break;

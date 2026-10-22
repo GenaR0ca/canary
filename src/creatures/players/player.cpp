@@ -4570,6 +4570,26 @@ bool Player::hasCapacity(const std::shared_ptr<Item> &item, uint32_t count) cons
 	return itemWeight <= getFreeCapacity();
 }
 
+namespace {
+	// Mubia: casco, armadura, pantalón, botas, armas y escudos de Tibia ya no se pueden equipar (solo los de MU)
+	bool isBlockedTibiaGear(const std::shared_ptr<Item> &item, int32_t index) {
+		if (index != CONST_SLOT_HEAD && index != CONST_SLOT_ARMOR && index != CONST_SLOT_LEGS && index != CONST_SLOT_FEET && index != CONST_SLOT_LEFT && index != CONST_SLOT_RIGHT) {
+			return false;
+		}
+
+		const auto itemId = item->getID();
+		if (itemId >= MUBIA_GEAR_FIRST_ID && itemId <= MUBIA_GEAR_LAST_ID) {
+			return false;
+		}
+
+		const auto weaponType = item->getWeaponType();
+		if (weaponType != WEAPON_NONE && weaponType != WEAPON_AMMO) {
+			return true;
+		}
+		return (item->getSlotPosition() & (SLOTP_HEAD | SLOTP_ARMOR | SLOTP_LEGS | SLOTP_FEET)) != 0;
+	}
+}
+
 ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing, uint32_t count, uint32_t flags, const std::shared_ptr<Creature> &) {
 	const auto &item = thing->getItem();
 	if (item == nullptr) {
@@ -4602,7 +4622,7 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 	if (allowPutItemsOnAmmoSlot && index == CONST_SLOT_AMMO) {
 		ret = RETURNVALUE_NOERROR;
 	} else {
-		if ((slotPosition & SLOTP_HEAD) || (slotPosition & SLOTP_NECKLACE) || (slotPosition & SLOTP_BACKPACK) || (slotPosition & SLOTP_ARMOR) || (slotPosition & SLOTP_LEGS) || (slotPosition & SLOTP_FEET) || (slotPosition & SLOTP_RING) || (slotPosition & SLOTP_WINGS)) {
+		if ((slotPosition & SLOTP_HEAD) || (slotPosition & SLOTP_NECKLACE) || (slotPosition & SLOTP_BACKPACK) || (slotPosition & SLOTP_ARMOR) || (slotPosition & SLOTP_LEGS) || (slotPosition & SLOTP_FEET) || (slotPosition & SLOTP_RING) || (slotPosition & SLOTP_WINGS) || (slotPosition & SLOTP_GLOVES)) {
 			ret = RETURNVALUE_CANNOTBEDRESSED;
 		} else if (slotPosition & SLOTP_TWO_HAND) {
 			ret = RETURNVALUE_PUTTHISOBJECTINBOTHHANDS;
@@ -4767,6 +4787,13 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 			break;
 		}
 
+		case CONST_SLOT_GLOVES: {
+			if (slotPosition & SLOTP_GLOVES) {
+				ret = RETURNVALUE_NOERROR;
+			}
+			break;
+		}
+
 		case CONST_SLOT_WHEREEVER:
 		case -1:
 			ret = RETURNVALUE_NOTENOUGHROOM;
@@ -4775,6 +4802,10 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 		default:
 			ret = RETURNVALUE_NOTPOSSIBLE;
 			break;
+	}
+
+	if (ret == RETURNVALUE_NOERROR && isBlockedTibiaGear(item, index)) {
+		ret = RETURNVALUE_CANNOTBEDRESSED;
 	}
 
 	if (ret == RETURNVALUE_NOERROR || ret == RETURNVALUE_NOTENOUGHROOM) {

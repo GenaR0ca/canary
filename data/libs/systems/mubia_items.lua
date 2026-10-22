@@ -19,8 +19,12 @@ Mubia.ItemConfig = {
 	levelBonus = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 5, 6, 7, 8, 9 },
 }
 
--- Slot de alas (lo define canary.exe desde la fase 2; 12 por si el .exe todavía es el viejo)
+-- Slots de alas y guantes (los define canary.exe; los números por si el .exe todavía es el viejo)
 CONST_SLOT_WINGS = CONST_SLOT_WINGS or 12
+CONST_SLOT_GLOVES = CONST_SLOT_GLOVES or 13
+
+-- Sets, armas y escudos de MU: la tabla Mubia.Gear está en mubia_gear.lua
+Mubia.Gear = Mubia.Gear or {}
 
 Mubia.JEWEL_OF_BLESS = 60303
 Mubia.JEWEL_OF_SOUL = 60301
@@ -46,36 +50,16 @@ Mubia.WingTiers = {
 	[3] = { damage = 39, damagePerLevel = 1, absorb = 39, absorbPerLevel = 1, defense = 35 },
 }
 
-local SLOTP_HEAD = 1
-local SLOTP_ARMOR = 8
-local SLOTP_LEGS = 64
-local SLOTP_FEET = 128
-local ARMOR_SLOTS = SLOTP_HEAD + SLOTP_ARMOR + SLOTP_LEGS + SLOTP_FEET
-
 local ATTR_LEVEL = "muLevel"
 local ATTR_OPTION = "muOption"
 
--- Qué tipo de item MU es: "weapon", "staff", "armor", "shield", "wings" o nil si no se puede mejorar
+-- Qué tipo de item MU es: "weapon", "staff", "armor", "shield", "wings" o nil (los items de Tibia no se mejoran)
 function Mubia.getItemKind(item)
 	if Mubia.Wings[item:getId()] then
 		return "wings"
 	end
-	local itemType = item:getType()
-	if itemType:isStackable() then
-		return nil
-	end
-	local weaponType = itemType:getWeaponType()
-	if weaponType == WEAPON_SHIELD then
-		return "shield"
-	elseif weaponType == WEAPON_WAND then
-		return "staff"
-	elseif weaponType ~= WEAPON_NONE and weaponType ~= WEAPON_AMMO then
-		return "weapon"
-	end
-	if bit.band(itemType:getSlotPosition(), ARMOR_SLOTS) ~= 0 then
-		return "armor"
-	end
-	return nil
+	local gear = Mubia.Gear[item:getId()]
+	return gear and gear.kind or nil
 end
 
 function Mubia.getItemLevel(item)
@@ -129,6 +113,9 @@ function Mubia.refreshItemText(item)
 		lines[#lines + 1] = string.format("Alas de %s. Aumenta el daño %d%%. Absorbe el %d%% del daño recibido. Defensa %d.", Mubia.Classes[wing.classId].name, wingStats.damage, wingStats.absorb, wingStats.defense)
 	elseif level > 0 then
 		local what = (kind == "weapon" or kind == "staff") and "Daño" or "Defensa"
+		if kind == "staff" then
+			what = "Daño mágico"
+		end
 		lines[#lines + 1] = string.format("Nivel +%d: %s +%d.", level, what, Mubia.getLevelBonus(level))
 	end
 	if option > 0 then
@@ -153,25 +140,24 @@ function Mubia.setItemOption(item, option)
 	Mubia.refreshItemText(item)
 end
 
--- Bonus de los items equipados: daño físico, daño mágico, defensa y alas
+-- Bonus de los items equipados: daño físico, daño mágico, % de daño mágico (bastones), defensa y alas
 function Mubia.getEquipmentBonus(player)
-	local bonus = { attack = 0, wizardry = 0, defense = 0, wingDamage = 0, wingAbsorb = 0 }
-	local slots = { CONST_SLOT_HEAD, CONST_SLOT_ARMOR, CONST_SLOT_LEGS, CONST_SLOT_FEET, CONST_SLOT_LEFT, CONST_SLOT_RIGHT, CONST_SLOT_WINGS }
+	local bonus = { attack = 0, wizardry = 0, magicRise = 0, defense = 0, wingDamage = 0, wingAbsorb = 0 }
+	local slots = { CONST_SLOT_HEAD, CONST_SLOT_ARMOR, CONST_SLOT_LEGS, CONST_SLOT_FEET, CONST_SLOT_GLOVES, CONST_SLOT_LEFT, CONST_SLOT_RIGHT, CONST_SLOT_WINGS }
 	for _, slot in ipairs(slots) do
 		local item = player:getSlotItem(slot)
 		local kind = item and Mubia.getItemKind(item)
 		if kind then
-			local itemType = item:getType()
+			local gear = Mubia.Gear[item:getId()]
 			local levelBonus = Mubia.getLevelBonus(Mubia.getItemLevel(item))
 			local optionBonus = Mubia.getItemOption(item) * Mubia.ItemConfig.optionStep
 			if kind == "weapon" then
 				bonus.attack = bonus.attack + levelBonus + optionBonus
 			elseif kind == "staff" then
 				bonus.wizardry = bonus.wizardry + levelBonus + optionBonus
-			elseif kind == "shield" then
-				bonus.defense = bonus.defense + itemType:getDefense() + levelBonus + optionBonus
-			elseif kind == "armor" then
-				bonus.defense = bonus.defense + itemType:getArmor() + levelBonus + optionBonus
+				bonus.magicRise = bonus.magicRise + (gear.magic or 0)
+			elseif kind == "shield" or kind == "armor" then
+				bonus.defense = bonus.defense + gear.defense + levelBonus + optionBonus
 			elseif kind == "wings" then
 				local stats = Mubia.getWingStats(item)
 				bonus.defense = bonus.defense + stats.defense
@@ -183,6 +169,147 @@ function Mubia.getEquipmentBonus(player)
 		end
 	end
 	return bonus
+end
+
+-- Daño mínimo y máximo de las armas MU equipadas (sin nivel ni opción)
+function Mubia.getGearWeaponDamage(player)
+	local minDamage, maxDamage = 0, 0
+	for _, slot in ipairs({ CONST_SLOT_LEFT, CONST_SLOT_RIGHT }) do
+		local item = player:getSlotItem(slot)
+		local gear = item and Mubia.Gear[item:getId()]
+		if gear and gear.min then
+			minDamage = minDamage + gear.min
+			maxDamage = maxDamage + gear.max
+		end
+	end
+	return minDamage, maxDamage
+end
+
+local function hasClass(gear, class)
+	for _, classId in ipairs(gear.classes) do
+		if Mubia.Classes[classId] == class then
+			return true
+		end
+	end
+	return false
+end
+
+local function classNames(gear)
+	local names = {}
+	for _, classId in ipairs(gear.classes) do
+		names[#names + 1] = Mubia.Classes[classId].name
+	end
+	return table.concat(names, ", ")
+end
+
+-- ¿Puede el jugador equipar este item de MU? Devuelve false y el motivo si no puede.
+function Mubia.checkGearRequirements(player, itemId)
+	local gear = Mubia.Gear[itemId]
+	if not gear then
+		return true
+	end
+	local class = Mubia.getClass(player)
+	if not class or not hasClass(gear, class) then
+		return false, string.format("%s solo lo puede usar: %s.", gear.name, classNames(gear))
+	end
+	local stats = Mubia.getStats(player)
+	local missing = {}
+	if stats.str < gear.str then
+		missing[#missing + 1] = string.format("STR %d (tienes %d)", gear.str, stats.str)
+	end
+	if stats.agi < gear.agi then
+		missing[#missing + 1] = string.format("AGI %d (tienes %d)", gear.agi, stats.agi)
+	end
+	if gear.level and player:getLevel() < gear.level then
+		missing[#missing + 1] = string.format("nivel %d", gear.level)
+	end
+	if #missing > 0 then
+		return false, string.format("Para usar %s necesitas %s.", gear.name, table.concat(missing, ", "))
+	end
+	return true
+end
+
+-- Texto extra al mirar un item de MU: clase, defensa o daño y requisitos
+function Mubia.getGearLookText(player, item)
+	local gear = Mubia.Gear[item:getId()]
+	if not gear then
+		return nil
+	end
+	local lines = { "Clase: " .. classNames(gear) .. "." }
+	if gear.defense then
+		lines[#lines + 1] = string.format("Defensa: %d.", gear.defense)
+	end
+	if gear.min then
+		lines[#lines + 1] = string.format("Daño: %d - %d%s.", gear.min, gear.max, gear.twoHanded and " (dos manos)" or "")
+	end
+	if gear.magic then
+		lines[#lines + 1] = string.format("Daño mágico: +%d%%.", gear.magic)
+	end
+	local requirement = string.format("Requiere STR %d, AGI %d", gear.str, gear.agi)
+	if gear.level then
+		requirement = requirement .. string.format(", nivel %d", gear.level)
+	end
+	lines[#lines + 1] = requirement .. "."
+	local ok = Mubia.checkGearRequirements(player, item:getId())
+	if not ok then
+		lines[#lines + 1] = "No lo puedes usar."
+	end
+	return Mubia.toLatin1(table.concat(lines, "\n"))
+end
+
+-- Sets, armas y escudos de Tibia equipados: se borran (solo existen los de MU)
+local GEAR_SLOTS = { CONST_SLOT_HEAD, CONST_SLOT_ARMOR, CONST_SLOT_LEGS, CONST_SLOT_FEET, CONST_SLOT_LEFT, CONST_SLOT_RIGHT }
+
+-- ¿Es un casco, armadura, pantalón, botas, arma o escudo de Tibia?
+function Mubia.isTibiaGear(itemId)
+	if Mubia.Gear[itemId] or Mubia.Wings[itemId] then
+		return false
+	end
+	local itemType = ItemType(itemId)
+	if itemType:isContainer() then
+		return false
+	end
+	local weaponType = itemType:getWeaponType()
+	if weaponType ~= WEAPON_NONE and weaponType ~= WEAPON_AMMO then
+		return true
+	end
+	-- casco, armadura, pantalón o botas
+	return bit.band(itemType:getSlotPosition(), 1 + 8 + 64 + 128) ~= 0
+end
+
+function Mubia.removeTibiaGear(player)
+	local removed = 0
+	for _, slot in ipairs(GEAR_SLOTS) do
+		local item = player:getSlotItem(slot)
+		if item and Mubia.isTibiaGear(item:getId()) then
+			item:remove()
+			removed = removed + 1
+		end
+	end
+	return removed
+end
+
+-- Una sola vez por personaje: set inicial de MU de su clase (va a la mochila si el slot está ocupado)
+function Mubia.giveStarterGear(player)
+	local class = Mubia.getClass(player)
+	local store = player:kv():scoped("mubia")
+	if not class or store:get("starterGear") then
+		return false
+	end
+	store:set("starterGear", true)
+	for classId, ids in pairs(Mubia.StarterGear or {}) do
+		if Mubia.Classes[classId] == class then
+			for _, itemId in ipairs(ids) do
+				local gear = Mubia.Gear[itemId]
+				local ok = Mubia.checkGearRequirements(player, itemId)
+				local slot = ({ helm = CONST_SLOT_HEAD, armor = CONST_SLOT_ARMOR, pants = CONST_SLOT_LEGS, gloves = CONST_SLOT_GLOVES, boots = CONST_SLOT_FEET })[gear.piece] or CONST_SLOT_LEFT
+				if not ok or player:getSlotItem(slot) or not player:addItem(itemId, 1, false, 1, slot) then
+					player:addItem(itemId, 1)
+				end
+			end
+		end
+	end
+	return true
 end
 
 -- ¿Puede la clase del jugador usar estas alas?

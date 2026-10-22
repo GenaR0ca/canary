@@ -238,10 +238,23 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 	for _, def in ipairs(spells) do
 		table.insert(npcConfig.shop, { itemName = def.scrollName, clientId = def.scrollId, buy = 0 })
 	end
+	-- sets, armas y escudos de MU de la clase (gratis para probar)
+	if config.classId then
+		local gearIds = {}
+		for itemId, gear in pairs(Mubia.Gear) do
+			if table.contains(gear.classes, config.classId) then
+				gearIds[#gearIds + 1] = itemId
+			end
+		end
+		table.sort(gearIds)
+		for _, itemId in ipairs(gearIds) do
+			table.insert(npcConfig.shop, { itemName = Mubia.Gear[itemId].name:lower(), clientId = itemId, buy = 0 })
+		end
+	end
 
 	local voice = config.voice
 	if not voice then
-		voice = className and string.format("¡Scrolls de magias de %s gratis! Di {trade}.", className) or "¡Pociones de vida y de mana gratis! Di {trade}."
+		voice = className and string.format("¡Scrolls de magias y equipo de %s gratis! Di {trade}.", className) or "¡Pociones de vida y de mana gratis! Di {trade}."
 	end
 	npcConfig.voices = {
 		interval = 15000,

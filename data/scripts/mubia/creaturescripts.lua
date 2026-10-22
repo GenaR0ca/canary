@@ -20,6 +20,13 @@ function mubiaLogin.onLogin(player)
 		addEvent(function(playerId)
 			local p = Player(playerId)
 			if p then
+				-- después de los items iniciales de Canary (así ya tiene mochila)
+				if Mubia.removeTibiaGear(p) > 0 then
+					Mubia.sendMessage(p, MESSAGE_LOGIN, "Los sets y armas de Tibia ya no existen en Mubia: se sacaron de tu equipo.")
+				end
+				if Mubia.giveStarterGear(p) then
+					Mubia.sendMessage(p, MESSAGE_LOGIN, "Recibiste el set inicial de MU de tu clase. Si no se equipó, está en tu mochila: necesitas más STR o AGI.")
+				end
 				Mubia.sendStats(p)
 			end
 		end, 1000, player:getId())

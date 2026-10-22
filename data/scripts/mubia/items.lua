@@ -96,22 +96,47 @@ for id in pairs(JEWELS) do
 end
 jewels:register()
 
--- Alas: solo las puede equipar su clase
-local wingsClass = EventCallback("MubiaWingsClass")
-
-function wingsClass.playerOnMoveItem(player, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
-	if toPosition.x == CONTAINER_POSITION and toPosition.y == CONST_SLOT_WINGS and Mubia.Wings[item:getId()] then
-		if not Mubia.canUseWings(player, item) then
-			local wing = Mubia.Wings[item:getId()]
-			Mubia.sendMessage(player, MESSAGE_FAILURE, string.format("Solo un %s puede usar estas alas.", Mubia.Classes[wing.classId].name))
-			return false
-		end
-		Mubia.refreshItemText(item)
+-- Sets, armas, escudos y alas de MU: al equiparse se revisa la clase, STR, AGI y nivel.
+-- (Los sets y armas de Tibia ya no se pueden equipar: lo bloquea canary.exe)
+local function onGearEquip(player, item, slot, isCheck)
+	if not isCheck then
+		return true
 	end
-	return true
+	local itemId = item:getId()
+	local ok, reason
+	if Mubia.Wings[itemId] then
+		ok = Mubia.canUseWings(player, item)
+		if not ok then
+			reason = string.format("Solo un %s puede usar estas alas.", Mubia.Classes[Mubia.Wings[itemId].classId].name)
+		end
+	else
+		ok, reason = Mubia.checkGearRequirements(player, itemId)
+	end
+	if not ok then
+		Mubia.sendMessage(player, MESSAGE_FAILURE, reason)
+	end
+	return ok
 end
 
-wingsClass:register()
+local PIECE_SLOTS = { helm = "head", armor = "armor", pants = "legs", gloves = "gloves", boots = "feet" }
+local idsBySlot = { wings = {} }
+for itemId in pairs(Mubia.Wings) do
+	table.insert(idsBySlot.wings, itemId)
+end
+for itemId, gear in pairs(Mubia.Gear) do
+	local slot = gear.kind == "armor" and PIECE_SLOTS[gear.piece] or "hand"
+	idsBySlot[slot] = idsBySlot[slot] or {}
+	table.insert(idsBySlot[slot], itemId)
+end
+
+for slot, ids in pairs(idsBySlot) do
+	local equip = MoveEvent()
+	equip.onEquip = onGearEquip
+	equip:type("equip")
+	equip:slot(slot)
+	equip:id(unpack(ids))
+	equip:register()
+end
 
 -- Al cambiar el equipo se actualiza la ventana de stats (defensa, daño)
 local equipChange = EventCallback("MubiaEquipmentStats")

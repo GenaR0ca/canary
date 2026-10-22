@@ -111,7 +111,10 @@ function sendFirstItems.onLogin(player)
 
 	if targetVocation.items then
 		for i = 1, #targetVocation.items do
-			player:addItem(targetVocation.items[i][1], targetVocation.items[i][2])
+			-- Mubia: sin sets ni armas de Tibia (el set inicial de MU lo da data/scripts/mubia)
+			if not (Mubia and Mubia.isTibiaGear(targetVocation.items[i][1])) then
+				player:addItem(targetVocation.items[i][1], targetVocation.items[i][2])
+			end
 		end
 	end
 
@@ -122,7 +125,9 @@ function sendFirstItems.onLogin(player)
 
 	if targetVocation.container then
 		for i = 1, #targetVocation.container do
-			backpack:addItem(targetVocation.container[i][1], targetVocation.container[i][2])
+			if not (Mubia and Mubia.isTibiaGear(targetVocation.container[i][1])) then
+				backpack:addItem(targetVocation.container[i][1], targetVocation.container[i][2])
+			end
 		end
 	end
 	return true

@@ -296,19 +296,11 @@ function Mubia.getDefense(player)
 	return class.defense(Mubia.getStats(player)) + Mubia.getEquipmentBonus(player).defense
 end
 
-function Mubia.getWeaponAttack(player)
-	local attack = 0
-	for _, slot in ipairs({ CONST_SLOT_LEFT, CONST_SLOT_RIGHT }) do
-		local item = player:getSlotItem(slot)
-		if item then
-			local itemType = item:getType()
-			if itemType:getWeaponType() ~= WEAPON_NONE and itemType:getWeaponType() ~= WEAPON_SHIELD then
-				attack = attack + itemType:getAttack()
-			end
-		end
-	end
-	-- nivel (+1 a +15) y opción adicional (Jewel of Life) de arma y alas
-	return attack + Mubia.getEquipmentBonus(player).attack
+-- Daño mínimo y máximo del arma de MU equipada, con su nivel (+1 a +15) y opción adicional (Jewel of Life) y las alas
+function Mubia.getWeaponDamage(player)
+	local minDamage, maxDamage = Mubia.getGearWeaponDamage(player)
+	local bonus = Mubia.getEquipmentBonus(player).attack
+	return minDamage + bonus, maxDamage + bonus
 end
 
 local function isHealthDamage(combatType)
@@ -328,9 +320,9 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 	local isMuSpell = attackerPlayer and Mubia.castingSpell[attackerPlayer:getId()]
 	if attackerPlayer and not isMuSpell and Mubia.getClass(attackerPlayer) and damagePrimary > 0 then
 		local minDamage, maxDamage = Mubia.getDamageRange(attackerPlayer)
-		local weaponAttack = Mubia.getWeaponAttack(attackerPlayer)
-		minDamage = minDamage + math.floor(weaponAttack * 0.8)
-		maxDamage = maxDamage + weaponAttack
+		local weaponMin, weaponMax = Mubia.getWeaponDamage(attackerPlayer)
+		minDamage = minDamage + weaponMin
+		maxDamage = maxDamage + weaponMax
 		damagePrimary = math.random(math.max(1, minDamage), math.max(1, maxDamage)) + Mubia.getBuff(attackerPlayer, "damage")
 		damageSecondary = 0
 	end
@@ -411,7 +403,11 @@ function Mubia.sendStats(player)
 	end
 
 	local stats = Mubia.getStats(player)
+	-- daño y defensa con el equipo puesto (arma, armaduras, escudo y alas)
 	local minDamage, maxDamage = class.damage(stats)
+	local weaponMin, weaponMax = Mubia.getWeaponDamage(player)
+	minDamage, maxDamage = minDamage + weaponMin, maxDamage + weaponMax
+	local equipment = Mubia.getEquipmentBonus(player)
 	local data = {
 		action = "stats",
 		class = class.name,
@@ -424,7 +420,7 @@ function Mubia.sendStats(player)
 		ene = stats.ene,
 		minDamage = minDamage,
 		maxDamage = maxDamage,
-		defense = class.defense(stats),
+		defense = Mubia.getDefense(player),
 		minMagic = 0,
 		maxMagic = 0,
 		attackSpeed = Mubia.getAttackSpeed(class, stats),
@@ -434,7 +430,10 @@ function Mubia.sendStats(player)
 	}
 
 	if class.magic then
-		data.minMagic, data.maxMagic = class.magic(stats)
+		local minMagic, maxMagic = class.magic(stats)
+		local rise = (100 + equipment.magicRise) / 100
+		data.minMagic = math.floor((minMagic + equipment.wizardry) * rise)
+		data.maxMagic = math.floor((maxMagic + equipment.wizardry) * rise)
 	end
 
 	local parts = {}

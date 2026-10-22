@@ -84706,4 +84706,1415 @@ Granted by TibiaGoals.com"/>
 		<attribute key="description" value="Alas de 3ra generacion de la Fairy Elf."/>
 		<attribute key="weight" value="500"/>
 	</item>
+	<!-- Mubia: items de MU (generado por tools/mubia/gear.py) -->
+	<item id="61001" name="leather helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61002" name="leather armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61003" name="leather pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61004" name="leather gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61005" name="leather boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61006" name="bronze helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61007" name="bronze armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61008" name="bronze pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61009" name="bronze gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61010" name="bronze boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61011" name="scale helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61012" name="scale armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61013" name="scale pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61014" name="scale gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61015" name="scale boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61016" name="brass helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61017" name="brass armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61018" name="brass pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61019" name="brass gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61020" name="brass boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61021" name="plate helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61022" name="plate armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61023" name="plate pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61024" name="plate gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61025" name="plate boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61026" name="dragon helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61027" name="dragon armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61028" name="dragon pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61029" name="dragon gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61030" name="dragon boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61031" name="ashcrow helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61032" name="ashcrow armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61033" name="ashcrow pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61034" name="ashcrow gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61035" name="ashcrow boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61036" name="black dragon helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61037" name="black dragon armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61038" name="black dragon pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61039" name="black dragon gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61040" name="black dragon boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61041" name="dark phoenix helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61042" name="dark phoenix armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61043" name="dark phoenix pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61044" name="dark phoenix gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61045" name="dark phoenix boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61046" name="great dragon helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61047" name="great dragon armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61048" name="great dragon pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61049" name="great dragon gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61050" name="great dragon boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61051" name="dragon knight helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61052" name="dragon knight armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61053" name="dragon knight pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61054" name="dragon knight gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61055" name="dragon knight boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61056" name="pad helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61057" name="pad armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61058" name="pad pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61059" name="pad gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61060" name="pad boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61061" name="bone helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61062" name="bone armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61063" name="bone pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61064" name="bone gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61065" name="bone boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61066" name="sphinx helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61067" name="sphinx armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61068" name="sphinx pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61069" name="sphinx gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61070" name="sphinx boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61071" name="legendary helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61072" name="legendary armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61073" name="legendary pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61074" name="legendary gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61075" name="legendary boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61076" name="eclipse helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61077" name="eclipse armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61078" name="eclipse pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61079" name="eclipse gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61080" name="eclipse boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61081" name="grand soul helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61082" name="grand soul armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61083" name="grand soul pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61084" name="grand soul gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61085" name="grand soul boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61086" name="dark soul helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61087" name="dark soul armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61088" name="dark soul pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61089" name="dark soul gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61090" name="dark soul boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61091" name="venom mist helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61092" name="venom mist armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61093" name="venom mist pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61094" name="venom mist gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61095" name="venom mist boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61096" name="vine helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61097" name="vine armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61098" name="vine pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61099" name="vine gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61100" name="vine boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61101" name="silk helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61102" name="silk armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61103" name="silk pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61104" name="silk gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61105" name="silk boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61106" name="wind helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61107" name="wind armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61108" name="wind pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61109" name="wind gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61110" name="wind boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61111" name="spirit helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61112" name="spirit armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61113" name="spirit pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61114" name="spirit gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61115" name="spirit boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61116" name="guardian helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61117" name="guardian armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61118" name="guardian pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61119" name="guardian gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61120" name="guardian boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61121" name="iris helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61122" name="iris armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61123" name="iris pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61124" name="iris gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61125" name="iris boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61126" name="divine helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61127" name="divine armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61128" name="divine pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61129" name="divine gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61130" name="divine boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61131" name="red spirit helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61132" name="red spirit armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61133" name="red spirit pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61134" name="red spirit gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61135" name="red spirit boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61136" name="sylphid ray helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61137" name="sylphid ray armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61138" name="sylphid ray pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61139" name="sylphid ray gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61140" name="sylphid ray boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="62001" name="short sword">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="7"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62002" name="kris">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="11"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62003" name="rapier">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="15"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62004" name="katana">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="26"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62005" name="gladius">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="30"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62006" name="falchion">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="34"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62007" name="serpent sword">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="42"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62008" name="blade">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="47"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62009" name="legendary sword">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="61"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62010" name="lighting sword">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="75"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62011" name="giant sword">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="82"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62012" name="sword of destruction">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="90"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62013" name="knight blade">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="125"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62014" name="dark reign blade">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="140"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62015" name="bone blade">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="158"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="62016" name="small axe">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="attack" value="6"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62017" name="hand axe">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="attack" value="9"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62018" name="double axe">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="attack" value="24"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62019" name="tomahawk">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="attack" value="28"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62020" name="elven axe">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="attack" value="38"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62021" name="battle axe">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="44"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62022" name="nikea axe">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="50"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62023" name="larkan axe">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="67"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62024" name="crescent axe">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="89"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62025" name="chaos dragon axe">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="130"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62026" name="mace">
+		<attribute key="primarytype" value="club weapons"/>
+		<attribute key="weaponType" value="club"/>
+		<attribute key="attack" value="13"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="club"/>
+		</attribute>
+	</item>
+	<item id="62027" name="morning star">
+		<attribute key="primarytype" value="club weapons"/>
+		<attribute key="weaponType" value="club"/>
+		<attribute key="attack" value="22"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="club"/>
+		</attribute>
+	</item>
+	<item id="62028" name="flail">
+		<attribute key="primarytype" value="club weapons"/>
+		<attribute key="weaponType" value="club"/>
+		<attribute key="attack" value="32"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="club"/>
+		</attribute>
+	</item>
+	<item id="62029" name="great hammer">
+		<attribute key="primarytype" value="club weapons"/>
+		<attribute key="weaponType" value="club"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="56"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="club"/>
+		</attribute>
+	</item>
+	<item id="62030" name="crystal morning star">
+		<attribute key="primarytype" value="club weapons"/>
+		<attribute key="weaponType" value="club"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="107"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="club"/>
+		</attribute>
+	</item>
+	<item id="62031" name="dragon lance">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="31"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62032" name="giant trident">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="43"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62033" name="serpent spear">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="58"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62034" name="light spear">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="63"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62035" name="great scythe">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="92"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62036" name="bill of balrog">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="102"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62037" name="dragon spear">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="140"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62038" name="short bow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="arrow"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="5"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62039" name="bow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="arrow"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="13"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62040" name="elven bow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="arrow"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="24"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62041" name="battle bow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="arrow"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="37"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62042" name="tiger bow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="arrow"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="52"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62043" name="silver bow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="arrow"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="71"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62044" name="chaos nature bow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="arrow"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="106"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62045" name="celestial bow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="arrow"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="113"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62046" name="albatross bow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="arrow"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="140"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62047" name="crossbow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="bolt"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="8"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62048" name="golden crossbow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="bolt"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="14"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62049" name="arquebus">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="bolt"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="30"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62050" name="light crossbow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="bolt"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="44"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62051" name="serpent crossbow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="bolt"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="60"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62052" name="bluewing crossbow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="bolt"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="82"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62053" name="aquagold crossbow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="bolt"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="88"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62054" name="saint crossbow">
+		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="shootType" value="bolt"/>
+		<attribute key="range" value="6"/>
+		<attribute key="hitchance" value="100"/>
+		<attribute key="attack" value="127"/>
+		<attribute key="weight" value="2000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="distance"/>
+		</attribute>
+	</item>
+	<item id="62055" name="skull staff">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="6"/>
+			<attribute key="toDamage" value="11"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62056" name="angelic staff">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="18"/>
+			<attribute key="toDamage" value="25"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62057" name="serpent staff">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="30"/>
+			<attribute key="toDamage" value="40"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62058" name="thunder staff">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="42"/>
+			<attribute key="toDamage" value="52"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62059" name="gorgon staff">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="56"/>
+			<attribute key="toDamage" value="64"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62060" name="legendary staff">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="59"/>
+			<attribute key="toDamage" value="66"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62061" name="staff of resurrection">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="64"/>
+			<attribute key="toDamage" value="72"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62062" name="chaos lightning staff">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="70"/>
+			<attribute key="toDamage" value="80"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62063" name="staff of destruction">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="78"/>
+			<attribute key="toDamage" value="88"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62064" name="dragon soul staff">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="80"/>
+			<attribute key="toDamage" value="92"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62065" name="staff of kundun">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="86"/>
+			<attribute key="toDamage" value="97"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62066" name="grand viper staff">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="90"/>
+			<attribute key="toDamage" value="104"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62067" name="platina staff">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="96"/>
+			<attribute key="toDamage" value="110"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="63001" name="small shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63002" name="buckler">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63003" name="elven shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63004" name="skull shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63005" name="horn shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63006" name="kite shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63007" name="large round shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63008" name="legendary shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63009" name="tower shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63010" name="serpent shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63011" name="elemental shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63012" name="dragon slayer shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63013" name="cross shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63014" name="grand soul shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<!-- Mubia: fin de items de MU -->
 </items>
