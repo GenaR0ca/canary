@@ -1,0 +1,333 @@
+-- Mubia Online: armado común de monstruos y NPCs. Cada criatura tiene su propio archivo
+-- (con Game.createMonsterType("Nombre") y monster.outfit) para que el editor de mapas la reconozca.
+
+-- Monstruo salvaje de MU (Lorencia, etc.). cfg: level, health, damage = {min, max}, defense, speed, corpse, magic
+function Mubia.registerWildMonster(mType, monster, cfg)
+	monster.description = monster.description or ("a " .. mType:name():lower())
+	monster.experience = cfg.level * 3
+	monster.health = cfg.health
+	monster.maxHealth = cfg.health
+	monster.race = "blood"
+	monster.corpse = cfg.corpse
+	monster.speed = cfg.speed
+	monster.manaCost = 0
+
+	monster.changeTarget = {
+		interval = 4000,
+		chance = 10,
+	}
+
+	monster.strategiesTarget = {
+		nearest = 100,
+	}
+
+	monster.flags = {
+		summonable = false,
+		attackable = true,
+		hostile = true,
+		convinceable = false,
+		pushable = false,
+		rewardBoss = false,
+		illusionable = false,
+		canPushItems = true,
+		canPushCreatures = false,
+		staticAttackChance = 90,
+		targetDistance = cfg.magic and 4 or 1,
+		runHealth = 0,
+		healthHidden = false,
+		isBlockable = false,
+		canWalkOnEnergy = false,
+		canWalkOnFire = false,
+		canWalkOnPoison = false,
+	}
+
+	monster.light = {
+		level = 0,
+		color = 0,
+	}
+
+	-- zen (gold coin) como en MU
+	monster.loot = {
+		{ id = 3031, chance = 60000, maxCount = cfg.level * 5 },
+	}
+
+	if cfg.magic then
+		monster.attacks = {
+			{ name = "combat", interval = 2000, chance = 100, type = COMBAT_ENERGYDAMAGE, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2], range = 5, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = true },
+		}
+	else
+		monster.attacks = {
+			{ name = "melee", interval = 2000, chance = 100, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2] },
+		}
+	end
+
+	monster.defenses = {
+		defense = cfg.defense,
+		armor = cfg.defense,
+	}
+
+	monster.elements = {}
+	monster.immunities = {}
+
+	mType:register(monster)
+end
+
+-- Invocación de la Fairy Elf: no da experiencia ni loot. cfg: health, damage = {min, max}, defense, speed
+function Mubia.registerSummon(mType, monster, cfg)
+	monster.description = "a " .. mType:name():lower()
+	monster.experience = 0
+	monster.health = cfg.health
+	monster.maxHealth = cfg.health
+	monster.race = "blood"
+	monster.corpse = 0
+	monster.speed = cfg.speed
+	monster.manaCost = 0
+
+	monster.changeTarget = {
+		interval = 4000,
+		chance = 0,
+	}
+
+	monster.strategiesTarget = {
+		nearest = 100,
+	}
+
+	monster.flags = {
+		summonable = true,
+		attackable = true,
+		hostile = true,
+		convinceable = false,
+		pushable = false,
+		rewardBoss = false,
+		illusionable = false,
+		canPushItems = true,
+		canPushCreatures = false,
+		staticAttackChance = 90,
+		targetDistance = 1,
+		runHealth = 0,
+		healthHidden = false,
+		isBlockable = false,
+		canWalkOnEnergy = true,
+		canWalkOnFire = true,
+		canWalkOnPoison = true,
+	}
+
+	monster.light = {
+		level = 0,
+		color = 0,
+	}
+
+	monster.loot = {}
+
+	monster.attacks = {
+		{ name = "melee", interval = 2000, chance = 100, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2] },
+	}
+
+	monster.defenses = {
+		defense = cfg.defense,
+		armor = cfg.defense,
+	}
+
+	monster.elements = {}
+	monster.immunities = {}
+
+	mType:register(monster)
+end
+
+-- Training Monk inmortal: recibe el daño (se ven los números) y se cura enseguida.
+-- cfg: speed, leash (opcional: casillas máximas que se aleja de donde apareció)
+function Mubia.registerTrainingMonk(mType, monster, cfg)
+	monster.description = "a training monk"
+	monster.experience = 0
+	monster.health = 10000000
+	monster.maxHealth = monster.health
+	monster.race = "blood"
+	monster.corpse = 0
+	monster.speed = cfg.speed
+	monster.manaCost = 0
+
+	monster.changeTarget = {
+		interval = 4000,
+		chance = 0,
+	}
+
+	monster.strategiesTarget = {
+		nearest = 100,
+	}
+
+	monster.flags = {
+		summonable = false,
+		attackable = true,
+		hostile = false,
+		convinceable = false,
+		pushable = false,
+		rewardBoss = false,
+		illusionable = false,
+		canPushItems = false,
+		canPushCreatures = false,
+		staticAttackChance = 90,
+		targetDistance = 1,
+		runHealth = 0,
+		healthHidden = false,
+		isBlockable = false,
+		canWalkOnEnergy = true,
+		canWalkOnFire = true,
+		canWalkOnPoison = true,
+	}
+
+	monster.light = {
+		level = 0,
+		color = 0,
+	}
+
+	monster.loot = {}
+	monster.attacks = {}
+	monster.defenses = {
+		defense = 0,
+		armor = 0,
+	}
+	monster.elements = {}
+	monster.immunities = {}
+
+	local homes = {}
+
+	mType.onThink = function(creature, interval)
+		-- inmortal: vuelve a vida completa
+		local missing = creature:getMaxHealth() - creature:getHealth()
+		if missing > 0 then
+			creature:addHealth(missing)
+		end
+		-- el que camina no se aleja más de "leash" casillas de donde apareció
+		if cfg.leash then
+			local id = creature:getId()
+			homes[id] = homes[id] or creature:getPosition()
+			if creature:getPosition():getDistance(homes[id]) > cfg.leash then
+				creature:teleportTo(homes[id], true)
+			end
+		end
+	end
+
+	mType:register(monster)
+end
+
+-- NPC de la zona de NPCs: vende gratis los scrolls de su clase (classId) o lo que diga shop.
+-- Di "magias" para recibir todos los scrolls de la clase de una vez.
+Mubia.NpcPotions = {
+	{ itemName = "health potion", clientId = 266, buy = 0 },
+	{ itemName = "strong health potion", clientId = 236, buy = 0 },
+	{ itemName = "great health potion", clientId = 239, buy = 0 },
+	{ itemName = "mana potion", clientId = 268, buy = 0 },
+	{ itemName = "strong mana potion", clientId = 237, buy = 0 },
+	{ itemName = "great mana potion", clientId = 238, buy = 0 },
+}
+
+function Mubia.registerShopNpc(npcType, npcConfig, config)
+	npcConfig.name = npcType:name()
+	npcConfig.description = npcConfig.name
+	npcConfig.health = 100
+	npcConfig.maxHealth = npcConfig.health
+	npcConfig.walkInterval = 0
+	npcConfig.walkRadius = 0
+	npcConfig.flags = { floorchange = false }
+
+	local spells = config.classId and Mubia.getClassSpells(config.classId) or {}
+	local className = config.classId and Mubia.Classes[config.classId].name
+
+	npcConfig.shop = config.shop or {}
+	for _, def in ipairs(spells) do
+		table.insert(npcConfig.shop, { itemName = def.scrollName, clientId = def.scrollId, buy = 0 })
+	end
+
+	if className then
+		npcConfig.voices = {
+			interval = 15000,
+			chance = 20,
+			{ text = Mubia.toLatin1(string.format("¡Scrolls de magias de %s gratis! Di {trade}.", className)) },
+		}
+	else
+		npcConfig.voices = {
+			interval = 15000,
+			chance = 20,
+			{ text = Mubia.toLatin1("¡Pociones de vida y de mana gratis! Di {trade}.") },
+		}
+	end
+
+	local keywordHandler = KeywordHandler:new()
+	local npcHandler = NpcHandler:new(keywordHandler)
+
+	npcType.onThink = function(npc, interval)
+		npcHandler:onThink(npc, interval)
+	end
+
+	npcType.onAppear = function(npc, creature)
+		npcHandler:onAppear(npc, creature)
+	end
+
+	npcType.onDisappear = function(npc, creature)
+		npcHandler:onDisappear(npc, creature)
+	end
+
+	npcType.onMove = function(npc, creature, fromPosition, toPosition)
+		npcHandler:onMove(npc, creature, fromPosition, toPosition)
+	end
+
+	npcType.onSay = function(npc, creature, type, message)
+		npcHandler:onSay(npc, creature, type, message)
+	end
+
+	npcType.onCloseChannel = function(npc, player)
+		npcHandler:onCloseChannel(npc, player)
+	end
+
+	npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
+		npc:sellItem(player, itemId, amount, subType, 0, ignore, inBackpacks)
+	end
+
+	npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name, totalCost) end
+
+	npcType.onCheckItem = function(npc, player, clientId, subType) end
+
+	-- Di "magias" para recibir todos los scrolls de la clase de una vez
+	local function giveScrolls(npc, player)
+		local names = {}
+		for _, def in ipairs(spells) do
+			if not player:addItem(def.scrollId, 1) then
+				npcHandler:say(Mubia.toLatin1("No tienes espacio o capacidad para más items."), npc, player)
+				break
+			end
+			names[#names + 1] = def.name
+		end
+		if #names > 0 then
+			player:getPosition():sendMagicEffect(CONST_ME_GIFT_WRAPS)
+			npcHandler:say(Mubia.toLatin1("Aquí tienes los scrolls de: " .. table.concat(names, ", ") .. "."), npc, player)
+		end
+	end
+
+	local greeting
+	if className then
+		greeting = string.format("¡Hola |PLAYERNAME|! Enseño las magias de %s. Di {trade} para elegir scrolls gratis o {magias} para llevarte todos.", className)
+	else
+		greeting = "¡Hola |PLAYERNAME|! Di {trade} para llevarte pociones de vida y de mana gratis."
+	end
+
+	npcHandler:setCallback(CALLBACK_GREET, function(npc, player)
+		npcHandler:setMessage(MESSAGE_GREET, Mubia.toLatin1(greeting))
+		return true
+	end)
+
+	npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, function(npc, player, type, msg)
+		if not npcHandler:checkInteraction(npc, player) then
+			return false
+		end
+		if className and (MsgContains(msg, "magias") or MsgContains(msg, "scrolls")) then
+			giveScrolls(npc, player)
+		end
+		return true
+	end)
+
+	npcHandler:setMessage(MESSAGE_FAREWELL, Mubia.toLatin1("¡Suerte en tu aventura!"))
+	npcHandler:setMessage(MESSAGE_WALKAWAY, Mubia.toLatin1("¡Vuelve cuando quieras!"))
+	npcHandler:addModule(FocusModule:new(), npcConfig.name, true, true, true)
+
+	npcType:register(npcConfig)
+end

@@ -29,5 +29,5 @@ spell:isSelfTarget(true)
 spell:cooldown(4 * 1000)
 spell:groupCooldown(2 * 1000)
 
-spell:vocation("paladin;true", "royal paladin;true")
+spell:vocation("fairy elf;true", "muse elf;true")
 spell:register()

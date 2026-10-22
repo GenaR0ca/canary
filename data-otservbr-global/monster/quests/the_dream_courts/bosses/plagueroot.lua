@@ -73,7 +73,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 100000, maxCount = 5 },
+	{ name = "zen bar", chance = 100000, maxCount = 5 },
 	{ name = "silver token", chance = 100000, maxCount = 3 },
 	{ name = "mysterious remains", chance = 100000 },
 	{ name = "huge chunk of crude iron", chance = 100000 },
@@ -96,7 +96,7 @@ monster.loot = {
 	{ id = 282, chance = 20000 }, -- giant shimmering pearl
 	{ name = "plagueroot offshoot", chance = 20000 },
 	{ name = "skull staff", chance = 20000 },
-	{ name = "platinum coin", chance = 100000 },
+	{ name = "zen bar", chance = 100000 },
 	{ name = "silver token", chance = 95920, maxCount = 5 },
 	{ name = "piggy bank", chance = 93880 },
 	{ name = "mysterious remains", chance = 91840 },
@@ -108,7 +108,7 @@ monster.loot = {
 	{ name = "supreme health potion", chance = 46940, maxCount = 20 },
 	{ name = "yellow gem", chance = 40820, maxCount = 2 },
 	{ name = "huge chunk of crude iron", chance = 38780 },
-	{ name = "crystal coin", chance = 26530, maxCount = 3 },
+	{ name = "zen crystal", chance = 26530, maxCount = 3 },
 	{ name = "mastermind potion", chance = 22450 },
 	{ name = "gold ingot", chance = 22450 },
 	{ name = "bullseye potion", chance = 20410 },

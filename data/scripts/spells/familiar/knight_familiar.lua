@@ -16,5 +16,5 @@ spell:cooldown(0) -- calculated in CreateFamiliarSpell
 spell:groupCooldown(2 * 1000)
 
 spell:isAggressive(false)
-spell:vocation("knight;true", "elite knight;true")
+spell:vocation("dark knight;true", "blade knight;true")
 spell:register()

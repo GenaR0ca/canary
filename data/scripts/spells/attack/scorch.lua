@@ -30,5 +30,5 @@ spell:needDirection(true)
 spell:cooldown(4 * 1000)
 spell:groupCooldown(2 * 1000)
 
-spell:vocation("sorcerer;true", "master sorcerer;true")
+spell:vocation("dark wizard;true", "soul master;true")
 spell:register()

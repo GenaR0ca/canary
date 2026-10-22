@@ -79,7 +79,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 5000, maxCount = 24 },
+	{ name = "zen bar", chance = 5000, maxCount = 24 },
 	{ name = "spiked squelcher", chance = 1500 },
 	{ id = 3053, chance = 800 }, -- time ring
 	{ id = 3040, chance = 4761 }, -- gold nugget

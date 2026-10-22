@@ -76,7 +76,7 @@ monster.summon = {
 monster.voices = {}
 
 monster.loot = {
-	{ name = "crystal coin", chance = 12317, maxCount = 91 },
+	{ name = "zen crystal", chance = 12317, maxCount = 91 },
 	{ id = 3039, chance = 10896, maxCount = 2 }, -- red gem
 	{ name = "amber with a bug", chance = 14590, maxCount = 1 },
 	{ name = "amber with a dragonfly", chance = 5405, maxCount = 1 },

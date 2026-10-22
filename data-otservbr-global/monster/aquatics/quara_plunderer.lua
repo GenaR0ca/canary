@@ -81,7 +81,7 @@ monster.loot = {
 	{ id = 3039, chance = 4940 }, -- red gem
 	{ id = 3041, chance = 4900 }, -- blue gem
 	{ name = "Haunted Blade", chance = 350 },
-	{ name = "platinum coin", chance = 10000, maxCount = 25 },
+	{ name = "zen bar", chance = 10000, maxCount = 25 },
 }
 
 monster.attacks = {

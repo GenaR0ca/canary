@@ -87,7 +87,7 @@ monster.voices = {
 
 monster.loot = {
 	{ id = 2828, chance = 730 }, -- book
-	{ name = "gold coin", chance = 66940, maxCount = 40 },
+	{ name = "zen", chance = 66940, maxCount = 40 },
 	{ name = "small emerald", chance = 550 },
 	{ id = 3052, chance = 560 }, -- life ring
 	{ name = "terra rod", chance = 250 },

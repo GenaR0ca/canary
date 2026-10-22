@@ -21,5 +21,5 @@ spell:isSelfTarget(true)
 spell:cooldown(2 * 1000)
 spell:groupCooldown(2 * 1000)
 
-spell:vocation("druid;true", "sorcerer;true", "elder druid;true", "master sorcerer;true")
+spell:vocation("druid;true", "dark wizard;true", "elder druid;true", "soul master;true")
 spell:register()

@@ -80,8 +80,8 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "gold coin", chance = 100000, minCount = 1, maxCount = 360 },
-	{ name = "platinum coin", chance = 20000, maxCount = 60 },
+	{ name = "zen", chance = 100000, minCount = 1, maxCount = 360 },
+	{ name = "zen bar", chance = 20000, maxCount = 60 },
 	{ name = "great health potion", chance = 40000, maxCount = 13 },
 	{ name = "broken mitmah necklace", chance = 40000, maxCount = 1 },
 	{ name = "crystal of the mitmah", chance = 40000, maxCount = 1 },

@@ -61,7 +61,7 @@ monster.voices = {
 monster.loot = {
 	{ name = "piggy bank", chance = 80000 },
 	{ name = "royal star", chance = 80000, maxCount = 100 },
-	{ name = "platinum coin", chance = 80000, maxCount = 5 },
+	{ name = "zen bar", chance = 80000, maxCount = 5 },
 	{ name = "energy bar", chance = 75000 },
 	{ name = "supreme health potion", chance = 65000, maxCount = 20 },
 	{ name = "huge chunk of crude iron", chance = 64000 },
@@ -78,7 +78,7 @@ monster.loot = {
 	{ name = "flames of the percht queen", chance = 18000 },
 	{ name = "small ladybug", chance = 24980 },
 	{ name = "gold ingot", chance = 22480 },
-	{ name = "crystal coin", chance = 24890, maxCount = 2 },
+	{ name = "zen crystal", chance = 24890, maxCount = 2 },
 	{ id = 281, chance = 21580 }, -- giant shimmering pearl (green)
 	{ name = "skull staff", chance = 19850 },
 	{ name = "magic sulphur", chance = 25480 },

@@ -57,7 +57,7 @@ monster.light = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 100000, maxcount = 30 },
+	{ name = "zen bar", chance = 100000, maxcount = 30 },
 	{ id = 3039, chance = 35542, maxCount = 2 }, -- red gem
 	{ name = "ultimate health potion", chance = 27000, maxcount = 7 },
 	{ name = "ultimate mana potion", chance = 24300, maxcount = 5 },

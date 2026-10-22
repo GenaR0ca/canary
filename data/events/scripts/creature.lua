@@ -57,5 +57,8 @@ function Creature:onDrainHealth(attacker, typePrimary, damagePrimary, typeSecond
 		return typePrimary, damagePrimary, typeSecondary, damageSecondary, colorPrimary, colorSecondary
 	end
 
+	-- Mubia: daño y defensa calculados con los stats MU
+	damagePrimary, damageSecondary = Mubia.modifyDamage(self, attacker, typePrimary, damagePrimary, typeSecondary, damageSecondary)
+
 	return typePrimary, damagePrimary, typeSecondary, damageSecondary, colorPrimary, colorSecondary
 end

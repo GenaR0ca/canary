@@ -70,7 +70,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 100000, maxCount = 9 },
+	{ name = "zen bar", chance = 100000, maxCount = 9 },
 	{ name = "green gem", chance = 100000, maxCount = 2 },
 	{ name = "energy bar", chance = 100000 },
 	{ name = "ultimate mana potion", chance = 73080, maxCount = 31 },
@@ -88,7 +88,7 @@ monster.loot = {
 	{ name = "blue gem", chance = 15380 },
 	{ name = "magma monocle", chance = 15380 },
 	{ name = "yellow gem", chance = 15380 },
-	{ name = "crystal coin", chance = 11540, maxCount = 5 },
+	{ name = "zen crystal", chance = 11540, maxCount = 5 },
 	{ name = "silver token", chance = 7690, maxCount = 5 },
 	{ name = "violet gem", chance = 7690 },
 	{ name = "urmahlullu's paw", chance = 7690 },

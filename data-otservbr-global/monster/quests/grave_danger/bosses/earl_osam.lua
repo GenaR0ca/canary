@@ -79,8 +79,8 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", minCount = 1, maxCount = 5, chance = 100000 },
-	{ name = "crystal coin", minCount = 0, maxCount = 2, chance = 50000 },
+	{ name = "zen bar", minCount = 1, maxCount = 5, chance = 100000 },
+	{ name = "zen crystal", minCount = 0, maxCount = 2, chance = 50000 },
 	{ name = "supreme health potion", minCount = 0, maxCount = 6, chance = 35000 },
 	{ name = "ultimate mana potion", minCount = 0, maxCount = 20, chance = 32000 },
 	{ name = "ultimate spirit potion", minCount = 0, maxCount = 20, chance = 32000 },

@@ -5,7 +5,7 @@ local timiraFightConfig = {
 	corruptedWaterUsePerPlayerInFight = 2,
 	secondsDelayForUseCorruptedWater = 8,
 	chestPossibleValuables = {
-		"crystal coin",
+		"zen crystal",
 		"amber",
 		"giant sapphire",
 		"giant amethyst",

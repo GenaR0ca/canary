@@ -80,7 +80,7 @@ monster.voices = {
 
 monster.loot = {
 	{ id = 3003, chance = 7950 }, -- rope
-	{ name = "gold coin", chance = 65300, maxCount = 12 },
+	{ name = "zen", chance = 65300, maxCount = 12 },
 	{ name = "silver amulet", chance = 80 },
 	{ name = "hand axe", chance = 18000 },
 	{ name = "spear", chance = 13000 },

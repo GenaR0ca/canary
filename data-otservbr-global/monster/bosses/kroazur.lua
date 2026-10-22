@@ -73,8 +73,8 @@ monster.voices = {
 
 monster.loot = {
 	{ name = "fairy wings", chance = 100000 },
-	{ name = "gold coin", chance = 100000, maxCount = 365 },
-	{ name = "platinum coin", chance = 100000, maxCount = 7 },
+	{ name = "zen", chance = 100000, maxCount = 365 },
+	{ name = "zen bar", chance = 100000, maxCount = 7 },
 	{ name = "strong health potion", chance = 91460, maxCount = 2 },
 	{ name = "great health potion", chance = 76330, maxCount = 3 },
 	{ name = "small enchanted amethyst", chance = 53560, maxCount = 5 },

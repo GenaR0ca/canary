@@ -31,5 +31,5 @@ spell:blockWalls(true)
 spell:cooldown(30 * 1000)
 spell:groupCooldown(2 * 1000)
 
-spell:vocation("knight;true", "elite knight;true", "monk;true", "exalted monk;true")
+spell:vocation("dark knight;true", "blade knight;true", "monk;true", "exalted monk;true")
 spell:register()

@@ -85,7 +85,7 @@ monster.voices = {
 monster.loot = {
 	{ name = "scarab amulet", chance = 3410 },
 	{ id = 3025, chance = 2500 }, -- ancient amulet
-	{ name = "gold coin", chance = 100000, maxCount = 187 },
+	{ name = "zen", chance = 100000, maxCount = 187 },
 	{ name = "small emerald", chance = 6000, maxCount = 3 },
 	{ name = "small amethyst", chance = 6000, maxCount = 4 },
 	{ name = "scarab coin", chance = 8000, maxCount = 2 },

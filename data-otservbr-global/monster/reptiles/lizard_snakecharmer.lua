@@ -82,7 +82,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "gold coin", chance = 83740, maxCount = 55 },
+	{ name = "zen", chance = 83740, maxCount = 55 },
 	{ name = "small amethyst", chance = 520 },
 	{ name = "yellow gem", chance = 150 },
 	{ id = 3052, chance = 340 }, -- life ring

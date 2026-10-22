@@ -76,7 +76,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "gold coin", chance = 69500, maxCount = 45 },
+	{ name = "zen", chance = 69500, maxCount = 45 },
 	{ name = "small amethyst", chance = 260 },
 	{ id = 3046, chance = 3000 }, -- magic light wand
 	{ name = "wand of decay", chance = 1050 },

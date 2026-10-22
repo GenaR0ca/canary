@@ -81,7 +81,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "gold coin", chance = 74230, maxCount = 10 },
+	{ name = "zen", chance = 74230, maxCount = 10 },
 	{ name = "bullseye potion", chance = 74230, maxCount = 10 },
 	{ name = "mastermind potion", chance = 74230, maxCount = 10 },
 	{ name = "berserk potion", chance = 74230, maxCount = 17 },
@@ -91,7 +91,7 @@ monster.loot = {
 	{ name = "goblet of gloom", chance = 7000, maxCount = 1 },
 	{ name = "violet gem", chance = 7000, maxCount = 1 },
 	{ name = "gruesome fan", chance = 7000, maxCount = 1 },
-	{ name = "crystal coin", chance = 7000, maxCount = 200 },
+	{ name = "zen crystal", chance = 7000, maxCount = 200 },
 	{ name = "amber with a dragonfly", chance = 7000, maxCount = 1 },
 	{ name = "abomination's tongue", chance = 7000, maxCount = 1 },
 	{ name = "abomination's eye", chance = 7000, maxCount = 1 },

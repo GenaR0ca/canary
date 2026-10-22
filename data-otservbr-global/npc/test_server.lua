@@ -157,7 +157,7 @@ local function buildEquipmentShopFromItemsXml()
 
 	-- Mandatory test server items.
 	local forcedItems = {
-		{ itemName = "crystal coin", clientId = 3043, buy = 1, _slotOrder = 0 },
+		{ itemName = "zen crystal", clientId = 3043, buy = 1, _slotOrder = 0 },
 	}
 
 	for _, forcedItem in ipairs(forcedItems) do

@@ -6071,7 +6071,9 @@ bool Player::hasShopItemForSale(uint16_t itemId, uint8_t subType) const {
 	const ItemType &itemType = Item::items[itemId];
 	const auto &shoplist = shopOwner->getShopItemVector(getGUID());
 	return std::ranges::any_of(shoplist, [&](const ShopBlock &shopBlock) {
-		return shopBlock.itemId == itemId && shopBlock.itemBuyPrice != 0 && (!itemType.isFluidContainer() || shopBlock.itemSubType == subType);
+		// Mubia: compra 0 y venta 0 = item gratis del NPC
+		const bool forSale = shopBlock.itemBuyPrice != 0 || shopBlock.itemSellPrice == 0;
+		return shopBlock.itemId == itemId && forSale && (!itemType.isFluidContainer() || shopBlock.itemSubType == subType);
 	});
 }
 
@@ -7344,6 +7346,9 @@ bool Player::isPromoted() const {
 }
 
 uint32_t Player::getAttackSpeed() const {
+	if (attackSpeedOverride > 0) {
+		return attackSpeedOverride;
+	}
 	return vocation->getAttackSpeed();
 }
 

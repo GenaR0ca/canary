@@ -76,7 +76,7 @@ monster.loot = {
 	{ id = 3116, chance = 500, maxCount = 2 }, -- big bone
 	{ name = "book page", chance = 500, maxCount = 4 },
 	{ name = "glowing rune", chance = 500, maxCount = 2 },
-	{ name = "platinum coin", chance = 10000, maxCount = 5 },
+	{ name = "zen bar", chance = 10000, maxCount = 5 },
 	{ name = "silken bookmark", chance = 500, maxCount = 3 },
 }
 

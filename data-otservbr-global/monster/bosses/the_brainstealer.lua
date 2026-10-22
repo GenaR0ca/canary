@@ -56,8 +56,8 @@ monster.flags = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", mincount = 10, maxcount = 50, chance = 100000 },
-	{ name = "crystal coin", mincount = 1, maxcount = 5, chance = 100000 },
+	{ name = "zen bar", mincount = 10, maxcount = 50, chance = 100000 },
+	{ name = "zen crystal", mincount = 1, maxcount = 5, chance = 100000 },
 	{ name = "violet gem", chance = 50000 },
 	{ name = "mastermind potion", chance = 50000 },
 	{ id = 49271, chance = 50000 }, -- transcendence potion

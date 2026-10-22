@@ -73,7 +73,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "Crystal Coin", chance = 35160 },
+	{ name = "zen crystal", chance = 35160 },
 	{ name = "Headpecker Beak", chance = 11360 },
 	{ name = "Headpecker Feather", chance = 7620, minCount = 1, maxCount = 5 },
 	{ name = "Furry Club", chance = 5560 },

@@ -71,7 +71,7 @@ monster.light = {
 }
 
 monster.loot = {
-	{ name = "crystal coin", chance = 9000, maxCount = 1 },
+	{ name = "zen crystal", chance = 9000, maxCount = 1 },
 	{ name = "organic acid", chance = 7678, maxCount = 1 },
 	{ name = "terra boots", chance = 12369, maxCount = 1 },
 	{ name = "small amethyst", chance = 12859, maxCount = 1 },

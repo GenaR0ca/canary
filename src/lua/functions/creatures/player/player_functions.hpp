@@ -60,6 +60,8 @@ class PlayerFunctions {
 
 	static int luaPlayerGetCapacity(lua_State* L);
 	static int luaPlayerSetCapacity(lua_State* L);
+	static int luaPlayerGetAttackSpeed(lua_State* L);
+	static int luaPlayerSetAttackSpeed(lua_State* L);
 
 	static int luaPlayerGetIsTraining(lua_State* L);
 	static int luaPlayerSetTraining(lua_State* L);

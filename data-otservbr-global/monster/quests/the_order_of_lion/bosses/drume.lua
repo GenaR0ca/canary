@@ -84,7 +84,7 @@ monster.voices = {
 
 monster.loot = {
 	{ name = "energy bar", chance = 100000 },
-	{ name = "platinum coin", chance = 100000, maxCount = 5 },
+	{ name = "zen bar", chance = 100000, maxCount = 5 },
 	{ name = "supreme health potion", chance = 57831, maxCount = 20 },
 	{ name = "ultimate mana potion", chance = 55723, maxCount = 20 },
 	{ name = "yellow gem", chance = 35843, maxCount = 2 },
@@ -100,7 +100,7 @@ monster.loot = {
 	{ id = 281, chance = 15060 }, -- giant shimmering pearl (green)
 	{ name = "gold ingot", chance = 13253 },
 	{ name = "terra rod", chance = 11145 },
-	{ name = "crystal coin", chance = 10241 },
+	{ name = "zen crystal", chance = 10241 },
 	{ name = "stone skin amulet", chance = 10241 },
 	{ name = "silver token", chance = 8735, maxCount = 3 },
 	{ name = "terra legs", chance = 8735 },

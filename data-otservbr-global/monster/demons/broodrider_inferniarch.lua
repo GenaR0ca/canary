@@ -78,7 +78,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 5000, maxCount = 25 },
+	{ name = "zen bar", chance = 5000, maxCount = 25 },
 	{ name = "drill bolt", chance = 900, maxCount = 5 },
 	{ name = "broodrider saddle", chance = 1000 },
 	{ name = "mummified demon finger", chance = 155 },

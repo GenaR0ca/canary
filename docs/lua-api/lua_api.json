@@ -6074,6 +6074,12 @@
         "source": "src/lua/functions/creatures/player/player_functions.cpp"
       },
       {
+        "name": "getAttackSpeed",
+        "params": [],
+        "return": "number|nil",
+        "source": "src/lua/functions/creatures/player/player_functions.cpp"
+      },
+      {
         "name": "getBackpack",
         "params": [],
         "return": "nil|Container",
@@ -7452,6 +7458,14 @@
           "accountType: any"
         ],
         "return": "boolean|nil",
+        "source": "src/lua/functions/creatures/player/player_functions.cpp"
+      },
+      {
+        "name": "setAttackSpeed",
+        "params": [
+          "ms: number"
+        ],
+        "return": "true|nil",
         "source": "src/lua/functions/creatures/player/player_functions.cpp"
       },
       {
