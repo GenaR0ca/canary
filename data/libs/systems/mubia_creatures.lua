@@ -1,7 +1,8 @@
 -- Mubia Online: armado común de monstruos y NPCs. Cada criatura tiene su propio archivo
 -- (con Game.createMonsterType("Nombre") y monster.outfit) para que el editor de mapas la reconozca.
 
--- Monstruo salvaje de MU (Lorencia, etc.). cfg: level, health, damage = {min, max}, defense, speed, corpse, magic
+-- Monstruo salvaje de MU (Lorencia, Noria, etc.). cfg: level, health, damage = {min, max}, defense, speed, corpse,
+-- magic (ataca con magia a distancia) o ranged (dispara flechas a distancia)
 function Mubia.registerWildMonster(mType, monster, cfg)
 	monster.description = monster.description or ("a " .. mType:name():lower())
 	monster.experience = cfg.level * 3
@@ -32,7 +33,7 @@ function Mubia.registerWildMonster(mType, monster, cfg)
 		canPushItems = true,
 		canPushCreatures = false,
 		staticAttackChance = 90,
-		targetDistance = cfg.magic and 4 or 1,
+		targetDistance = (cfg.magic or cfg.ranged) and 4 or 1,
 		runHealth = 0,
 		healthHidden = false,
 		isBlockable = false,
@@ -54,6 +55,10 @@ function Mubia.registerWildMonster(mType, monster, cfg)
 	if cfg.magic then
 		monster.attacks = {
 			{ name = "combat", interval = 2000, chance = 100, type = COMBAT_ENERGYDAMAGE, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2], range = 5, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = true },
+		}
+	elseif cfg.ranged then
+		monster.attacks = {
+			{ name = "combat", interval = 2000, chance = 100, type = COMBAT_PHYSICALDAMAGE, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2], range = 5, shootEffect = CONST_ANI_ARROW, target = true },
 		}
 	else
 		monster.attacks = {

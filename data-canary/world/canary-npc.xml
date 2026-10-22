@@ -37,7 +37,14 @@
 	<npc centerx="912" centery="650" centerz="7" radius="1">
 		<npc name="Elf Lala" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="924" centery="672" centerz="7" radius="1">
+	<!-- Noria (MU) -->
+	<npc centerx="1269" centery="634" centerz="7" radius="1">
+		<npc name="Elf Lala" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1307" centery="634" centerz="7" radius="1">
+		<npc name="Eo the Craftsman" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1288" centery="652" centerz="7" radius="1">
 		<npc name="Chaos Goblin" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 </npcs>
