@@ -285,7 +285,7 @@
 		<monster name="Azure Frog" x="-1" y="0" z="7" spawntime="60" />
 		<monster name="Azure Frog" x="1" y="-1" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="5019" centery="5006" centerz="7" radius="0">
+	<monster centerx="5019" centery="5006" centerz="7" radius="1">
 		<monster name="Training Monk" x="0" y="0" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="5021" centery="5008" centerz="7" radius="1">
