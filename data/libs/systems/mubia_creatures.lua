@@ -211,6 +211,7 @@ function Mubia.registerTrainingMonk(mType, monster, cfg)
 end
 
 -- NPC de la zona de NPCs: vende gratis los scrolls de su clase (classId) o lo que diga shop.
+-- Opcionales: greeting y voice (textos propios del NPC).
 -- Di "magias" para recibir todos los scrolls de la clase de una vez.
 Mubia.NpcPotions = {
 	{ itemName = "health potion", clientId = 266, buy = 0 },
@@ -238,19 +239,15 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 		table.insert(npcConfig.shop, { itemName = def.scrollName, clientId = def.scrollId, buy = 0 })
 	end
 
-	if className then
-		npcConfig.voices = {
-			interval = 15000,
-			chance = 20,
-			{ text = Mubia.toLatin1(string.format("¡Scrolls de magias de %s gratis! Di {trade}.", className)) },
-		}
-	else
-		npcConfig.voices = {
-			interval = 15000,
-			chance = 20,
-			{ text = Mubia.toLatin1("¡Pociones de vida y de mana gratis! Di {trade}.") },
-		}
+	local voice = config.voice
+	if not voice then
+		voice = className and string.format("¡Scrolls de magias de %s gratis! Di {trade}.", className) or "¡Pociones de vida y de mana gratis! Di {trade}."
 	end
+	npcConfig.voices = {
+		interval = 15000,
+		chance = 20,
+		{ text = Mubia.toLatin1(voice) },
+	}
 
 	local keywordHandler = KeywordHandler:new()
 	local npcHandler = NpcHandler:new(keywordHandler)
@@ -303,10 +300,10 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 		end
 	end
 
-	local greeting
-	if className then
+	local greeting = config.greeting
+	if not greeting and className then
 		greeting = string.format("¡Hola |PLAYERNAME|! Enseño las magias de %s. Di {trade} para elegir scrolls gratis o {magias} para llevarte todos.", className)
-	else
+	elseif not greeting then
 		greeting = "¡Hola |PLAYERNAME|! Di {trade} para llevarte pociones de vida y de mana gratis."
 	end
 

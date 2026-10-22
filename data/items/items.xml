@@ -84637,4 +84637,73 @@ Granted by TibiaGoals.com"/>
 		<attribute key="description" value="Fairy Elf. Rayo de energia del cielo muy poderoso. Usalo para aprender Starfall. Palabras: starfall"/>
 		<attribute key="weight" value="50"/>
 	</item>
+	<item id="60301" article="a" name="jewel of bless">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usalo sobre un item (Usar con...) para subirlo de +0 a +6. Exito 100%."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60302" article="a" name="jewel of soul">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usalo sobre un item +6 o mas (Usar con...) para subirlo hasta +15. Puede fallar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60303" article="a" name="jewel of life">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usalo sobre un item (Usar con...) para darle o subirle la opcion adicional (+4 a +28). Puede fallar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60401" name="wings of satan">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 1ra generacion del Dark Knight."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60402" name="wings of heaven">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 1ra generacion del Dark Wizard."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60403" name="wings of elf">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 1ra generacion de la Fairy Elf."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60404" name="wings of dragon">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 2da generacion del Dark Knight."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60405" name="wings of soul">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 2da generacion del Dark Wizard."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60406" name="wings of spirits">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 2da generacion de la Fairy Elf."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60407" name="wings of storm">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 3ra generacion del Dark Knight."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60408" name="wings of eternal">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 3ra generacion del Dark Wizard."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60409" name="wings of illusion">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 3ra generacion de la Fairy Elf."/>
+		<attribute key="weight" value="500"/>
+	</item>
 </items>

@@ -59,7 +59,9 @@ local function getSpellDamage(player, def)
 			return 0, 0
 		end
 		minDamage, maxDamage = class.magic(stats)
-		minDamage, maxDamage = minDamage + def.base, maxDamage + def.base
+		-- nivel y opción adicional del bastón (wand) y de las alas
+		local wizardry = Mubia.getEquipmentBonus(player).wizardry
+		minDamage, maxDamage = minDamage + def.base + wizardry, maxDamage + def.base + wizardry
 	else
 		minDamage, maxDamage = class.damage(stats)
 		local weaponAttack = Mubia.getWeaponAttack(player)

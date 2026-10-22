@@ -4148,6 +4148,8 @@ Slots_t getSlotType(const ItemType &it) {
 			slot = CONST_SLOT_RING;
 		} else if (slotPosition & SLOTP_AMMO) {
 			slot = CONST_SLOT_AMMO;
+		} else if (slotPosition & SLOTP_WINGS) {
+			slot = CONST_SLOT_WINGS;
 		} else if (slotPosition & SLOTP_TWO_HAND || slotPosition & SLOTP_LEFT) {
 			slot = CONST_SLOT_LEFT;
 		}

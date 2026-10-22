@@ -21,6 +21,9 @@
 	<npc centerx="4770" centery="5087" centerz="7" radius="1">
 		<npc name="Elf Lala" x="0" y="0" z="7" spawntime="60" />
 	</npc>
+	<npc centerx="4762" centery="5086" centerz="7" radius="1">
+		<npc name="Chaos Goblin" x="0" y="0" z="7" spawntime="60" />
+	</npc>
 	<!-- Lorencia (MU) -->
 	<npc centerx="958" centery="619" centerz="7" radius="1">
 		<npc name="Hanzo the Blacksmith" x="0" y="0" z="7" spawntime="60" />
@@ -33,5 +36,8 @@
 	</npc>
 	<npc centerx="918" centery="632" centerz="7" radius="1">
 		<npc name="Elf Lala" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="932" centery="645" centerz="7" radius="1">
+		<npc name="Chaos Goblin" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 </npcs>

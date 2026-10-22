@@ -292,7 +292,8 @@ function Mubia.getDefense(player)
 	if not class then
 		return 0
 	end
-	return class.defense(Mubia.getStats(player))
+	-- defensa por AGI + armaduras, escudo y alas equipados (con su nivel y opción)
+	return class.defense(Mubia.getStats(player)) + Mubia.getEquipmentBonus(player).defense
 end
 
 function Mubia.getWeaponAttack(player)
@@ -306,7 +307,8 @@ function Mubia.getWeaponAttack(player)
 			end
 		end
 	end
-	return attack
+	-- nivel (+1 a +15) y opción adicional (Jewel of Life) de arma y alas
+	return attack + Mubia.getEquipmentBonus(player).attack
 end
 
 local function isHealthDamage(combatType)
@@ -333,6 +335,15 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 		damageSecondary = 0
 	end
 
+	-- Alas: aumentan el daño de golpes y magias
+	if attackerPlayer and damagePrimary > 0 then
+		local wingDamage = Mubia.getEquipmentBonus(attackerPlayer).wingDamage
+		if wingDamage > 0 then
+			damagePrimary = math.floor(damagePrimary * (100 + wingDamage) / 100)
+			damageSecondary = math.floor(damageSecondary * (100 + wingDamage) / 100)
+		end
+	end
+
 	local targetPlayer = target:getPlayer()
 	if targetPlayer and Mubia.getClass(targetPlayer) then
 		local total = damagePrimary + damageSecondary
@@ -344,6 +355,11 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 			local barrier = Mubia.getBuff(targetPlayer, "barrier")
 			if barrier > 0 then
 				reduced = math.max(1, math.floor(reduced * (100 - barrier) / 100))
+			end
+			-- Alas: absorben un % del daño que queda
+			local wingAbsorb = Mubia.getEquipmentBonus(targetPlayer).wingAbsorb
+			if wingAbsorb > 0 then
+				reduced = math.max(1, math.floor(reduced * (100 - wingAbsorb) / 100))
 			end
 			local ratio = reduced / total
 			damagePrimary = math.floor(damagePrimary * ratio)

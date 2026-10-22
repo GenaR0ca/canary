@@ -313,6 +313,9 @@ void ItemParse::parseSlotType(const std::string &stringValue, pugi::xml_attribut
 			itemType.slotPosition |= SLOTP_AMMO;
 		} else if (subStringValue == "hand") {
 			itemType.slotPosition |= SLOTP_HAND;
+		} else if (subStringValue == "wings") {
+			// Mubia: las alas solo van en su slot
+			itemType.slotPosition = SLOTP_WINGS;
 		} else {
 			g_logger().warn("[itemParseSlotType - Items::parseItemNode] - Unknown slotType {}", valueAttribute.as_string());
 		}

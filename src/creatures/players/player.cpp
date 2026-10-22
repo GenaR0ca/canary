@@ -4602,7 +4602,7 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 	if (allowPutItemsOnAmmoSlot && index == CONST_SLOT_AMMO) {
 		ret = RETURNVALUE_NOERROR;
 	} else {
-		if ((slotPosition & SLOTP_HEAD) || (slotPosition & SLOTP_NECKLACE) || (slotPosition & SLOTP_BACKPACK) || (slotPosition & SLOTP_ARMOR) || (slotPosition & SLOTP_LEGS) || (slotPosition & SLOTP_FEET) || (slotPosition & SLOTP_RING)) {
+		if ((slotPosition & SLOTP_HEAD) || (slotPosition & SLOTP_NECKLACE) || (slotPosition & SLOTP_BACKPACK) || (slotPosition & SLOTP_ARMOR) || (slotPosition & SLOTP_LEGS) || (slotPosition & SLOTP_FEET) || (slotPosition & SLOTP_RING) || (slotPosition & SLOTP_WINGS)) {
 			ret = RETURNVALUE_CANNOTBEDRESSED;
 		} else if (slotPosition & SLOTP_TWO_HAND) {
 			ret = RETURNVALUE_PUTTHISOBJECTINBOTHHANDS;
@@ -4755,6 +4755,13 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 				if ((slotPosition & SLOTP_AMMO)) {
 					ret = RETURNVALUE_NOERROR;
 				}
+			}
+			break;
+		}
+
+		case CONST_SLOT_WINGS: {
+			if (slotPosition & SLOTP_WINGS) {
+				ret = RETURNVALUE_NOERROR;
 			}
 			break;
 		}
