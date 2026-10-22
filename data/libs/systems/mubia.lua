@@ -7,9 +7,9 @@ Mubia.Config = {
 	pointsPerLevel = 5,
 	maxStat = 32767,
 	startLevel = 1, -- nivel con el que empieza todo personaje nuevo
-	testLevel = 50, -- PRUEBAS: sube una vez a este nivel a todos los personajes (0 = desactivado)
+	testLevel = 400, -- PRUEBAS: sube una vez a este nivel a todos los personajes (0 = desactivado)
 	resetLevel = 400,
-	resetPointsPerReset = 500, -- puntos extra por cada reset acumulado
+	resetPointsPerReset = 1000, -- puntos extra por cada reset acumulado
 	resetCostZen = 0,
 	minDamageAfterDefense = 0.1, -- el golpe nunca baja de este % aunque la defensa sea alta
 	opcode = 80, -- opcode extendido para la ventana de stats del cliente
