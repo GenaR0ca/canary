@@ -23,7 +23,7 @@ Mubia.ExcellentConfig = {
 Mubia.ExcellentOptions = {
 	armor = {
 		{ key = "MH", text = "Vida máxima +4%" },
-		{ key = "SD", text = "Mana máximo +4% (SD)" },
+		{ key = "SD", text = "SD máximo +4%" },
 		{ key = "DD", text = "Reduce el daño recibido 4%" },
 		{ key = "REF", text = "Devuelve el 5% del daño recibido" },
 		{ key = "DSR", text = "Defensa contra monstruos +10%" },
@@ -41,7 +41,7 @@ Mubia.ExcellentOptions = {
 	wings = {
 		{ key = "HP", text = "Vida máxima +50 (+5 por nivel)", tiers = { 2 } },
 		{ key = "MANA", text = "Mana máximo +50 (+5 por nivel)", tiers = { 2 } },
-		{ key = "AG", text = "Mana máximo +50 (+5 por nivel) (AG)", tiers = { 2 } },
+		{ key = "AG", text = "AG máximo +50 (+5 por nivel)", tiers = { 2 } },
 		{ key = "RMP", text = "5% de recuperar todo el mana al recibir daño", tiers = { 3 } },
 		{ key = "RHP", text = "5% de recuperar toda la vida al recibir daño", tiers = { 3 } },
 		{ key = "ARR", text = "5% de devolver el golpe al atacante", tiers = { 3 } },
@@ -250,8 +250,10 @@ function Mubia.addExcellentBonus(bonus, item, player)
 		if Mubia.getExcellentGroup(item) == "wings" then
 			if key == "HP" then
 				exc.wingHp = exc.wingHp + 50 + 5 * wingLevel
-			elseif key == "MANA" or key == "AG" then
+			elseif key == "MANA" then
 				exc.wingMana = exc.wingMana + 50 + 5 * wingLevel
+			elseif key == "AG" then
+				exc.wingAg = exc.wingAg + 50 + 5 * wingLevel
 			elseif key == "RMP" then
 				exc.recoverMana = exc.recoverMana + 5
 			elseif key == "RHP" then
@@ -264,7 +266,7 @@ function Mubia.addExcellentBonus(bonus, item, player)
 		elseif key == "MH" then
 			exc.maxHealth = exc.maxHealth + 4
 		elseif key == "SD" then
-			exc.maxMana = exc.maxMana + 4
+			exc.maxSd = exc.maxSd + 4
 		elseif key == "DD" then
 			exc.damageDecrease = exc.damageDecrease + 4
 		elseif key == "REF" then
@@ -295,6 +297,8 @@ function Mubia.newExcellentBonus()
 		maxMana = 0,
 		wingHp = 0,
 		wingMana = 0,
+		wingAg = 0,
+		maxSd = 0,
 		damageDecrease = 0,
 		reflect = 0,
 		defenseRate = 0,

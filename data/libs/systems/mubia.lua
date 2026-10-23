@@ -381,6 +381,10 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 			end
 			-- opciones Excellent: DD, REF, ARR y recuperar vida / mana (alas)
 			reduced = Mubia.applyExcellentDefense(targetPlayer, attacker, reduced)
+			-- SD: si te pega otro jugador, el escudo se lleva la mayor parte del golpe
+			if attackerPlayer and attackerPlayer ~= targetPlayer and Mubia.absorbWithSD then
+				reduced = Mubia.absorbWithSD(targetPlayer, reduced)
+			end
 			local ratio = reduced / total
 			damagePrimary = math.floor(damagePrimary * ratio)
 			damageSecondary = reduced - damagePrimary

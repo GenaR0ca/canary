@@ -163,10 +163,22 @@ local function getPartyMembersInRange(player)
 	return members
 end
 
-local function startSpell(player)
+local function startSpell(player, def)
 	local class, stats = getStatsAndClass(player)
-	if not class or not checkCastSpeed(player, class, stats) then
+	if not class then
 		return nil
+	end
+	-- AG: las habilidades gastan AG (data/libs/systems/mubia_sdag.lua)
+	local agCost = def and Mubia.SpellAG and Mubia.SpellAG[def.key] or 0
+	if agCost > 0 and Mubia.getAG and Mubia.getAG(player) < agCost then
+		Mubia.useAG(player, def.key) -- avisa que falta AG
+		return nil
+	end
+	if not checkCastSpeed(player, class, stats) then
+		return nil
+	end
+	if agCost > 0 and Mubia.useAG then
+		Mubia.useAG(player, def.key)
 	end
 	return class, stats
 end
@@ -263,7 +275,7 @@ local function registerAttack(def)
 
 	function spell.onCastSpell(creature, variant)
 		local player = creature:getPlayer()
-		if not player or not startSpell(player) then
+		if not player or not startSpell(player, def) then
 			return false
 		end
 
@@ -309,7 +321,7 @@ local function registerBuff(def)
 		if not player then
 			return false
 		end
-		local class, stats = startSpell(player)
+		local class, stats = startSpell(player, def)
 		if not class then
 			return false
 		end
@@ -364,7 +376,7 @@ local function registerHeal(def)
 		if not player then
 			return false
 		end
-		local class, stats = startSpell(player)
+		local class, stats = startSpell(player, def)
 		if not class then
 			return false
 		end
@@ -388,7 +400,7 @@ local function registerHeal(def)
 	spell:register()
 end
 
--- Recovery: en MU recupera el SD; aquí recupera mana de la elfa y su party
+-- Recovery: recupera SD y mana de la elfa y su party
 local function registerRecovery(def)
 	local spell = newSpell(def, "healing", false)
 
@@ -397,7 +409,7 @@ local function registerRecovery(def)
 		if not player then
 			return false
 		end
-		local class, stats = startSpell(player)
+		local class, stats = startSpell(player, def)
 		if not class then
 			return false
 		end
@@ -405,6 +417,9 @@ local function registerRecovery(def)
 		local amount = 10 + math.floor(stats.ene / 4)
 		for _, member in ipairs(getPartyMembersInRange(player)) do
 			member:addMana(amount)
+			if Mubia.addSD then
+				Mubia.addSD(member, amount)
+			end
 			member:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
 		end
 		return true
@@ -428,7 +443,7 @@ local function registerSummon(def)
 			position:sendMagicEffect(CONST_ME_POFF)
 			return false
 		end
-		if not startSpell(player) then
+		if not startSpell(player, def) then
 			return false
 		end
 
@@ -482,7 +497,7 @@ local function registerTeleport(def)
 			origin:sendMagicEffect(CONST_ME_POFF)
 			return false
 		end
-		if not startSpell(player) then
+		if not startSpell(player, def) then
 			return false
 		end
 
