@@ -84746,6 +84746,113 @@ Granted by TibiaGoals.com"/>
 		<attribute key="weight" value="10"/>
 	</item>
 	<!-- Mubia: fin de Jewel of Harmony, Luck y Excellent -->
+	<!-- Mubia: Devil Square, Devil's Eye, Key e Invitation (generado por tools/mubia/devil_square_items.py) -->
+	<item id="60601" article="a" name="devil's eye +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60602" article="a" name="devil's eye +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60603" article="a" name="devil's eye +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60604" article="a" name="devil's eye +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60605" article="a" name="devil's eye +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60606" article="a" name="devil's eye +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60607" article="a" name="devil's eye +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60611" article="a" name="devil's key +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60612" article="a" name="devil's key +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60613" article="a" name="devil's key +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60614" article="a" name="devil's key +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60615" article="a" name="devil's key +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60616" article="a" name="devil's key +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60617" article="a" name="devil's key +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60621" article="a" name="devil's invitation +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60622" article="a" name="devil's invitation +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60623" article="a" name="devil's invitation +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60624" article="a" name="devil's invitation +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60625" article="a" name="devil's invitation +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60626" article="a" name="devil's invitation +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60627" article="a" name="devil's invitation +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<!-- Mubia: fin de Devil Square -->
 	<item id="60401" name="wings of satan">
 		<attribute key="primarytype" value="wings"/>
 		<attribute key="slottype" value="wings"/>
