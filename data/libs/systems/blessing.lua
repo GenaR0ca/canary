@@ -92,7 +92,7 @@ Blessings.PlayerDeath = function(player, corpse, killer)
 	end
 
 	if not player:getSlotItem(CONST_SLOT_BACKPACK) then
-		player:addItem(ITEM_BAG, 1, false, CONST_SLOT_BACKPACK)
+		player:addItem(Mubia and Mubia.INVENTORY_BAG or ITEM_BAG, 1, false, CONST_SLOT_BACKPACK)
 	end
 
 	return true
@@ -105,7 +105,8 @@ Blessings.DropLoot = function(player, corpse, chance, skulled)
 	Blessings.DebugPrint("DropLoot chance " .. chance)
 	for i = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
 		local item = player:getSlotItem(i)
-		if item then
+		-- Mubia: el inventario (tecla I) nunca se pierde al morir
+		if item and not (Mubia and item:getId() == Mubia.INVENTORY_BAG) then
 			local thisChance = item:isContainer() and chance or (chance / 10)
 			local thisRandom = math.random(100 * multiplier)
 

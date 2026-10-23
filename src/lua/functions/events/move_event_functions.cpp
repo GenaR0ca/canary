@@ -184,6 +184,8 @@ int MoveEventFunctions::luaMoveEventSlot(lua_State* L) {
 			moveevent->setSlot(SLOTP_WINGS);
 		} else if (slotName == "gloves") {
 			moveevent->setSlot(SLOTP_GLOVES);
+		} else if (slotName == "pet") {
+			moveevent->setSlot(SLOTP_PET);
 		} else {
 			g_logger().warn("[MoveEventFunctions::luaMoveEventSlot] - "
 			                "Unknown slot type: {}",

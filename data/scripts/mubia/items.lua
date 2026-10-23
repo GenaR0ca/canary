@@ -1,4 +1,4 @@
--- Mubia Online: Jewels de MU (Bless, Soul, Life) y alas. Las reglas están en data/libs/systems/mubia_items.lua.
+-- Mubia Online: Jewels de MU (Bless, Soul, Life, Harmony, Luck, Excellent) y alas. Las reglas están en data/libs/systems/mubia_items.lua.
 
 local function say(player, text)
 	Mubia.sendMessage(player, MESSAGE_EVENT_ADVANCE, text)
@@ -31,7 +31,14 @@ local function useSoul(player, target)
 		say(player, string.format("Este item ya está en +%d, el máximo.", Mubia.ItemConfig.maxLevel))
 		return false
 	end
+	if level >= Mubia.ItemConfig.soulMaxLevel then
+		say(player, string.format("Jewel of Soul sube items hasta +%d. De +%d a +15 se sube en la Chaos Machine del Chaos Goblin.", Mubia.ItemConfig.soulMaxLevel, Mubia.ItemConfig.soulMaxLevel + 1))
+		return false
+	end
 	local chance = Mubia.ItemConfig.soulChance[level + 1] or 0
+	if Mubia.hasLuck(target) then
+		chance = math.min(100, chance + Mubia.ExcellentConfig.luckSuccessRate) -- Luck: +25%
+	end
 	if math.random(100) <= chance then
 		Mubia.setItemLevel(target, level + 1)
 		say(player, string.format("¡Éxito! Tu item ahora es +%d.", level + 1))
@@ -68,10 +75,26 @@ local function useLife(player, target)
 	return true
 end
 
+-- Jewel of Harmony, Luck y Excellent: las reglas están en mubia_harmony.lua
+local function useWith(rule)
+	return function(player, target)
+		local used, message = rule(target)
+		say(player, message)
+		if used then
+			finish(player, not message:find("^Falló"))
+			Mubia.recalc(player)
+		end
+		return used
+	end
+end
+
 local JEWELS = {
 	[Mubia.JEWEL_OF_BLESS] = useBless,
 	[Mubia.JEWEL_OF_SOUL] = useSoul,
 	[Mubia.JEWEL_OF_LIFE] = useLife,
+	[Mubia.JEWEL_OF_HARMONY] = useWith(Mubia.useHarmony),
+	[Mubia.JEWEL_OF_LUCK] = useWith(Mubia.useLuckJewel),
+	[Mubia.JEWEL_OF_EXCELLENT] = useWith(Mubia.useExcellentJewel),
 }
 
 local jewels = Action()
@@ -96,22 +119,13 @@ for id in pairs(JEWELS) do
 end
 jewels:register()
 
--- Sets, armas, escudos y alas de MU: al equiparse se revisa la clase, STR, AGI y nivel.
+-- Sets, armas, escudos, alas y mascotas de MU: al equiparse se revisa la clase, STR, AGI y nivel.
 -- (Los sets y armas de Tibia ya no se pueden equipar: lo bloquea canary.exe)
 local function onGearEquip(player, item, slot, isCheck)
 	if not isCheck then
 		return true
 	end
-	local itemId = item:getId()
-	local ok, reason
-	if Mubia.Wings[itemId] then
-		ok = Mubia.canUseWings(player, item)
-		if not ok then
-			reason = string.format("Solo un %s puede usar estas alas.", Mubia.Classes[Mubia.Wings[itemId].classId].name)
-		end
-	else
-		ok, reason = Mubia.checkGearRequirements(player, itemId)
-	end
+	local ok, reason = Mubia.checkEquipRequirements(player, item)
 	if not ok then
 		Mubia.sendMessage(player, MESSAGE_FAILURE, reason)
 	end
@@ -119,9 +133,14 @@ local function onGearEquip(player, item, slot, isCheck)
 end
 
 local PIECE_SLOTS = { helm = "head", armor = "armor", pants = "legs", gloves = "gloves", boots = "feet" }
-local idsBySlot = { wings = {} }
+local idsBySlot = { wings = {}, pet = {} }
 for itemId in pairs(Mubia.Wings) do
 	table.insert(idsBySlot.wings, itemId)
+end
+for itemId, pet in pairs(Mubia.Pets) do
+	if pet.level then
+		table.insert(idsBySlot.pet, itemId)
+	end
 end
 for itemId, gear in pairs(Mubia.Gear) do
 	local slot = gear.kind == "armor" and PIECE_SLOTS[gear.piece] or "hand"
@@ -143,6 +162,7 @@ local equipChange = EventCallback("MubiaEquipmentStats")
 
 function equipChange.playerOnItemMoved(player, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
 	if fromPosition.x == CONTAINER_POSITION and fromPosition.y < 0x40 or toPosition.x == CONTAINER_POSITION and toPosition.y < 0x40 then
+		Mubia.recalc(player) -- vida, mana y velocidad (opciones Excellent)
 		Mubia.sendStats(player)
 	end
 end

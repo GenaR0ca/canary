@@ -439,6 +439,7 @@ enum SlotPositionBits : uint32_t {
 	SLOTP_TWO_HAND = 1 << 11,
 	SLOTP_WINGS = 1 << 12, // Mubia: alas de MU
 	SLOTP_GLOVES = 1 << 13, // Mubia: guantes de MU
+	SLOTP_PET = 1 << 14, // Mubia: mascotas de MU
 	SLOTP_HAND = (SLOTP_LEFT | SLOTP_RIGHT)
 };
 
