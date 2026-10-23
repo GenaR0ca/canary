@@ -158,7 +158,7 @@ for index, value in pairs(potions) do
 	flaskPotion:id(index)
 end
 
--- Mubia Online: el MU Helper toma pociones solo con estas mismas reglas (data/libs/systems/mubia_helper.lua)
+-- Mubia Online: el Mubia Helper toma pociones solo con estas mismas reglas (data/libs/systems/mubia_helper.lua)
 if Mubia then
 	Mubia.FlaskPotions = potions
 	Mubia.useFlaskPotion = onUsePotion

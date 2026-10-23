@@ -1,9 +1,10 @@
--- Mubia Online: MU Helper, el "bot" de caza de MU Online.
+-- Mubia Online: Mubia Helper, el "bot" de caza (como el MU Helper de MU Online).
 -- El cliente (módulo game_mubia_helper) elige a qué monstruo pegarle y camina hacia él.
 -- El servidor, mientras el Helper está prendido:
 --   * lanza las habilidades elegidas (básica, habilidad 1 y 2 con su condición, buffs),
---   * toma pociones y usa Heal cuando la vida baja del % elegido,
---   * recoge del cuerpo de los monstruos que matás los items elegidos (el zen ya se junta solo).
+--   * toma pociones y usa Heal (en sí misma o en el party) cuando la vida baja del % elegido,
+--   * recoge del cuerpo de los monstruos que matás los items elegidos (y el zen, si está marcado).
+-- Además, siempre (prendido o no): acepta o rechaza solo las invitaciones de party ("Other Settings").
 -- Cliente y servidor hablan por el opcode 86. Prender el Helper cuesta nivel x 20 zen (como en MU).
 
 Mubia.HELPER_OPCODE = 86
@@ -91,13 +92,16 @@ local function parseConfig(text)
 		basic = spell("basic"),
 		skills = { skill("s1"), skill("s2") },
 		buffs = {},
-		healPercent = number("heal", 0, 0, 100),
+		healSelf = number("heal", 0, 0, 100),
+		healParty = number("hparty", 0, 0, 100),
 		hpPotion = number("hp", 0, 0, 100),
 		mpPotion = number("mp", 0, 0, 100),
 		pickAll = raw.all == "1",
 		pickJewels = raw.jewel == "1",
+		pickZen = raw.zen ~= "0", -- sin el dato, el zen se junta como siempre
 		pickExcellent = raw.exc == "1",
 		pickGear = raw.gear == "1",
+		pickScrolls = raw.scroll == "1",
 		pickRange = number("prange", 3, 1, Mubia.HelperConfig.maxPickupRange),
 		extraNames = {},
 	}
@@ -107,7 +111,8 @@ local function parseConfig(text)
 			config.buffs[#config.buffs + 1] = def.key
 		end
 	end
-	for text in (raw.extra or ""):gmatch("[^,]+") do
+	local extra = raw.other == "1" and raw.extra or ""
+	for text in extra:gmatch("[^,]+") do
 		local name = text:lower():gsub("^%s+", ""):gsub("%s+$", "")
 		if name ~= "" and #config.extraNames < Mubia.HelperConfig.maxExtraNames then
 			config.extraNames[#config.extraNames + 1] = name
@@ -124,23 +129,23 @@ end
 function Mubia.startHelper(player, configText)
 	if Mubia.isHelperOn(player) then
 		Mubia.helpers[player:getId()].config = parseConfig(configText)
-		Mubia.sendMessage(player, MESSAGE_STATUS, "MU Helper: configuración actualizada.")
+		Mubia.sendMessage(player, MESSAGE_STATUS, "Mubia Helper: configuración actualizada.")
 		sendState(player, true)
 		return true
 	end
 	if inSafeZone(player) then
-		sendState(player, false, "No puedes usar el MU Helper en una zona segura.")
+		sendState(player, false, "No puedes usar el Mubia Helper en una zona segura.")
 		return false
 	end
 	local cost = Mubia.getHelperCost(player)
 	if Mubia.getZen(player) < cost or not player:removeMoneyBank(cost) then
-		sendState(player, false, string.format("Necesitas %d zen para usar el MU Helper.", cost))
+		sendState(player, false, string.format("Necesitas %d zen para usar el Mubia Helper.", cost))
 		return false
 	end
 
 	local playerId = player:getId()
 	Mubia.helpers[playerId] = { config = parseConfig(configText), nextPotion = 0, timers = {} }
-	Mubia.sendMessage(player, MESSAGE_STATUS, string.format("MU Helper prendido (costó %d zen).", cost))
+	Mubia.sendMessage(player, MESSAGE_STATUS, string.format("Mubia Helper prendido (costó %d zen).", cost))
 	sendState(player, true)
 	addEvent(Mubia.helperTick, Mubia.HelperConfig.tick, playerId)
 	return true
@@ -152,9 +157,9 @@ function Mubia.stopHelper(player, reason)
 	end
 	Mubia.helpers[player:getId()] = nil
 	if reason then
-		Mubia.sendMessage(player, MESSAGE_STATUS, "MU Helper apagado: " .. reason)
+		Mubia.sendMessage(player, MESSAGE_STATUS, "Mubia Helper apagado: " .. reason)
 	else
-		Mubia.sendMessage(player, MESSAGE_STATUS, "MU Helper apagado.")
+		Mubia.sendMessage(player, MESSAGE_STATUS, "Mubia Helper apagado.")
 	end
 	sendState(player, false)
 end
@@ -312,6 +317,27 @@ local function percent(value, max)
 	return max > 0 and value * 100 / max or 100
 end
 
+-- ¿Algún compañero de party cerca tiene la vida por debajo del %?
+local PARTY_HEAL_RANGE = 8
+local function partyNeedsHeal(player, limit)
+	local party = player:getParty()
+	if not party then
+		return false
+	end
+	local origin = player:getPosition()
+	local members = party:getMembers()
+	members[#members + 1] = party:getLeader()
+	for _, member in ipairs(members) do
+		if member and member ~= player then
+			local position = member:getPosition()
+			if position.z == origin.z and origin:getDistance(position) <= PARTY_HEAL_RANGE and percent(member:getHealth(), member:getMaxHealth()) <= limit then
+				return true
+			end
+		end
+	end
+	return false
+end
+
 local function heal(player, helper)
 	local config = helper.config
 	local now = systemTime()
@@ -326,8 +352,12 @@ local function heal(player, helper)
 		end
 	end
 
-	-- Heal de la elfa
-	if config.healPercent > 0 and hp <= config.healPercent then
+	-- Heal de la elfa: en sí misma o en el compañero de party más herido (la magia elige al más herido)
+	local needsHeal = config.healSelf > 0 and hp <= config.healSelf
+	if not needsHeal and config.healParty > 0 then
+		needsHeal = partyNeedsHeal(player, config.healParty)
+	end
+	if needsHeal then
 		local def = Mubia.Spells.heal
 		if canCast(player, def) and cast(player, def) then
 			return true
@@ -417,6 +447,9 @@ local function wantsItem(config, item)
 	if config.pickGear and itemId >= gear.from and itemId <= gear.to then
 		return true
 	end
+	if config.pickScrolls and Mubia.SpellByScroll and Mubia.SpellByScroll[itemId] then
+		return true
+	end
 	if config.pickExcellent and Mubia.isExcellent and Mubia.isExcellent(item) then
 		return true
 	end
@@ -460,7 +493,7 @@ function Mubia.helperPickup(player, corpse)
 		return
 	end
 	local config = helper.config
-	if not (config.pickAll or config.pickJewels or config.pickExcellent or config.pickGear or #config.extraNames > 0) then
+	if not (config.pickAll or config.pickJewels or config.pickExcellent or config.pickGear or config.pickScrolls or #config.extraNames > 0) then
 		return
 	end
 	local from, to = player:getPosition(), corpse:getPosition()
@@ -476,20 +509,67 @@ function Mubia.helperPickup(player, corpse)
 	local fits = pickFrom(player, config, corpse, bag, picked)
 	if #picked > 0 then
 		to:sendMagicEffect(CONST_ME_MAGIC_GREEN)
-		Mubia.sendMessage(player, MESSAGE_LOOT, "MU Helper recogió: " .. table.concat(picked, ", ") .. ".")
+		Mubia.sendMessage(player, MESSAGE_LOOT, "Mubia Helper recogió: " .. table.concat(picked, ", ") .. ".")
 	end
 	if not fits and not helper.fullWarned then
 		helper.fullWarned = true
-		Mubia.sendMessage(player, MESSAGE_FAILURE, "MU Helper: tu inventario está lleno, ya no puede recoger más items.")
+		Mubia.sendMessage(player, MESSAGE_FAILURE, "Mubia Helper: tu inventario está lleno, ya no puede recoger más items.")
 	elseif fits then
 		helper.fullWarned = nil
 	end
 end
 
--- Mensajes del cliente: "spells" (pide la lista de habilidades), "start|config" y "stop"
+-- Con el Helper prendido y el zen sin marcar, las monedas quedan en el cuerpo (data/scripts/mubia/zen.lua)
+function Mubia.helperWantsZen(player)
+	local helper = player and Mubia.helpers[player:getId()]
+	if not helper then
+		return true
+	end
+	return helper.config.pickAll or helper.config.pickZen
+end
+
+-- Invitaciones de party: "accept" las acepta solo, "reject" las rechaza solo, "none" no hace nada.
+-- Se guarda en el personaje, así funciona aunque el Helper esté apagado.
+Mubia.PartyModes = { accept = true, reject = true, none = true }
+
+function Mubia.getPartyMode(player)
+	local mode = player:kv():scoped("mubia-helper"):get("party")
+	return Mubia.PartyModes[mode] and mode or "none"
+end
+
+function Mubia.setPartyMode(player, mode)
+	if not Mubia.PartyModes[mode] then
+		return
+	end
+	player:kv():scoped("mubia-helper"):set("party", mode)
+end
+
+-- Revisa las invitaciones pendientes de cada party (lo llama un GlobalEvent cada segundo)
+function Mubia.checkPartyInvites()
+	for _, leader in ipairs(Game.getPlayers()) do
+		local party = leader:getParty()
+		if party and party:getLeader() == leader then
+			for _, invitee in ipairs(party:getInvitees()) do
+				local mode = Mubia.getPartyMode(invitee)
+				if mode == "accept" and not invitee:getParty() then
+					if party:addMember(invitee) then
+						Mubia.sendMessage(invitee, MESSAGE_STATUS, string.format("Mubia Helper: aceptaste solo la party de %s.", leader:getName()))
+					end
+				elseif mode == "reject" then
+					party:removeInvite(invitee)
+					Mubia.sendMessage(leader, MESSAGE_FAILURE, string.format("%s rechaza las invitaciones de party.", invitee:getName()))
+				end
+			end
+		end
+	end
+end
+
+-- Mensajes del cliente: "spells" (pide la lista de habilidades), "start|config", "stop" y "party|modo"
 function Mubia.onHelperOpcode(player, buffer)
 	local action, rest = buffer:match("^(%a+)|?(.*)$")
-	if action == "spells" then
+	if action == "party" then
+		Mubia.setPartyMode(player, rest)
+	elseif action == "spells" then
 		Mubia.sendHelperSpells(player)
 	elseif action == "start" then
 		Mubia.startHelper(player, rest or "")

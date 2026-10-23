@@ -1,4 +1,4 @@
--- Mubia Online: MU Helper (opcode 86). Reglas en data/libs/systems/mubia_helper.lua.
+-- Mubia Online: Mubia Helper (opcode 86). Reglas en data/libs/systems/mubia_helper.lua.
 
 local helperOpcode = CreatureEvent("MubiaHelperOpcode")
 
@@ -28,3 +28,14 @@ function helperLogout.onLogout(player)
 end
 
 helperLogout:register()
+
+-- Aceptar o rechazar solo las invitaciones de party (pestaña "Other Settings" del Helper)
+local partyInvites = GlobalEvent("MubiaHelperPartyInvites")
+
+function partyInvites.onThink(interval)
+	Mubia.checkPartyInvites()
+	return true
+end
+
+partyInvites:interval(1000)
+partyInvites:register()

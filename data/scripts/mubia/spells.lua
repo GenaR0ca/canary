@@ -23,7 +23,7 @@ MUBIA_AREA_RING = {
 local PARTY_RANGE = 8 -- casillas a las que llega un buff de party
 
 Mubia.nextCast = Mubia.nextCast or {}
-Mubia.SpellCasters = {} -- key de la magia -> función que la lanza (la usa el MU Helper)
+Mubia.SpellCasters = {} -- key de la magia -> función que la lanza (la usa el Mubia Helper)
 
 local function getStatsAndClass(player)
 	local class = Mubia.getClass(player)
@@ -300,7 +300,7 @@ local function registerAttack(def)
 		return ok
 	end
 	spell.onCastSpell = onCastSpell
-	Mubia.SpellCasters[def.key] = onCastSpell -- el MU Helper las lanza directo
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	if def.target then
 		spell:needTarget(true)
@@ -367,7 +367,7 @@ local function registerBuff(def)
 		return true
 	end
 	spell.onCastSpell = onCastSpell
-	Mubia.SpellCasters[def.key] = onCastSpell -- el MU Helper las lanza directo
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	spell:register()
 end
@@ -402,7 +402,7 @@ local function registerHeal(def)
 		return true
 	end
 	spell.onCastSpell = onCastSpell
-	Mubia.SpellCasters[def.key] = onCastSpell -- el MU Helper las lanza directo
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	spell:register()
 end
@@ -432,7 +432,7 @@ local function registerRecovery(def)
 		return true
 	end
 	spell.onCastSpell = onCastSpell
-	Mubia.SpellCasters[def.key] = onCastSpell -- el MU Helper las lanza directo
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	spell:register()
 end
@@ -473,7 +473,7 @@ local function registerSummon(def)
 		return true
 	end
 	spell.onCastSpell = onCastSpell
-	Mubia.SpellCasters[def.key] = onCastSpell -- el MU Helper las lanza directo
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	spell:register()
 end
@@ -518,7 +518,7 @@ local function registerTeleport(def)
 		return true
 	end
 	spell.onCastSpell = onCastSpell
-	Mubia.SpellCasters[def.key] = onCastSpell -- el MU Helper las lanza directo
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	spell:needDirection(true)
 	spell:register()
