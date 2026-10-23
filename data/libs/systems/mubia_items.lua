@@ -291,7 +291,26 @@ Mubia.LookColors = {
 	info = "#ffffff", -- clase (blanco)
 	ok = "#90ee90", -- requisito cumplido (verde claro)
 	missing = "#f55e5e", -- requisito sin cumplir (rojo)
+	-- color del nombre según el nivel del item (como en MU)
+	normal = "#d8d8d8", -- +0 a +2 (gris claro)
+	upgraded = "#8f8fff", -- +3 a +5 (azul lila, distinto del azul de las opciones)
+	golden = "#ffd23f", -- +6 o más (dorado)
+	excellent = "#2df0b4", -- Excellent, con cualquier + (verde agua)
 }
+
+function Mubia.getItemNameColor(item)
+	local colors = Mubia.LookColors
+	if Mubia.isExcellent and Mubia.isExcellent(item) then
+		return colors.excellent
+	end
+	local level = Mubia.getItemLevel(item)
+	if level >= 6 then
+		return colors.golden
+	elseif level >= 3 then
+		return colors.upgraded
+	end
+	return colors.normal
+end
 
 local function colored(parts, text, color)
 	parts[#parts + 1] = string.format("{%s, %s}", text:gsub("[{}]", ""), color)
@@ -326,7 +345,7 @@ function Mubia.getItemLookMarkup(player, item)
 	local article = item:getArticle()
 	local name = (article ~= "" and article .. " " or "") .. item:getName()
 	local parts = {}
-	colored(parts, "You see " .. name .. ".", Mubia.LookColors.name)
+	colored(parts, "You see " .. name .. ".", Mubia.getItemNameColor(item))
 
 	local stats = {}
 	if gear and gear.defense then
@@ -356,8 +375,9 @@ function Mubia.getItemLookMarkup(player, item)
 	end
 
 	local requirements = {}
+	local className
 	if gear then
-		colored(parts, "\nClase: " .. classNames(gear) .. ".", Mubia.LookColors.info)
+		className = classNames(gear)
 		local strDecrease, agiDecrease = Mubia.getHarmonyRequirementDecrease(item)
 		local playerStats = Mubia.getStats(player)
 		local needStr, needAgi = math.max(0, gear.str - strDecrease), math.max(0, gear.agi - agiDecrease)
@@ -367,11 +387,15 @@ function Mubia.getItemLookMarkup(player, item)
 			requirements[#requirements + 1] = { text = "Nivel " .. gear.level, ok = player:getLevel() >= gear.level }
 		end
 	elseif wing then
-		colored(parts, "\nClase: " .. Mubia.Classes[wing.classId].name .. ".", Mubia.LookColors.info)
+		className = Mubia.Classes[wing.classId].name
 	elseif pet and pet.level then
 		requirements[#requirements + 1] = { text = "Nivel " .. pet.level, ok = player:getLevel() >= pet.level }
 	end
+	-- requisitos anteúltimos y la clase al final
 	addRequirements(parts, requirements)
+	if className then
+		colored(parts, "\nClase: " .. className .. ".", Mubia.LookColors.info)
+	end
 
 	return Mubia.toLatin1(table.concat(parts))
 end
