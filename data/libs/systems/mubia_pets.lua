@@ -9,18 +9,36 @@ CONST_SLOT_PET = CONST_SLOT_PET or 14
 Mubia.INVENTORY_BAG = 60500
 
 -- damage y absorb en %, hp suma vida máxima, attackSpeed baja el tiempo entre golpes en %,
--- speed suma velocidad al caminar (monturas) y exp da % de experiencia extra.
+-- speed suma velocidad al caminar (monturas), exp da % de experiencia extra y zen % de zen extra.
+-- mount = montura de Tibia que se ve al equiparla (id de mounts.xml y su clientid).
+-- follower = criatura que te sigue (data-canary/monster/mubia/pets). level = nivel mínimo.
 Mubia.Pets = {
-	[60501] = { name = "Guardian Angel", absorb = 20, hp = 50 },
-	[60502] = { name = "Imp", damage = 30 },
-	[60503] = { name = "Horn of Uniria", mount = true, speed = 40 },
-	[60504] = { name = "Horn of Dinorant", mount = true, damage = 15, absorb = 10, speed = 60 },
-	[60505] = { name = "Horn of Fenrir", mount = true, damage = 10, absorb = 10, speed = 100 },
-	[60506] = { name = "Demon", damage = 40, attackSpeed = 10 },
-	[60507] = { name = "Spirit of Guardian", absorb = 30, hp = 50 },
-	[60508] = { name = "Pet Skeleton", damage = 20, attackSpeed = 10 },
-	[60509] = { name = "Pet Panda", exp = 50 },
+	[60501] = { name = "Guardian Angel", absorb = 20, hp = 50, follower = "Guardian Angel" },
+	[60502] = { name = "Imp", damage = 30, follower = "Imp" },
+	[60503] = { name = "Horn of Uniria", speed = 40, mount = { id = 114, look = 1018 } }, -- Arctic Unicorn
+	[60504] = { name = "Horn of Dinorant", damage = 15, absorb = 10, speed = 60, mount = { id = 6, look = 373 } }, -- Draptor
+	[60505] = { name = "Horn of Fenrir", speed = 100, level = 300, mount = { id = 39, look = 559 } }, -- The Hellgrip (rojo)
+	[60506] = { name = "Demon", damage = 40, attackSpeed = 10, follower = "Pet Demon" },
+	[60507] = { name = "Spirit of Guardian", absorb = 30, hp = 50, follower = "Spirit of Guardian" },
+	[60508] = { name = "Pet Skeleton", damage = 20, attackSpeed = 10, follower = "Pet Skeleton" },
+	[60509] = { name = "Pet Panda", exp = 50, follower = "Pet Panda" },
+	-- Dark Horse y Dark Raven son del Dark Lord: cuando exista la clase, se le puede limitar
+	[60510] = { name = "Dark Horse", absorb = 15, speed = 80, mount = { id = 17, look = 392 } }, -- War Horse
+	[60511] = { name = "Dark Raven", follower = "Dark Raven", attacks = true },
+	[60512] = { name = "Black Fenrir", damage = 10, speed = 100, level = 300, mount = { id = 32, look = 515 } }, -- Gnarlhound
+	[60513] = { name = "Blue Fenrir", absorb = 10, speed = 100, level = 300, mount = { id = 16, look = 390 } }, -- Crystal Wolf
+	[60514] = { name = "Gold Fenrir", damage = 10, absorb = 10, hp = 200, speed = 100, level = 300, mount = { id = 40, look = 571 } }, -- Noble Lion
+	[60515] = { name = "Pet Rudolf", zen = 30, follower = "Pet Rudolf" },
+	[60516] = { name = "Pet Unicorn", zen = 50, absorb = 5, follower = "Pet Unicorn" },
 }
+
+-- Nombres de las criaturas que siguen a su dueño (para no confundirlas con las invocaciones de la elfa)
+Mubia.PetFollowers = {}
+for _, pet in pairs(Mubia.Pets) do
+	if pet.follower then
+		Mubia.PetFollowers[pet.follower] = true
+	end
+end
 
 local NO_PET = {}
 
@@ -36,6 +54,9 @@ function Mubia.getPetLookText(item)
 		return nil
 	end
 	local lines = { pet.mount and "Montura. Va en el slot de mascotas." or "Mascota. Va en el slot de mascotas." }
+	if pet.attacks then
+		lines[#lines + 1] = "Ataca a tu objetivo."
+	end
 	if pet.damage then
 		lines[#lines + 1] = string.format("Aumenta el daño %d%%.", pet.damage)
 	end
@@ -54,14 +75,72 @@ function Mubia.getPetLookText(item)
 	if pet.exp then
 		lines[#lines + 1] = string.format("Experiencia +%d%%.", pet.exp)
 	end
+	if pet.zen then
+		lines[#lines + 1] = string.format("Zen +%d%%.", pet.zen)
+	end
+	if pet.level then
+		lines[#lines + 1] = string.format("Nivel mínimo: %d.", pet.level)
+	end
 	return Mubia.toLatin1(table.concat(lines, "\n"))
 end
 
 local PET_SPEED_SUBID = 60500
 
--- Aplica la mascota equipada: velocidad de las monturas y vida / velocidad de ataque (Mubia.recalc)
+-- Revisa si el jugador puede equipar la mascota (por ahora solo el nivel)
+function Mubia.checkPetRequirements(player, itemId)
+	local pet = Mubia.Pets[itemId]
+	if pet and pet.level and player:getLevel() < pet.level then
+		return false, string.format("Para usar %s necesitas nivel %d.", pet.name, pet.level)
+	end
+	return true
+end
+
+-- Saca la montura de mascota anterior (si se la habíamos dado nosotros) y la criatura que lo seguía
+local function clearPet(player)
+	local kv = player:kv():scoped("mubia-pet")
+	local mountId = kv:get("mount")
+	if mountId then
+		local outfit = player:getOutfit()
+		for _, pet in pairs(Mubia.Pets) do
+			if pet.mount and pet.mount.id == mountId and outfit.lookMount == pet.mount.look then
+				outfit.lookMount = 0
+				player:setOutfit(outfit)
+			end
+		end
+		if kv:get("addedMount") then
+			player:removeMount(mountId)
+		end
+		kv:remove("mount")
+		kv:remove("addedMount")
+	end
+	for _, summon in ipairs(player:getSummons()) do
+		if Mubia.PetFollowers[summon:getName()] then
+			summon:remove()
+		end
+	end
+end
+
+-- Pone a la criatura de la mascota al lado del jugador
+local function spawnFollower(playerId, name)
+	local player = Player(playerId)
+	if not player or Mubia.getPet(player).follower ~= name then
+		return
+	end
+	for _, summon in ipairs(player:getSummons()) do
+		if summon:getName() == name then
+			return
+		end
+	end
+	local follower = Game.createMonster(name, player:getPosition(), true, true, player)
+	if follower then
+		follower:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	end
+end
+
+-- Aplica la mascota equipada: velocidad, montura, criatura que te sigue y vida / velocidad de ataque (Mubia.recalc)
 function Mubia.applyPet(player)
 	player:removeCondition(CONDITION_HASTE, CONDITIONID_COMBAT, PET_SPEED_SUBID)
+	clearPet(player)
 	local pet = Mubia.getPet(player)
 	if pet.speed then
 		local condition = Condition(CONDITION_HASTE, CONDITIONID_COMBAT)
@@ -69,6 +148,20 @@ function Mubia.applyPet(player)
 		condition:setParameter(CONDITION_PARAM_TICKS, -1)
 		condition:setParameter(CONDITION_PARAM_SPEED, pet.speed)
 		player:addCondition(condition)
+	end
+	if pet.mount then
+		local kv = player:kv():scoped("mubia-pet")
+		kv:set("mount", pet.mount.id)
+		if not player:hasMount(pet.mount.id) then
+			player:addMount(pet.mount.id)
+			kv:set("addedMount", true)
+		end
+		local outfit = player:getOutfit()
+		outfit.lookMount = pet.mount.look
+		player:setOutfit(outfit)
+	end
+	if pet.follower then
+		addEvent(spawnFollower, 300, player:getId(), pet.follower)
 	end
 	Mubia.recalc(player)
 end

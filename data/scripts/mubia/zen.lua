@@ -29,6 +29,8 @@ function zenLoot.monsterPostDropLoot(monster, corpse)
 	end
 	local player = Player(corpse:getCorpseOwner())
 	if player then
+		-- mascotas que dan zen extra (Pet Rudolf, Pet Unicorn)
+		zen = math.floor(zen * (100 + (Mubia.getPet(player).zen or 0)) / 100)
 		Mubia.addZen(player, zen)
 		Mubia.sendMessage(player, MESSAGE_LOOT, string.format("Obtuviste %d zen.", zen))
 	end

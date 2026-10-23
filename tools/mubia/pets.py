@@ -27,6 +27,13 @@ PETS = [
     (60507, "Spirit of Guardian", 8146, "Mascota. Absorbe el 30% del daño recibido y da +50 de vida."),
     (60508, "Pet Skeleton", 3114, "Mascota. Aumenta el daño un 20% y la velocidad de ataque un 10%."),
     (60509, "Pet Panda", 5080, "Mascota. Da un 50% más de experiencia."),
+    (60510, "Dark Horse", 30318, "Montura del Dark Lord. Absorbe daño y aumenta la velocidad."),
+    (60511, "Dark Raven", 3024, "Mascota del Dark Lord. Ataca a tu objetivo."),
+    (60512, "Black Fenrir", 10318, "Montura. Fenrir de destrucción: aumenta el daño."),
+    (60513, "Blue Fenrir", 3012, "Montura. Fenrir de protección: absorbe daño."),
+    (60514, "Gold Fenrir", 33781, "Montura. Fenrir de ilusión: daño, absorción y vida."),
+    (60515, "Pet Rudolf", 6496, "Mascota. Da más zen."),
+    (60516, "Pet Unicorn", 30054, "Mascota. Da más zen y absorbe daño."),
 ]
 
 # Flags del item de Tibia que se copian a las mascotas: take, light, shift, height y animate_always

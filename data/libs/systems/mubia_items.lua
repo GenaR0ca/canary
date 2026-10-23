@@ -29,6 +29,7 @@ Mubia.Gear = Mubia.Gear or {}
 Mubia.JEWEL_OF_BLESS = 60303
 Mubia.JEWEL_OF_SOUL = 60301
 Mubia.JEWEL_OF_LIFE = 60302
+Mubia.JEWEL_OF_CHAOS = 60304
 
 -- Alas MU: aumentan el daño y absorben un % del daño recibido; ambos suben con el nivel del item.
 Mubia.Wings = {

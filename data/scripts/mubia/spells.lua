@@ -433,8 +433,10 @@ local function registerSummon(def)
 		end
 
 		for _, summon in ipairs(player:getSummons()) do
-			summon:getPosition():sendMagicEffect(CONST_ME_POFF)
-			summon:remove()
+			if not Mubia.PetFollowers[summon:getName()] then -- la mascota se queda
+				summon:getPosition():sendMagicEffect(CONST_ME_POFF)
+				summon:remove()
+			end
 		end
 
 		local summon = Game.createMonster(def.monster, position, true, false, player)

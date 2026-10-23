@@ -84652,6 +84652,11 @@ Granted by TibiaGoals.com"/>
 		<attribute key="description" value="Usalo sobre un item (Usar con...) para subirlo de +0 a +6. Exito 100%."/>
 		<attribute key="weight" value="10"/>
 	</item>
+	<item id="60304" article="a" name="jewel of chaos">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Joya de MU. Se usa en la Chaos Machine del Chaos Goblin para combinar items."/>
+		<attribute key="weight" value="10"/>
+	</item>
 	<item id="60401" name="wings of satan">
 		<attribute key="primarytype" value="wings"/>
 		<attribute key="slottype" value="wings"/>
@@ -86157,6 +86162,34 @@ Granted by TibiaGoals.com"/>
 		<attribute key="weight" value="100"/>
 	</item>
 	<item id="60509" name="pet panda">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60510" name="dark horse">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60511" name="dark raven">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60512" name="black fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60513" name="blue fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60514" name="gold fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60515" name="pet rudolf">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60516" name="pet unicorn">
 		<attribute key="slottype" value="pet"/>
 		<attribute key="weight" value="100"/>
 	</item>
