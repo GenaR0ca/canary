@@ -13,6 +13,8 @@ monster.outfit = {
 	lookMount = 0,
 }
 
+-- Nivel, vida, daño y defensa reales salen del Monster.txt de MU (data/libs/systems/mubia_monster_stats.lua).
+-- Los números de abajo solo se usan si pones custom = true.
 Mubia.registerWildMonster(mType, monster, {
 	level = 13,
 	health = 220,
