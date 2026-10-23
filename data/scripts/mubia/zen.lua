@@ -33,6 +33,10 @@ function zenLoot.monsterPostDropLoot(monster, corpse)
 		end
 		-- RHP / RMP del arma: vida y mana al matar
 		Mubia.applyExcellentKill(player)
+		-- MU Helper: recoge los items elegidos (data/libs/systems/mubia_helper.lua)
+		if Mubia.helperPickup then
+			Mubia.helperPickup(player, corpse)
+		end
 	end
 
 	local zen = Mubia.takeCoins(corpse)
