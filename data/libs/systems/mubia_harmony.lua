@@ -34,7 +34,7 @@ Mubia.HarmonyOptions = {
 	armor = {
 		{ key = "DEF", text = "Defensa +%d", stat = "defense", value = { 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18, 20, 22, 25 } },
 		{ key = "HP", text = "Vida máxima +%d", stat = "maxHealth", value = { 7, 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28 } },
-		{ key = "AG", text = "Mana máximo +%d (AG)", stat = "maxMana", value = { 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 } },
+		{ key = "AG", text = "AG máximo +%d", stat = "maxAg", value = { 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 } },
 		{ key = "DD", text = "Daño recibido -%d", stat = "damageDecrease", value = { 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 } },
 	},
 }
@@ -99,6 +99,13 @@ function Mubia.addHarmonyBonus(bonus, item)
 		bonus.wizardry = bonus.wizardry + value
 	elseif option.stat == "defense" then
 		bonus.defense = bonus.defense + value
+	elseif option.stat == "maxAg" then
+		-- si el servidor tiene la barra de AG (mubia_sdag.lua) suma ahí; si no, da mana
+		if bonus.exc.wingAg then
+			bonus.exc.wingAg = bonus.exc.wingAg + value
+		else
+			bonus.harmony.maxMana = bonus.harmony.maxMana + value
+		end
 	elseif bonus.harmony[option.stat] then
 		bonus.harmony[option.stat] = bonus.harmony[option.stat] + value
 	end
