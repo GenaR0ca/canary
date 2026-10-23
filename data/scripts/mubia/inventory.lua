@@ -2,8 +2,31 @@
 
 local inventoryLogin = CreatureEvent("MubiaInventoryLogin")
 
+-- Las manos solo llevan armas y escudos: lo demás (guantes, armaduras...) va a su slot o al inventario
+local HAND_SLOTS = { CONST_SLOT_LEFT, CONST_SLOT_RIGHT }
+local PIECE_SLOT = { helm = CONST_SLOT_HEAD, armor = CONST_SLOT_ARMOR, pants = CONST_SLOT_LEGS, gloves = CONST_SLOT_GLOVES, boots = CONST_SLOT_FEET }
+
+local function canGoInHand(item)
+	return item:getType():getWeaponType() ~= WEAPON_NONE
+end
+
+local function fixHands(player)
+	local bag = player:getSlotItem(CONST_SLOT_BACKPACK)
+	for _, handSlot in ipairs(HAND_SLOTS) do
+		local item = player:getSlotItem(handSlot)
+		if item and not canGoInHand(item) then
+			local gear = Mubia.Gear[item:getId()]
+			local slot = gear and PIECE_SLOT[gear.piece]
+			if not (slot and not player:getSlotItem(slot) and item:moveToSlot(player, slot)) and bag then
+				item:moveTo(bag)
+			end
+		end
+	end
+end
+
 function inventoryLogin.onLogin(player)
 	Mubia.ensureInventory(player)
+	fixHands(player)
 	Mubia.applyPet(player)
 	return true
 end
@@ -16,6 +39,15 @@ local inventoryMove = EventCallback("MubiaInventoryMove")
 function inventoryMove.playerOnMoveItem(player, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
 	if item:getId() == Mubia.INVENTORY_BAG then
 		Mubia.sendMessage(player, MESSAGE_FAILURE, "El inventario no se puede mover. Se abre con la tecla I.")
+		return false
+	end
+	if toPosition.x == CONTAINER_POSITION and (toPosition.y == CONST_SLOT_LEFT or toPosition.y == CONST_SLOT_RIGHT) and not canGoInHand(item) then
+		local gear = Mubia.Gear[item:getId()]
+		if gear and gear.piece == "gloves" then
+			Mubia.sendMessage(player, MESSAGE_FAILURE, "Los guantes van en su slot, a la izquierda del pantalón.")
+		else
+			Mubia.sendMessage(player, MESSAGE_FAILURE, "En las manos solo van armas y escudos.")
+		end
 		return false
 	end
 	return true
