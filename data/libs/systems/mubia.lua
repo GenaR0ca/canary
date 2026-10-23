@@ -228,9 +228,11 @@ function Mubia.recalc(player)
 	local stats = Mubia.getStats(player)
 	local pet = Mubia.getPet and Mubia.getPet(player) or {}
 	-- opciones Excellent: MH / SD (+4% cada una), HP / MANA / AG de las alas
-	local exc = Mubia.getEquipmentBonus(player).exc
-	local maxHealth = math.floor(Mubia.getMaxHealth(player, class, stats) * (100 + exc.maxHealth) / 100) + exc.wingHp + (pet.hp or 0)
-	local maxMana = math.floor(Mubia.getMaxMana(player, class, stats) * (100 + exc.maxMana) / 100) + exc.wingMana
+	-- y Harmony HP / AG de las armaduras
+	local equipment = Mubia.getEquipmentBonus(player)
+	local exc, harmony = equipment.exc, equipment.harmony
+	local maxHealth = math.floor(Mubia.getMaxHealth(player, class, stats) * (100 + exc.maxHealth) / 100) + exc.wingHp + harmony.maxHealth + (pet.hp or 0)
+	local maxMana = math.floor(Mubia.getMaxMana(player, class, stats) * (100 + exc.maxMana) / 100) + exc.wingMana + harmony.maxMana
 
 	player:setMaxHealth(maxHealth)
 	player:setMaxMana(maxMana)
@@ -305,8 +307,10 @@ end
 -- Daño mínimo y máximo del arma de MU equipada, con su nivel (+1 a +15) y opción adicional (Jewel of Life) y las alas
 function Mubia.getWeaponDamage(player)
 	local minDamage, maxDamage = Mubia.getGearWeaponDamage(player)
-	local bonus = Mubia.getEquipmentBonus(player).attack
-	return minDamage + bonus, maxDamage + bonus
+	local equipment = Mubia.getEquipmentBonus(player)
+	local bonus = equipment.attack
+	-- Harmony: daño mínimo / máximo del arma
+	return minDamage + bonus + equipment.harmony.minAttack, maxDamage + bonus + equipment.harmony.maxAttack
 end
 
 local function isHealthDamage(combatType)
@@ -335,7 +339,9 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 		damagePrimary = damagePrimary + Mubia.getBuff(attackerPlayer, "damage")
 		damageSecondary = 0
 	elseif isMuSpell and damagePrimary > 0 then
-		damagePrimary = Mubia.applyExcellentHit(Mubia.getEquipmentBonus(attackerPlayer), damagePrimary, nil, target)
+		local bonus = Mubia.getEquipmentBonus(attackerPlayer)
+		-- Harmony SKILL: daño extra de skills
+		damagePrimary = Mubia.applyExcellentHit(bonus, damagePrimary + bonus.harmony.skillDamage, nil, target)
 	end
 
 	-- IGNOR de las alas: este golpe no se reduce por la defensa del enemigo
@@ -379,6 +385,8 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 					reduced = math.max(1, math.floor(reduced * (100 - absorb) / 100))
 				end
 			end
+			-- Harmony DD: resta daño fijo
+			reduced = math.max(1, reduced - bonus.harmony.damageDecrease)
 			-- opciones Excellent: DD, REF, ARR y recuperar vida / mana (alas)
 			reduced = Mubia.applyExcellentDefense(targetPlayer, attacker, reduced)
 			local ratio = reduced / total
