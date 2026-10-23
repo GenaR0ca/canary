@@ -1,4 +1,4 @@
--- Mubia Online: Jewels de MU (Bless, Soul, Life) y alas. Las reglas están en data/libs/systems/mubia_items.lua.
+-- Mubia Online: Jewels de MU (Bless, Soul, Life, Harmony, Luck, Excellent) y alas. Las reglas están en data/libs/systems/mubia_items.lua.
 
 local function say(player, text)
 	Mubia.sendMessage(player, MESSAGE_EVENT_ADVANCE, text)
@@ -75,10 +75,26 @@ local function useLife(player, target)
 	return true
 end
 
+-- Jewel of Harmony, Luck y Excellent: las reglas están en mubia_harmony.lua
+local function useWith(rule)
+	return function(player, target)
+		local used, message = rule(target)
+		say(player, message)
+		if used then
+			finish(player, not message:find("^Falló"))
+			Mubia.recalc(player)
+		end
+		return used
+	end
+end
+
 local JEWELS = {
 	[Mubia.JEWEL_OF_BLESS] = useBless,
 	[Mubia.JEWEL_OF_SOUL] = useSoul,
 	[Mubia.JEWEL_OF_LIFE] = useLife,
+	[Mubia.JEWEL_OF_HARMONY] = useWith(Mubia.useHarmony),
+	[Mubia.JEWEL_OF_LUCK] = useWith(Mubia.useLuckJewel),
+	[Mubia.JEWEL_OF_EXCELLENT] = useWith(Mubia.useExcellentJewel),
 }
 
 local jewels = Action()
@@ -119,7 +135,7 @@ local function onGearEquip(player, item, slot, isCheck)
 	elseif Mubia.Pets[itemId] then
 		ok, reason = Mubia.checkPetRequirements(player, itemId)
 	else
-		ok, reason = Mubia.checkGearRequirements(player, itemId)
+		ok, reason = Mubia.checkGearRequirements(player, itemId, item)
 	end
 	if not ok then
 		Mubia.sendMessage(player, MESSAGE_FAILURE, reason)

@@ -139,9 +139,9 @@ function Mubia.refreshItemText(item)
 		local what = kind == "staff" and "Daño mágico" or (kind == "weapon" or kind == "wings") and "Daño" or "Defensa"
 		lines[#lines + 1] = string.format("Opción adicional: %s +%d.", what, option * Mubia.ItemConfig.optionStep)
 	end
-	-- Luck y opciones Excellent (mubia_excellent.lua)
-	if Mubia.getExcellentLines then
-		for _, line in ipairs(Mubia.getExcellentLines(item)) do
+	-- Luck, opciones Excellent (mubia_excellent.lua) y Harmony (mubia_harmony.lua)
+	for _, getLines in ipairs({ Mubia.getExcellentLines, Mubia.getHarmonyLines }) do
+		for _, line in ipairs(getLines(item)) do
 			lines[#lines + 1] = line
 		end
 	end
@@ -168,6 +168,7 @@ function Mubia.getEquipmentBonus(player)
 	local pet = Mubia.getPet and Mubia.getPet(player) or {}
 	local bonus = { attack = 0, wizardry = 0, magicRise = 0, defense = 0, wingDamage = 0, wingAbsorb = 0, petDamage = pet.damage or 0, petAbsorb = pet.absorb or 0, criticalRate = 0 }
 	bonus.exc = Mubia.newExcellentBonus()
+	bonus.harmony = Mubia.newHarmonyBonus()
 	local slots = { CONST_SLOT_HEAD, CONST_SLOT_ARMOR, CONST_SLOT_LEGS, CONST_SLOT_FEET, CONST_SLOT_GLOVES, CONST_SLOT_LEFT, CONST_SLOT_RIGHT, CONST_SLOT_WINGS }
 	for _, slot in ipairs(slots) do
 		local item = player:getSlotItem(slot)
@@ -192,6 +193,7 @@ function Mubia.getEquipmentBonus(player)
 				bonus.wingAbsorb = stats.absorb
 			end
 			Mubia.addExcellentBonus(bonus, item, player)
+			Mubia.addHarmonyBonus(bonus, item)
 		end
 	end
 	-- DMGL: daño +nivel/20 (golpes y magias)
@@ -232,22 +234,28 @@ local function classNames(gear)
 end
 
 -- ¿Puede el jugador equipar este item de MU? Devuelve false y el motivo si no puede.
-function Mubia.checkGearRequirements(player, itemId)
+-- item (opcional): si tiene Harmony de STR o AGI requerida, se descuenta.
+function Mubia.checkGearRequirements(player, itemId, item)
 	local gear = Mubia.Gear[itemId]
 	if not gear then
 		return true
 	end
+	local strDecrease, agiDecrease = 0, 0
+	if item then
+		strDecrease, agiDecrease = Mubia.getHarmonyRequirementDecrease(item)
+	end
+	local needStr, needAgi = math.max(0, gear.str - strDecrease), math.max(0, gear.agi - agiDecrease)
 	local class = Mubia.getClass(player)
 	if not class or not hasClass(gear, class) then
 		return false, string.format("%s solo lo puede usar: %s.", gear.name, classNames(gear))
 	end
 	local stats = Mubia.getStats(player)
 	local missing = {}
-	if stats.str < gear.str then
-		missing[#missing + 1] = string.format("STR %d (tienes %d)", gear.str, stats.str)
+	if stats.str < needStr then
+		missing[#missing + 1] = string.format("STR %d (tienes %d)", needStr, stats.str)
 	end
-	if stats.agi < gear.agi then
-		missing[#missing + 1] = string.format("AGI %d (tienes %d)", gear.agi, stats.agi)
+	if stats.agi < needAgi then
+		missing[#missing + 1] = string.format("AGI %d (tienes %d)", needAgi, stats.agi)
 	end
 	if gear.level and player:getLevel() < gear.level then
 		missing[#missing + 1] = string.format("nivel %d", gear.level)
@@ -282,7 +290,7 @@ function Mubia.getGearLookText(player, item)
 		requirement = requirement .. string.format(", nivel %d", gear.level)
 	end
 	lines[#lines + 1] = requirement .. "."
-	local ok = Mubia.checkGearRequirements(player, item:getId())
+	local ok = Mubia.checkGearRequirements(player, item:getId(), item)
 	if not ok then
 		lines[#lines + 1] = "No lo puedes usar."
 	end

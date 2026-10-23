@@ -84729,6 +84729,23 @@ Granted by TibiaGoals.com"/>
 		<attribute key="weight" value="10"/>
 	</item>
 	<!-- Mubia: fin de items de la Chaos Machine -->
+	<!-- Mubia: Jewel of Harmony, Luck y Excellent (generado por tools/mubia/jewels.py) -->
+	<item id="60319" article="a" name="jewel of harmony">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usala sobre un set, arma o escudo (Usar con...) para darle una opcion Harmony. Si ya tiene, la sube de nivel (hasta el nivel del item). Puede fallar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60320" article="a" name="jewel of luck">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usala sobre un item de MU (Usar con...) para darle Luck."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60321" article="a" name="jewel of excellent">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usala sobre un item Excellent (Usar con...) para sumarle una opcion Excellent nueva."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<!-- Mubia: fin de Jewel of Harmony, Luck y Excellent -->
 	<item id="60401" name="wings of satan">
 		<attribute key="primarytype" value="wings"/>
 		<attribute key="slottype" value="wings"/>

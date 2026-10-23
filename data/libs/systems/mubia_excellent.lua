@@ -138,6 +138,11 @@ local function availableOptions(item)
 	return list
 end
 
+-- Siglas de todas las opciones que puede tener este item
+function Mubia.getAvailableExcellentKeys(item)
+	return availableOptions(item)
+end
+
 -- Elige "count" opciones al azar (distintas) para el item
 function Mubia.randomExcellentKeys(item, count)
 	local list = availableOptions(item)
@@ -323,13 +328,15 @@ end
 -- Golpe excelente (EXE: daño máximo x1.2) y golpe crítico (Luck: daño máximo) del atacante.
 -- maxDamage = daño máximo del golpe normal (nil en magias: se multiplica el daño). Devuelve el daño nuevo.
 function Mubia.applyExcellentHit(bonus, damage, maxDamage, target)
+	-- Harmony CRIT: suma daño a los golpes excelentes y críticos
+	local criticalDamage = bonus.harmony and bonus.harmony.criticalDamage or 0
 	if chance(bonus.exc.excellentRate) then
 		target:getPosition():sendMagicEffect(CONST_ME_CRITICAL_DAMAGE)
-		return math.floor((maxDamage or damage) * 1.2)
+		return math.floor((maxDamage or damage) * 1.2) + criticalDamage
 	end
 	if chance(bonus.criticalRate or 0) then
 		target:getPosition():sendMagicEffect(CONST_ME_FATAL)
-		return maxDamage or math.floor(damage * 1.1)
+		return (maxDamage or math.floor(damage * 1.1)) + criticalDamage
 	end
 	return damage
 end
