@@ -392,6 +392,9 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 
 	npcHandler:setCallback(CALLBACK_GREET, function(npc, player)
 		npcHandler:setMessage(MESSAGE_GREET, Mubia.toLatin1(greeting))
+		if config.onGreet then
+			config.onGreet(npc, player)
+		end
 		return true
 	end)
 
@@ -401,6 +404,13 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 		end
 		if className and (MsgContains(msg, "magias") or MsgContains(msg, "scrolls")) then
 			giveScrolls(npc, player)
+		end
+		-- palabras propias del NPC (ej. "chaos" en el Chaos Goblin)
+		for keyword, callback in pairs(config.keywords or {}) do
+			if MsgContains(msg, keyword) then
+				callback(npc, player)
+				break
+			end
 		end
 		return true
 	end)

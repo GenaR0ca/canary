@@ -1,4 +1,5 @@
--- Mubia Online: Chaos Goblin, regala (gratis mientras probamos) las joyas de MU, las alas de cada clase y las mascotas.
+-- Mubia Online: Chaos Goblin. Al hablarle abre la Chaos Machine (ventana del cliente, ver data/libs/systems/mubia_chaos.lua).
+-- Además regala (gratis mientras probamos) las joyas de MU, las alas de cada clase y las mascotas.
 
 local npcType = Game.createNpcType("Chaos Goblin")
 local npcConfig = {}
@@ -19,6 +20,10 @@ Mubia.registerShopNpc(npcType, npcConfig, {
 		{ itemName = "jewel of soul", clientId = Mubia.JEWEL_OF_SOUL, buy = 0 },
 		{ itemName = "jewel of life", clientId = Mubia.JEWEL_OF_LIFE, buy = 0 },
 		{ itemName = "jewel of chaos", clientId = Mubia.JEWEL_OF_CHAOS, buy = 0 },
+		{ itemName = "jewel of creation", clientId = Mubia.JEWEL_OF_CREATION, buy = 0 },
+		{ itemName = "loch's feather", clientId = Mubia.LOCHS_FEATHER, buy = 0 },
+		{ itemName = "feather of condor", clientId = Mubia.FEATHER_OF_CONDOR, buy = 0 },
+		{ itemName = "flame of condor", clientId = Mubia.FLAME_OF_CONDOR, buy = 0 },
 		{ itemName = "wings of satan", clientId = 60401, buy = 0 },
 		{ itemName = "wings of heaven", clientId = 60402, buy = 0 },
 		{ itemName = "wings of elf", clientId = 60403, buy = 0 },
@@ -45,6 +50,17 @@ Mubia.registerShopNpc(npcType, npcConfig, {
 		{ itemName = "pet rudolf", clientId = 60515, buy = 0 },
 		{ itemName = "pet unicorn", clientId = 60516, buy = 0 },
 	},
-	greeting = "¡Hola |PLAYERNAME|! Tengo Jewels of Bless, Soul, Life y Chaos, alas para cada clase y mascotas. Di {trade}, todo es gratis.",
-	voice = "¡Joyas, alas y mascotas gratis! Di {trade}.",
+	greeting = "¡Hola |PLAYERNAME|! Te abrí la Chaos Machine: arrastrá tus items a la ventana. Si la cerrás, di {chaos}. Di {trade} para joyas, plumas, alas y mascotas gratis.",
+	voice = "¡Chaos Machine! Combiná tus items. Joyas gratis con {trade}.",
+	onGreet = function(npc, player)
+		Mubia.openChaosMachine(player, npc)
+	end,
+	keywords = {
+		chaos = function(npc, player)
+			Mubia.openChaosMachine(player, npc)
+		end,
+		machine = function(npc, player)
+			Mubia.openChaosMachine(player, npc)
+		end,
+	},
 })

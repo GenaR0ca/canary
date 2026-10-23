@@ -8,9 +8,11 @@ Mubia.ItemConfig = {
 	optionStep = 4,
 	-- Jewel of Bless: sube de +0 a +6, siempre sale bien
 	blessMaxLevel = 6,
-	-- Jewel of Soul: sube de +6 a +15. Probabilidad de éxito según el nivel al que se quiere llegar.
+	-- Jewel of Soul: sube de +6 a +9. Probabilidad de éxito según el nivel al que se quiere llegar.
 	-- Si falla, el item baja soulFailLevels niveles (nunca por debajo de +0).
-	soulChance = { [7] = 50, [8] = 50, [9] = 50, [10] = 45, [11] = 40, [12] = 35, [13] = 30, [14] = 25, [15] = 20 },
+	-- De +9 a +15 se sube en la Chaos Machine (data/libs/systems/mubia_chaos.lua), como en MU.
+	soulMaxLevel = 9,
+	soulChance = { [7] = 50, [8] = 50, [9] = 50 },
 	soulFailLevels = 1,
 	-- Jewel of Life: probabilidad de éxito. Si falla, se pierde la opción (vuelve a +0).
 	lifeChance = 50,
