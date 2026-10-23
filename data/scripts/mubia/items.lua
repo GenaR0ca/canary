@@ -96,7 +96,7 @@ for id in pairs(JEWELS) do
 end
 jewels:register()
 
--- Sets, armas, escudos y alas de MU: al equiparse se revisa la clase, STR, AGI y nivel.
+-- Sets, armas, escudos, alas y mascotas de MU: al equiparse se revisa la clase, STR, AGI y nivel.
 -- (Los sets y armas de Tibia ya no se pueden equipar: lo bloquea canary.exe)
 local function onGearEquip(player, item, slot, isCheck)
 	if not isCheck then
@@ -109,6 +109,8 @@ local function onGearEquip(player, item, slot, isCheck)
 		if not ok then
 			reason = string.format("Solo un %s puede usar estas alas.", Mubia.Classes[Mubia.Wings[itemId].classId].name)
 		end
+	elseif Mubia.Pets[itemId] then
+		ok, reason = Mubia.checkPetRequirements(player, itemId)
 	else
 		ok, reason = Mubia.checkGearRequirements(player, itemId)
 	end
@@ -119,9 +121,14 @@ local function onGearEquip(player, item, slot, isCheck)
 end
 
 local PIECE_SLOTS = { helm = "head", armor = "armor", pants = "legs", gloves = "gloves", boots = "feet" }
-local idsBySlot = { wings = {} }
+local idsBySlot = { wings = {}, pet = {} }
 for itemId in pairs(Mubia.Wings) do
 	table.insert(idsBySlot.wings, itemId)
+end
+for itemId, pet in pairs(Mubia.Pets) do
+	if pet.level then
+		table.insert(idsBySlot.pet, itemId)
+	end
 end
 for itemId, gear in pairs(Mubia.Gear) do
 	local slot = gear.kind == "armor" and PIECE_SLOTS[gear.piece] or "hand"

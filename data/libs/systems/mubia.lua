@@ -226,14 +226,17 @@ function Mubia.recalc(player)
 	end
 
 	local stats = Mubia.getStats(player)
-	local maxHealth = Mubia.getMaxHealth(player, class, stats)
+	local pet = Mubia.getPet and Mubia.getPet(player) or {}
+	local maxHealth = Mubia.getMaxHealth(player, class, stats) + (pet.hp or 0)
 	local maxMana = Mubia.getMaxMana(player, class, stats)
 
 	player:setMaxHealth(maxHealth)
 	player:setMaxMana(maxMana)
-	-- setAttackSpeed existe desde el canary.exe de Mubia con velocidad por AGI
+	-- setAttackSpeed existe desde el canary.exe de Mubia con velocidad por AGI (la mascota la sube un %)
 	if player.setAttackSpeed then
-		player:setAttackSpeed(Mubia.getAttackSpeed(class, stats))
+		local attackSpeed = Mubia.getAttackSpeed(class, stats)
+		attackSpeed = math.floor(attackSpeed * (100 - (pet.attackSpeed or 0)) / 100)
+		player:setAttackSpeed(math.max(Mubia.Config.minAttackSpeed, attackSpeed))
 	end
 	if player:getHealth() > maxHealth then
 		player:addHealth(maxHealth - player:getHealth())
@@ -327,12 +330,14 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 		damageSecondary = 0
 	end
 
-	-- Alas: aumentan el daño de golpes y magias
+	-- Alas y mascota: aumentan el daño de golpes y magias
 	if attackerPlayer and damagePrimary > 0 then
-		local wingDamage = Mubia.getEquipmentBonus(attackerPlayer).wingDamage
-		if wingDamage > 0 then
-			damagePrimary = math.floor(damagePrimary * (100 + wingDamage) / 100)
-			damageSecondary = math.floor(damageSecondary * (100 + wingDamage) / 100)
+		local bonus = Mubia.getEquipmentBonus(attackerPlayer)
+		for _, extra in ipairs({ bonus.wingDamage, bonus.petDamage }) do
+			if extra > 0 then
+				damagePrimary = math.floor(damagePrimary * (100 + extra) / 100)
+				damageSecondary = math.floor(damageSecondary * (100 + extra) / 100)
+			end
 		end
 	end
 
@@ -348,10 +353,12 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 			if barrier > 0 then
 				reduced = math.max(1, math.floor(reduced * (100 - barrier) / 100))
 			end
-			-- Alas: absorben un % del daño que queda
-			local wingAbsorb = Mubia.getEquipmentBonus(targetPlayer).wingAbsorb
-			if wingAbsorb > 0 then
-				reduced = math.max(1, math.floor(reduced * (100 - wingAbsorb) / 100))
+			-- Alas y mascota: absorben un % del daño que queda
+			local bonus = Mubia.getEquipmentBonus(targetPlayer)
+			for _, absorb in ipairs({ bonus.wingAbsorb, bonus.petAbsorb }) do
+				if absorb > 0 then
+					reduced = math.max(1, math.floor(reduced * (100 - absorb) / 100))
+				end
 			end
 			local ratio = reduced / total
 			damagePrimary = math.floor(damagePrimary * ratio)
