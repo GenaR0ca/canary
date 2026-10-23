@@ -125,18 +125,7 @@ local function onGearEquip(player, item, slot, isCheck)
 	if not isCheck then
 		return true
 	end
-	local itemId = item:getId()
-	local ok, reason
-	if Mubia.Wings[itemId] then
-		ok = Mubia.canUseWings(player, item)
-		if not ok then
-			reason = string.format("Solo un %s puede usar estas alas.", Mubia.Classes[Mubia.Wings[itemId].classId].name)
-		end
-	elseif Mubia.Pets[itemId] then
-		ok, reason = Mubia.checkPetRequirements(player, itemId)
-	else
-		ok, reason = Mubia.checkGearRequirements(player, itemId, item)
-	end
+	local ok, reason = Mubia.checkEquipRequirements(player, item)
 	if not ok then
 		Mubia.sendMessage(player, MESSAGE_FAILURE, reason)
 	end
