@@ -55,6 +55,7 @@ Mubia.ChaosConfig = {
 		[14] = { rate = 50, zen = 10000000 },
 		[15] = { rate = 50, zen = 12000000 },
 	},
+	luckRate = 25, -- % extra para subir de +10 a +15 si el item tiene Luck
 	-- Fruits: Jewel of Chaos + Jewel of Creation
 	fruit = { rate = 90, zen = 3000000 },
 	-- Paquetes de joyas: 10, 20 o 30 joyas iguales. Desarmar un paquete cuesta unbundleZen.
@@ -386,9 +387,14 @@ function Mubia.findChaosRecipe(entries)
 		takeJewel(entries, Mubia.JEWEL_OF_CHAOS, 1, consume)
 		takeJewel(entries, Mubia.JEWEL_OF_BLESS, need, consume)
 		takeJewel(entries, Mubia.JEWEL_OF_SOUL, need, consume)
+		-- Luck (opción de los items excellent) suma +25%, como en MU
+		local rate = upgrade.rate
+		if Mubia.hasLuck and Mubia.hasLuck(target.item) then
+			rate = math.min(100, rate + config.luckRate)
+		end
 		return {
 			name = string.format("Item +%d", nextLevel),
-			rate = upgrade.rate,
+			rate = rate,
 			zen = upgrade.zen,
 			consume = consume,
 			keepItem = target, -- si sale bien el item se queda, con un nivel más
