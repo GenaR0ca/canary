@@ -2,9 +2,9 @@
 -- SD: escudo para PvP. Cuando otro jugador te pega, el SD se lleva el 90% del golpe y la vida el 10%.
 --     Si el SD llega a 0, la vida recibe todo. Se recupera solo dentro de zonas seguras (ciudades).
 -- AG: energía que gastan las habilidades. Se recupera sola en cualquier lugar cada 3 segundos.
--- El cliente muestra las barras con el opcode 83.
+-- El cliente muestra las barras con el opcode 84 (el 83 es de la Chaos Machine).
 
-Mubia.SDAG_OPCODE = 83
+Mubia.SDAG_OPCODE = 84
 
 Mubia.SDAGConfig = {
 	sdRatio = 90, -- % del golpe PvP que va al SD
