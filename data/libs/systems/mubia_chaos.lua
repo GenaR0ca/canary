@@ -388,7 +388,8 @@ function Mubia.findChaosRecipe(entries)
 		takeJewel(entries, Mubia.JEWEL_OF_SOUL, need, consume)
 		return {
 			name = string.format("Item +%d", nextLevel),
-			rate = upgrade.rate,
+			-- Luck: +25% de éxito (como en MU, hasta 75%)
+			rate = Mubia.hasLuck(target.item) and math.min(75, upgrade.rate + Mubia.ExcellentConfig.luckSuccessRate) or upgrade.rate,
 			zen = upgrade.zen,
 			consume = consume,
 			keepItem = target, -- si sale bien el item se queda, con un nivel más
@@ -603,7 +604,11 @@ function Mubia.chaosMix(player, text)
 			resultId, resultCount, resultLevel = recipe.keepItem.id, 1, recipe.upgradeTo
 		else
 			resultId, resultCount = recipe.result()
-			player:addItem(resultId, resultCount)
+			local created = player:addItem(resultId, resultCount)
+			-- alas y armas nuevas: Luck y opciones al azar
+			if created and resultCount == 1 then
+				Mubia.rollItemOptions(created)
+			end
 		end
 		player:getPosition():sendMagicEffect(CONST_ME_FIREWORK_YELLOW)
 	else

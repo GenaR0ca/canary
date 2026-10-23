@@ -19,18 +19,29 @@ end
 
 zenLogin:register()
 
--- Al morir un monstruo, las monedas de su botín pasan directo como zen a quien tiene derecho al botín
+-- Al morir un monstruo, las monedas de su botín pasan directo como zen a quien tiene derecho al botín.
+-- También se tiran los dados de los items de MU que dejó (Luck, opción y Excellent).
 local zenLoot = EventCallback("MubiaZenLoot")
 
 function zenLoot.monsterPostDropLoot(monster, corpse)
+	local player = Player(corpse:getCorpseOwner())
+	-- items de MU del botín: Luck, opción y Excellent al azar
+	local excellent = Mubia.rollContainerOptions(corpse)
+	if player then
+		for _, name in ipairs(excellent) do
+			Mubia.sendMessage(player, MESSAGE_LOOT, string.format("¡Cayó un item Excellent: %s!", name))
+		end
+		-- RHP / RMP del arma: vida y mana al matar
+		Mubia.applyExcellentKill(player)
+	end
+
 	local zen = Mubia.takeCoins(corpse)
 	if zen <= 0 then
 		return
 	end
-	local player = Player(corpse:getCorpseOwner())
 	if player then
-		-- mascotas que dan zen extra (Pet Rudolf, Pet Unicorn)
-		zen = math.floor(zen * (100 + (Mubia.getPet(player).zen or 0)) / 100)
+		-- mascotas (Pet Rudolf, Pet Unicorn) y la opción ZEN de las armaduras dan zen extra
+		zen = math.floor(zen * (100 + (Mubia.getPet(player).zen or 0) + Mubia.getEquipmentBonus(player).exc.zen) / 100)
 		Mubia.addZen(player, zen)
 		Mubia.sendMessage(player, MESSAGE_LOOT, string.format("Obtuviste %d zen.", zen))
 	end

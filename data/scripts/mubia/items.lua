@@ -36,6 +36,9 @@ local function useSoul(player, target)
 		return false
 	end
 	local chance = Mubia.ItemConfig.soulChance[level + 1] or 0
+	if Mubia.hasLuck(target) then
+		chance = math.min(100, chance + Mubia.ExcellentConfig.luckSuccessRate) -- Luck: +25%
+	end
 	if math.random(100) <= chance then
 		Mubia.setItemLevel(target, level + 1)
 		say(player, string.format("¡Éxito! Tu item ahora es +%d.", level + 1))
@@ -154,6 +157,7 @@ local equipChange = EventCallback("MubiaEquipmentStats")
 
 function equipChange.playerOnItemMoved(player, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
 	if fromPosition.x == CONTAINER_POSITION and fromPosition.y < 0x40 or toPosition.x == CONTAINER_POSITION and toPosition.y < 0x40 then
+		Mubia.recalc(player) -- vida, mana y velocidad (opciones Excellent)
 		Mubia.sendStats(player)
 	end
 end

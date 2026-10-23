@@ -103,10 +103,24 @@ function Mubia.refreshItemText(item)
 	local option = Mubia.getItemOption(item)
 	local kind = Mubia.getItemKind(item)
 
+	-- "excellent dragon sword +7" (las alas con opción no se llaman Excellent, como en MU)
+	local excellent = Mubia.isExcellent and Mubia.isExcellent(item)
+	local name = itemType:getName()
+	if excellent then
+		name = "excellent " .. name
+	end
 	if level > 0 then
-		item:setAttribute(ITEM_ATTRIBUTE_NAME, string.format("%s +%d", itemType:getName(), level))
+		name = string.format("%s +%d", name, level)
+	end
+	if name ~= itemType:getName() then
+		item:setAttribute(ITEM_ATTRIBUTE_NAME, name)
 	else
 		item:removeAttribute(ITEM_ATTRIBUTE_NAME)
+	end
+	if excellent then
+		item:setAttribute(ITEM_ATTRIBUTE_ARTICLE, "an")
+	else
+		item:removeAttribute(ITEM_ATTRIBUTE_ARTICLE)
 	end
 
 	local lines = {}
@@ -124,6 +138,12 @@ function Mubia.refreshItemText(item)
 	if option > 0 then
 		local what = kind == "staff" and "Daño mágico" or (kind == "weapon" or kind == "wings") and "Daño" or "Defensa"
 		lines[#lines + 1] = string.format("Opción adicional: %s +%d.", what, option * Mubia.ItemConfig.optionStep)
+	end
+	-- Luck y opciones Excellent (mubia_excellent.lua)
+	if Mubia.getExcellentLines then
+		for _, line in ipairs(Mubia.getExcellentLines(item)) do
+			lines[#lines + 1] = line
+		end
 	end
 
 	if #lines > 0 then
@@ -146,7 +166,8 @@ end
 -- Bonus de los items equipados: daño físico, daño mágico, % de daño mágico (bastones), defensa, alas y mascota
 function Mubia.getEquipmentBonus(player)
 	local pet = Mubia.getPet and Mubia.getPet(player) or {}
-	local bonus = { attack = 0, wizardry = 0, magicRise = 0, defense = 0, wingDamage = 0, wingAbsorb = 0, petDamage = pet.damage or 0, petAbsorb = pet.absorb or 0 }
+	local bonus = { attack = 0, wizardry = 0, magicRise = 0, defense = 0, wingDamage = 0, wingAbsorb = 0, petDamage = pet.damage or 0, petAbsorb = pet.absorb or 0, criticalRate = 0 }
+	bonus.exc = Mubia.newExcellentBonus()
 	local slots = { CONST_SLOT_HEAD, CONST_SLOT_ARMOR, CONST_SLOT_LEGS, CONST_SLOT_FEET, CONST_SLOT_GLOVES, CONST_SLOT_LEFT, CONST_SLOT_RIGHT, CONST_SLOT_WINGS }
 	for _, slot in ipairs(slots) do
 		local item = player:getSlotItem(slot)
@@ -170,8 +191,12 @@ function Mubia.getEquipmentBonus(player)
 				bonus.wingDamage = stats.damage
 				bonus.wingAbsorb = stats.absorb
 			end
+			Mubia.addExcellentBonus(bonus, item, player)
 		end
 	end
+	-- DMGL: daño +nivel/20 (golpes y magias)
+	bonus.attack = bonus.attack + bonus.exc.damageFlat
+	bonus.wizardry = bonus.wizardry + bonus.exc.damageFlat
 	return bonus
 end
 
