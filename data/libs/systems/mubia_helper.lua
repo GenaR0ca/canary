@@ -11,7 +11,7 @@ Mubia.HELPER_OPCODE = 86
 
 Mubia.HelperConfig = {
 	tick = 300, -- cada cuánto piensa el Helper (ms)
-	zenPerLevel = 20, -- costo al prenderlo: nivel x esto
+	zenPerLevel = 0, -- costo al prenderlo: nivel x esto (0 = gratis, por ahora para probarlo; en MU es 20)
 	potionDelay = 1000, -- espera entre pociones (ms)
 	maxPickupRange = 8,
 	maxExtraNames = 13, -- nombres de items extra para recoger (como en MU)
@@ -138,14 +138,18 @@ function Mubia.startHelper(player, configText)
 		return false
 	end
 	local cost = Mubia.getHelperCost(player)
-	if Mubia.getZen(player) < cost or not player:removeMoneyBank(cost) then
+	if cost > 0 and (Mubia.getZen(player) < cost or not player:removeMoneyBank(cost)) then
 		sendState(player, false, string.format("Necesitas %d zen para usar el Mubia Helper.", cost))
 		return false
 	end
 
 	local playerId = player:getId()
 	Mubia.helpers[playerId] = { config = parseConfig(configText), nextPotion = 0, timers = {} }
-	Mubia.sendMessage(player, MESSAGE_STATUS, string.format("Mubia Helper prendido (costó %d zen).", cost))
+	if cost > 0 then
+		Mubia.sendMessage(player, MESSAGE_STATUS, string.format("Mubia Helper prendido (costó %d zen).", cost))
+	else
+		Mubia.sendMessage(player, MESSAGE_STATUS, "Mubia Helper prendido.")
+	end
 	sendState(player, true)
 	addEvent(Mubia.helperTick, Mubia.HelperConfig.tick, playerId)
 	return true
@@ -264,7 +268,40 @@ local function cast(player, def, target)
 	return false
 end
 
--- Buffs: se vuelven a lanzar cuando se terminan
+-- Buffs: se vuelven a lanzar cuando se terminan, en el jugador o en algún compañero de party
+local BUFF_PARTY_RANGE = 8 -- igual que PARTY_RANGE de data/scripts/mubia/spells.lua
+
+local function hasBuff(creature, def)
+	if def.buff == "swellLife" then
+		return creature:getCondition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT, BUFF_SUBID) ~= nil
+	end
+	if def.buff == "soulBarrier" then
+		return Mubia.getBuff(creature, "barrier") > 0
+	end
+	return Mubia.getBuff(creature, def.buff) > 0
+end
+
+-- El jugador y los compañeros de party a los que les llega el buff
+local function buffTargets(player)
+	local targets = { player }
+	local party = player:getParty()
+	if not party then
+		return targets
+	end
+	local origin = player:getPosition()
+	local members = party:getMembers()
+	members[#members + 1] = party:getLeader()
+	for _, member in ipairs(members) do
+		if member and member ~= player then
+			local position = member:getPosition()
+			if position.z == origin.z and origin:getDistance(position) <= BUFF_PARTY_RANGE then
+				targets[#targets + 1] = member
+			end
+		end
+	end
+	return targets
+end
+
 local function isBuffActive(player, def)
 	if def.kind == "summon" then
 		for _, summon in ipairs(player:getSummons()) do
@@ -277,13 +314,13 @@ local function isBuffActive(player, def)
 	if def.kind == "recovery" then
 		return player:getMana() >= player:getMaxMana() * 0.5
 	end
-	if def.buff == "swellLife" then
-		return player:getCondition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT, BUFF_SUBID) ~= nil
+	-- los buffs llegan a toda la party cercana: se vuelve a lanzar si a alguno se le terminó
+	for _, member in ipairs(buffTargets(player)) do
+		if not hasBuff(member, def) then
+			return false
+		end
 	end
-	if def.buff == "soulBarrier" then
-		return Mubia.getBuff(player, "barrier") > 0
-	end
-	return Mubia.getBuff(player, def.buff) > 0
+	return true
 end
 
 -- Pociones: la mejor que tenga y pueda tomar (mismas reglas que tomarla a mano)
