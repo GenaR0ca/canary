@@ -592,6 +592,14 @@ function Player:onGainExperience(target, exp, rawExp)
 		end
 	end
 
+	-- Mubia: mascotas que dan experiencia extra (Pet Panda)
+	if Mubia and Mubia.getPet then
+		local petExp = Mubia.getPet(self).exp or 0
+		if petExp > 0 then
+			exp = exp * (1 + petExp / 100)
+		end
+	end
+
 	-- Final Adjustments: Low Level Bonus and Base Rate
 	local lowLevelBonusExp = self:getFinalLowLevelBonus()
 	local baseRateExp = self:getFinalBaseRateExperience()

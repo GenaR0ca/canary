@@ -226,14 +226,22 @@ function Mubia.recalc(player)
 	end
 
 	local stats = Mubia.getStats(player)
-	local maxHealth = Mubia.getMaxHealth(player, class, stats)
-	local maxMana = Mubia.getMaxMana(player, class, stats)
+	local pet = Mubia.getPet and Mubia.getPet(player) or {}
+	-- opciones Excellent: MH / SD (+4% cada una), HP / MANA / AG de las alas
+	-- y Harmony HP / AG de las armaduras
+	local equipment = Mubia.getEquipmentBonus(player)
+	local exc, harmony = equipment.exc, equipment.harmony
+	local maxHealth = math.floor(Mubia.getMaxHealth(player, class, stats) * (100 + exc.maxHealth) / 100) + exc.wingHp + harmony.maxHealth + (pet.hp or 0)
+	local maxMana = math.floor(Mubia.getMaxMana(player, class, stats) * (100 + exc.maxMana) / 100) + exc.wingMana + harmony.maxMana
 
 	player:setMaxHealth(maxHealth)
 	player:setMaxMana(maxMana)
-	-- setAttackSpeed existe desde el canary.exe de Mubia con velocidad por AGI
+	-- setAttackSpeed existe desde el canary.exe de Mubia con velocidad por AGI (la mascota la sube un %)
 	if player.setAttackSpeed then
-		player:setAttackSpeed(Mubia.getAttackSpeed(class, stats))
+		local attackSpeed = Mubia.getAttackSpeed(class, stats)
+		attackSpeed = math.floor(attackSpeed * (100 - (pet.attackSpeed or 0)) / 100)
+		attackSpeed = math.floor(attackSpeed * (100 - exc.attackSpeed) / 100) -- ASPD del arma
+		player:setAttackSpeed(math.max(Mubia.Config.minAttackSpeed, attackSpeed))
 	end
 	if player:getHealth() > maxHealth then
 		player:addHealth(maxHealth - player:getHealth())
@@ -299,8 +307,10 @@ end
 -- Daño mínimo y máximo del arma de MU equipada, con su nivel (+1 a +15) y opción adicional (Jewel of Life) y las alas
 function Mubia.getWeaponDamage(player)
 	local minDamage, maxDamage = Mubia.getGearWeaponDamage(player)
-	local bonus = Mubia.getEquipmentBonus(player).attack
-	return minDamage + bonus, maxDamage + bonus
+	local equipment = Mubia.getEquipmentBonus(player)
+	local bonus = equipment.attack
+	-- Harmony: daño mínimo / máximo del arma
+	return minDamage + bonus + equipment.harmony.minAttack, maxDamage + bonus + equipment.harmony.maxAttack
 end
 
 local function isHealthDamage(combatType)
@@ -323,16 +333,36 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 		local weaponMin, weaponMax = Mubia.getWeaponDamage(attackerPlayer)
 		minDamage = minDamage + weaponMin
 		maxDamage = maxDamage + weaponMax
-		damagePrimary = math.random(math.max(1, minDamage), math.max(1, maxDamage)) + Mubia.getBuff(attackerPlayer, "damage")
+		damagePrimary = math.random(math.max(1, minDamage), math.max(1, maxDamage))
+		-- golpe excelente (EXE) y crítico (Luck): daño máximo
+		damagePrimary = Mubia.applyExcellentHit(Mubia.getEquipmentBonus(attackerPlayer), damagePrimary, math.max(1, maxDamage), target)
+		damagePrimary = damagePrimary + Mubia.getBuff(attackerPlayer, "damage")
 		damageSecondary = 0
+	elseif isMuSpell and damagePrimary > 0 then
+		local bonus = Mubia.getEquipmentBonus(attackerPlayer)
+		-- Harmony SKILL: daño extra de skills
+		damagePrimary = Mubia.applyExcellentHit(bonus, damagePrimary + bonus.harmony.skillDamage, nil, target)
 	end
 
-	-- Alas: aumentan el daño de golpes y magias
+	-- IGNOR de las alas: este golpe no se reduce por la defensa del enemigo
+	local ignoreDefense = false
+	if attackerPlayer and damagePrimary > 0 and Mubia.rollIgnoreDefense(Mubia.getEquipmentBonus(attackerPlayer)) then
+		ignoreDefense = true
+		-- la defensa de los monstruos de MU se resta después (mubia_monsters.lua): se compensa acá
+		local wild = Mubia.WildMonsters and target:getMonster() and not target:getMaster() and Mubia.WildMonsters[target:getName()]
+		if wild and wild.defense then
+			damagePrimary = damagePrimary + wild.defense
+		end
+	end
+
+	-- Alas, mascota y DMG del arma: aumentan el daño de golpes y magias
 	if attackerPlayer and damagePrimary > 0 then
-		local wingDamage = Mubia.getEquipmentBonus(attackerPlayer).wingDamage
-		if wingDamage > 0 then
-			damagePrimary = math.floor(damagePrimary * (100 + wingDamage) / 100)
-			damageSecondary = math.floor(damageSecondary * (100 + wingDamage) / 100)
+		local bonus = Mubia.getEquipmentBonus(attackerPlayer)
+		for _, extra in ipairs({ bonus.wingDamage, bonus.petDamage, bonus.exc.damage }) do
+			if extra > 0 then
+				damagePrimary = math.floor(damagePrimary * (100 + extra) / 100)
+				damageSecondary = math.floor(damageSecondary * (100 + extra) / 100)
+			end
 		end
 	end
 
@@ -340,7 +370,7 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 	if targetPlayer and Mubia.getClass(targetPlayer) then
 		local total = damagePrimary + damageSecondary
 		if total > 0 then
-			local defense = Mubia.getDefense(targetPlayer) + Mubia.getBuff(targetPlayer, "defense")
+			local defense = ignoreDefense and 0 or Mubia.getDefense(targetPlayer) + Mubia.getBuff(targetPlayer, "defense")
 			local minimum = math.ceil(total * Mubia.Config.minDamageAfterDefense)
 			local reduced = math.max(minimum, total - defense)
 			-- Soul Barrier: quita un % del daño que queda
@@ -348,10 +378,20 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 			if barrier > 0 then
 				reduced = math.max(1, math.floor(reduced * (100 - barrier) / 100))
 			end
-			-- Alas: absorben un % del daño que queda
-			local wingAbsorb = Mubia.getEquipmentBonus(targetPlayer).wingAbsorb
-			if wingAbsorb > 0 then
-				reduced = math.max(1, math.floor(reduced * (100 - wingAbsorb) / 100))
+			-- Alas y mascota: absorben un % del daño que queda
+			local bonus = Mubia.getEquipmentBonus(targetPlayer)
+			for _, absorb in ipairs({ bonus.wingAbsorb, bonus.petAbsorb }) do
+				if absorb > 0 then
+					reduced = math.max(1, math.floor(reduced * (100 - absorb) / 100))
+				end
+			end
+			-- Harmony DD: resta daño fijo
+			reduced = math.max(1, reduced - bonus.harmony.damageDecrease)
+			-- opciones Excellent: DD, REF, ARR y recuperar vida / mana (alas)
+			reduced = Mubia.applyExcellentDefense(targetPlayer, attacker, reduced)
+			-- SD: si te pega otro jugador, el escudo se lleva la mayor parte del golpe
+			if attackerPlayer and attackerPlayer ~= targetPlayer and Mubia.absorbWithSD then
+				reduced = Mubia.absorbWithSD(targetPlayer, reduced)
 			end
 			local ratio = reduced / total
 			damagePrimary = math.floor(damagePrimary * ratio)
