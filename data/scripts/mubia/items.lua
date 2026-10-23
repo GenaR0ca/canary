@@ -31,6 +31,10 @@ local function useSoul(player, target)
 		say(player, string.format("Este item ya está en +%d, el máximo.", Mubia.ItemConfig.maxLevel))
 		return false
 	end
+	if level >= Mubia.ItemConfig.soulMaxLevel then
+		say(player, string.format("Jewel of Soul sube items hasta +%d. De +%d a +15 se sube en la Chaos Machine del Chaos Goblin.", Mubia.ItemConfig.soulMaxLevel, Mubia.ItemConfig.soulMaxLevel + 1))
+		return false
+	end
 	local chance = Mubia.ItemConfig.soulChance[level + 1] or 0
 	if math.random(100) <= chance then
 		Mubia.setItemLevel(target, level + 1)
