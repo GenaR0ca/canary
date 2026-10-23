@@ -12,7 +12,7 @@ Mubia.HELPER_OPCODE = 86
 Mubia.HelperConfig = {
 	tick = 300, -- cada cuánto piensa el Helper (ms)
 	zenPerLevel = 0, -- costo al prenderlo: nivel x esto (0 = gratis, por ahora para probarlo; en MU es 20)
-	potionDelay = 1000, -- espera entre pociones (ms)
+	potionDelay = 1000, -- espera entre pociones del mismo tipo (ms); la de vida y la de mana no se esperan entre sí
 	maxPickupRange = 8,
 	maxExtraNames = 13, -- nombres de items extra para recoger (como en MU)
 	-- items que cuentan como "joyas": joyas, paquetes de joyas, frutas, plumas
@@ -21,7 +21,7 @@ Mubia.HelperConfig = {
 	gearIds = { from = 61001, to = 63999 },
 }
 
--- Helper prendido por jugador: Mubia.helpers[playerId] = { config = {...}, nextPotion = ms, timers = {...} }
+-- Helper prendido por jugador: Mubia.helpers[playerId] = { config = {...}, nextPotion = ms, nextManaPotion = ms, timers = {...} }
 Mubia.helpers = Mubia.helpers or {}
 
 local BUFF_SUBID = 47100 -- Swell Life (ver data/scripts/mubia/spells.lua)
@@ -381,12 +381,12 @@ local function heal(player, helper)
 	local hp = percent(player:getHealth(), player:getMaxHealth())
 	local mp = percent(player:getMana(), player:getMaxMana())
 
-	if now >= helper.nextPotion then
-		if config.hpPotion > 0 and hp <= config.hpPotion and usePotion(player, "health") then
-			helper.nextPotion = now + Mubia.HelperConfig.potionDelay
-		elseif config.mpPotion > 0 and mp <= config.mpPotion and usePotion(player, "mana") then
-			helper.nextPotion = now + Mubia.HelperConfig.potionDelay
-		end
+	-- vida y mana van por separado: puede tomar las dos a la vez
+	if now >= helper.nextPotion and config.hpPotion > 0 and hp <= config.hpPotion and usePotion(player, "health") then
+		helper.nextPotion = now + Mubia.HelperConfig.potionDelay
+	end
+	if now >= (helper.nextManaPotion or 0) and config.mpPotion > 0 and mp <= config.mpPotion and usePotion(player, "mana") then
+		helper.nextManaPotion = now + Mubia.HelperConfig.potionDelay
 	end
 
 	-- Heal de la elfa: en sí misma o en el compañero de party más herido (la magia elige al más herido)

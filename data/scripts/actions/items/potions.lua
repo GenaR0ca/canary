@@ -105,7 +105,8 @@ local function onUsePotion(player, item, fromPosition, target, toPosition, isHot
 		player:addAchievementProgress("Potion Addict", 100000)
 		target:say("Aaaah...", MESSAGE_POTION)
 
-		local deactivatedFlasks = player:kv():get("talkaction.potions.flask") or false
+		-- Mubia Online: las pociones no dejan frasco vacío (como en MU)
+		local deactivatedFlasks = true
 		if not deactivatedFlasks then
 			if fromPosition.x == CONTAINER_POSITION then
 				player:addItem(potion.flask, 1)
