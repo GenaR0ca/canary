@@ -701,3 +701,15 @@ function Player:onChangeZone(zone)
 end
 
 function Player:onInventoryUpdate(item, slot, equip) end
+
+-- Mubia: nivel máximo (Mubia.Config.maxLevel). Se corta al final, después de todos los bonus,
+-- y también vale para la experiencia que dan los scripts (Devil Square, Blood Castle...).
+local mubiaGainExperience = Player.onGainExperience
+
+function Player:onGainExperience(target, exp, rawExp)
+	exp = mubiaGainExperience(self, target, exp, rawExp)
+	if Mubia and Mubia.capExperience then
+		exp = Mubia.capExperience(self, exp)
+	end
+	return exp
+end
