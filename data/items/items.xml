@@ -84853,6 +84853,143 @@ Granted by TibiaGoals.com"/>
 		<attribute key="weight" value="10"/>
 	</item>
 	<!-- Mubia: fin de Devil Square -->
+	<!-- Mubia: Blood Castle, Scroll of Archangel, Blood Bone, Cloak of Invisibility y armas del Archangel (generado por tools/mubia/blood_castle_items.py) -->
+	<item id="60631" article="a" name="scroll of archangel +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60632" article="a" name="scroll of archangel +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60633" article="a" name="scroll of archangel +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60634" article="a" name="scroll of archangel +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60635" article="a" name="scroll of archangel +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60636" article="a" name="scroll of archangel +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60637" article="a" name="scroll of archangel +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60638" article="a" name="scroll of archangel +8">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60641" article="a" name="blood bone +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60642" article="a" name="blood bone +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60643" article="a" name="blood bone +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60644" article="a" name="blood bone +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60645" article="a" name="blood bone +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60646" article="a" name="blood bone +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60647" article="a" name="blood bone +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60648" article="a" name="blood bone +8">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60651" article="a" name="cloak of invisibility +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60652" article="a" name="cloak of invisibility +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60653" article="a" name="cloak of invisibility +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60654" article="a" name="cloak of invisibility +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60655" article="a" name="cloak of invisibility +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60656" article="a" name="cloak of invisibility +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60657" article="a" name="cloak of invisibility +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60658" article="a" name="cloak of invisibility +8">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60661" article="a" name="divine sword of archangel">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Arma sagrada robada al Archangel. Llevasela al Archangel en la entrada del Blood Castle antes de que termine el tiempo."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60662" article="a" name="divine staff of archangel">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Arma sagrada robada al Archangel. Llevasela al Archangel en la entrada del Blood Castle antes de que termine el tiempo."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60663" article="a" name="divine crossbow of archangel">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Arma sagrada robada al Archangel. Llevasela al Archangel en la entrada del Blood Castle antes de que termine el tiempo."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<!-- Mubia: fin de Blood Castle -->
 	<item id="60401" name="wings of satan">
 		<attribute key="primarytype" value="wings"/>
 		<attribute key="slottype" value="wings"/>
