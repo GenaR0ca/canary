@@ -292,7 +292,11 @@ function Mubia.sellFromBag(player, slot, itemId, count, confirmed)
 	if not item:remove(count) then
 		return false
 	end
-	Mubia.addZen(player, total)
+	if Mubia.addZen then
+		Mubia.addZen(player, total)
+	else
+		player:setBankBalance(player:getBankBalance() + total)
+	end
 	local text = count > 1 and string.format("Vendiste %dx %s por %d zen.", count, name, total) or string.format("Vendiste %s por %d zen.", name, total)
 	player:sendTextMessage(MESSAGE_TRADE, Mubia.toLatin1(text))
 	Mubia.sendSellList(player)
