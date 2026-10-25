@@ -51,14 +51,8 @@
 	<npc centerx="1254" centery="706" centerz="7" radius="1">
 		<npc name="Charon" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="1592" centery="741" centerz="7" radius="1">
-		<npc name="Charon" x="0" y="0" z="7" spawntime="60" />
-	</npc>
 	<npc centerx="1954" centery="615" centerz="7" radius="1">
 		<npc name="Arena Guard" x="0" y="0" z="7" spawntime="60" />
-	</npc>
-	<npc centerx="1254" centery="702" centerz="7" radius="1">
-		<npc name="Messenger of Archangel" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1594" centery="741" centerz="7" radius="1">
 		<npc name="Messenger of Archangel" x="0" y="0" z="7" spawntime="60" />
@@ -87,15 +81,6 @@
 	<npc centerx="2580" centery="705" centerz="7" radius="1">
 		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="940" centery="650" centerz="7" radius="1">
-		<npc name="Charon" x="0" y="0" z="7" spawntime="60" />
-	</npc>
-	<npc centerx="942" centery="650" centerz="7" radius="1">
-		<npc name="Messenger of Archangel" x="0" y="0" z="7" spawntime="60" />
-	</npc>
-	<npc centerx="914" centery="650" centerz="7" radius="1">
-		<npc name="Lahap" x="0" y="0" z="7" spawntime="60" />
-	</npc>
 	<npc centerx="925" centery="632" centerz="7" radius="1">
 		<npc name="Guard" x="0" y="0" z="7" spawntime="60" />
 	</npc>
@@ -108,19 +93,37 @@
 	<npc centerx="931" centery="675" centerz="7" radius="1">
 		<npc name="Guard" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="1260" centery="691" centerz="7" radius="1">
-		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
-	</npc>
 	<npc centerx="1590" centery="690" centerz="7" radius="1">
 		<npc name="Guard" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1597" centery="690" centerz="7" radius="1">
 		<npc name="Guard" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="4766" centery="5085" centerz="7" radius="1">
-		<npc name="Lahap" x="0" y="0" z="7" spawntime="60" />
+	<npc centerx="932" centery="633" centerz="7" radius="1">
+		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="4768" centery="5085" centerz="7" radius="1">
+	<npc centerx="933" centery="674" centerz="7" radius="1">
+		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="907" centery="651" centerz="7" radius="1">
+		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="948" centery="651" centerz="7" radius="1">
+		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1250" centery="694" centerz="7" radius="1">
+		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1276" centery="682" centerz="7" radius="1">
+		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1286" centery="720" centerz="7" radius="1">
+		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1601" centery="692" centerz="7" radius="1">
+		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1633" centery="742" centerz="7" radius="1">
 		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 </npcs>

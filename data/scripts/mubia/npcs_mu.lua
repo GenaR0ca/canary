@@ -1,12 +1,23 @@
 -- Mubia Online: lo que hacen los NPCs de MU que no son tiendas.
--- Elf Soldier (buff para personajes de nivel bajo) y Lahap (junta y separa paquetes de joyas).
--- Los archivos de cada NPC están en data-canary/npc/ (elf_soldier.lua, lahap.lua).
+--   Elf Soldier: en cada salida de las ciudades, da un buff de defensa y daño por 30 minutos.
+--     El cliente muestra un recuadro con el tiempo que queda (opcode 89, módulo game_mubia_buffs).
+--   Messenger of Archangel: abre la ventana para elegir el Blood Castle (opcode 88, módulo game_mubia_bloodcastle).
+-- Los archivos de cada NPC están en data-canary/npc/ (elf_soldier.lua, messenger_of_archangel.lua).
 
--- Elf Soldier: como en MU, da gratis más defensa y más daño a los personajes de nivel bajo.
+Mubia.BUFFS_OPCODE = 89
+Mubia.BLOOD_CASTLE_MENU_OPCODE = 88
+
+-- texto para el cliente: en Latin-1 (como espera OTClient) y escapado para JSON
+local function jsonString(text)
+	text = Mubia.toLatin1(text)
+	return '"' .. text:gsub("\\", "\\\\"):gsub('"', '\\"'):gsub("\n", "\\n") .. '"'
+end
+
+-- Elf Soldier ----------------------------------------------------------------------------------
+
 Mubia.ElfSoldier = {
-	maxLevel = 200, -- hasta este nivel (incluido) da el buff
-	duration = 60 * 60 * 1000, -- 60 minutos
-	godAlways = true, -- PRUEBAS: los GOD lo reciben aunque tengan más nivel
+	duration = 30 * 60, -- segundos
+	maxLevel = 0, -- 0 = cualquier nivel recibe el buff (en MU solo hasta nivel 180-220)
 }
 
 -- Defensa y daño según el nivel (fórmula de MU: nivel / 5 + 50 y nivel / 3 + 45)
@@ -14,22 +25,51 @@ function Mubia.ElfSoldier.values(level)
 	return math.floor(level / 5) + 50, math.floor(level / 3) + 45
 end
 
+local function elfSoldierStore(player)
+	return player:kv():scoped("mubia-elf-soldier")
+end
+
+-- Manda al cliente el recuadro de buffs (por ahora solo el del Elf Soldier)
+function Mubia.sendBuffs(player)
+	local buffs = {}
+	local store = elfSoldierStore(player)
+	local left = (store:get("until") or 0) - os.time()
+	if left > 0 then
+		local text = string.format("+%d defensa, +%d daño", store:get("defense") or 0, store:get("damage") or 0)
+		buffs[#buffs + 1] = string.format('{"id":"elfSoldier","name":"Elf Soldier","text":%s,"seconds":%d}', jsonString(text), left)
+	end
+	player:sendExtendedOpcode(Mubia.BUFFS_OPCODE, '{"buffs":[' .. table.concat(buffs, ",") .. "]}")
+end
+
+-- Vuelve a poner el buff que quedaba (al entrar al juego)
+local function restoreElfSoldier(player)
+	local store = elfSoldierStore(player)
+	local left = (store:get("until") or 0) - os.time()
+	if left > 0 then
+		Mubia.setBuff(player, "elfSoldierDefense", store:get("defense") or 0, left * 1000)
+		Mubia.setBuff(player, "elfSoldierDamage", store:get("damage") or 0, left * 1000)
+	end
+end
+
 function Mubia.ElfSoldier.give(npc, player)
 	local config = Mubia.ElfSoldier
 	local level = player:getLevel()
-	local isGod = player:getGroup():getAccess()
-	if level > config.maxLevel and not (config.godAlways and isGod) then
-		npc:say(Mubia.toLatin1(string.format("Ya eres muy fuerte, %s. Mi bendición es solo para aventureros de nivel %d o menos.", player:getName(), config.maxLevel)), TALKTYPE_PRIVATE_NP, false, player)
+	if config.maxLevel > 0 and level > config.maxLevel then
+		npc:say(Mubia.toLatin1(string.format("Mi bendición es solo para aventureros de nivel %d o menos.", config.maxLevel)), TALKTYPE_PRIVATE_NP, false, player)
 		return false
 	end
 
-	local defense, damage = config.values(math.min(level, config.maxLevel))
-	Mubia.setBuff(player, "elfSoldierDefense", defense, config.duration)
-	Mubia.setBuff(player, "elfSoldierDamage", damage, config.duration)
+	local defense, damage = config.values(level)
+	local store = elfSoldierStore(player)
+	store:set("until", os.time() + config.duration)
+	store:set("defense", defense)
+	store:set("damage", damage)
+	restoreElfSoldier(player)
+	Mubia.sendBuffs(player)
+
 	player:getPosition():sendMagicEffect(CONST_ME_HOLYDAMAGE)
-	local minutes = math.floor(config.duration / 60000)
 	npc:say(Mubia.toLatin1(string.format("Que la bendición de las elfas te proteja, %s.", player:getName())), TALKTYPE_PRIVATE_NP, false, player)
-	Mubia.sendMessage(player, MESSAGE_STATUS, string.format("Elf Soldier: +%d de defensa y +%d de daño por %d minutos.", defense, damage, minutes))
+	Mubia.sendMessage(player, MESSAGE_STATUS, string.format("Elf Soldier: +%d de defensa y +%d de daño por %d minutos.", defense, damage, math.floor(config.duration / 60)))
 	return true
 end
 
@@ -47,106 +87,79 @@ if not Mubia.elfSoldierGetBuffWrapped then
 	end
 end
 
--- Lahap: junta 10 Jewels of Bless o de Soul en un paquete (x10) y separa paquetes (x10, x20, x30).
-Mubia.Lahap = {
-	bundleZen = 0, -- PRUEBAS: gratis. En MU cuesta 500.000 zen por paquete
-	unbundleZen = 0, -- PRUEBAS: gratis. En MU cuesta 1.000.000 zen por paquete
-	jewels = {
-		{ jewel = Mubia.JEWEL_OF_BLESS, bundle = 60309 }, -- Bless Bundle x10
-		{ jewel = Mubia.JEWEL_OF_SOUL, bundle = 60312 }, -- Soul Bundle x10
-	},
-}
+-- Messenger of Archangel: ventana de castillos --------------------------------------------------
 
-local function lahapSay(npc, player, text)
-	npc:say(Mubia.toLatin1(text), TALKTYPE_PRIVATE_NP, false, player)
-end
-
-local function getBag(player)
-	local bag = player:getSlotItem(CONST_SLOT_BACKPACK)
-	if bag and bag:isContainer() then
-		return bag
+local function castleLabel(castle)
+	if castle.minResets then
+		return string.format("Castillo %d (nivel %d + %d reset)", castle.level, castle.minLevel, castle.minResets)
 	end
+	return string.format("Castillo %d (nivel %d-%d)", castle.level, castle.minLevel, castle.maxLevel)
 end
 
-local function payZen(player, cost)
-	return cost <= 0 or player:removeMoney(cost, 0, true)
-end
-
-function Mubia.Lahap.bundle(npc, player)
-	local config = Mubia.Lahap
-	local bag = getBag(player)
-	if not bag then
-		return false
-	end
-
-	local made = {}
-	for _, entry in ipairs(config.jewels) do
-		local packs = math.floor(player:getItemCount(entry.jewel) / 10)
-		while packs > 0 do
-			if bag:getEmptySlots(false) < 1 then
-				lahapSay(npc, player, "No tienes espacio en tu inventario (tecla I) para más paquetes.")
-				packs = 0
-				break
-			end
-			if not payZen(player, config.bundleZen) then
-				lahapSay(npc, player, "No tienes suficiente zen.")
-				packs = 0
-				break
-			end
-			if not player:removeItem(entry.jewel, 10) then
-				break
-			end
-			bag:addItem(entry.bundle, 1, -1, FLAG_IGNOREAUTOSTACK)
-			made[entry.bundle] = (made[entry.bundle] or 0) + 1
-			packs = packs - 1
+local function nearMessenger(player)
+	local spectators = Game.getSpectators(player:getPosition(), false, false, 4, 4, 4, 4)
+	for _, creature in ipairs(spectators) do
+		if creature:isNpc() and creature:getName() == "Messenger of Archangel" then
+			return true
 		end
 	end
+	return false
+end
 
-	local names = {}
-	for bundleId, count in pairs(made) do
-		names[#names + 1] = string.format("%dx %s", count, ItemType(bundleId):getName())
+function Mubia.openBloodCastleMenu(player)
+	local BC = Mubia.BloodCastle
+	if not BC then
+		return
 	end
-	if #names == 0 then
-		lahapSay(npc, player, "Necesitas al menos 10 Jewels of Bless o 10 Jewels of Soul en tu inventario.")
-		return false
+	local mine = BC.getCastleForPlayer(player)
+	local parts = {}
+	for _, castle in ipairs(BC.castles) do
+		local ok, reason = BC.canEnter(player, castle)
+		parts[#parts + 1] = string.format('{"level":%d,"label":%s,"enabled":%s,"mine":%s,"reason":%s}', castle.level, jsonString(castleLabel(castle)), ok and "true" or "false", castle == mine and "true" or "false", jsonString(reason or ""))
 	end
-	player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
-	lahapSay(npc, player, "Listo, aquí tienes: " .. table.concat(names, ", ") .. ".")
+	player:sendExtendedOpcode(Mubia.BLOOD_CASTLE_MENU_OPCODE, '{"action":"open","castles":[' .. table.concat(parts, ",") .. "]}")
+end
+
+local opcodes = CreatureEvent("MubiaNpcOpcodes")
+
+function opcodes.onExtendedOpcode(player, opcode, buffer)
+	if opcode == Mubia.BUFFS_OPCODE then
+		Mubia.sendBuffs(player)
+	elseif opcode == Mubia.BLOOD_CASTLE_MENU_OPCODE then
+		local number = tonumber(buffer:match("^enter:(%d+)$"))
+		local BC = Mubia.BloodCastle
+		local castle = number and BC and BC.castles[number]
+		if not castle then
+			return
+		end
+		if not nearMessenger(player) then
+			Mubia.sendMessage(player, MESSAGE_FAILURE, "Tienes que estar al lado del Messenger of Archangel.")
+			return
+		end
+		if BC.enter(player, castle) then
+			player:sendExtendedOpcode(Mubia.BLOOD_CASTLE_MENU_OPCODE, '{"action":"close"}')
+		else
+			Mubia.openBloodCastleMenu(player)
+		end
+	end
+end
+
+opcodes:register()
+
+local login = CreatureEvent("MubiaNpcLogin")
+
+function login.onLogin(player)
+	player:registerEvent("MubiaNpcOpcodes")
+	restoreElfSoldier(player)
+	-- un instante después, cuando el cliente ya cargó sus módulos
+	local playerId = player:getId()
+	addEvent(function()
+		local p = Player(playerId)
+		if p then
+			Mubia.sendBuffs(p)
+		end
+	end, 1000)
 	return true
 end
 
-function Mubia.Lahap.unbundle(npc, player)
-	local config = Mubia.Lahap
-	local bag = getBag(player)
-	if not bag then
-		return false
-	end
-
-	local opened = 0
-	for bundleId, bundle in pairs(Mubia.JewelBundles) do
-		while player:getItemCount(bundleId) > 0 do
-			-- las joyas se apilan: con una casilla libre alcanza (el paquete libera la suya)
-			if bag:getEmptySlots(false) < 1 then
-				lahapSay(npc, player, "Necesitas al menos una casilla libre en tu inventario (tecla I).")
-				break
-			end
-			if not payZen(player, config.unbundleZen) then
-				lahapSay(npc, player, "No tienes suficiente zen.")
-				break
-			end
-			if not player:removeItem(bundleId, 1) then
-				break
-			end
-			player:addItem(bundle.jewel, bundle.amount)
-			opened = opened + 1
-		end
-	end
-
-	if opened == 0 then
-		lahapSay(npc, player, "No tienes paquetes de joyas para separar.")
-		return false
-	end
-	player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
-	lahapSay(npc, player, string.format("Listo, separé %d paquete(s). Las joyas están en tu inventario.", opened))
-	return true
-end
+login:register()

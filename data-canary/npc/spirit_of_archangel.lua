@@ -15,6 +15,6 @@ npcConfig.outfit = {
 
 Mubia.registerShopNpc(npcType, npcConfig, {
 	shop = {},
-	greeting = "|PLAYERNAME|, el Arcángel necesita guerreros para defender Blood Castle. Habla con el {Messenger of Archangel}, al lado de Charon, para entrar.",
+	greeting = "|PLAYERNAME|, el Arcángel necesita guerreros para defender Blood Castle. Habla con el {Messenger of Archangel}, aquí en Devias, para entrar.",
 	voice = "¡Blood Castle espera a sus defensores! El Messenger of Archangel te lleva.",
 })

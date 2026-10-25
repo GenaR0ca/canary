@@ -1,13 +1,18 @@
 -- Mubia Online: armado común de monstruos y NPCs. Cada criatura tiene su propio archivo
 -- (con Game.createMonsterType("Nombre") y monster.outfit) para que el editor de mapas la reconozca.
 
--- Monstruo salvaje de MU (Lorencia, Noria, etc.). cfg: level, health, damage = {min, max}, defense, speed, corpse,
--- magic (ataca con magia a distancia) o ranged (dispara flechas a distancia)
+-- Monstruo salvaje de MU (Lorencia, Noria, etc.). cfg: speed, corpse, magic (ataca con magia a distancia)
+-- o ranged (dispara flechas a distancia). Nivel, vida, daño y defensa salen del Monster.txt de MU
+-- (Mubia.MonsterStats); los de cfg (level, health, damage = {min, max}, defense) solo se usan si el
+-- monstruo no está en Monster.txt o si pones custom = true.
 function Mubia.registerWildMonster(mType, monster, cfg)
+	local mu = Mubia.getMonsterMuStats(mType:name(), cfg)
+	Mubia.WildMonsters[mType:name()] = mu
+
 	monster.description = monster.description or ("a " .. mType:name():lower())
-	monster.experience = cfg.level * 3
-	monster.health = cfg.health
-	monster.maxHealth = cfg.health
+	monster.experience = Mubia.getMonsterBaseExp(mu.level)
+	monster.health = mu.hp
+	monster.maxHealth = mu.hp
 	monster.race = "blood"
 	monster.corpse = cfg.corpse
 	monster.speed = cfg.speed
@@ -49,26 +54,27 @@ function Mubia.registerWildMonster(mType, monster, cfg)
 
 	-- zen (gold coin) como en MU
 	monster.loot = {
-		{ id = 3031, chance = 60000, maxCount = cfg.level * 5 },
+		{ id = 3031, chance = 60000, maxCount = mu.level * 5 },
 	}
 
 	if cfg.magic then
 		monster.attacks = {
-			{ name = "combat", interval = 2000, chance = 100, type = COMBAT_ENERGYDAMAGE, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2], range = 5, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = true },
+			{ name = "combat", interval = mu.attackSpeed, chance = 100, type = COMBAT_ENERGYDAMAGE, minDamage = -mu.minDamage, maxDamage = -mu.maxDamage, range = 5, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = true },
 		}
 	elseif cfg.ranged then
 		monster.attacks = {
-			{ name = "combat", interval = 2000, chance = 100, type = COMBAT_PHYSICALDAMAGE, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2], range = 5, shootEffect = CONST_ANI_ARROW, target = true },
+			{ name = "combat", interval = mu.attackSpeed, chance = 100, type = COMBAT_PHYSICALDAMAGE, minDamage = -mu.minDamage, maxDamage = -mu.maxDamage, range = 5, shootEffect = CONST_ANI_ARROW, target = true },
 		}
 	else
 		monster.attacks = {
-			{ name = "melee", interval = 2000, chance = 100, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2] },
+			{ name = "melee", interval = mu.attackSpeed, chance = 100, minDamage = -mu.minDamage, maxDamage = -mu.maxDamage },
 		}
 	end
 
+	-- la defensa y el bloqueo de MU se aplican en Mubia.modifyDamage (mubia_monsters.lua), no los de Tibia
 	monster.defenses = {
-		defense = cfg.defense,
-		armor = cfg.defense,
+		defense = 0,
+		armor = 0,
 	}
 
 	monster.elements = {}
@@ -131,6 +137,71 @@ function Mubia.registerSummon(mType, monster, cfg)
 	monster.defenses = {
 		defense = cfg.defense,
 		armor = cfg.defense,
+	}
+
+	monster.elements = {}
+	monster.immunities = {}
+
+	mType:register(monster)
+end
+
+-- Mascota de MU que sigue a su dueño (Guardian Angel, Imp, Dark Raven...). Es un "familiar":
+-- entra a las zonas seguras, se teletransporta con el dueño y nadie la puede atacar.
+-- cfg: damage = {min, max} solo si ataca al objetivo del dueño (Dark Raven)
+function Mubia.registerPet(mType, monster, cfg)
+	monster.description = "una mascota"
+	monster.experience = 0
+	monster.health = 1000
+	monster.maxHealth = 1000
+	monster.race = "undead"
+	monster.corpse = 0
+	monster.speed = 400
+	monster.manaCost = 0
+
+	monster.changeTarget = {
+		interval = 4000,
+		chance = 0,
+	}
+
+	monster.strategiesTarget = {
+		nearest = 100,
+	}
+
+	monster.flags = {
+		summonable = false,
+		attackable = false,
+		hostile = cfg.damage ~= nil,
+		convinceable = false,
+		pushable = false,
+		familiar = true,
+		rewardBoss = false,
+		illusionable = false,
+		canPushItems = false,
+		canPushCreatures = false,
+		staticAttackChance = 90,
+		targetDistance = 1,
+		runHealth = 0,
+		healthHidden = true,
+		isBlockable = false,
+		canWalkOnEnergy = true,
+		canWalkOnFire = true,
+		canWalkOnPoison = true,
+	}
+
+	monster.light = {
+		level = 0,
+		color = 0,
+	}
+
+	monster.loot = {}
+	monster.attacks = {}
+	if cfg.damage then
+		monster.attacks[1] = { name = "melee", interval = 1500, chance = 100, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2] }
+	end
+
+	monster.defenses = {
+		defense = 0,
+		armor = 0,
 	}
 
 	monster.elements = {}
@@ -227,6 +298,68 @@ Mubia.NpcPotions = {
 	{ itemName = "great mana potion", clientId = 238, buy = 0 },
 }
 
+-- Compra en un NPC: el item va directo a la bolsa de inventario (tecla I), nunca al suelo.
+-- Si la bolsa no tiene casillas libres, no se cobra y no se compra nada.
+function Mubia.buyToInventory(npc, player, itemId, subType, amount, totalCost)
+	local bag = player:getSlotItem(CONST_SLOT_BACKPACK)
+	if not bag or bag:getId() ~= Mubia.INVENTORY_BAG or not bag:isContainer() then
+		return npc:sellItem(player, itemId, amount, subType, 0, false, false)
+	end
+
+	local itemType = ItemType(itemId)
+	if itemType:getId() == 0 or amount < 1 then
+		return false
+	end
+
+	local stackable = itemType:isStackable()
+	local stackSize = stackable and itemType:getStackSize() or 1
+	-- lo que entra: casillas libres y, si se apila (joyas, pociones), lo que falta para llenar las pilas que ya tienes
+	local room = bag:getEmptySlots(false) * stackSize
+	if stackable then
+		for _, item in ipairs(bag:getItems(false)) do
+			if item:getId() == itemId then
+				room = room + math.max(0, stackSize - item:getCount())
+			end
+		end
+	end
+	if room < amount then
+		player:sendCancelMessage(Mubia.toLatin1("No tienes espacio en tu inventario (tecla I)."))
+		return false
+	end
+
+	local currency = npc:getCurrency()
+	if totalCost > 0 then
+		local paid
+		if currency == ITEM_GOLD_COIN then
+			paid = player:removeMoney(totalCost, 0, true)
+		else
+			paid = player:removeItem(currency, totalCost)
+		end
+		if not paid then
+			player:sendCancelMessage(Mubia.toLatin1("No tienes suficiente zen."))
+			return false
+		end
+	end
+
+	local left = amount
+	while left > 0 do
+		local count = stackable and math.min(left, stackSize) or subType
+		-- -1 = cualquier casilla; lo que se apila se junta con las pilas que ya hay (como en Tibia)
+		if not bag:addItem(itemId, count, -1, stackable and 0 or FLAG_IGNOREAUTOSTACK) then
+			break
+		end
+		left = left - (stackable and count or 1)
+	end
+
+	local bought = amount - left
+	local message = string.format("Compraste %dx %s", bought, itemType:getName())
+	if totalCost > 0 then
+		message = message .. string.format(" por %d %s", totalCost, currency == ITEM_GOLD_COIN and "zen" or ItemType(currency):getName())
+	end
+	player:sendTextMessage(MESSAGE_TRADE, Mubia.toLatin1(message .. "."))
+	return bought > 0
+end
+
 function Mubia.registerShopNpc(npcType, npcConfig, config)
 	npcConfig.name = npcType:name()
 	npcConfig.description = npcConfig.name
@@ -295,7 +428,7 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 	end
 
 	npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
-		npc:sellItem(player, itemId, amount, subType, 0, ignore, inBackpacks)
+		Mubia.buyToInventory(npc, player, itemId, subType, amount, totalCost)
 	end
 
 	npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name, totalCost) end
@@ -327,6 +460,9 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 
 	npcHandler:setCallback(CALLBACK_GREET, function(npc, player)
 		npcHandler:setMessage(MESSAGE_GREET, Mubia.toLatin1(greeting))
+		if config.onGreet then
+			config.onGreet(npc, player)
+		end
 		return true
 	end)
 
@@ -336,6 +472,13 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 		end
 		if className and (MsgContains(msg, "magias") or MsgContains(msg, "scrolls")) then
 			giveScrolls(npc, player)
+		end
+		-- palabras propias del NPC (ej. "chaos" en el Chaos Goblin)
+		for keyword, callback in pairs(config.keywords or {}) do
+			if MsgContains(msg, keyword) then
+				callback(npc, player)
+				break
+			end
 		end
 		return true
 	end)
