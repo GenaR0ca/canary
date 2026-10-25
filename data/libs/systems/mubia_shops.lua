@@ -231,7 +231,7 @@ function Mubia.getSellPrice(item)
 		return math.floor(price)
 	end
 	-- pociones, flechas, scrolls y demás
-	return item:isStackable() and 10 or 100
+	return ItemType(itemId):isStackable() and 10 or 100
 end
 
 local function jsonText(text)
