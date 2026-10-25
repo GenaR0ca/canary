@@ -77,15 +77,27 @@ end
 -- Lo que vende Lumen the Barmaid (y también Elf Lala y Wizard Izabel)
 Mubia.ShopBarmaid = {
 	items = {
-		266, 236, 239, -- Small Healing Potion, Healing Potion, Large Healing Potion
-		268, 237, 238, -- Small Mana Potion, Mana Potion, Large Mana Potion
+		266,
+		236,
+		239, -- Small Healing Potion, Healing Potion, Large Healing Potion
+		268,
+		237,
+		238, -- Small Mana Potion, Mana Potion, Large Mana Potion
 		7644, -- Antidote
 		60701, -- Ale
 		60702, -- Olive of Love
-		60631, 60632, 60633, -- Scroll of Archangel +1 a +3
-		60641, 60642, 60643, -- Blood Bone +1 a +3
-		60601, 60602, 60603, -- Devil's Eye +1 a +3
-		60611, 60612, 60613, -- Devil's Key +1 a +3
+		60631,
+		60632,
+		60633, -- Scroll of Archangel +1 a +3
+		60641,
+		60642,
+		60643, -- Blood Bone +1 a +3
+		60601,
+		60602,
+		60603, -- Devil's Eye +1 a +3
+		60611,
+		60612,
+		60613, -- Devil's Key +1 a +3
 	},
 }
 
@@ -255,15 +267,7 @@ function Mubia.sendSellList(player)
 	local entries = {}
 	for _, entry in ipairs(Mubia.getSellableItems(player)) do
 		local item = entry.item
-		entries[#entries + 1] = string.format(
-			'{"slot":%d,"id":%d,"count":%d,"name":%s,"price":%d,"valuable":%s}',
-			entry.slot,
-			item:getId(),
-			item:getCount(),
-			jsonText(item:getName()),
-			Mubia.getSellPrice(item),
-			Mubia.isValuableItem(item) and "true" or "false"
-		)
+		entries[#entries + 1] = string.format('{"slot":%d,"id":%d,"count":%d,"name":%s,"price":%d,"valuable":%s}', entry.slot, item:getId(), item:getCount(), jsonText(item:getName()), Mubia.getSellPrice(item), Mubia.isValuableItem(item) and "true" or "false")
 	end
 	player:sendExtendedOpcode(Mubia.NPC_SHOP_OPCODE or 85, '{"sell":[' .. table.concat(entries, ",") .. "]}")
 end

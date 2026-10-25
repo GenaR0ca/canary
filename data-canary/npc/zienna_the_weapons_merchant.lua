@@ -14,10 +14,7 @@ npcConfig.outfit = {
 }
 
 Mubia.registerShopNpc(npcType, npcConfig, {
-	shop = Mubia.Shop(
-		{ sets = { "Plate", "Sphinx", "Spirit" } },
-		{ gear = { "Tiger Bow", "Serpent Crossbow", "Gorgon Staff", "Blade", "Salamander Sword", "Great Scythe" } }
-	),
+	shop = Mubia.Shop({ sets = { "Plate", "Sphinx", "Spirit" } }, { gear = { "Tiger Bow", "Serpent Crossbow", "Gorgon Staff", "Blade", "Salamander Sword", "Great Scythe" } }),
 	greeting = "¡Bienvenido a Devias, |PLAYERNAME|! Tengo sets, armas y bastones con Luck. Di {trade}, todo es gratis.",
 	voice = "¡Sets, armas y bastones con Luck! Di {trade}.",
 })
