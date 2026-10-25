@@ -1,14 +1,5 @@
 <?xml version="1.0"?>
 <npcs>
-	<npc centerx="5854" centery="5300" centerz="5" radius="6">
-		<npc name="Canary" x="0" y="-2" z="5" spawntime="60" />
-	</npc>
-	<npc centerx="4974" centery="5302" centerz="5" radius="6">
-		<npc name="Canary" x="0" y="-2" z="5" spawntime="60" />
-	</npc>
-	<npc centerx="5521" centery="5124" centerz="6" radius="3">
-		<npc name="Canary" x="0" y="0" z="6" spawntime="60" />
-	</npc>
 	<npc centerx="943" centery="640" centerz="7" radius="1">
 		<npc name="Hanzo the Blacksmith" x="0" y="0" z="7" spawntime="60" />
 	</npc>
@@ -95,5 +86,41 @@
 	</npc>
 	<npc centerx="2580" centery="705" centerz="7" radius="1">
 		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="940" centery="650" centerz="7" radius="1">
+		<npc name="Charon" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="942" centery="650" centerz="7" radius="1">
+		<npc name="Messenger of Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="914" centery="650" centerz="7" radius="1">
+		<npc name="Lahap" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="925" centery="632" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="930" centery="632" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="925" centery="675" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="931" centery="675" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1260" centery="691" centerz="7" radius="1">
+		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1590" centery="690" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1597" centery="690" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="4766" centery="5085" centerz="7" radius="1">
+		<npc name="Lahap" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="4768" centery="5085" centerz="7" radius="1">
+		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 </npcs>
