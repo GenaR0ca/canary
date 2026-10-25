@@ -4,11 +4,11 @@ local npcType = Game.createNpcType("Shadow Phantom Soldier")
 local npcConfig = {}
 
 npcConfig.outfit = {
-	lookType = 131,
-	lookHead = 114,
-	lookBody = 114,
-	lookLegs = 114,
-	lookFeet = 114,
+	lookType = 1725, -- Celestial Avenger (female): red/gold armour with wings
+	lookHead = 94,
+	lookBody = 79,
+	lookLegs = 94,
+	lookFeet = 79,
 	lookAddons = 3,
 	lookMount = 0,
 }
