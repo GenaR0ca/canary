@@ -14,7 +14,7 @@ npcConfig.outfit = {
 }
 
 Mubia.registerShopNpc(npcType, npcConfig, {
-	shop = Mubia.Shop({ gear = { "Elven Bow", "Battle Bow", "Arquebus", "Light Crossbow" } }, { ammo = { Mubia.BOLT, Mubia.ARROW } }),
-	greeting = "¡Bienvenido a Noria, |PLAYERNAME|! Fabrico arcos y ballestas con Luck, y flechas y bolts +3. Di {trade}, todo es gratis.",
+	shop = Mubia.Shop({ gear = { "Elven Bow", "Battle Bow", "Arquebus", "Light Crossbow" } }, { items = { Mubia.QUIVER } }, { ammo = { Mubia.BOLT, Mubia.ARROW } }),
+	greeting = "¡Bienvenido a Noria, |PLAYERNAME|! Fabrico arcos y ballestas con Luck, quivers y flechas y bolts +3. Pon las flechas dentro del quiver. Di {trade}, todo es gratis.",
 	voice = "¡Arcos, ballestas, flechas y bolts! Di {trade}.",
 })

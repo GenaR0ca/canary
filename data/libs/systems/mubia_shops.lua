@@ -7,6 +7,7 @@ Mubia.SHOP_PRICE = 0 -- precio de compra de todo, por ahora
 Mubia.ARROW = 3447 -- Arrow +3
 Mubia.BOLT = 3446 -- Bolt +3
 Mubia.AMMO_STACK = 255 -- cuántas flechas o bolts da cada compra
+Mubia.QUIVER = 35562 -- quiver: va en la mano del escudo y el arco gasta las flechas que tiene adentro
 
 -- id de cada item de MU por nombre ("Leather Helm" -> 61001)
 local gearByName = {}

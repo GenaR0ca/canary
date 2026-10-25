@@ -100,8 +100,12 @@ def build_xml(src, dst, ammo=True):
             xml = xml.replace(block, block.replace('\t</item>', '\t\t<attribute key="stacksize" value="255"/>\n\t</item>', 1) if block.endswith('\t</item>') else block.replace('</item>', '\t<attribute key="stacksize" value="255"/>\n\t</item>'))
     # flechas y bolts siempre pegan (el acierto lo decide el sistema de MU)
     for item_id in (3447, 3446):
-        xml = re.sub(r'(<item id="%d".*?<attribute key=")maxhitchance" value="\d+(")' % item_id, r'\g<1>hitchance" value="100\2', xml, count=1, flags=re.S)
-    # arcos gastan flechas y ballestas gastan bolts (puestos en la mano del escudo, como en MU)
+        block = re.search(r'<item id="%d".*?</item>' % item_id, xml, re.S).group(0)
+        xml = xml.replace(block, re.sub(r'key="maxhitchance" value="\d+"', 'key="hitchance" value="100"', block))
+    # quiver (35562): lo usan las elfas (Fairy Elf y Muse Elf); va en la mano del escudo con las flechas adentro
+    block = re.search(r'<item id="35562".*?</item>', xml, re.S).group(0)
+    xml = xml.replace(block, re.sub(r'key="vocation" value="[^"]*"', 'key="vocation" value="Fairy Elf;true, Muse Elf;true"', block))
+    # arcos gastan flechas y ballestas gastan bolts (desde el quiver en la mano del escudo)
     for item_id, ammo_type in (AMMO_WEAPONS.items() if ammo else ()):
         block = re.search(r'<item id="%d".*?</item>' % item_id, xml, re.S).group(0)
         if 'key="ammotype"' not in block:
@@ -117,5 +121,5 @@ def build_xml(src, dst, ammo=True):
 
 if __name__ == "__main__":
     build_dat(sys.argv[1], sys.argv[2])
-    # --sin-municion: los arcos no gastan flechas (para un canary.exe viejo, sin flechas en la mano del escudo)
+    # --sin-municion: los arcos no gastan flechas
     build_xml(sys.argv[3], sys.argv[4], ammo="--sin-municion" not in sys.argv)

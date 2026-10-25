@@ -14,7 +14,7 @@ npcConfig.outfit = {
 }
 
 Mubia.registerShopNpc(npcType, npcConfig, {
-	shop = Mubia.Shop(Mubia.ShopBarmaid, { ammo = { Mubia.BOLT, Mubia.ARROW } }),
-	greeting = "Hola |PLAYERNAME|. Tengo pociones, Ale, entradas para los eventos y flechas y bolts +3. Di {trade}, todo es gratis.",
+	shop = Mubia.Shop(Mubia.ShopBarmaid, { items = { Mubia.QUIVER } }, { ammo = { Mubia.BOLT, Mubia.ARROW } }),
+	greeting = "Hola |PLAYERNAME|. Tengo pociones, Ale, entradas para los eventos quivers y flechas y bolts +3. Di {trade}, todo es gratis.",
 	voice = "¡Pociones, entradas y flechas! Di {trade}.",
 })
