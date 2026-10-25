@@ -8,10 +8,10 @@ Mubia.Teleports = {
 	{ position = Position(1943, 1349, 7), destination = Position(4804, 5088, 7), description = "Teleport a la zona de NPCs." },
 	{ position = Position(1945, 1349, 7), destination = Position(5008, 5004, 7), description = "Teleport a la zona de entrenamiento." },
 	{ position = Position(1944, 1349, 7), destination = Position(924, 660, 7), description = "Teleport a Lorencia." },
-	{ position = Position(1946, 1349, 7), destination = Position(1288, 648, 7), description = "Teleport a Noria." },
+	{ position = Position(1946, 1349, 7), destination = Position(1257, 720, 7), description = "Teleport a Noria." },
 	{ position = Position(4804, 5086, 7), destination = TEMPLE, description = "Teleport de vuelta al templo." },
 	{ position = Position(927, 657, 7), destination = TEMPLE, description = "Teleport de vuelta al templo de Strongarm." },
-	{ position = Position(1291, 645, 7), destination = TEMPLE, description = "Teleport de vuelta al templo de Strongarm." },
+	{ position = Position(1253, 722, 7), destination = TEMPLE, description = "Teleport de vuelta al templo de Strongarm." },
 	{ position = Position(5006, 5003, 7), destination = TEMPLE, description = "Teleport de vuelta al templo." },
 }
 

@@ -9,16 +9,13 @@
 	<npc centerx="5521" centery="5124" centerz="6" radius="3">
 		<npc name="Canary" x="0" y="0" z="6" spawntime="60" />
 	</npc>
-	<npc centerx="912" centery="650" centerz="7" radius="1">
-		<npc name="Elf Lala" x="0" y="0" z="7" spawntime="60" />
-	</npc>
-	<npc centerx="936" centery="652" centerz="7" radius="1">
+	<npc centerx="943" centery="640" centerz="7" radius="1">
 		<npc name="Hanzo the Blacksmith" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="911" centery="670" centerz="7" radius="1">
+	<npc centerx="911" centery="642" centerz="7" radius="1">
 		<npc name="Pasi the Mage" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="936" centery="670" centerz="7" radius="1">
+	<npc centerx="935" centery="643" centerz="7" radius="1">
 		<npc name="Potion Girl Amy" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="4794" centery="5083" centerz="7" radius="1">
@@ -51,13 +48,52 @@
 	<npc centerx="1600" centery="702" centerz="7" radius="1">
 		<npc name="Sevina the Priestess" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="1271" centery="633" centerz="7" radius="1">
+	<npc centerx="1270" centery="690" centerz="7" radius="1">
 		<npc name="Elf Lala" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="1305" centery="633" centerz="7" radius="1">
+	<npc centerx="1284" centery="712" centerz="7" radius="1">
 		<npc name="Eo the Craftsman" x="0" y="0" z="7" spawntime="60" />
 	</npc>
-	<npc centerx="1288" centery="652" centerz="7" radius="1">
+	<npc centerx="1262" centery="718" centerz="7" radius="1">
 		<npc name="Chaos Goblin" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1254" centery="706" centerz="7" radius="1">
+		<npc name="Charon" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1592" centery="741" centerz="7" radius="1">
+		<npc name="Charon" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1954" centery="615" centerz="7" radius="1">
+		<npc name="Arena Guard" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1254" centery="702" centerz="7" radius="1">
+		<npc name="Messenger of Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1594" centery="741" centerz="7" radius="1">
+		<npc name="Messenger of Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2321" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2358" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2395" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2432" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2469" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2506" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2543" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2580" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 </npcs>
