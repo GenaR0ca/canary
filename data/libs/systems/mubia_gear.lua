@@ -210,6 +210,9 @@ Mubia.Gear = {
 	[62065] = { name = "Staff of Kundun", kind = "staff", classes = { Mubia.CLASS_DW }, type = "staff", min = 86, max = 97, magic = 59, str = 60, agi = 20 },
 	[62066] = { name = "Grand Viper Staff", kind = "staff", classes = { Mubia.CLASS_DW }, type = "staff", min = 90, max = 104, magic = 65, str = 65, agi = 20 },
 	[62067] = { name = "Platina Staff", kind = "staff", classes = { Mubia.CLASS_DW }, type = "staff", min = 96, max = 110, magic = 71, str = 70, agi = 25 },
+	-- agregados para las tiendas de NPC (tools/mubia/npc_items.py)
+	[62068] = { name = "Berdysh", kind = "weapon", classes = { Mubia.CLASS_DK }, type = "spear", min = 42, max = 54, twoHanded = true, str = 80, agi = 50 },
+	[62069] = { name = "Salamander Sword", kind = "weapon", classes = { Mubia.CLASS_DK }, type = "sword", min = 32, max = 46, str = 103, agi = 51 },
 	[63001] = { name = "Small Shield", kind = "shield", classes = { Mubia.CLASS_DK, Mubia.CLASS_DW, Mubia.CLASS_ELF }, defense = 3, str = 70, agi = 0 },
 	[63002] = { name = "Buckler", kind = "shield", classes = { Mubia.CLASS_DK, Mubia.CLASS_DW, Mubia.CLASS_ELF }, defense = 6, str = 80, agi = 0 },
 	[63003] = { name = "Elven Shield", kind = "shield", classes = { Mubia.CLASS_ELF }, defense = 8, str = 30, agi = 100 },
@@ -224,6 +227,8 @@ Mubia.Gear = {
 	[63012] = { name = "Dragon Slayer Shield", kind = "shield", classes = { Mubia.CLASS_DK }, defense = 29, str = 100, agi = 40 },
 	[63013] = { name = "Cross Shield", kind = "shield", classes = { Mubia.CLASS_DK }, defense = 31, str = 160, agi = 0 },
 	[63014] = { name = "Grand Soul Shield", kind = "shield", classes = { Mubia.CLASS_DW }, defense = 33, str = 70, agi = 20 },
+	[63015] = { name = "Spiked Shield", kind = "shield", classes = { Mubia.CLASS_DK }, defense = 10, str = 85, agi = 0 },
+	[63016] = { name = "Round Shield", kind = "shield", classes = { Mubia.CLASS_DK, Mubia.CLASS_DW }, defense = 5, str = 65, agi = 0 },
 }
 
 -- Set inicial de cada clase (se da una sola vez)

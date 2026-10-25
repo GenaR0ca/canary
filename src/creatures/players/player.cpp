@@ -434,6 +434,12 @@ bool Player::hasWeaponDistanceEquipped() const {
 }
 
 std::shared_ptr<Item> Player::getQuiverAmmoOfType(const ItemType &it) const {
+	// Mubia: como en MU, las flechas y bolts van sueltos en la mano del escudo
+	const auto &handAmmo = inventory[CONST_SLOT_RIGHT];
+	if (handAmmo && handAmmo->getWeaponType() == WEAPON_AMMO && handAmmo->getAmmoType() == it.ammoType) {
+		return handAmmo;
+	}
+
 	if (!hasQuiverEquipped()) {
 		return nullptr;
 	}
@@ -4661,14 +4667,16 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 		}
 
 		case CONST_SLOT_RIGHT: {
-			if (slotPosition & SLOTP_RIGHT) {
-				if (item->getWeaponType() != WEAPON_SHIELD && !item->isQuiver()) {
+			// Mubia: flechas y bolts en la mano del escudo (al lado del arco o la ballesta)
+			const bool isHandAmmo = item->getWeaponType() == WEAPON_AMMO;
+			if ((slotPosition & SLOTP_RIGHT) || isHandAmmo) {
+				if (item->getWeaponType() != WEAPON_SHIELD && !item->isQuiver() && !isHandAmmo) {
 					ret = RETURNVALUE_CANNOTBEDRESSED;
 				} else {
 					const auto &leftItem = inventory[CONST_SLOT_LEFT];
 					if (leftItem) {
 						if ((leftItem->getSlotPosition() | slotPosition) & SLOTP_TWO_HAND) {
-							if (item->isQuiver() && leftItem->getWeaponType() == WEAPON_DISTANCE) {
+							if ((item->isQuiver() || isHandAmmo) && leftItem->getWeaponType() == WEAPON_DISTANCE) {
 								ret = RETURNVALUE_NOERROR;
 							} else {
 								ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
@@ -4709,8 +4717,8 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 			} else if (slotPosition & SLOTP_TWO_HAND) {
 				if (inventory[CONST_SLOT_RIGHT]) {
 					const WeaponType_t type = item->getWeaponType();
-					// Allow equip bow when quiver is in SLOT_RIGHT
-					if (type == WEAPON_DISTANCE && inventory[CONST_SLOT_RIGHT]->isQuiver()) {
+					// Allow equip bow when quiver is in SLOT_RIGHT (Mubia: o flechas / bolts sueltos)
+					if (type == WEAPON_DISTANCE && (inventory[CONST_SLOT_RIGHT]->isQuiver() || inventory[CONST_SLOT_RIGHT]->getWeaponType() == WEAPON_AMMO)) {
 						ret = RETURNVALUE_NOERROR;
 					} else {
 						ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;

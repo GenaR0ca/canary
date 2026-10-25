@@ -233,7 +233,9 @@ function Mubia.recalc(player)
 	player:setMaxMana(maxMana)
 	-- setAttackSpeed existe desde el canary.exe de Mubia con velocidad por AGI
 	if player.setAttackSpeed then
-		player:setAttackSpeed(Mubia.getAttackSpeed(class, stats))
+		local attackSpeed = Mubia.getAttackSpeed(class, stats)
+		attackSpeed = math.floor(attackSpeed * (100 - Mubia.getBuff(player, "drinkSpeed")) / 100) -- Ale / Olive of Love
+		player:setAttackSpeed(math.max(Mubia.Config.minAttackSpeed, attackSpeed))
 	end
 	if player:getHealth() > maxHealth then
 		player:addHealth(maxHealth - player:getHealth())

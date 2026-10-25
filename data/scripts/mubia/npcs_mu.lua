@@ -1,5 +1,5 @@
 -- Mubia Online: lo que hacen los NPCs de MU que no son tiendas.
---   Elf Soldier: en cada salida de las ciudades, da un buff de defensa y daño por 30 minutos.
+--   Shadow Phantom Soldier (antes Elf Soldier): en cada salida de las ciudades, da un buff de defensa y daño por 30 minutos.
 --     El cliente muestra un recuadro con el tiempo que queda (opcode 89, módulo game_mubia_buffs).
 --   Messenger of Archangel y Charon: abren la ventana para elegir el Blood Castle (opcode 88) o la
 --     Devil Square (opcode 90), como en MU (módulo del cliente game_mubia_bloodcastle).
@@ -31,14 +31,18 @@ local function elfSoldierStore(player)
 	return player:kv():scoped("mubia-elf-soldier")
 end
 
--- Manda al cliente el recuadro de buffs (por ahora solo el del Elf Soldier)
+-- Manda al cliente el recuadro de buffs (Shadow Phantom Soldier y bebidas: Ale, Olive of Love)
 function Mubia.sendBuffs(player)
 	local buffs = {}
 	local store = elfSoldierStore(player)
 	local left = (store:get("until") or 0) - os.time()
 	if left > 0 then
 		local text = string.format("+%d defensa, +%d daño", store:get("defense") or 0, store:get("damage") or 0)
-		buffs[#buffs + 1] = string.format('{"id":"elfSoldier","name":"Elf Soldier","text":%s,"seconds":%d}', jsonString(text), left)
+		buffs[#buffs + 1] = string.format('{"id":"elfSoldier","name":"Shadow Phantom","text":%s,"seconds":%d}', jsonString(text), left)
+	end
+	local drink = Mubia.drinkBuffs and Mubia.drinkBuffs[player:getId()]
+	if drink and drink.ends > os.time() then
+		buffs[#buffs + 1] = string.format('{"id":"drink","name":%s,"text":%s,"seconds":%d}', jsonString(drink.name), jsonString(drink.text), drink.ends - os.time())
 	end
 	player:sendExtendedOpcode(Mubia.BUFFS_OPCODE, '{"buffs":[' .. table.concat(buffs, ",") .. "]}")
 end
@@ -70,8 +74,8 @@ function Mubia.ElfSoldier.give(npc, player)
 	Mubia.sendBuffs(player)
 
 	player:getPosition():sendMagicEffect(CONST_ME_HOLYDAMAGE)
-	npc:say(Mubia.toLatin1(string.format("Que la bendición de las elfas te proteja, %s.", player:getName())), TALKTYPE_PRIVATE_NP, false, player)
-	Mubia.sendMessage(player, MESSAGE_STATUS, string.format("Elf Soldier: +%d de defensa y +%d de daño por %d minutos.", defense, damage, math.floor(config.duration / 60)))
+	npc:say(Mubia.toLatin1(string.format("Que la sombra del Phantom te proteja, %s.", player:getName())), TALKTYPE_PRIVATE_NP, false, player)
+	Mubia.sendMessage(player, MESSAGE_STATUS, string.format("Shadow Phantom: +%d de defensa y +%d de daño por %d minutos.", defense, damage, math.floor(config.duration / 60)))
 	return true
 end
 

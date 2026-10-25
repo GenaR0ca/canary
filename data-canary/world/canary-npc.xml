@@ -7,10 +7,10 @@
 		<npc name="Pasi the Mage" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="935" centery="643" centerz="7" radius="1">
-		<npc name="Potion Girl Amy" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Lumen the Barmaid" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="4794" centery="5083" centerz="7" radius="1">
-		<npc name="Potion Girl Amy" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Lumen the Barmaid" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="4778" centery="5084" centerz="7" radius="1">
 		<npc name="Pasi the Mage" x="0" y="0" z="7" spawntime="60" />
@@ -28,7 +28,7 @@
 		<npc name="Zienna the Weapons Merchant" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1601" centery="745" centerz="7" radius="1">
-		<npc name="Izabel the Wizard" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Wizard Izabel" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1604" centery="734" centerz="7" radius="1">
 		<npc name="Guild Master" x="0" y="0" z="7" spawntime="60" />
@@ -100,30 +100,42 @@
 		<npc name="Guard" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="932" centery="633" centerz="7" radius="1">
-		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Shadow Phantom Soldier" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="933" centery="674" centerz="7" radius="1">
-		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Shadow Phantom Soldier" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="907" centery="651" centerz="7" radius="1">
-		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Shadow Phantom Soldier" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="948" centery="651" centerz="7" radius="1">
-		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Shadow Phantom Soldier" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1250" centery="694" centerz="7" radius="1">
-		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Shadow Phantom Soldier" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1276" centery="682" centerz="7" radius="1">
-		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Shadow Phantom Soldier" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1286" centery="720" centerz="7" radius="1">
-		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Shadow Phantom Soldier" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1601" centery="692" centerz="7" radius="1">
-		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Shadow Phantom Soldier" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1633" centery="742" centerz="7" radius="1">
-		<npc name="Elf Soldier" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Shadow Phantom Soldier" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="945" centery="647" centerz="7" radius="4">
+		<npc name="City Guard" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="927" centery="671" centerz="7" radius="4">
+		<npc name="City Guard" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1612" centery="738" centerz="7" radius="4">
+		<npc name="City Guard" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1609" centery="726" centerz="7" radius="4">
+		<npc name="City Guard" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 </npcs>
