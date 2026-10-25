@@ -1,6 +1,8 @@
 """Genera Devias (MU, la ciudad de la nieve) como tiles de Tibia 15.x.
 La forma (barrancos, caminos, río, lagos, edificios, zona segura) sale de Data/World3 del cliente de MU
 (EncTerrain3.att/.map decodificados en devias_mu.pkl), pero se dibuja a mano con piezas de Tibia (estilo Noria).
+Lo bloqueado de MU (el negro del minimapa) es un vacío: casillas sin piso con un borde de roca, cruzado por puentes
+de troncos con baranda de soga y pilares de piedra en cada punta (como el puente al este del pueblo en MU).
 Salida: dict (x,y,z) -> (flags, [ground, items...]) en coordenadas globales, y metadatos (POIS, ZONES)."""
 import math, os, pickle, random
 
@@ -22,8 +24,6 @@ def mu(x, y):
 SNOW = [799] * 24 + list(range(6580, 6594))
 ICE = [800, 800, 6683, 6684, 6685, 6686]
 SEA = 4597
-MTN_STYLE = os.environ.get('MTN', 'a')
-MTN = {'a': 6869, 'b': 6925, 'c': 1128}[MTN_STYLE]
 ROAD = [103]  # tierra
 COBBLE = 870
 WOOD = 408
@@ -32,14 +32,11 @@ MARBLE = 409
 # bordes: n e s w, esquinas exteriores c*, interiores d*
 BORDERS = {
     'snow': {'n': 4726, 'e': 4727, 's': 4728, 'w': 4729, 'cnw': 4730, 'cne': 4731, 'csw': 4732, 'cse': 4733, 'dnw': 4734, 'dne': 4735, 'dsw': 4736, 'dse': 4737},
-    'mtn': {'a': {'n': 6720, 'e': 6762, 's': 6761, 'w': 6719, 'cnw': 6723, 'cne': 6722, 'csw': 6721, 'cse': 6768, 'dnw': 6724, 'dne': 6726, 'dsw': 6725, 'dse': 6727},
-            'b': {'n': 7107, 'w': 7112, 'e': 6728, 's': 6729, 'cnw': 7113, 'cne': 7114, 'csw': 7115, 'cse': 6730, 'dse': 6734, 'dnw': 7117, 'dne': 7114, 'dsw': 7115},
-            'c': {'n': 6939, 'w': 6940, 's': 6941, 'e': 6942, 'cnw': 6946, 'cne': 6944, 'csw': 6945, 'cse': 6943, 'dnw': 6949, 'dne': 6950, 'dsw': 6948, 'dse': 6947}}[MTN_STYLE],
     'water': {'n': 6627, 'e': 6628, 's': 6629, 'w': 6630, 'cnw': 6635, 'cne': 6636, 'csw': 6638, 'cse': 6637, 'dnw': 6634, 'dne': 6633, 'dsw': 6632, 'dse': 6631},
     'ice': {'n': 6695, 'e': 6696, 's': 6697, 'w': 6698, 'cnw': 6699, 'cne': 6700, 'csw': 6701, 'cse': 6702, 'dnw': 6703, 'dne': 6704, 'dsw': 6705, 'dse': 6706},
 }
 # qué suelo dibuja su borde encima de cuál (el de más arriba tapa al de más abajo)
-ZORD = {'pave': 1, 'cobble': 1, 'wood': 1, 'marble': 1, 'road': 10, 'ice': 3900, 'snow': 4000, 'mtn': 9900, 'water': -1}
+ZORD = {'pave': 1, 'cobble': 1, 'wood': 1, 'marble': 1, 'road': 10, 'ice': 3900, 'snow': 4000, 'water': -1}
 
 STONE_WALL = dict(H=1295, V=1294, CORNER=1298, POLE=1296)
 SNOW_TREES = [3609, 3609, 7023, 7023, 4433]
@@ -54,6 +51,12 @@ CRATE = 2471
 STATUE = 2026
 FOUNTAIN = 1922
 RED_CARPET = 2572
+# vacío: borde de roca sobre la casilla vacía que toca tierra
+RIM = {'n': 4445, 'e': 4446, 's': 4447, 'w': 4448, 'cnw': 4449, 'cne': 4450, 'cse': 4451, 'csw': 4452,
+       'dnw': 4453, 'dne': 4454, 'dse': 4455, 'dsw': 4456}
+BRIDGE = {'H': 2253, 'V': 2254}  # troncos atados con soga (H: se cruza de oeste a este)
+RAIL = {'H': 2240, 'V': 2236}  # baranda oscura
+PILLAR = 1296
 
 ground = [['snow'] * W for _ in range(H)]
 items = {}
@@ -80,7 +83,7 @@ for y in range(H):
         if a & 1:
             safe.add((x, y))
         if a & 8 or a & 4:
-            ground[y][x] = 'water' if t == 5 else 'mtn'
+            ground[y][x] = 'water' if t == 5 else 'mtn'  # 'mtn' = bloqueado de MU; al final se dibuja como vacío
         else:
             walk[y][x] = True
             if t == 5:
@@ -136,12 +139,13 @@ BUILDINGS = [
     ('torre', 38, 238, 46, 245, [('N', 41, 42)], 'wood'),
 ]
 in_building = set()
+ring = set()  # orilla del pueblo entre las casas, el río y el vacío
 for name, x0, y0, x1, y1, doors, floor in BUILDINGS:
     for y in range(y0, y1 + 1):
         for x in range(x0, x1 + 1):
             in_building.add((x, y))
 
-# ---------- 3) pueblo: la orilla bloqueada de MU alrededor del pueblo pasa a ser nieve con cerca ----------
+# ---------- 3) pueblo: la orilla bloqueada de MU alrededor del pueblo pasa a ser nieve abierta ----------
 TOWN = (5, 166, 78, 255)
 
 
@@ -155,8 +159,10 @@ for y in range(H):
             ground[y][x] = dict(marble='marble', wood='wood')[[b for b in BUILDINGS if b[1] <= x <= b[3] and b[2] <= y <= b[4]][0][6]]
             walk[y][x] = True
         elif (x, y) in safe and ground[y][x] == 'mtn' and in_town_box(x, y):
-            ground[y][x] = 'snow'  # orilla / jardines; se tapan con árboles más abajo
-            blocked.add((x, y))
+            ground[y][x] = 'snow'  # orilla / jardines: nieve abierta con pocos árboles (más abajo)
+            walk[y][x] = True
+            flags[(x, y)] = 1
+            ring.add((x, y))
         elif (x, y) in safe and walk[y][x]:
             flags[(x, y)] = 1
             if ground[y][x] == 'road':
@@ -194,6 +200,16 @@ for _ in range(2):
                 if open4 >= 3:
                     change.append((x, y))
     for (x, y) in change:
+        ground[y][x] = 'snow'
+        add(x, y, rng.choice(SNOW_TREES + SNOWY_STONES))
+        blocked.add((x, y))
+
+
+# vacío de una casilla de ancho (rendijas): piedra o pino sobre nieve
+for _ in range(2):
+    thin = [(x, y) for y in range(1, H - 1) for x in range(1, W - 1) if ground[y][x] == 'mtn' and (x, y) not in fort_walls
+            and ((ground[y][x - 1] != 'mtn' and ground[y][x + 1] != 'mtn') or (ground[y - 1][x] != 'mtn' and ground[y + 1][x] != 'mtn'))]
+    for (x, y) in thin:
         ground[y][x] = 'snow'
         add(x, y, rng.choice(SNOW_TREES + SNOWY_STONES))
         blocked.add((x, y))
@@ -296,12 +312,21 @@ def street(points, width=1):
 
 for st in STREETS:
     street(st)
-# la orilla bloqueada del pueblo: pinos y piedras nevadas
-for y in range(TOWN[1], TOWN[3] + 1):
-    for x in range(TOWN[0], TOWN[2] + 1):
-        if ground[y][x] == 'snow' and (x, y) in blocked and not items.get((x, y)) and (x, y) not in in_building:
-            r = rng.random()
-            add(x, y, rng.choice(SNOW_TREES) if r < 0.75 else rng.choice(SNOWY_STONES))
+# la orilla del pueblo: pocos pinos y alguna piedra nevada, lejos de las calles
+for (x, y) in sorted(ring):
+    if ground[y][x] != 'snow' or items.get((x, y)) or (x, y) in blocked:
+        continue
+    if any(ground[y + dy][x + dx] == 'cobble' for dx in (-1, 0, 1) for dy in (-1, 0, 1) if 0 <= x + dx < W and 0 <= y + dy < H):
+        continue
+    r = rng.random()
+    if r < 0.07:
+        add(x, y, rng.choice(SNOW_TREES))
+        blocked.add((x, y))
+    elif r < 0.09:
+        add(x, y, rng.choice(SNOWY_STONES))
+        blocked.add((x, y))
+    elif r < 0.11:
+        add(x, y, SNOW_HEAP)
 
 # ---------- 6) campo: árboles y piedras al pie de las montañas, nieve suelta ----------
 def near(x, y, kind, r):
@@ -320,7 +345,7 @@ for y in range(H):
             continue
         r = rng.random()
         foot = near(x, y, 'mtn', 1)
-        if foot and r < 0.28:
+        if foot and r < 0.10:
             add(x, y, rng.choice(SNOW_TREES))
         elif r < 0.035:
             add(x, y, rng.choice(SNOW_TREES))
@@ -331,17 +356,60 @@ for y in range(H):
         elif r < 0.065:
             add(x, y, SNOW_HEAP)
 
-# montañas: pinos y piedras nevadas encima para que no se vean planas
-for y in range(H):
-    for x in range(W):
-        if ground[y][x] == 'mtn' and not items.get((x, y)):
-            r = rng.random()
-            if r < 0.16:
-                add(x, y, rng.choice(SNOW_TREES))
-            elif r < 0.24:
-                add(x, y, rng.choice(SNOWY_STONES))
-            elif r < 0.27:
-                add(x, y, rng.choice(DEAD_TREES))
+# ---------- 6b) puentes: pasos angostos (hasta 4 casillas) con vacío a los dos lados ----------
+def is_void(x, y):
+    return not (0 <= x < W and 0 <= y < H) or ground[y][x] == 'mtn'
+
+
+def open_cell(x, y):
+    return 0 <= x < W and 0 <= y < H and walk[y][x] and ground[y][x] not in ('water', 'mtn')
+
+
+def narrow(x, y, dx, dy):
+    a = b = 0
+    while a < 6 and open_cell(x - dx * (a + 1), y - dy * (a + 1)):
+        a += 1
+    while b < 6 and open_cell(x + dx * (b + 1), y + dy * (b + 1)):
+        b += 1
+    return a + b + 1 <= 4 and is_void(x - dx * (a + 1), y - dy * (a + 1)) and is_void(x + dx * (b + 1), y + dy * (b + 1))
+
+
+BRIDGES = []  # (orientación, casillas)
+for kind, (dx, dy) in (('H', (0, 1)), ('V', (1, 0))):
+    cand = {(x, y) for y in range(H) for x in range(W) if open_cell(x, y) and narrow(x, y, dx, dy)}
+    for comp in components(lambda x, y: (x, y) in cand):
+        along = [p[0] for p in comp] if kind == 'H' else [p[1] for p in comp]
+        if max(along) - min(along) + 1 >= 6:
+            BRIDGES.append((kind, set(comp)))
+
+bridge_cells = set()
+for kind, cells in BRIDGES:
+    rails = set()
+    for (x, y) in cells:
+        for side in (-1, 1):
+            p = (x, y + side) if kind == 'H' else (x + side, y)
+            if p not in cells and is_void(*p):
+                rails.add(p)
+    for (x, y) in cells | rails:
+        ground[y][x] = 'bridge_' + kind
+        items.pop((x, y), None)
+        bridge_cells.add((x, y))
+    for (x, y) in rails:
+        add(x, y, RAIL[kind])
+        walk[y][x] = False
+    # pilares de piedra en las cuatro puntas, sobre la tierra de cada orilla
+    along = [p[0] for p in rails] if kind == 'H' else [p[1] for p in rails]
+    for end, step in ((min(along), -1), (max(along), 1)):
+        for (x, y) in rails:
+            if (x if kind == 'H' else y) != end:
+                continue
+            px, py = (x + step, y) if kind == 'H' else (x, y + step)
+            if is_void(px, py):
+                ground[py][px] = 'bridge_' + kind
+                bridge_cells.add((px, py))
+            items[(px, py)] = [PILLAR]
+            walk[py][px] = False
+            blocked.add((px, py))
 
 # ---------- 7) bordes ----------
 DIRS = dict(nw=(-1, -1), n=(0, -1), ne=(1, -1), e=(1, 0), se=(1, 1), s=(0, 1), sw=(-1, 1), w=(-1, 0))
@@ -351,6 +419,11 @@ def g(x, y):
     if 0 <= x < W and 0 <= y < H:
         return ground[y][x]
     return 'mtn'
+
+
+def g_land(x, y):
+    """Casilla con piso (para el borde de roca del vacío). Los puentes no llevan borde."""
+    return g(x, y) != 'mtn' and not g(x, y).startswith('bridge')
 
 
 def border_pieces(x, y, is_other):
@@ -385,13 +458,18 @@ def border_pieces(x, y, is_other):
 
 
 borders = {}
-ORDER = ['ice', 'snow', 'mtn']  # de abajo hacia arriba
+ORDER = ['ice', 'snow']  # de abajo hacia arriba
 for y in range(H):
     for x in range(W):
         t = ground[y][x]
         b = []
-        if t == 'water':
-            for p in border_pieces(x, y, lambda a, c: g(a, c) not in ('water',)):
+        if t == 'mtn':
+            for p in border_pieces(x, y, g_land):
+                b.append(RIM[p])
+        elif t.startswith('bridge'):
+            pass
+        elif t == 'water':
+            for p in border_pieces(x, y, lambda a, c: g(a, c) not in ('water', 'mtn') and not g(a, c).startswith('bridge')):
                 b.append(BORDERS['water'][p])
         else:
             for kind in ORDER:
@@ -406,8 +484,13 @@ tiles = {}
 for y in range(H):
     for x in range(W):
         t = ground[y][x]
-        gid = {'snow': rng.choice(SNOW), 'ice': rng.choice(ICE), 'water': SEA, 'mtn': MTN, 'road': rng.choice(ROAD),
-               'cobble': COBBLE, 'pave': 429, 'wood': WOOD, 'marble': MARBLE}[t]
+        if t == 'mtn':  # vacío: sin piso, solo el borde de roca (si no toca tierra, ni se guarda la casilla)
+            if borders.get((x, y)):
+                tiles[(OX + x, OY + y, Z)] = (0, borders[(x, y)])
+            continue
+        gid = {'snow': rng.choice(SNOW), 'ice': rng.choice(ICE), 'water': SEA, 'road': rng.choice(ROAD),
+               'cobble': COBBLE, 'pave': 429, 'wood': WOOD, 'marble': MARBLE,
+               'bridge_H': BRIDGE['H'], 'bridge_V': BRIDGE['V']}[t]
         stack = [gid] + borders.get((x, y), []) + items.get((x, y), [])
         tiles[(OX + x, OY + y, Z)] = (flags.get((x, y), 0), stack)
 
