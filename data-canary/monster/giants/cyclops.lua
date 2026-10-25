@@ -91,7 +91,7 @@ monster.loot = {
 	{ name = "battle shield", chance = 1400 },
 	{ name = "meat", chance = 30070 },
 	{ id = 7398, chance = 80 }, -- cyclops trophy
-	{ name = "health potion", chance = 210 },
+	{ id = 266, chance = 210 },
 	{ name = "cyclops toe", chance = 4930 },
 	{ id = 23986, chance = 1000 }, -- heavy old tome
 }
