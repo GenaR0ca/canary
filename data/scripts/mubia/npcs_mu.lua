@@ -1,11 +1,13 @@
 -- Mubia Online: lo que hacen los NPCs de MU que no son tiendas.
 --   Elf Soldier: en cada salida de las ciudades, da un buff de defensa y daño por 30 minutos.
 --     El cliente muestra un recuadro con el tiempo que queda (opcode 89, módulo game_mubia_buffs).
---   Messenger of Archangel: abre la ventana para elegir el Blood Castle (opcode 88, módulo game_mubia_bloodcastle).
--- Los archivos de cada NPC están en data-canary/npc/ (elf_soldier.lua, messenger_of_archangel.lua).
+--   Messenger of Archangel y Charon: abren la ventana para elegir el Blood Castle (opcode 88) o la
+--     Devil Square (opcode 90), como en MU (módulo del cliente game_mubia_bloodcastle).
+-- Los archivos de cada NPC están en data-canary/npc/ (elf_soldier.lua, messenger_of_archangel.lua, charon.lua).
 
 Mubia.BUFFS_OPCODE = 89
 Mubia.BLOOD_CASTLE_MENU_OPCODE = 88
+Mubia.DEVIL_SQUARE_MENU_OPCODE = 90
 
 -- texto para el cliente: en Latin-1 (como espera OTClient) y escapado para JSON
 local function jsonString(text)
@@ -87,37 +89,95 @@ if not Mubia.elfSoldierGetBuffWrapped then
 	end
 end
 
--- Messenger of Archangel: ventana de castillos --------------------------------------------------
+-- Ventanas de eventos: Messenger of Archangel (Blood Castle) y Charon (Devil Square) --------------
+-- Al hablarles o hacerles clic se abre la ventana con los castillos / squares, sin el diálogo del NPC.
 
-local function castleLabel(castle)
-	if castle.minResets then
-		return string.format("Castillo %d (nivel %d + %d reset)", castle.level, castle.minLevel, castle.minResets)
+local function rangeLabel(prefix, entry)
+	if entry.minResets then
+		return string.format("%s %d (nivel %d + %d reset)", prefix, entry.level, entry.minLevel, entry.minResets)
 	end
-	return string.format("Castillo %d (nivel %d-%d)", castle.level, castle.minLevel, castle.maxLevel)
+	return string.format("%s %d (nivel %d-%d)", prefix, entry.level, entry.minLevel, entry.maxLevel)
 end
 
-local function nearMessenger(player)
+Mubia.EventMenus = {
+	[Mubia.BLOOD_CASTLE_MENU_OPCODE] = {
+		npc = "Messenger of Archangel",
+		title = "Messenger of Archangel",
+		message = "Tu voluntad de ayudar al Arcángel es apreciada. Pero ten cuidado, joven guerrero: Blood Castle es un lugar peligroso. Que Dios te acompañe.",
+		prefix = "Castillo",
+		system = function()
+			local BC = Mubia.BloodCastle
+			return BC, BC and BC.castles, BC and BC.getCastleForPlayer
+		end,
+	},
+	[Mubia.DEVIL_SQUARE_MENU_OPCODE] = {
+		npc = "Charon",
+		title = "Devil Square",
+		message = "Se te dio la oportunidad de probar tu valentía. Nadie ha entrado todavía a la Devil Square. No creas nada de lo que veas ahí dentro: solo tu valentía y tu fuerza te mantendrán con vida.",
+		prefix = "Square",
+		system = function()
+			local DS = Mubia.DevilSquare
+			return DS, DS and DS.squares, DS and DS.getSquareForPlayer
+		end,
+	},
+}
+
+local function nearNpc(player, name)
 	local spectators = Game.getSpectators(player:getPosition(), false, false, 4, 4, 4, 4)
 	for _, creature in ipairs(spectators) do
-		if creature:isNpc() and creature:getName() == "Messenger of Archangel" then
+		if creature:isNpc() and creature:getName() == name then
 			return true
 		end
 	end
 	return false
 end
 
-function Mubia.openBloodCastleMenu(player)
-	local BC = Mubia.BloodCastle
-	if not BC then
+function Mubia.openEventMenu(player, opcode)
+	local menu = Mubia.EventMenus[opcode]
+	local system, entries, getForPlayer = menu.system()
+	if not system then
 		return
 	end
-	local mine = BC.getCastleForPlayer(player)
+	local mine = getForPlayer(player)
 	local parts = {}
-	for _, castle in ipairs(BC.castles) do
-		local ok, reason = BC.canEnter(player, castle)
-		parts[#parts + 1] = string.format('{"level":%d,"label":%s,"enabled":%s,"mine":%s,"reason":%s}', castle.level, jsonString(castleLabel(castle)), ok and "true" or "false", castle == mine and "true" or "false", jsonString(reason or ""))
+	for _, entry in ipairs(entries) do
+		local ok, reason = system.canEnter(player, entry)
+		parts[#parts + 1] = string.format('{"level":%d,"label":%s,"enabled":%s,"mine":%s,"reason":%s}', entry.level, jsonString(rangeLabel(menu.prefix, entry)), ok and "true" or "false", entry == mine and "true" or "false", jsonString(reason or ""))
 	end
-	player:sendExtendedOpcode(Mubia.BLOOD_CASTLE_MENU_OPCODE, '{"action":"open","castles":[' .. table.concat(parts, ",") .. "]}")
+	player:sendExtendedOpcode(opcode, string.format('{"action":"open","title":%s,"message":%s,"entries":[%s]}', jsonString(menu.title), jsonString(menu.message), table.concat(parts, ",")))
+end
+
+function Mubia.openBloodCastleMenu(player)
+	Mubia.openEventMenu(player, Mubia.BLOOD_CASTLE_MENU_OPCODE)
+end
+
+function Mubia.openDevilSquareMenu(player)
+	Mubia.openEventMenu(player, Mubia.DEVIL_SQUARE_MENU_OPCODE)
+end
+
+-- NPCs que con clic (opcode de la tienda, data/scripts/mubia/npc_shop.lua) abren su ventana en vez de hablar
+Mubia.NpcWindows = {
+	["Messenger of Archangel"] = Mubia.openBloodCastleMenu,
+	["Charon"] = Mubia.openDevilSquareMenu,
+}
+
+local function enterEvent(player, opcode, buffer)
+	local menu = Mubia.EventMenus[opcode]
+	local system, entries = menu.system()
+	local number = tonumber(buffer:match("^enter:(%d+)$"))
+	local entry = number and entries and entries[number]
+	if not entry then
+		return
+	end
+	if not nearNpc(player, menu.npc) then
+		Mubia.sendMessage(player, MESSAGE_FAILURE, string.format("Tienes que estar al lado de %s.", menu.npc))
+		return
+	end
+	if system.enter(player, entry) then
+		player:sendExtendedOpcode(opcode, '{"action":"close"}')
+	else
+		Mubia.openEventMenu(player, opcode)
+	end
 end
 
 local opcodes = CreatureEvent("MubiaNpcOpcodes")
@@ -125,22 +185,8 @@ local opcodes = CreatureEvent("MubiaNpcOpcodes")
 function opcodes.onExtendedOpcode(player, opcode, buffer)
 	if opcode == Mubia.BUFFS_OPCODE then
 		Mubia.sendBuffs(player)
-	elseif opcode == Mubia.BLOOD_CASTLE_MENU_OPCODE then
-		local number = tonumber(buffer:match("^enter:(%d+)$"))
-		local BC = Mubia.BloodCastle
-		local castle = number and BC and BC.castles[number]
-		if not castle then
-			return
-		end
-		if not nearMessenger(player) then
-			Mubia.sendMessage(player, MESSAGE_FAILURE, "Tienes que estar al lado del Messenger of Archangel.")
-			return
-		end
-		if BC.enter(player, castle) then
-			player:sendExtendedOpcode(Mubia.BLOOD_CASTLE_MENU_OPCODE, '{"action":"close"}')
-		else
-			Mubia.openBloodCastleMenu(player)
-		end
+	elseif Mubia.EventMenus[opcode] then
+		enterEvent(player, opcode, buffer)
 	end
 end
 
