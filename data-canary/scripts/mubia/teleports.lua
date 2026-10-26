@@ -13,6 +13,7 @@ Mubia.Teleports = {
 	{ position = Position(927, 657, 7), destination = TEMPLE, description = "Teleport de vuelta al templo de Strongarm." },
 	{ position = Position(1253, 722, 7), destination = TEMPLE, description = "Teleport de vuelta al templo de Strongarm." },
 	{ position = Position(5006, 5003, 7), destination = TEMPLE, description = "Teleport de vuelta al templo." },
+	{ position = Position(947, 628, 8), destination = Position(924, 660, 7), description = "Salida de Dungeon a Lorencia." },
 }
 
 local TELEPORT_ITEM = 1949 -- magic forcefield
