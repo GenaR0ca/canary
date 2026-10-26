@@ -15,6 +15,7 @@ local helperLogin = CreatureEvent("MubiaHelperLogin")
 
 function helperLogin.onLogin(player)
 	player:registerEvent("MubiaHelperOpcode")
+	Mubia.loadAutoQuiver(player)
 	return true
 end
 
@@ -29,11 +30,12 @@ end
 
 helperLogout:register()
 
--- Aceptar o rechazar solo las invitaciones de party (pestaña "Other Settings" del Helper)
+-- Cada segundo: aceptar o rechazar parties y llenar el quiver de la elfa (pestaña "Other Settings" del Helper)
 local partyInvites = GlobalEvent("MubiaHelperPartyInvites")
 
 function partyInvites.onThink(interval)
 	Mubia.checkPartyInvites()
+	Mubia.checkAutoQuivers()
 	return true
 end
 

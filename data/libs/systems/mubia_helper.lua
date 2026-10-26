@@ -506,7 +506,7 @@ local function pickFrom(player, config, container, bag, picked)
 		local item = container:getItem(i)
 		if item then
 			if wantsItem(config, item) then
-				if bag:getEmptySlots() <= 0 and not item:isStackable() then
+				if bag:getEmptySlots() <= 0 and not ItemType(item:getId()):isStackable() then
 					return false
 				end
 				local name = item:getCount() > 1 and string.format("%d %s", item:getCount(), item:getName()) or item:getName()
@@ -581,6 +581,61 @@ function Mubia.setPartyMode(player, mode)
 	player:kv():scoped("mubia-helper"):set("party", mode)
 end
 
+-- Elfa: flechas o bolts del inventario al quiver (mano del escudo), si hay lugar.
+-- Se guarda en el personaje ("Other Settings"); funciona aunque el Helper esté apagado.
+Mubia.autoQuiver = Mubia.autoQuiver or {}
+
+function Mubia.setAutoQuiver(player, enabled)
+	player:kv():scoped("mubia-helper"):set("quiver", enabled and "1" or "0")
+	Mubia.autoQuiver[player:getId()] = enabled or nil
+end
+
+function Mubia.loadAutoQuiver(player)
+	Mubia.autoQuiver[player:getId()] = player:kv():scoped("mubia-helper"):get("quiver") == "1" or nil
+end
+
+function Mubia.fillQuiver(player)
+	local vocation = player:getVocation()
+	if not vocation or vocation:getBaseId() ~= Mubia.CLASS_ELF then
+		return
+	end
+	local quiver = player:getSlotItem(CONST_SLOT_RIGHT)
+	if not quiver or not ItemType(quiver:getId()):isQuiver() or not quiver:isContainer() then
+		return
+	end
+	local weapon = player:getSlotItem(CONST_SLOT_LEFT)
+	local ammoType = weapon and ItemType(weapon:getId()):getAmmoType() or 0
+	if ammoType == 0 then
+		return -- sin arco ni ballesta no se sabe si van flechas o bolts
+	end
+	local bag = player:getSlotItem(CONST_SLOT_BACKPACK)
+	if not bag or not bag:isContainer() then
+		return
+	end
+	for i = bag:getSize() - 1, 0, -1 do
+		local item = bag:getItem(i)
+		if item then
+			local itemType = ItemType(item:getId())
+			if itemType:getWeaponType() == WEAPON_AMMO and itemType:getAmmoType() == ammoType then
+				if not item:moveTo(quiver) then
+					return -- el quiver está lleno
+				end
+			end
+		end
+	end
+end
+
+function Mubia.checkAutoQuivers()
+	for playerId in pairs(Mubia.autoQuiver) do
+		local player = Player(playerId)
+		if player then
+			Mubia.fillQuiver(player)
+		else
+			Mubia.autoQuiver[playerId] = nil
+		end
+	end
+end
+
 -- Revisa las invitaciones pendientes de cada party (lo llama un GlobalEvent cada segundo)
 function Mubia.checkPartyInvites()
 	for _, leader in ipairs(Game.getPlayers()) do
@@ -606,6 +661,8 @@ function Mubia.onHelperOpcode(player, buffer)
 	local action, rest = buffer:match("^(%a+)|?(.*)$")
 	if action == "party" then
 		Mubia.setPartyMode(player, rest)
+	elseif action == "quiver" then
+		Mubia.setAutoQuiver(player, rest == "1")
 	elseif action == "spells" then
 		Mubia.sendHelperSpells(player)
 	elseif action == "start" then
