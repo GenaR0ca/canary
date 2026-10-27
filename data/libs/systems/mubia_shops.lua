@@ -253,7 +253,7 @@ function Mubia.getSellableItems(player)
 	end
 	for slot = 0, bag:getSize() - 1 do
 		local item = bag:getItem(slot)
-		if item and not item:isContainer() then
+		if item and not item:isContainer() and not (Mubia.isQuestItem and Mubia.isQuestItem(item:getId())) then
 			list[#list + 1] = { slot = slot, item = item }
 		end
 	end
@@ -281,6 +281,10 @@ function Mubia.sellFromBag(player, slot, itemId, count, confirmed)
 	if not item or item:getId() ~= itemId or item:isContainer() then
 		Mubia.sendMessage(player, MESSAGE_FAILURE, "Ese item ya no está en tu inventario.")
 		Mubia.sendSellList(player)
+		return false
+	end
+	if Mubia.isQuestItem and Mubia.isQuestItem(itemId) then
+		Mubia.sendMessage(player, MESSAGE_FAILURE, "Los items de la misión de Sebina no se pueden vender.")
 		return false
 	end
 	if Mubia.isValuableItem(item) and not confirmed then

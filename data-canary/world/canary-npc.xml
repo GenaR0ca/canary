@@ -37,7 +37,7 @@
 		<npc name="Spirit of Archangel" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1600" centery="702" centerz="7" radius="1">
-		<npc name="Sevina the Priestess" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Sebina the Priest" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="1270" centery="690" centerz="7" radius="1">
 		<npc name="Elf Lala" x="0" y="0" z="7" spawntime="60" />

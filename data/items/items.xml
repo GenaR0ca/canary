@@ -86176,4 +86176,29 @@ Granted by TibiaGoals.com"/>
 		<attribute key="weaponType" value="shield"/>
 		<attribute key="weight" value="2000"/>
 	</item>
+	<item id="60801" article="a" name="Scroll of Emperor">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino sellado por el emperador. Sebina the Priest lo pide para despertar tu verdadero poder. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60802" article="a" name="Broken Sword">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Espada rota de un antiguo caballero. La pide Sebina the Priest a los Dark Knight. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60803" article="a" name="Tear of Elf">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llanto cristalizado de una antigua elfa. Lo pide Sebina the Priest a las Fairy Elf. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60804" article="a" name="Soul of Wizard">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Alma de un antiguo mago. La pide Sebina the Priest a los Dark Wizard. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60805" article="an" name="Abyssal Eye">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del abismo. Lo pide Sebina the Priest a las Summoner. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
 </items>
