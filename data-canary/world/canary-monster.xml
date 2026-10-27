@@ -3052,4 +3052,1534 @@
 		<monster name="Stone Golem" x="0" y="3" z="7" spawntime="10" />
 		<monster name="Stone Golem" x="0" y="2" z="7" spawntime="10" />
 	</monster>
+	<!-- Aida (MU): Aida 1 y Aida 2 -->
+	<monster centerx="1431" centery="1365" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1411" centery="1527" centerz="7" radius="4">
+		<monster name="Blue Golem" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1311" centery="1492" centerz="7" radius="4">
+		<monster name="Death Tree" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-4" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1353" centery="1439" centerz="7" radius="4">
+		<monster name="Blue Golem" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1495" centery="1488" centerz="7" radius="4">
+		<monster name="Blue Golem" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1506" centery="1516" centerz="7" radius="4">
+		<monster name="Death Rider" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1523" centery="1449" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1320" centery="1508" centerz="7" radius="4">
+		<monster name="Forest Orc" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1349" centery="1378" centerz="7" radius="4">
+		<monster name="Blue Golem" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1413" centery="1373" centerz="7" radius="4">
+		<monster name="Blue Golem" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1322" centery="1436" centerz="7" radius="4">
+		<monster name="Death Tree" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1310" centery="1545" centerz="7" radius="4">
+		<monster name="Death Tree" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="3" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1366" centery="1535" centerz="7" radius="4">
+		<monster name="Death Rider" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1430" centery="1547" centerz="7" radius="4">
+		<monster name="Death Rider" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1436" centery="1411" centerz="7" radius="4">
+		<monster name="Witch Queen" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1369" centery="1405" centerz="7" radius="4">
+		<monster name="Blue Golem" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1382" centery="1483" centerz="7" radius="4">
+		<monster name="Forest Orc" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1405" centery="1436" centerz="7" radius="4">
+		<monster name="Blue Golem" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1447" centery="1559" centerz="7" radius="4">
+		<monster name="Death Rider" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1490" centery="1449" centerz="7" radius="4">
+		<monster name="Witch Queen" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1524" centery="1481" centerz="7" radius="4">
+		<monster name="Blue Golem" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1489" centery="1340" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1371" centery="1517" centerz="7" radius="4">
+		<monster name="Death Rider" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1509" centery="1386" centerz="7" radius="4">
+		<monster name="Death Rider" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1415" centery="1554" centerz="7" radius="4">
+		<monster name="Blue Golem" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1477" centery="1350" centerz="7" radius="4">
+		<monster name="Blue Golem" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1469" centery="1415" centerz="7" radius="4">
+		<monster name="Blue Golem" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1401" centery="1555" centerz="7" radius="4">
+		<monster name="Blue Golem" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1506" centery="1360" centerz="7" radius="4">
+		<monster name="Death Rider" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1501" centery="1454" centerz="7" radius="4">
+		<monster name="Blue Golem" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1323" centery="1478" centerz="7" radius="4">
+		<monster name="Forest Orc" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1474" centery="1495" centerz="7" radius="4">
+		<monster name="Death Rider" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1333" centery="1527" centerz="7" radius="4">
+		<monster name="Death Rider" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-4" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1374" centery="1454" centerz="7" radius="4">
+		<monster name="Witch Queen" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1336" centery="1468" centerz="7" radius="4">
+		<monster name="Death Tree" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1388" centery="1526" centerz="7" radius="4">
+		<monster name="Death Rider" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1509" centery="1505" centerz="7" radius="4">
+		<monster name="Death Rider" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1458" centery="1420" centerz="7" radius="4">
+		<monster name="Death Rider" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1358" centery="1413" centerz="7" radius="4">
+		<monster name="Witch Queen" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1440" centery="1529" centerz="7" radius="4">
+		<monster name="Witch Queen" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1520" centery="1535" centerz="7" radius="4">
+		<monster name="Blue Golem" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1504" centery="1422" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1318" centery="1462" centerz="7" radius="4">
+		<monster name="Forest Orc" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1379" centery="1537" centerz="7" radius="4">
+		<monster name="Death Rider" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1344" centery="1367" centerz="7" radius="4">
+		<monster name="Blue Golem" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1448" centery="1439" centerz="7" radius="4">
+		<monster name="Death Rider" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1494" centery="1476" centerz="7" radius="4">
+		<monster name="Blue Golem" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1452" centery="1407" centerz="7" radius="4">
+		<monster name="Death Rider" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1419" centery="1495" centerz="7" radius="4">
+		<monster name="Death Rider" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1363" centery="1457" centerz="7" radius="4">
+		<monster name="Death Rider" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1444" centery="1348" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1494" centery="1438" centerz="7" radius="4">
+		<monster name="Death Rider" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1507" centery="1527" centerz="7" radius="4">
+		<monster name="Witch Queen" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1525" centery="1391" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1344" centery="1349" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1312" centery="1421" centerz="7" radius="4">
+		<monster name="Death Tree" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-4" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1336" centery="1503" centerz="7" radius="4">
+		<monster name="Forest Orc" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1536" centery="1532" centerz="7" radius="4">
+		<monster name="Blue Golem" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1344" centery="1424" centerz="7" radius="4">
+		<monster name="Death Rider" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1469" centery="1427" centerz="7" radius="4">
+		<monster name="Witch Queen" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1343" centery="1559" centerz="7" radius="4">
+		<monster name="Forest Orc" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1489" centery="1515" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-4" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1442" centery="1509" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1411" centery="1450" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1428" centery="1529" centerz="7" radius="4">
+		<monster name="Death Rider" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-4" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1414" centery="1410" centerz="7" radius="4">
+		<monster name="Death Rider" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1482" centery="1361" centerz="7" radius="4">
+		<monster name="Blue Golem" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1403" centery="1412" centerz="7" radius="4">
+		<monster name="Blue Golem" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1428" centery="1458" centerz="7" radius="4">
+		<monster name="Blue Golem" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1412" centery="1514" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-4" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1355" centery="1530" centerz="7" radius="4">
+		<monster name="Death Rider" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1393" centery="1438" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1451" centery="1490" centerz="7" radius="4">
+		<monster name="Blue Golem" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1526" centery="1362" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1493" centery="1361" centerz="7" radius="4">
+		<monster name="Witch Queen" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1517" centery="1550" centerz="7" radius="4">
+		<monster name="Death Rider" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1359" centery="1482" centerz="7" radius="4">
+		<monster name="Death Tree" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1473" centery="1531" centerz="7" radius="4">
+		<monster name="Blue Golem" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1443" centery="1424" centerz="7" radius="4">
+		<monster name="Blue Golem" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1375" centery="1358" centerz="7" radius="4">
+		<monster name="Death Rider" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1361" centery="1358" centerz="7" radius="4">
+		<monster name="Death Rider" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1363" centery="1377" centerz="7" radius="4">
+		<monster name="Blue Golem" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1511" centery="1406" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1403" centery="1354" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1377" centery="1432" centerz="7" radius="4">
+		<monster name="Blue Golem" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1356" centery="1502" centerz="7" radius="4">
+		<monster name="Death Tree" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1513" centery="1482" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1387" centery="1413" centerz="7" radius="4">
+		<monster name="Witch Queen" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1390" centery="1542" centerz="7" radius="4">
+		<monster name="Forest Orc" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1344" centery="1409" centerz="7" radius="4">
+		<monster name="Death Rider" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1456" centery="1545" centerz="7" radius="4">
+		<monster name="Death Rider" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1462" centery="1368" centerz="7" radius="4">
+		<monster name="Blue Golem" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1400" centery="1449" centerz="7" radius="4">
+		<monster name="Death Rider" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1388" centery="1452" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1314" centery="1525" centerz="7" radius="4">
+		<monster name="Death Tree" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1395" centery="1467" centerz="7" radius="4">
+		<monster name="Blue Golem" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1510" centery="1468" centerz="7" radius="4">
+		<monster name="Blue Golem" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1367" centery="1550" centerz="7" radius="4">
+		<monster name="Forest Orc" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1392" centery="1510" centerz="7" radius="4">
+		<monster name="Death Tree" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-4" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1355" centery="1549" centerz="7" radius="4">
+		<monster name="Forest Orc" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1385" centery="1400" centerz="7" radius="4">
+		<monster name="Blue Golem" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1458" centery="1558" centerz="7" radius="4">
+		<monster name="Witch Queen" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1418" centery="1471" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1378" centery="1550" centerz="7" radius="4">
+		<monster name="Death Tree" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="4" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1467" centery="1477" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1537" centery="1444" centerz="7" radius="4">
+		<monster name="Blue Golem" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1374" centery="1469" centerz="7" radius="4">
+		<monster name="Blue Golem" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1416" centery="1347" centerz="7" radius="4">
+		<monster name="Blue Golem" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1357" centery="1343" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1440" centery="1492" centerz="7" radius="4">
+		<monster name="Death Rider" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1387" centery="1357" centerz="7" radius="4">
+		<monster name="Blue Golem" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1536" centery="1563" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1430" centery="1348" centerz="7" radius="4">
+		<monster name="Death Rider" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1501" centery="1348" centerz="7" radius="4">
+		<monster name="Blue Golem" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1457" centery="1451" centerz="7" radius="4">
+		<monster name="Witch Queen" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1463" centery="1488" centerz="7" radius="4">
+		<monster name="Death Rider" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1445" centery="1365" centerz="7" radius="4">
+		<monster name="Blue Golem" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1442" centery="1542" centerz="7" radius="4">
+		<monster name="Death Rider" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1487" centery="1463" centerz="7" radius="4">
+		<monster name="Death Rider" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1315" centery="1451" centerz="7" radius="4">
+		<monster name="Forest Orc" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="1" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1494" centery="1528" centerz="7" radius="4">
+		<monster name="Witch Queen" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1341" centery="1545" centerz="7" radius="4">
+		<monster name="Death Rider" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1478" centery="1448" centerz="7" radius="4">
+		<monster name="Death Rider" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1451" centery="1386" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1403" centery="1503" centerz="7" radius="4">
+		<monster name="Death Tree" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1368" centery="1443" centerz="7" radius="4">
+		<monster name="Blue Golem" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1349" centery="1518" centerz="7" radius="4">
+		<monster name="Forest Orc" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-4" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1471" centery="1560" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1525" centery="1470" centerz="7" radius="4">
+		<monster name="Blue Golem" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-4" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1523" centery="1407" centerz="7" radius="4">
+		<monster name="Witch Queen" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1445" centery="1337" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1342" centery="1480" centerz="7" radius="4">
+		<monster name="Forest Orc" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1508" centery="1441" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1322" centery="1492" centerz="7" radius="4">
+		<monster name="Forest Orc" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1360" centery="1513" centerz="7" radius="4">
+		<monster name="Forest Orc" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-4" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1370" centery="1483" centerz="7" radius="4">
+		<monster name="Death Tree" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1442" centery="1454" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1465" centery="1520" centerz="7" radius="4">
+		<monster name="Blue Golem" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1307" centery="1462" centerz="7" radius="4">
+		<monster name="Death Tree" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1513" centery="1494" centerz="7" radius="4">
+		<monster name="Witch Queen" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1347" centery="1491" centerz="7" radius="4">
+		<monster name="Forest Orc" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1414" centery="1541" centerz="7" radius="4">
+		<monster name="Blue Golem" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1429" centery="1484" centerz="7" radius="4">
+		<monster name="Blue Golem" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1413" centery="1484" centerz="7" radius="4">
+		<monster name="Death Rider" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1535" centery="1482" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1334" centery="1446" centerz="7" radius="4">
+		<monster name="Death Rider" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1508" centery="1371" centerz="7" radius="4">
+		<monster name="Blue Golem" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1311" centery="1476" centerz="7" radius="4">
+		<monster name="Forest Orc" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-2" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1519" centery="1350" centerz="7" radius="4">
+		<monster name="Blue Golem" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1332" centery="1556" centerz="7" radius="4">
+		<monster name="Death Tree" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="1" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1454" centery="1521" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1366" centery="1431" centerz="7" radius="4">
+		<monster name="Blue Golem" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1414" centery="1361" centerz="7" radius="4">
+		<monster name="Death Rider" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1530" centery="1346" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1459" centery="1438" centerz="7" radius="4">
+		<monster name="Death Rider" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1532" centery="1545" centerz="7" radius="4">
+		<monster name="Death Rider" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1426" centery="1376" centerz="7" radius="4">
+		<monster name="Blue Golem" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-2" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1478" centery="1338" centerz="7" radius="4">
+		<monster name="Witch Queen" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1390" centery="1558" centerz="7" radius="4">
+		<monster name="Death Rider" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1368" centery="1343" centerz="7" radius="4">
+		<monster name="Death Rider" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1453" centery="1510" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1337" centery="1516" centerz="7" radius="4">
+		<monster name="Forest Orc" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1393" centery="1427" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-1" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1522" centery="1561" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1425" centery="1410" centerz="7" radius="4">
+		<monster name="Blue Golem" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1309" centery="1435" centerz="7" radius="4">
+		<monster name="Forest Orc" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1373" centery="1505" centerz="7" radius="4">
+		<monster name="Forest Orc" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1434" centery="1560" centerz="7" radius="4">
+		<monster name="Blue Golem" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1499" centery="1465" centerz="7" radius="4">
+		<monster name="Blue Golem" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1437" centery="1400" centerz="7" radius="4">
+		<monster name="Death Rider" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1400" centery="1524" centerz="7" radius="4">
+		<monster name="Death Tree" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1330" centery="1538" centerz="7" radius="4">
+		<monster name="Death Tree" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Death Rider" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="3" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1355" centery="1424" centerz="7" radius="4">
+		<monster name="Witch Queen" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1505" centery="1538" centerz="7" radius="4">
+		<monster name="Witch Queen" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-4" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1324" centery="1425" centerz="7" radius="4">
+		<monster name="Death Rider" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-4" y="2" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-3" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1353" centery="1471" centerz="7" radius="4">
+		<monster name="Forest Orc" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Death Tree" x="0" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1329" centery="1457" centerz="7" radius="4">
+		<monster name="Forest Orc" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Death Tree" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Forest Orc" x="2" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1512" centery="1456" centerz="7" radius="4">
+		<monster name="Blue Golem" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="2" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1500" centery="1411" centerz="7" radius="4">
+		<monster name="Death Rider" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Death Rider" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Witch Queen" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Blue Golem" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Death Rider" x="4" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1341" centery="1357" centerz="7" radius="3">
+		<monster name="Hell Maine" x="0" y="0" z="7" spawntime="900" />
+	</monster>
 </monsters>

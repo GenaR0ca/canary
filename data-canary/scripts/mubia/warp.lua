@@ -8,6 +8,8 @@ Mubia.Warp = {
 		{ name = "Templo", position = Position(1943, 1345, 7), level = 0, zen = 0 },
 		{ name = "Lorencia", position = Position(924, 660, 7), level = 0, zen = 0 },
 		{ name = "Noria", position = Position(1257, 720, 7), level = 0, zen = 0 },
+		{ name = "Aida", position = Position(1310, 1406, 7), level = 0, zen = 0 },
+		{ name = "Aida 2", position = Position(1477, 1509, 7), level = 0, zen = 0 },
 		{ name = "Zona de NPCs", position = Position(4804, 5088, 7), level = 0, zen = 0 },
 		{ name = "Zona de entrenamiento", position = Position(5008, 5004, 7), level = 0, zen = 0 },
 	},
