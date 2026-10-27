@@ -26,6 +26,8 @@ Mubia.Warp = {
 		{ name = "Lost Tower 5", position = Position(944, 1700, 10), level = 0, zen = 0 },
 		{ name = "Lost Tower 6", position = Position(911, 1700, 9), level = 0, zen = 0 },
 		{ name = "Lost Tower 7", position = Position(873, 1653, 8), level = 0, zen = 0 },
+		{ name = "Tarkan", position = Position(1634, 1205, 7), level = 0, zen = 0 },
+		{ name = "Tarkan 2", position = Position(1734, 1099, 7), level = 0, zen = 0 },
 		{ name = "Zona de NPCs", position = Position(4804, 5088, 7), level = 0, zen = 0 },
 		{ name = "Zona de entrenamiento", position = Position(5008, 5004, 7), level = 0, zen = 0 },
 	},

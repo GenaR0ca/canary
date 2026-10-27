@@ -6916,4 +6916,1236 @@
 		<monster name="Death Gorgon" x="4" y="-4" z="8" spawntime="10" />
 		<monster name="Death Gorgon" x="2" y="0" z="8" spawntime="10" />
 	</monster>
+	<!-- Tarkan (MU): Tarkan 1 y Tarkan 2 -->
+	<monster centerx="1759" centery="1095" centerz="7" radius="4">
+		<monster name="Tantallos" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1690" centery="1174" centerz="7" radius="4">
+		<monster name="Mutant" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Mutant" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1770" centery="1087" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1632" centery="1088" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1702" centery="1128" centerz="7" radius="4">
+		<monster name="Tantallos" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1749" centery="1125" centerz="7" radius="4">
+		<monster name="Tantallos" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1718" centery="1074" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1701" centery="1111" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1777" centery="1154" centerz="7" radius="4">
+		<monster name="Beam Knight" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Death Beam Knight" x="0" y="2" z="7" spawntime="150" />
+		<monster name="Beam Knight" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1743" centery="1058" centerz="7" radius="4">
+		<monster name="Tantallos" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1665" centery="1073" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1651" centery="1070" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1599" centery="1096" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1656" centery="1098" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1773" centery="1015" centerz="7" radius="4">
+		<monster name="Beam Knight" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1644" centery="1048" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1737" centery="1046" centerz="7" radius="4">
+		<monster name="Tantallos" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1799" centery="1118" centerz="7" radius="4">
+		<monster name="Beam Knight" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="2" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1690" centery="1049" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1787" centery="1095" centerz="7" radius="4">
+		<monster name="Tantallos" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1672" centery="1159" centerz="7" radius="4">
+		<monster name="Mutant" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1702" centery="1099" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1593" centery="1143" centerz="7" radius="4">
+		<monster name="Mutant" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1774" centery="1049" centerz="7" radius="4">
+		<monster name="Beam Knight" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="2" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1628" centery="1044" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1674" centery="1201" centerz="7" radius="4">
+		<monster name="Mutant" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Mutant" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1721" centery="1036" centerz="7" radius="4">
+		<monster name="Tantallos" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1652" centery="1135" centerz="7" radius="4">
+		<monster name="Mutant" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1703" centery="1152" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1804" centery="1056" centerz="7" radius="4">
+		<monster name="Beam Knight" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1806" centery="1008" centerz="7" radius="4">
+		<monster name="Beam Knight" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1672" centery="1128" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1732" centery="1062" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1770" centery="1172" centerz="7" radius="4">
+		<monster name="Beam Knight" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="2" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1645" centery="1155" centerz="7" radius="4">
+		<monster name="Mutant" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Mutant" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="-1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1639" centery="1036" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1719" centery="1057" centerz="7" radius="4">
+		<monster name="Tantallos" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1634" centery="1152" centerz="7" radius="4">
+		<monster name="Mutant" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Mutant" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1667" centery="1039" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1644" centery="1083" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1778" centery="1187" centerz="7" radius="4">
+		<monster name="Death Beam Knight" x="1" y="-4" z="7" spawntime="150" />
+		<monster name="Beam Knight" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1652" centery="1028" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1596" centery="1128" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1756" centery="1080" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1685" centery="1035" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1668" centery="1141" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1818" centery="1035" centerz="7" radius="4">
+		<monster name="Tantallos" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1801" centery="1029" centerz="7" radius="4">
+		<monster name="Tantallos" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1716" centery="1131" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1752" centery="1112" centerz="7" radius="4">
+		<monster name="Tantallos" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1639" centery="1103" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1624" centery="1110" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1618" centery="1135" centerz="7" radius="4">
+		<monster name="Mutant" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Mutant" x="-2" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1773" centery="1129" centerz="7" radius="4">
+		<monster name="Tantallos" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1792" centery="1048" centerz="7" radius="4">
+		<monster name="Tantallos" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1790" centery="1032" centerz="7" radius="4">
+		<monster name="Tantallos" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="2" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1660" centery="1121" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1737" centery="1032" centerz="7" radius="4">
+		<monster name="Tantallos" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1698" centery="1026" centerz="7" radius="4">
+		<monster name="Tantallos" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1766" centery="1187" centerz="7" radius="4">
+		<monster name="Beam Knight" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Death Beam Knight" x="-4" y="-3" z="7" spawntime="150" />
+		<monster name="Beam Knight" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1738" centery="1081" centerz="7" radius="4">
+		<monster name="Tantallos" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1795" centery="1170" centerz="7" radius="4">
+		<monster name="Beam Knight" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Death Beam Knight" x="-3" y="1" z="7" spawntime="150" />
+		<monster name="Beam Knight" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1642" centery="1059" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1690" centery="1099" centerz="7" radius="4">
+		<monster name="Tantallos" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1758" centery="1161" centerz="7" radius="4">
+		<monster name="Beam Knight" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1727" centery="1111" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1633" centery="1070" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1692" centery="1078" centerz="7" radius="4">
+		<monster name="Tantallos" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1607" centery="1152" centerz="7" radius="4">
+		<monster name="Mutant" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Mutant" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1787" centery="1110" centerz="7" radius="4">
+		<monster name="Tantallos" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1610" centery="1122" centerz="7" radius="4">
+		<monster name="Mutant" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Mutant" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="-3" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1723" centery="1089" centerz="7" radius="4">
+		<monster name="Tantallos" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1635" centery="1127" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1716" centery="1106" centerz="7" radius="4">
+		<monster name="Tantallos" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1738" centery="1115" centerz="7" radius="4">
+		<monster name="Tantallos" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1718" centery="1151" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1653" centery="1109" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="3" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1709" centery="1033" centerz="7" radius="4">
+		<monster name="Tantallos" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1599" centery="1108" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1688" centery="1067" centerz="7" radius="4">
+		<monster name="Tantallos" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1729" centery="1128" centerz="7" radius="4">
+		<monster name="Tantallos" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1657" centery="1160" centerz="7" radius="4">
+		<monster name="Mutant" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1619" centery="1157" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-4" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1667" centery="1097" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1753" centery="1136" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1712" centery="1088" centerz="7" radius="4">
+		<monster name="Tantallos" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1773" centery="1103" centerz="7" radius="4">
+		<monster name="Tantallos" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1708" centery="1056" centerz="7" radius="4">
+		<monster name="Tantallos" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1606" centery="1141" centerz="7" radius="4">
+		<monster name="Mutant" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Mutant" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-2" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1704" centery="1045" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1656" centery="1059" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1776" centery="1115" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1789" centery="1013" centerz="7" radius="4">
+		<monster name="Beam Knight" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1691" centery="1123" centerz="7" radius="4">
+		<monster name="Tantallos" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1669" centery="1061" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1666" centery="1024" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1743" centery="1093" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1686" centery="1156" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1730" centery="1156" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1691" centery="1188" centerz="7" radius="4">
+		<monster name="Mutant" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Mutant" x="3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1613" centery="1111" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1764" centery="1114" centerz="7" radius="4">
+		<monster name="Tantallos" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1791" centery="1158" centerz="7" radius="4">
+		<monster name="Beam Knight" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-3" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="2" y="4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1616" centery="1099" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1701" centery="1165" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1686" centery="1111" centerz="7" radius="4">
+		<monster name="Tantallos" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1785" centery="1084" centerz="7" radius="4">
+		<monster name="Tantallos" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-3" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1721" centery="1024" centerz="7" radius="4">
+		<monster name="Tantallos" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1678" centery="1184" centerz="7" radius="4">
+		<monster name="Mutant" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1788" centery="1127" centerz="7" radius="4">
+		<monster name="Tantallos" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1687" centery="1200" centerz="7" radius="4">
+		<monster name="Mutant" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Mutant" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1781" centery="1169" centerz="7" radius="4">
+		<monster name="Death Beam Knight" x="-2" y="0" z="7" spawntime="150" />
+		<monster name="Beam Knight" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1748" centery="1148" centerz="7" radius="4">
+		<monster name="Death Beam Knight" x="0" y="2" z="7" spawntime="150" />
+		<monster name="Beam Knight" x="0" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1701" centery="1176" centerz="7" radius="4">
+		<monster name="Mutant" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-1" y="2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1790" centery="1181" centerz="7" radius="4">
+		<monster name="Beam Knight" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Death Beam Knight" x="-2" y="2" z="7" spawntime="150" />
+		<monster name="Beam Knight" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="-3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-3" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1706" centery="1073" centerz="7" radius="4">
+		<monster name="Tantallos" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1718" centery="1165" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1776" centery="1035" centerz="7" radius="4">
+		<monster name="Tantallos" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1639" centery="1140" centerz="7" radius="4">
+		<monster name="Mutant" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="-3" z="7" spawntime="10" />
+		<monster name="Mutant" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="-2" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1812" centery="1023" centerz="7" radius="4">
+		<monster name="Beam Knight" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1655" centery="1048" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1748" centery="1046" centerz="7" radius="4">
+		<monster name="Tantallos" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-4" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1742" centery="1136" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1744" centery="1070" centerz="7" radius="4">
+		<monster name="Tantallos" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="3" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1621" centery="1087" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="4" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1678" centery="1173" centerz="7" radius="4">
+		<monster name="Mutant" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="-1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1817" centery="1054" centerz="7" radius="4">
+		<monster name="Beam Knight" x="-4" y="-2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1765" centery="1065" centerz="7" radius="4">
+		<monster name="Beam Knight" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="4" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="-3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1806" centery="1040" centerz="7" radius="4">
+		<monster name="Tantallos" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1639" centery="1116" centerz="7" radius="4">
+		<monster name="Mutant" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1664" centery="1084" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="-3" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="-4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1661" centery="1177" centerz="7" radius="4">
+		<monster name="Mutant" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-1" y="-2" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Mutant" x="2" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1799" centery="1107" centerz="7" radius="4">
+		<monster name="Tantallos" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Tantallos" x="1" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-4" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1674" centery="1213" centerz="7" radius="4">
+		<monster name="Mutant" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Mutant" x="4" y="-4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1676" centery="1073" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1670" centery="1050" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-4" y="1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="1" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="2" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1664" centery="1109" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1764" centery="1150" centerz="7" radius="4">
+		<monster name="Beam Knight" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-1" y="2" z="7" spawntime="10" />
+		<monster name="Death Beam Knight" x="4" y="-1" z="7" spawntime="150" />
+		<monster name="Beam Knight" x="-4" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1628" centery="1099" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="1" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="-1" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="-1" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="4" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1730" centery="1141" centerz="7" radius="4">
+		<monster name="Iron Wheel" x="0" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1623" centery="1146" centerz="7" radius="4">
+		<monster name="Mutant" x="-3" y="-3" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Mutant" x="0" y="4" z="7" spawntime="10" />
+		<monster name="Mutant" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Mutant" x="-4" y="3" z="7" spawntime="10" />
+		<monster name="Bloody Wolf" x="4" y="4" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1741" centery="1104" centerz="7" radius="4">
+		<monster name="Tantallos" x="-2" y="3" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="0" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-1" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="0" y="2" z="7" spawntime="10" />
+		<monster name="Tantallos" x="-3" y="4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="2" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="3" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1760" centery="1125" centerz="7" radius="4">
+		<monster name="Tantallos" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="-3" z="7" spawntime="10" />
+		<monster name="Tantallos" x="4" y="2" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="1" y="1" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="2" y="-2" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1747" centery="1159" centerz="7" radius="4">
+		<monster name="Beam Knight" x="4" y="4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="-4" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="2" y="-1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="0" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1759" centery="1172" centerz="7" radius="4">
+		<monster name="Beam Knight" x="3" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="-3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="3" y="3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="4" y="1" z="7" spawntime="10" />
+		<monster name="Beam Knight" x="1" y="1" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1675" centery="1112" centerz="7" radius="4">
+		<monster name="Bloody Wolf" x="0" y="0" z="7" spawntime="10" />
+		<monster name="Iron Wheel" x="-1" y="0" z="7" spawntime="10" />
+	</monster>
+	<monster centerx="1794" centery="1033" centerz="7" radius="3">
+		<monster name="Zaikan" x="0" y="0" z="7" spawntime="150" />
+	</monster>
 </monsters>
