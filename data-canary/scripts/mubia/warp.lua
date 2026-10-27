@@ -3,13 +3,14 @@
 
 Mubia.Warp = {
 	opcode = 81,
-	-- name, position (donde aparece el jugador), level (nivel mínimo), zen (precio)
+	-- name, position (donde aparece el jugador), level (nivel mínimo), zen (precio), wings (pide alas equipadas)
 	destinations = {
 		{ name = "Templo", position = Position(1943, 1345, 7), level = 0, zen = 0 },
 		{ name = "Lorencia", position = Position(924, 660, 7), level = 0, zen = 0 },
 		{ name = "Noria", position = Position(1257, 720, 7), level = 0, zen = 0 },
 		{ name = "Aida", position = Position(1310, 1406, 7), level = 0, zen = 0 },
 		{ name = "Aida 2", position = Position(1477, 1509, 7), level = 0, zen = 0 },
+		{ name = "Icarus", position = Position(2223, 1254, 7), level = 0, zen = 0, wings = true },
 		{ name = "Zona de NPCs", position = Position(4804, 5088, 7), level = 0, zen = 0 },
 		{ name = "Zona de entrenamiento", position = Position(5008, 5004, 7), level = 0, zen = 0 },
 	},
@@ -34,6 +35,10 @@ local function warp(player, index)
 	end
 	if player:getLevel() < dest.level then
 		Mubia.sendMessage(player, MESSAGE_FAILURE, string.format("Necesitas nivel %d para viajar a %s.", dest.level, dest.name))
+		return
+	end
+	if dest.wings and Mubia.hasWings and not Mubia.hasWings(player) then
+		Mubia.sendMessage(player, MESSAGE_FAILURE, string.format("Necesitas tener alas equipadas para viajar a %s.", dest.name))
 		return
 	end
 	if dest.zen > 0 and not player:removeMoneyBank(dest.zen) then
