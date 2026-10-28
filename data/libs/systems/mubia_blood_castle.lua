@@ -900,9 +900,7 @@ function BC.registerMessenger(npcType, npcConfig)
 	end
 
 	registerTalkNpc(npcType, npcConfig, "¡Los demonios robaron el arma del Archangel! Háblame para entrar al Blood Castle.", function(npc, player)
-		local text = "Soy el mensajero del Archangel. Los demonios le robaron su arma y la guardan en el Blood Castle. "
-			.. "Adentro: mata los monstruos del patio, rompe la puerta, mata a los Magic Skeleton, rompe la Statue of Saint "
-			.. "y llévale el arma al Archangel. Tienes 15 minutos y solo se puede entrar antes de que baje el puente. "
+		local text = "Soy el mensajero del Archangel. Los demonios le robaron su arma y la guardan en el Blood Castle. " .. "Adentro: mata los monstruos del patio, rompe la puerta, mata a los Magic Skeleton, rompe la Statue of Saint " .. "y llévale el arma al Archangel. Tienes 15 minutos y solo se puede entrar antes de que baje el puente. "
 		if BC.requireCloak then
 			text = text .. "Necesitas una Cloak of Invisibility del nivel del castillo. "
 		else

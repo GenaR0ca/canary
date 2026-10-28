@@ -550,8 +550,7 @@ function DS.registerCharon(npcType, npcConfig)
 	end
 
 	npcHandler:setCallback(CALLBACK_GREET, function(npc, player)
-		local text = "Soy Charon, el guardián de la Devil Square. Durante 5 minutos te atacarán oleadas de monstruos: "
-			.. "los 10 que más maten se llevan zen, y los 3 primeros también joyas. "
+		local text = "Soy Charon, el guardián de la Devil Square. Durante 5 minutos te atacarán oleadas de monstruos: " .. "los 10 que más maten se llevan zen, y los 3 primeros también joyas. "
 		if DS.requireInvitation then
 			text = text .. "Necesitas una Devil's Invitation del nivel de la Devil Square. "
 		else

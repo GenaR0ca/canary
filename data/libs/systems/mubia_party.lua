@@ -40,7 +40,7 @@ function Mubia.isPartyFull(party)
 end
 
 local function jsonString(text)
-	return '"' .. tostring(text):gsub('\\', '\\\\'):gsub('"', '\\"') .. '"'
+	return '"' .. tostring(text):gsub("\\", "\\\\"):gsub('"', '\\"') .. '"'
 end
 
 local function className(player)
@@ -61,18 +61,7 @@ function Mubia.buildPartyPayload(viewer)
 	for _, member in ipairs(players) do
 		local pos = member:getPosition()
 		local near = pos.z == viewerPos.z and math.abs(pos.x - viewerPos.x) <= range and math.abs(pos.y - viewerPos.y) <= range
-		rows[#rows + 1] = string.format(
-			'{"id":%d,"name":%s,"class":%s,"level":%d,"hp":%d,"maxHp":%d,"leader":%s,"self":%s,"near":%s}',
-			member:getId(),
-			jsonString(member:getName()),
-			jsonString(className(member)),
-			member:getLevel(),
-			member:getHealth(),
-			member:getMaxHealth(),
-			tostring(leader and member:getId() == leader:getId()),
-			tostring(member:getId() == viewer:getId()),
-			tostring(near)
-		)
+		rows[#rows + 1] = string.format('{"id":%d,"name":%s,"class":%s,"level":%d,"hp":%d,"maxHp":%d,"leader":%s,"self":%s,"near":%s}', member:getId(), jsonString(member:getName()), jsonString(className(member)), member:getLevel(), member:getHealth(), member:getMaxHealth(), tostring(leader and member:getId() == leader:getId()), tostring(member:getId() == viewer:getId()), tostring(near))
 	end
 	return string.format('{"max":%d,"members":[%s]}', Mubia.PartyConfig.maxMembers, table.concat(rows, ","))
 end
