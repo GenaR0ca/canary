@@ -9,6 +9,7 @@ Mubia.Config = {
 	startLevel = 1, -- nivel con el que empieza todo personaje nuevo
 	testLevel = 400, -- PRUEBAS: sube una vez a este nivel a todos los personajes (0 = desactivado)
 	resetLevel = 400,
+	maxLevel = 400, -- como en MU: la experiencia se corta aquí, para seguir hay que hacer reset (0 = sin tope)
 	resetPointsPerReset = 1000, -- puntos extra por cada reset acumulado
 	resetCostZen = 0,
 	minDamageAfterDefense = 0.1, -- el golpe nunca baja de este % aunque la defensa sea alta
