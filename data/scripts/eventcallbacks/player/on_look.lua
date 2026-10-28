@@ -38,10 +38,10 @@ local function handleItemDescription(inspectedThing, lookDistance, player)
 			return string.format("You see %s\nIt has %d refillings left.", descriptionText, itemCharges)
 		end
 	else
-		-- Mubia: clase, defensa o daño y requisitos de los items de MU
-		local gearText = Mubia and Mubia.getGearLookText and Mubia.getGearLookText(player, inspectedThing)
-		if gearText then
-			descriptionText = descriptionText .. "\n" .. gearText
+		-- Mubia: los items de MU se ven con colores (nombre, stats, opciones, clase y requisitos), sin el peso
+		local markup = Mubia and Mubia.getItemLookMarkup and Mubia.getItemLookMarkup(player, inspectedThing)
+		if markup then
+			return markup
 		end
 		return "You see " .. descriptionText
 	end

@@ -48,7 +48,8 @@ function Mubia.getPet(player)
 	return item and Mubia.Pets[item:getId()] or NO_PET
 end
 
-function Mubia.getPetLookText(item)
+-- Líneas de lo que hace la mascota (en UTF-8). withLevel: incluir "Nivel mínimo".
+function Mubia.getPetLines(item, withLevel)
 	local pet = Mubia.Pets[item:getId()]
 	if not pet then
 		return nil
@@ -78,10 +79,15 @@ function Mubia.getPetLookText(item)
 	if pet.zen then
 		lines[#lines + 1] = string.format("Zen +%d%%.", pet.zen)
 	end
-	if pet.level then
+	if withLevel and pet.level then
 		lines[#lines + 1] = string.format("Nivel mínimo: %d.", pet.level)
 	end
-	return Mubia.toLatin1(table.concat(lines, "\n"))
+	return lines
+end
+
+function Mubia.getPetLookText(item)
+	local lines = Mubia.getPetLines(item, true)
+	return lines and Mubia.toLatin1(table.concat(lines, "\n"))
 end
 
 local PET_SPEED_SUBID = 60500
