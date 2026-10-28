@@ -150,4 +150,37 @@
 	<npc centerx="2220" centery="1250" centerz="7" radius="1">
 		<npc name="Potion Girl Amy" x="0" y="0" z="7" spawntime="60" />
 	</npc>
+	<npc centerx="1295" centery="648" centerz="7" radius="1">
+		<npc name="Messenger of Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="1594" centery="741" centerz="7" radius="1">
+		<npc name="Messenger of Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="932" centery="660" centerz="7" radius="1">
+		<npc name="Messenger of Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2321" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2358" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2395" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2432" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2469" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2506" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2543" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="2580" centery="705" centerz="7" radius="1">
+		<npc name="Archangel" x="0" y="0" z="7" spawntime="60" />
+	</npc>
 </npcs>
