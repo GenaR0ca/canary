@@ -74,7 +74,7 @@ local potions = {
 
 local flaskPotion = Action()
 
-function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHotkey)
+local function onUsePotion(player, item, fromPosition, target, toPosition, isHotkey)
 	if not target or type(target) == "userdata" and not target:isPlayer() then
 		return false
 	end
@@ -105,7 +105,8 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 		player:addAchievementProgress("Potion Addict", 100000)
 		target:say("Aaaah...", MESSAGE_POTION)
 
-		local deactivatedFlasks = player:kv():get("talkaction.potions.flask") or false
+		-- Mubia Online: las pociones no dejan frasco vacío (como en MU)
+		local deactivatedFlasks = true
 		if not deactivatedFlasks then
 			if fromPosition.x == CONTAINER_POSITION then
 				player:addItem(potion.flask, 1)
@@ -152,8 +153,16 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 	return true
 end
 
+flaskPotion.onUse = onUsePotion
+
 for index, value in pairs(potions) do
 	flaskPotion:id(index)
+end
+
+-- Mubia Online: el Mubia Helper toma pociones solo con estas mismas reglas (data/libs/systems/mubia_helper.lua)
+if Mubia then
+	Mubia.FlaskPotions = potions
+	Mubia.useFlaskPotion = onUsePotion
 end
 
 flaskPotion:register()
