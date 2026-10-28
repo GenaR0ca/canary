@@ -8,9 +8,11 @@ Mubia.ItemConfig = {
 	optionStep = 4,
 	-- Jewel of Bless: sube de +0 a +6, siempre sale bien
 	blessMaxLevel = 6,
-	-- Jewel of Soul: sube de +6 a +15. Probabilidad de éxito según el nivel al que se quiere llegar.
+	-- Jewel of Soul: sube de +6 a +9. Probabilidad de éxito según el nivel al que se quiere llegar.
 	-- Si falla, el item baja soulFailLevels niveles (nunca por debajo de +0).
-	soulChance = { [7] = 50, [8] = 50, [9] = 50, [10] = 45, [11] = 40, [12] = 35, [13] = 30, [14] = 25, [15] = 20 },
+	-- De +9 a +15 se sube en la Chaos Machine (data/libs/systems/mubia_chaos.lua), como en MU.
+	soulMaxLevel = 9,
+	soulChance = { [7] = 50, [8] = 50, [9] = 50 },
 	soulFailLevels = 1,
 	-- Jewel of Life: probabilidad de éxito. Si falla, se pierde la opción (vuelve a +0).
 	lifeChance = 50,
@@ -29,6 +31,7 @@ Mubia.Gear = Mubia.Gear or {}
 Mubia.JEWEL_OF_BLESS = 60303
 Mubia.JEWEL_OF_SOUL = 60301
 Mubia.JEWEL_OF_LIFE = 60302
+Mubia.JEWEL_OF_CHAOS = 60304
 
 -- Alas MU: aumentan el daño y absorben un % del daño recibido; ambos suben con el nivel del item.
 Mubia.Wings = {
@@ -93,6 +96,40 @@ function Mubia.getWingStats(item)
 	}
 end
 
+-- Líneas de stats del item por su nivel (+1 a +15) y, en las alas, daño / absorción / defensa
+function Mubia.getItemStatLines(item)
+	local lines = {}
+	local level = Mubia.getItemLevel(item)
+	local kind = Mubia.getItemKind(item)
+	local wingStats = Mubia.getWingStats(item)
+	if wingStats then
+		lines[#lines + 1] = string.format("Daño +%d%%.", wingStats.damage)
+		lines[#lines + 1] = string.format("Absorbe el %d%% del daño recibido.", wingStats.absorb)
+		lines[#lines + 1] = string.format("Defensa: %d.", wingStats.defense)
+	elseif level > 0 then
+		local what = kind == "staff" and "Daño mágico" or kind == "weapon" and "Daño" or "Defensa"
+		lines[#lines + 1] = string.format("Nivel +%d: %s +%d.", level, what, Mubia.getLevelBonus(level))
+	end
+	return lines
+end
+
+-- Líneas de opciones del item: opción adicional (Jewel of Life), Luck, Excellent y Harmony
+function Mubia.getItemOptionLines(item)
+	local lines = {}
+	local option = Mubia.getItemOption(item)
+	if option > 0 then
+		local kind = Mubia.getItemKind(item)
+		local what = kind == "staff" and "Daño mágico" or (kind == "weapon" or kind == "wings") and "Daño" or "Defensa"
+		lines[#lines + 1] = string.format("Opción adicional: %s +%d.", what, option * Mubia.ItemConfig.optionStep)
+	end
+	for _, getLines in ipairs({ Mubia.getExcellentLines, Mubia.getHarmonyLines }) do
+		for _, line in ipairs(getLines(item)) do
+			lines[#lines + 1] = line
+		end
+	end
+	return lines
+end
+
 -- Nombre y descripción del item según su nivel y opción ("Plate Armor +7", "Opción adicional: Defensa +8")
 function Mubia.refreshItemText(item)
 	local itemType = item:getType()
@@ -100,27 +137,31 @@ function Mubia.refreshItemText(item)
 	local option = Mubia.getItemOption(item)
 	local kind = Mubia.getItemKind(item)
 
+	-- "excellent dragon sword +7" (las alas con opción no se llaman Excellent, como en MU)
+	local excellent = Mubia.isExcellent and Mubia.isExcellent(item)
+	local name = itemType:getName()
+	if excellent then
+		name = "excellent " .. name
+	end
 	if level > 0 then
-		item:setAttribute(ITEM_ATTRIBUTE_NAME, string.format("%s +%d", itemType:getName(), level))
+		name = string.format("%s +%d", name, level)
+	end
+	if name ~= itemType:getName() then
+		item:setAttribute(ITEM_ATTRIBUTE_NAME, name)
 	else
 		item:removeAttribute(ITEM_ATTRIBUTE_NAME)
 	end
+	if excellent then
+		item:setAttribute(ITEM_ATTRIBUTE_ARTICLE, "an")
+	else
+		item:removeAttribute(ITEM_ATTRIBUTE_ARTICLE)
+	end
 
 	local lines = {}
-	local wingStats = Mubia.getWingStats(item)
-	if wingStats then
-		local wing = Mubia.Wings[item:getId()]
-		lines[#lines + 1] = string.format("Alas de %s. Aumenta el daño %d%%. Absorbe el %d%% del daño recibido. Defensa %d.", Mubia.Classes[wing.classId].name, wingStats.damage, wingStats.absorb, wingStats.defense)
-	elseif level > 0 then
-		local what = (kind == "weapon" or kind == "staff") and "Daño" or "Defensa"
-		if kind == "staff" then
-			what = "Daño mágico"
+	for _, list in ipairs({ Mubia.getItemStatLines(item), Mubia.getItemOptionLines(item) }) do
+		for _, line in ipairs(list) do
+			lines[#lines + 1] = line
 		end
-		lines[#lines + 1] = string.format("Nivel +%d: %s +%d.", level, what, Mubia.getLevelBonus(level))
-	end
-	if option > 0 then
-		local what = kind == "staff" and "Daño mágico" or (kind == "weapon" or kind == "wings") and "Daño" or "Defensa"
-		lines[#lines + 1] = string.format("Opción adicional: %s +%d.", what, option * Mubia.ItemConfig.optionStep)
 	end
 
 	if #lines > 0 then
@@ -140,9 +181,12 @@ function Mubia.setItemOption(item, option)
 	Mubia.refreshItemText(item)
 end
 
--- Bonus de los items equipados: daño físico, daño mágico, % de daño mágico (bastones), defensa y alas
+-- Bonus de los items equipados: daño físico, daño mágico, % de daño mágico (bastones), defensa, alas y mascota
 function Mubia.getEquipmentBonus(player)
-	local bonus = { attack = 0, wizardry = 0, magicRise = 0, defense = 0, wingDamage = 0, wingAbsorb = 0 }
+	local pet = Mubia.getPet and Mubia.getPet(player) or {}
+	local bonus = { attack = 0, wizardry = 0, magicRise = 0, defense = 0, wingDamage = 0, wingAbsorb = 0, petDamage = pet.damage or 0, petAbsorb = pet.absorb or 0, criticalRate = 0 }
+	bonus.exc = Mubia.newExcellentBonus()
+	bonus.harmony = Mubia.newHarmonyBonus()
 	local slots = { CONST_SLOT_HEAD, CONST_SLOT_ARMOR, CONST_SLOT_LEGS, CONST_SLOT_FEET, CONST_SLOT_GLOVES, CONST_SLOT_LEFT, CONST_SLOT_RIGHT, CONST_SLOT_WINGS }
 	for _, slot in ipairs(slots) do
 		local item = player:getSlotItem(slot)
@@ -166,8 +210,13 @@ function Mubia.getEquipmentBonus(player)
 				bonus.wingDamage = stats.damage
 				bonus.wingAbsorb = stats.absorb
 			end
+			Mubia.addExcellentBonus(bonus, item, player)
+			Mubia.addHarmonyBonus(bonus, item)
 		end
 	end
+	-- DMGL: daño +nivel/20 (golpes y magias)
+	bonus.attack = bonus.attack + bonus.exc.damageFlat
+	bonus.wizardry = bonus.wizardry + bonus.exc.damageFlat
 	return bonus
 end
 
@@ -203,22 +252,28 @@ local function classNames(gear)
 end
 
 -- ¿Puede el jugador equipar este item de MU? Devuelve false y el motivo si no puede.
-function Mubia.checkGearRequirements(player, itemId)
+-- item (opcional): si tiene Harmony de STR o AGI requerida, se descuenta.
+function Mubia.checkGearRequirements(player, itemId, item)
 	local gear = Mubia.Gear[itemId]
 	if not gear then
 		return true
 	end
+	local strDecrease, agiDecrease = 0, 0
+	if item then
+		strDecrease, agiDecrease = Mubia.getHarmonyRequirementDecrease(item)
+	end
+	local needStr, needAgi = math.max(0, gear.str - strDecrease), math.max(0, gear.agi - agiDecrease)
 	local class = Mubia.getClass(player)
 	if not class or not hasClass(gear, class) then
 		return false, string.format("%s solo lo puede usar: %s.", gear.name, classNames(gear))
 	end
 	local stats = Mubia.getStats(player)
 	local missing = {}
-	if stats.str < gear.str then
-		missing[#missing + 1] = string.format("STR %d (tienes %d)", gear.str, stats.str)
+	if stats.str < needStr then
+		missing[#missing + 1] = string.format("STR %d (tienes %d)", needStr, stats.str)
 	end
-	if stats.agi < gear.agi then
-		missing[#missing + 1] = string.format("AGI %d (tienes %d)", gear.agi, stats.agi)
+	if stats.agi < needAgi then
+		missing[#missing + 1] = string.format("AGI %d (tienes %d)", needAgi, stats.agi)
 	end
 	if gear.level and player:getLevel() < gear.level then
 		missing[#missing + 1] = string.format("nivel %d", gear.level)
@@ -229,32 +284,120 @@ function Mubia.checkGearRequirements(player, itemId)
 	return true
 end
 
--- Texto extra al mirar un item de MU: clase, defensa o daño y requisitos
-function Mubia.getGearLookText(player, item)
-	local gear = Mubia.Gear[item:getId()]
-	if not gear then
+-- Colores del texto al mirar un item de MU (el cliente de Mubia los muestra; formato {texto, #color})
+Mubia.LookColors = {
+	name = "#00EB00", -- nombre y stats (verde, como el mensaje normal de "You see")
+	option = "#6fa8ff", -- Luck, opción adicional, Excellent y Harmony (azul)
+	info = "#ffffff", -- clase (blanco)
+	ok = "#90ee90", -- requisito cumplido (verde claro)
+	missing = "#f55e5e", -- requisito sin cumplir (rojo)
+	-- color del nombre según el nivel del item (como en MU)
+	normal = "#d8d8d8", -- +0 a +2 (gris claro)
+	upgraded = "#8f8fff", -- +3 a +5 (azul lila, distinto del azul de las opciones)
+	golden = "#ffd23f", -- +6 o más (dorado)
+	excellent = "#2df0b4", -- Excellent, con cualquier + (verde agua)
+}
+
+function Mubia.getItemNameColor(item)
+	local colors = Mubia.LookColors
+	if Mubia.isExcellent and Mubia.isExcellent(item) then
+		return colors.excellent
+	end
+	local level = Mubia.getItemLevel(item)
+	if level >= 6 then
+		return colors.golden
+	elseif level >= 3 then
+		return colors.upgraded
+	end
+	return colors.normal
+end
+
+local function colored(parts, text, color)
+	parts[#parts + 1] = string.format("{%s, %s}", text:gsub("[{}]", ""), color)
+end
+
+-- Requisitos coloreados: "Requiere STR 20, AGI 40." (verde claro si lo cumples, rojo si no)
+local function addRequirements(parts, list)
+	if #list == 0 then
+		return
+	end
+	colored(parts, "\nRequiere ", Mubia.LookColors.info)
+	for i, requirement in ipairs(list) do
+		if i > 1 then
+			colored(parts, ", ", Mubia.LookColors.info)
+		end
+		colored(parts, requirement.text, requirement.ok and Mubia.LookColors.ok or Mubia.LookColors.missing)
+	end
+	colored(parts, ".", Mubia.LookColors.info)
+end
+
+-- Texto completo al mirar un item de MU (sets, armas, escudos, alas y mascotas), con colores.
+-- Devuelve nil si no es un item de MU (se usa la descripción normal de Tibia).
+function Mubia.getItemLookMarkup(player, item)
+	local itemId = item:getId()
+	local gear = Mubia.Gear[itemId]
+	local wing = Mubia.Wings[itemId]
+	local pet = Mubia.Pets and Mubia.Pets[itemId]
+	if not gear and not wing and not pet then
 		return nil
 	end
-	local lines = { "Clase: " .. classNames(gear) .. "." }
-	if gear.defense then
-		lines[#lines + 1] = string.format("Defensa: %d.", gear.defense)
+
+	local article = item:getArticle()
+	local name = (article ~= "" and article .. " " or "") .. item:getName()
+	local parts = {}
+	colored(parts, "You see " .. name .. ".", Mubia.getItemNameColor(item))
+
+	local stats = {}
+	if gear and gear.defense then
+		stats[#stats + 1] = string.format("Defensa: %d.", gear.defense)
 	end
-	if gear.min then
-		lines[#lines + 1] = string.format("Daño: %d - %d%s.", gear.min, gear.max, gear.twoHanded and " (dos manos)" or "")
+	if gear and gear.min then
+		stats[#stats + 1] = string.format("Daño: %d - %d%s.", gear.min, gear.max, gear.twoHanded and " (dos manos)" or "")
 	end
-	if gear.magic then
-		lines[#lines + 1] = string.format("Daño mágico: +%d%%.", gear.magic)
+	if gear and gear.magic then
+		stats[#stats + 1] = string.format("Daño mágico: +%d%%.", gear.magic)
 	end
-	local requirement = string.format("Requiere STR %d, AGI %d", gear.str, gear.agi)
-	if gear.level then
-		requirement = requirement .. string.format(", nivel %d", gear.level)
+	for _, line in ipairs(Mubia.getItemStatLines(item)) do
+		stats[#stats + 1] = line
 	end
-	lines[#lines + 1] = requirement .. "."
-	local ok = Mubia.checkGearRequirements(player, item:getId())
-	if not ok then
-		lines[#lines + 1] = "No lo puedes usar."
+	for _, line in ipairs(stats) do
+		colored(parts, "\n" .. line, Mubia.LookColors.name)
 	end
-	return Mubia.toLatin1(table.concat(lines, "\n"))
+
+	local options = Mubia.getItemOptionLines(item)
+	if pet then
+		for _, line in ipairs(Mubia.getPetLines(item, false)) do
+			options[#options + 1] = line
+		end
+	end
+	for _, line in ipairs(options) do
+		colored(parts, "\n" .. line, Mubia.LookColors.option)
+	end
+
+	local requirements = {}
+	local className
+	if gear then
+		className = classNames(gear)
+		local strDecrease, agiDecrease = Mubia.getHarmonyRequirementDecrease(item)
+		local playerStats = Mubia.getStats(player)
+		local needStr, needAgi = math.max(0, gear.str - strDecrease), math.max(0, gear.agi - agiDecrease)
+		requirements[#requirements + 1] = { text = "STR " .. needStr, ok = playerStats.str >= needStr }
+		requirements[#requirements + 1] = { text = "AGI " .. needAgi, ok = playerStats.agi >= needAgi }
+		if gear.level then
+			requirements[#requirements + 1] = { text = "Nivel " .. gear.level, ok = player:getLevel() >= gear.level }
+		end
+	elseif wing then
+		className = Mubia.Classes[wing.classId].name
+	elseif pet and pet.level then
+		requirements[#requirements + 1] = { text = "Nivel " .. pet.level, ok = player:getLevel() >= pet.level }
+	end
+	-- requisitos anteúltimos y la clase al final
+	addRequirements(parts, requirements)
+	if className then
+		colored(parts, "\nClase: " .. className .. ".", Mubia.LookColors.info)
+	end
+
+	return Mubia.toLatin1(table.concat(parts))
 end
 
 -- Sets, armas y escudos de Tibia equipados: se borran (solo existen los de MU)
@@ -320,4 +463,18 @@ function Mubia.canUseWings(player, item)
 	end
 	local class = Mubia.getClass(player)
 	return class ~= nil and Mubia.Classes[wing.classId] == class
+end
+
+-- ¿Puede el jugador ponerse este item de MU (set, arma, escudo, alas o mascota)? Devuelve false y el motivo si no.
+function Mubia.checkEquipRequirements(player, item)
+	local itemId = item:getId()
+	if Mubia.Wings[itemId] then
+		if not Mubia.canUseWings(player, item) then
+			return false, string.format("Solo un %s puede usar estas alas.", Mubia.Classes[Mubia.Wings[itemId].classId].name)
+		end
+		return true
+	elseif Mubia.Pets and Mubia.Pets[itemId] then
+		return Mubia.checkPetRequirements(player, itemId)
+	end
+	return Mubia.checkGearRequirements(player, itemId, item)
 end

@@ -1,0 +1,1 @@
+-- Mubia Online: Elf Soldier ya no existe (se renombró). Este archivo queda vacío para que no se cargue el NPC viejo.

@@ -87,7 +87,7 @@ monster.loot = {
 	{ name = "bear paw", chance = 13600000, maxCount = 2 },
 	{ name = "furry club", chance = 13600000 },
 	{ id = 281, chance = 5000 }, -- giant shimmering pearl (green)
-	{ name = "great health potion", chance = 13600000, maxCount = 5 },
+	{ id = 239, chance = 13600000, maxCount = 5 },
 	{ name = "honeycomb", chance = 13600000, maxCount = 2 },
 	{ name = "spiked squelcher", chance = 13600000 },
 	{ name = "ultimate health potion", chance = 13600000, maxCount = 5 },

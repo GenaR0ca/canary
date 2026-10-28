@@ -398,22 +398,22 @@
 		<attribute key="containersize" value="8"/>
 		<attribute key="weight" value="800"/>
 	</item>
-	<item id="236" article="a" name="strong health potion">
+	<item id="236" article="a" name="healing potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="description" value="This potion can only be consumed by knights, paladins and monks of level 50 or higher."/>
 		<attribute key="weight" value="290"/>
 	</item>
-	<item id="237" article="a" name="strong mana potion">
+	<item id="237" article="a" name="mana potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="290"/>
 		<attribute key="description" value="This potion can only be consumed by players of level 50 or higher."/>
 	</item>
-	<item id="238" article="a" name="great mana potion">
+	<item id="238" article="a" name="large mana potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="310"/>
 		<attribute key="description" value="This potion can only be consumed by sorcerers, druids, paladins and monks of level 80 or higher."/>
 	</item>
-	<item id="239" article="a" name="great health potion">
+	<item id="239" article="a" name="large healing potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="310"/>
 		<attribute key="description" value="This potion can only be consumed by knights of level 80 or higher."/>
@@ -424,14 +424,14 @@
 	<item fromid="253" toid="265" article="a" name="tent">
 		<attribute key="primarytype" value="constructions"/>
 	</item>
-	<item id="266" article="a" name="health potion">
+	<item id="266" article="a" name="small healing potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="270"/>
 	</item>
 	<item id="267" name="linen">
 		<attribute key="primarytype" value="walls"/>
 	</item>
-	<item id="268" article="a" name="mana potion">
+	<item id="268" article="a" name="small mana potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="270"/>
 	</item>
@@ -10600,12 +10600,12 @@
 			<attribute key="slot" value="shield"/>
 		</attribute>
 	</item>
-	<item id="3446" article="a" name="bolt">
+	<item id="3446" article="a" name="bolt +3">
 		<attribute key="primarytype" value="ammunition"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
-		<attribute key="maxhitchance" value="87"/>
+		<attribute key="hitchance" value="100"/>
 		<attribute key="attack" value="30"/>
 		<attribute key="weight" value="80"/>
 		<attribute key="script" value="moveevent;weapon">
@@ -10613,13 +10613,14 @@
 			<attribute key="weaponType" value="ammo"/>
 			<attribute key="slot" value="ammo"/>
 		</attribute>
+		<attribute key="stacksize" value="255"/>
 	</item>
-	<item id="3447" article="an" name="arrow">
+	<item id="3447" article="an" name="arrow +3">
 		<attribute key="primarytype" value="ammunition"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
-		<attribute key="maxhitchance" value="91"/>
+		<attribute key="hitchance" value="100"/>
 		<attribute key="attack" value="25"/>
 		<attribute key="weight" value="70"/>
 		<attribute key="script" value="moveevent;weapon">
@@ -10627,6 +10628,7 @@
 			<attribute key="weaponType" value="ammo"/>
 			<attribute key="slot" value="ammo"/>
 		</attribute>
+		<attribute key="stacksize" value="255"/>
 	</item>
 	<item id="3448" article="a" name="poison arrow">
 		<attribute key="primarytype" value="ammunition"/>
@@ -20603,7 +20605,8 @@
 		<attribute key="description" value="This potion can only be consumed by knights of level 130 or higher"/>
 		<attribute key="weight" value="310"/>
 	</item>
-	<item id="7644" article="an" name="antidote potion">
+	<item id="7644" article="an" name="antidote">
+		<attribute key="description" value="Quita todos los efectos negativos (veneno, fuego, parálisis...)."/>
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="265"/>
 	</item>
@@ -65498,7 +65501,7 @@ former students at the Noodles Academy. Awarded by TibiaLabs.com"/>
 		<attribute key="weight" value="1700"/>
 		<attribute key="script" value="moveevent">
 			<attribute key="slot" value="right-hand"/>
-			<attribute key="vocation" value="None;true, Paladin;true, Royal Paladin"/>
+			<attribute key="vocation" value="Fairy Elf;true, Muse Elf;true"/>
 		</attribute>
 	</item>
 	<item id="35563" article="a" name="magic shield potion">
@@ -84639,7 +84642,7 @@ Granted by TibiaGoals.com"/>
 	</item>
 	<item id="60301" article="a" name="jewel of soul">
 		<attribute key="primarytype" value="valuables"/>
-		<attribute key="description" value="Usalo sobre un item +6 o mas (Usar con...) para subirlo hasta +15. Puede fallar."/>
+		<attribute key="description" value="Usalo sobre un item +6 o mas (Usar con...) para subirlo hasta +9. De +10 a +15 se sube en la Chaos Machine. Puede fallar."/>
 		<attribute key="weight" value="10"/>
 	</item>
 	<item id="60302" article="a" name="jewel of life">
@@ -84652,6 +84655,344 @@ Granted by TibiaGoals.com"/>
 		<attribute key="description" value="Usalo sobre un item (Usar con...) para subirlo de +0 a +6. Exito 100%."/>
 		<attribute key="weight" value="10"/>
 	</item>
+	<item id="60304" article="a" name="jewel of chaos">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Joya de MU. Se usa en la Chaos Machine del Chaos Goblin para combinar items."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<!-- Mubia: items de la Chaos Machine (generado por tools/mubia/chaos_machine.py) -->
+	<item id="60305" article="a" name="jewel of creation">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Joya de MU. Se usa en la Chaos Machine para crear Fruits y alas de 3ra generacion."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60306" article="a" name="loch's feather">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pluma de MU. Con alas de 1ra generacion y una Jewel of Chaos crea alas de 2da generacion en la Chaos Machine."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60307" article="a" name="feather of condor">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pluma de MU. Junto con la Flame of Condor crea alas de 3ra generacion en la Chaos Machine."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60308" article="a" name="flame of condor">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llama de MU. Junto con la Feather of Condor crea alas de 3ra generacion en la Chaos Machine."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60309" name="bless bundle x10">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 10 Jewels of Bless. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60310" name="bless bundle x20">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 20 Jewels of Bless. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60311" name="bless bundle x30">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 30 Jewels of Bless. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60312" name="soul bundle x10">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 10 Jewels of Soul. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60313" name="soul bundle x20">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 20 Jewels of Soul. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60314" name="soul bundle x30">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 30 Jewels of Soul. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60315" article="a" name="fruit of strength">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Fruta de MU. Usala para sumar de 1 a 3 puntos de Strength."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60316" article="a" name="fruit of agility">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Fruta de MU. Usala para sumar de 1 a 3 puntos de Agility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60317" article="a" name="fruit of vitality">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Fruta de MU. Usala para sumar de 1 a 3 puntos de Vitality."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60318" article="a" name="fruit of energy">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Fruta de MU. Usala para sumar de 1 a 3 puntos de Energy."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<!-- Mubia: fin de items de la Chaos Machine -->
+	<!-- Mubia: Jewel of Harmony, Luck y Excellent (generado por tools/mubia/jewels.py) -->
+	<item id="60319" article="a" name="jewel of harmony">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usala sobre un set, arma o escudo (Usar con...) para darle una opcion Harmony. Si ya tiene, la sube de nivel (hasta el nivel del item). Puede fallar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60320" article="a" name="jewel of luck">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usala sobre un item de MU (Usar con...) para darle Luck."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60321" article="a" name="jewel of excellent">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usala sobre un item Excellent (Usar con...) para sumarle una opcion Excellent nueva."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<!-- Mubia: fin de Jewel of Harmony, Luck y Excellent -->
+	<!-- Mubia: Devil Square, Devil's Eye, Key e Invitation (generado por tools/mubia/devil_square_items.py) -->
+	<item id="60601" article="a" name="devil's eye +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60602" article="a" name="devil's eye +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60603" article="a" name="devil's eye +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60604" article="a" name="devil's eye +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60605" article="a" name="devil's eye +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60606" article="a" name="devil's eye +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60607" article="a" name="devil's eye +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del demonio. Con la Devil's Key del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60611" article="a" name="devil's key +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60612" article="a" name="devil's key +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60613" article="a" name="devil's key +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60614" article="a" name="devil's key +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60615" article="a" name="devil's key +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60616" article="a" name="devil's key +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60617" article="a" name="devil's key +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llave del demonio. Con el Devil's Eye del mismo nivel y una Jewel of Chaos se arma una Devil's Invitation."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60621" article="a" name="devil's invitation +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60622" article="a" name="devil's invitation +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60623" article="a" name="devil's invitation +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60624" article="a" name="devil's invitation +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60625" article="a" name="devil's invitation +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60626" article="a" name="devil's invitation +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60627" article="a" name="devil's invitation +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Devil Square del mismo nivel. Llevala a Charon."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<!-- Mubia: fin de Devil Square -->
+	<!-- Mubia: Blood Castle, Scroll of Archangel, Blood Bone, Cloak of Invisibility y armas del Archangel (generado por tools/mubia/blood_castle_items.py) -->
+	<item id="60631" article="a" name="scroll of archangel +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60632" article="a" name="scroll of archangel +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60633" article="a" name="scroll of archangel +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60634" article="a" name="scroll of archangel +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60635" article="a" name="scroll of archangel +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60636" article="a" name="scroll of archangel +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60637" article="a" name="scroll of archangel +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60638" article="a" name="scroll of archangel +8">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino del Archangel. Con la Blood Bone del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60641" article="a" name="blood bone +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60642" article="a" name="blood bone +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60643" article="a" name="blood bone +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60644" article="a" name="blood bone +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60645" article="a" name="blood bone +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60646" article="a" name="blood bone +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60647" article="a" name="blood bone +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60648" article="a" name="blood bone +8">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Hueso de sangre. Con el Scroll of Archangel del mismo nivel y una Jewel of Chaos se arma una Cloak of Invisibility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60651" article="a" name="cloak of invisibility +1">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60652" article="a" name="cloak of invisibility +2">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60653" article="a" name="cloak of invisibility +3">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60654" article="a" name="cloak of invisibility +4">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60655" article="a" name="cloak of invisibility +5">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60656" article="a" name="cloak of invisibility +6">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60657" article="a" name="cloak of invisibility +7">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60658" article="a" name="cloak of invisibility +8">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Entrada a Blood Castle del mismo nivel. Llevala al Messenger of Archangel."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60661" article="a" name="divine sword of archangel">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Arma sagrada robada al Archangel. Llevasela al Archangel en la entrada del Blood Castle antes de que termine el tiempo."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60662" article="a" name="divine staff of archangel">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Arma sagrada robada al Archangel. Llevasela al Archangel en la entrada del Blood Castle antes de que termine el tiempo."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60663" article="a" name="divine crossbow of archangel">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Arma sagrada robada al Archangel. Llevasela al Archangel en la entrada del Blood Castle antes de que termine el tiempo."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<!-- Mubia: fin de Blood Castle -->
 	<item id="60401" name="wings of satan">
 		<attribute key="primarytype" value="wings"/>
 		<attribute key="slottype" value="wings"/>
@@ -85647,6 +85988,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85660,6 +86002,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85673,6 +86016,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85686,6 +86030,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85699,6 +86044,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85712,6 +86058,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85725,6 +86072,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85738,6 +86086,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85751,6 +86100,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85764,6 +86114,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85777,6 +86128,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85790,6 +86142,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85803,6 +86156,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85816,6 +86170,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85829,6 +86184,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85842,6 +86198,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85855,6 +86212,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86117,4 +86475,140 @@ Granted by TibiaGoals.com"/>
 		<attribute key="weight" value="2000"/>
 	</item>
 	<!-- Mubia: fin de items de MU -->
+	<!-- Mubia: inventario y mascotas (generado por tools/mubia/pets.py) -->
+	<item id="60500" name="inventario">
+		<attribute key="primarytype" value="containers"/>
+		<attribute key="containersize" value="40"/>
+		<attribute key="description" value="Tu inventario de MU. Se abre con la tecla I."/>
+		<attribute key="weight" value="0"/>
+	</item>
+	<item id="60501" name="guardian angel">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60502" name="imp">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60503" name="horn of uniria">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60504" name="horn of dinorant">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60505" name="horn of fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60506" name="demon">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60507" name="spirit of guardian">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60508" name="pet skeleton">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60509" name="pet panda">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60510" name="dark horse">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60511" name="dark raven">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60512" name="black fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60513" name="blue fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60514" name="gold fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60515" name="pet rudolf">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60516" name="pet unicorn">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<!-- Mubia: fin de inventario y mascotas -->
+	<item id="60701" article="an" name="ale">
+		<attribute key="primarytype" value="food"/>
+		<attribute key="description" value="Vino de Lorencia. Aumenta en 10 la velocidad de ataque y de magia por 80 segundos."/>
+		<attribute key="weight" value="200"/>
+	</item>
+	<item id="60702" article="an" name="olive of love">
+		<attribute key="primarytype" value="food"/>
+		<attribute key="description" value="Aumenta en 10 la velocidad de ataque y de magia por 3 minutos."/>
+		<attribute key="weight" value="200"/>
+	</item>
+	<item id="62068" name="berdysh">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="54"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62069" name="salamander sword">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="46"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="63015" name="spiked shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63016" name="round shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="60801" article="a" name="Scroll of Emperor">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino sellado por el emperador. Sebina the Priest lo pide para despertar tu verdadero poder. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60802" article="a" name="Broken Sword">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Espada rota de un antiguo caballero. La pide Sebina the Priest a los Dark Knight. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60803" article="a" name="Tear of Elf">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llanto cristalizado de una antigua elfa. Lo pide Sebina the Priest a las Fairy Elf. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60804" article="a" name="Soul of Wizard">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Alma de un antiguo mago. La pide Sebina the Priest a los Dark Wizard. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60805" article="an" name="Abyssal Eye">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del abismo. Lo pide Sebina the Priest a las Summoner. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
 </items>

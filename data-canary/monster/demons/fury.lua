@@ -95,7 +95,7 @@ monster.loot = {
 	{ name = "flask of demonic blood", chance = 35000, maxCount = 3 },
 	{ name = "assassin dagger", chance = 660 },
 	{ name = "noble axe", chance = 2000 },
-	{ name = "great health potion", chance = 10500 },
+	{ id = 239, chance = 10500 },
 	{ name = "jalapeno pepper", chance = 29280, maxCount = 4 },
 }
 

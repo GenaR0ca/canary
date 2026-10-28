@@ -23,6 +23,7 @@ MUBIA_AREA_RING = {
 local PARTY_RANGE = 8 -- casillas a las que llega un buff de party
 
 Mubia.nextCast = Mubia.nextCast or {}
+Mubia.SpellCasters = {} -- key de la magia -> función que la lanza (la usa el Mubia Helper)
 
 local function getStatsAndClass(player)
 	local class = Mubia.getClass(player)
@@ -42,7 +43,8 @@ local function checkCastSpeed(player, class, stats)
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		return false
 	end
-	Mubia.nextCast[playerId] = now + Mubia.getCastSpeed(class, stats)
+	-- Ale / Olive of Love: magias un % más rápidas
+	Mubia.nextCast[playerId] = now + math.floor(Mubia.getCastSpeed(class, stats) * (100 - Mubia.getBuff(player, "drinkSpeed")) / 100)
 	return true
 end
 
@@ -163,10 +165,22 @@ local function getPartyMembersInRange(player)
 	return members
 end
 
-local function startSpell(player)
+local function startSpell(player, def)
 	local class, stats = getStatsAndClass(player)
-	if not class or not checkCastSpeed(player, class, stats) then
+	if not class then
 		return nil
+	end
+	-- AG: las habilidades gastan AG (data/libs/systems/mubia_sdag.lua)
+	local agCost = def and Mubia.SpellAG and Mubia.SpellAG[def.key] or 0
+	if agCost > 0 and Mubia.getAG and Mubia.getAG(player) < agCost then
+		Mubia.useAG(player, def.key) -- avisa que falta AG
+		return nil
+	end
+	if not checkCastSpeed(player, class, stats) then
+		return nil
+	end
+	if agCost > 0 and Mubia.useAG then
+		Mubia.useAG(player, def.key)
 	end
 	return class, stats
 end
@@ -261,9 +275,9 @@ local function registerAttack(def)
 
 	local spell = newSpell(def, "attack", true)
 
-	function spell.onCastSpell(creature, variant)
+	local function onCastSpell(creature, variant)
 		local player = creature:getPlayer()
-		if not player or not startSpell(player) then
+		if not player or not startSpell(player, def) then
 			return false
 		end
 
@@ -286,6 +300,8 @@ local function registerAttack(def)
 		Mubia.castingSpell[playerId] = nil
 		return ok
 	end
+	spell.onCastSpell = onCastSpell
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	if def.target then
 		spell:needTarget(true)
@@ -304,12 +320,12 @@ local BUFF_SUBID = 47100
 local function registerBuff(def)
 	local spell = newSpell(def, "support", false)
 
-	function spell.onCastSpell(creature, variant)
+	local function onCastSpell(creature, variant)
 		local player = creature:getPlayer()
 		if not player then
 			return false
 		end
-		local class, stats = startSpell(player)
+		local class, stats = startSpell(player, def)
 		if not class then
 			return false
 		end
@@ -351,6 +367,8 @@ local function registerBuff(def)
 		end
 		return true
 	end
+	spell.onCastSpell = onCastSpell
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	spell:register()
 end
@@ -359,12 +377,12 @@ end
 local function registerHeal(def)
 	local spell = newSpell(def, "healing", false)
 
-	function spell.onCastSpell(creature, variant)
+	local function onCastSpell(creature, variant)
 		local player = creature:getPlayer()
 		if not player then
 			return false
 		end
-		local class, stats = startSpell(player)
+		local class, stats = startSpell(player, def)
 		if not class then
 			return false
 		end
@@ -384,20 +402,22 @@ local function registerHeal(def)
 		end
 		return true
 	end
+	spell.onCastSpell = onCastSpell
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	spell:register()
 end
 
--- Recovery: en MU recupera el SD; aquí recupera mana de la elfa y su party
+-- Recovery: recupera SD y mana de la elfa y su party
 local function registerRecovery(def)
 	local spell = newSpell(def, "healing", false)
 
-	function spell.onCastSpell(creature, variant)
+	local function onCastSpell(creature, variant)
 		local player = creature:getPlayer()
 		if not player then
 			return false
 		end
-		local class, stats = startSpell(player)
+		local class, stats = startSpell(player, def)
 		if not class then
 			return false
 		end
@@ -405,10 +425,15 @@ local function registerRecovery(def)
 		local amount = 10 + math.floor(stats.ene / 4)
 		for _, member in ipairs(getPartyMembersInRange(player)) do
 			member:addMana(amount)
+			if Mubia.addSD then
+				Mubia.addSD(member, amount)
+			end
 			member:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
 		end
 		return true
 	end
+	spell.onCastSpell = onCastSpell
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	spell:register()
 end
@@ -417,7 +442,7 @@ end
 local function registerSummon(def)
 	local spell = newSpell(def, "support", false)
 
-	function spell.onCastSpell(creature, variant)
+	local function onCastSpell(creature, variant)
 		local player = creature:getPlayer()
 		if not player then
 			return false
@@ -428,13 +453,15 @@ local function registerSummon(def)
 			position:sendMagicEffect(CONST_ME_POFF)
 			return false
 		end
-		if not startSpell(player) then
+		if not startSpell(player, def) then
 			return false
 		end
 
 		for _, summon in ipairs(player:getSummons()) do
-			summon:getPosition():sendMagicEffect(CONST_ME_POFF)
-			summon:remove()
+			if not Mubia.PetFollowers[summon:getName()] then -- la mascota se queda
+				summon:getPosition():sendMagicEffect(CONST_ME_POFF)
+				summon:remove()
+			end
 		end
 
 		local summon = Game.createMonster(def.monster, position, true, false, player)
@@ -446,6 +473,8 @@ local function registerSummon(def)
 		summon:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		return true
 	end
+	spell.onCastSpell = onCastSpell
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	spell:register()
 end
@@ -454,7 +483,7 @@ end
 local function registerTeleport(def)
 	local spell = newSpell(def, "support", false)
 
-	function spell.onCastSpell(creature, variant)
+	local function onCastSpell(creature, variant)
 		local player = creature:getPlayer()
 		if not player then
 			return false
@@ -480,7 +509,7 @@ local function registerTeleport(def)
 			origin:sendMagicEffect(CONST_ME_POFF)
 			return false
 		end
-		if not startSpell(player) then
+		if not startSpell(player, def) then
 			return false
 		end
 
@@ -489,6 +518,8 @@ local function registerTeleport(def)
 		destination:sendMagicEffect(CONST_ME_PURPLETELEPORT)
 		return true
 	end
+	spell.onCastSpell = onCastSpell
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
 	spell:needDirection(true)
 	spell:register()

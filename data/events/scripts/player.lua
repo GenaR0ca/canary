@@ -534,6 +534,11 @@ function Player:onGainExperience(target, exp, rawExp)
 		return exp
 	end
 
+	-- Mubia: experiencia como en MU (baja si el monstruo es mucho más débil que tú)
+	if Mubia and Mubia.getMonsterExpFactor then
+		exp = exp * Mubia.getMonsterExpFactor(self, target)
+	end
+
 	-- Soul regeneration
 	local vocation = self:getVocation()
 	if self:getSoul() < vocation:getMaxSoul() and exp >= self:getLevel() then
@@ -589,6 +594,14 @@ function Player:onGainExperience(target, exp, rawExp)
 				local taintBoost = SoulWarQuest.taintExperienceBoostMap[taintLevel] and SoulWarQuest.taintExperienceBoostMap[taintLevel].boost or 0
 				exp = exp * (1 + taintBoost / 100)
 			end
+		end
+	end
+
+	-- Mubia: mascotas que dan experiencia extra (Pet Panda)
+	if Mubia and Mubia.getPet then
+		local petExp = Mubia.getPet(self).exp or 0
+		if petExp > 0 then
+			exp = exp * (1 + petExp / 100)
 		end
 	end
 
@@ -693,3 +706,15 @@ function Player:onChangeZone(zone)
 end
 
 function Player:onInventoryUpdate(item, slot, equip) end
+
+-- Mubia: nivel máximo (Mubia.Config.maxLevel). Se corta al final, después de todos los bonus,
+-- y también vale para la experiencia que dan los scripts (Devil Square, Blood Castle...).
+local mubiaGainExperience = Player.onGainExperience
+
+function Player:onGainExperience(target, exp, rawExp)
+	exp = mubiaGainExperience(self, target, exp, rawExp)
+	if Mubia and Mubia.capExperience then
+		exp = Mubia.capExperience(self, exp)
+	end
+	return exp
+end

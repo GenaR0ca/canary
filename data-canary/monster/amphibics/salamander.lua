@@ -80,8 +80,8 @@ monster.loot = {
 	{ id = 3003, chance = 5190 }, -- rope
 	{ name = "bow", chance = 740 },
 	{ name = "brass helmet", chance = 2180 },
-	{ name = "arrow", chance = 7890, maxCount = 3 },
-	{ name = "health potion", chance = 1480 },
+	{ id = 3447, chance = 7890, maxCount = 3 },
+	{ id = 266, chance = 1480 },
 	{ id = 3307, chance = 490 }, -- scimitar
 }
 

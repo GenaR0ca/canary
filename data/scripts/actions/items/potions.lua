@@ -55,7 +55,25 @@ local potions = {
 	[7443] = { vocations = { VOCATION.BASE_ID.PALADIN }, condition = bullseye, effect = CONST_ME_MAGIC_GREEN, description = "Only paladins may drink this potion.", text = "You feel more accurate.", achievement = "Sharpshooter" },
 	[7642] = { health = { 250, 350 }, mana = { 100, 200 }, vocations = { VOCATION.BASE_ID.PALADIN, VOCATION.BASE_ID.MONK }, flask = 284, description = "Only paladins and monks of level 80 or above may drink this fluid." },
 	[7643] = { health = { 650, 850 }, vocations = { VOCATION.BASE_ID.KNIGHT }, flask = 284, description = "Only knights of level 130 or above may drink this fluid." },
-	[7644] = { combat = antidote, flask = 285 },
+	-- Mubia Online: Antidote quita todos los efectos negativos; Ale y Olive of Love dan velocidad (data/libs/systems/mubia_shops.lua)
+	[7644] = {
+		func = function(player)
+			Mubia.cleanse(player)
+		end,
+		effect = CONST_ME_MAGIC_GREEN,
+	},
+	[60701] = {
+		func = function(player)
+			Mubia.drink(player, 60701)
+		end,
+		effect = CONST_ME_MAGIC_RED,
+	},
+	[60702] = {
+		func = function(player)
+			Mubia.drink(player, 60702)
+		end,
+		effect = CONST_ME_MAGIC_RED,
+	},
 	[7876] = { health = { 60, 90 }, flask = 285 },
 	[23373] = { mana = { 425, 575 }, vocations = { VOCATION.BASE_ID.SORCERER, VOCATION.BASE_ID.DRUID }, flask = 284, description = "Only druids and sorcerers of level 130 or above may drink this fluid." },
 	[23374] = { health = { 420, 580 }, mana = { 250, 350 }, vocations = { VOCATION.BASE_ID.PALADIN, VOCATION.BASE_ID.MONK }, flask = 284, description = "Only paladins and monks of level 130 or above may drink this fluid." },
@@ -74,13 +92,14 @@ local potions = {
 
 local flaskPotion = Action()
 
-function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHotkey)
+local function onUsePotion(player, item, fromPosition, target, toPosition, isHotkey)
 	if not target or type(target) == "userdata" and not target:isPlayer() then
 		return false
 	end
 
 	local potion = potions[item:getId()]
-	if not player:getGroup():getAccess() and (potion.level and player:getLevel() < potion.level or potion.vocations and not table.contains(potion.vocations, player:getVocation():getBaseId())) then
+	-- Mubia: cualquier clase de MU puede tomar todas las pociones (solo se revisa el nivel)
+	if not player:getGroup():getAccess() and potion.level and player:getLevel() < potion.level then
 		player:say(potion.description, MESSAGE_POTION)
 		return true
 	end
@@ -105,7 +124,8 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 		player:addAchievementProgress("Potion Addict", 100000)
 		target:say("Aaaah...", MESSAGE_POTION)
 
-		local deactivatedFlasks = player:kv():get("talkaction.potions.flask") or false
+		-- Mubia Online: las pociones no dejan frasco vacío (como en MU)
+		local deactivatedFlasks = true
 		if not deactivatedFlasks then
 			if fromPosition.x == CONTAINER_POSITION then
 				player:addItem(potion.flask, 1)
@@ -152,8 +172,16 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 	return true
 end
 
+flaskPotion.onUse = onUsePotion
+
 for index, value in pairs(potions) do
 	flaskPotion:id(index)
+end
+
+-- Mubia Online: el Mubia Helper toma pociones solo con estas mismas reglas (data/libs/systems/mubia_helper.lua)
+if Mubia then
+	Mubia.FlaskPotions = potions
+	Mubia.useFlaskPotion = onUsePotion
 end
 
 flaskPotion:register()
