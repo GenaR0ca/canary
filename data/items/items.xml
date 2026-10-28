@@ -398,22 +398,22 @@
 		<attribute key="containersize" value="8"/>
 		<attribute key="weight" value="800"/>
 	</item>
-	<item id="236" article="a" name="strong health potion">
+	<item id="236" article="a" name="healing potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="description" value="This potion can only be consumed by knights, paladins and monks of level 50 or higher."/>
 		<attribute key="weight" value="290"/>
 	</item>
-	<item id="237" article="a" name="strong mana potion">
+	<item id="237" article="a" name="mana potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="290"/>
 		<attribute key="description" value="This potion can only be consumed by players of level 50 or higher."/>
 	</item>
-	<item id="238" article="a" name="great mana potion">
+	<item id="238" article="a" name="large mana potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="310"/>
 		<attribute key="description" value="This potion can only be consumed by sorcerers, druids, paladins and monks of level 80 or higher."/>
 	</item>
-	<item id="239" article="a" name="great health potion">
+	<item id="239" article="a" name="large healing potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="310"/>
 		<attribute key="description" value="This potion can only be consumed by knights of level 80 or higher."/>
@@ -424,14 +424,14 @@
 	<item fromid="253" toid="265" article="a" name="tent">
 		<attribute key="primarytype" value="constructions"/>
 	</item>
-	<item id="266" article="a" name="health potion">
+	<item id="266" article="a" name="small healing potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="270"/>
 	</item>
 	<item id="267" name="linen">
 		<attribute key="primarytype" value="walls"/>
 	</item>
-	<item id="268" article="a" name="mana potion">
+	<item id="268" article="a" name="small mana potion">
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="270"/>
 	</item>
@@ -10600,12 +10600,12 @@
 			<attribute key="slot" value="shield"/>
 		</attribute>
 	</item>
-	<item id="3446" article="a" name="bolt">
+	<item id="3446" article="a" name="bolt +3">
 		<attribute key="primarytype" value="ammunition"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
-		<attribute key="maxhitchance" value="87"/>
+		<attribute key="hitchance" value="100"/>
 		<attribute key="attack" value="30"/>
 		<attribute key="weight" value="80"/>
 		<attribute key="script" value="moveevent;weapon">
@@ -10613,13 +10613,14 @@
 			<attribute key="weaponType" value="ammo"/>
 			<attribute key="slot" value="ammo"/>
 		</attribute>
+		<attribute key="stacksize" value="255"/>
 	</item>
-	<item id="3447" article="an" name="arrow">
+	<item id="3447" article="an" name="arrow +3">
 		<attribute key="primarytype" value="ammunition"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
-		<attribute key="maxhitchance" value="91"/>
+		<attribute key="hitchance" value="100"/>
 		<attribute key="attack" value="25"/>
 		<attribute key="weight" value="70"/>
 		<attribute key="script" value="moveevent;weapon">
@@ -10627,6 +10628,7 @@
 			<attribute key="weaponType" value="ammo"/>
 			<attribute key="slot" value="ammo"/>
 		</attribute>
+		<attribute key="stacksize" value="255"/>
 	</item>
 	<item id="3448" article="a" name="poison arrow">
 		<attribute key="primarytype" value="ammunition"/>
@@ -20603,7 +20605,8 @@
 		<attribute key="description" value="This potion can only be consumed by knights of level 130 or higher"/>
 		<attribute key="weight" value="310"/>
 	</item>
-	<item id="7644" article="an" name="antidote potion">
+	<item id="7644" article="an" name="antidote">
+		<attribute key="description" value="Quita todos los efectos negativos (veneno, fuego, parálisis...)."/>
 		<attribute key="primarytype" value="liquids"/>
 		<attribute key="weight" value="265"/>
 	</item>
@@ -65498,7 +65501,7 @@ former students at the Noodles Academy. Awarded by TibiaLabs.com"/>
 		<attribute key="weight" value="1700"/>
 		<attribute key="script" value="moveevent">
 			<attribute key="slot" value="right-hand"/>
-			<attribute key="vocation" value="None;true, Paladin;true, Royal Paladin"/>
+			<attribute key="vocation" value="Fairy Elf;true, Muse Elf;true"/>
 		</attribute>
 	</item>
 	<item id="35563" article="a" name="magic shield potion">
@@ -85985,6 +85988,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -85998,6 +86002,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86011,6 +86016,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86024,6 +86030,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86037,6 +86044,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86050,6 +86058,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86063,6 +86072,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86076,6 +86086,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86089,6 +86100,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86102,6 +86114,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86115,6 +86128,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86128,6 +86142,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86141,6 +86156,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86154,6 +86170,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86167,6 +86184,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86180,6 +86198,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86193,6 +86212,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="distance weapons"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="ammotype" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="range" value="6"/>
 		<attribute key="hitchance" value="100"/>
@@ -86527,4 +86547,68 @@ Granted by TibiaGoals.com"/>
 		<attribute key="weight" value="100"/>
 	</item>
 	<!-- Mubia: fin de inventario y mascotas -->
+	<item id="60701" article="an" name="ale">
+		<attribute key="primarytype" value="food"/>
+		<attribute key="description" value="Vino de Lorencia. Aumenta en 10 la velocidad de ataque y de magia por 80 segundos."/>
+		<attribute key="weight" value="200"/>
+	</item>
+	<item id="60702" article="an" name="olive of love">
+		<attribute key="primarytype" value="food"/>
+		<attribute key="description" value="Aumenta en 10 la velocidad de ataque y de magia por 3 minutos."/>
+		<attribute key="weight" value="200"/>
+	</item>
+	<item id="62068" name="berdysh">
+		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="54"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="axe"/>
+		</attribute>
+	</item>
+	<item id="62069" name="salamander sword">
+		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="attack" value="46"/>
+		<attribute key="weight" value="3000"/>
+		<attribute key="script" value="weapon">
+			<attribute key="weaponType" value="sword"/>
+		</attribute>
+	</item>
+	<item id="63015" name="spiked shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63016" name="round shield">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="60801" article="a" name="Scroll of Emperor">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pergamino sellado por el emperador. Sebina the Priest lo pide para despertar tu verdadero poder. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60802" article="a" name="Broken Sword">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Espada rota de un antiguo caballero. La pide Sebina the Priest a los Dark Knight. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60803" article="a" name="Tear of Elf">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llanto cristalizado de una antigua elfa. Lo pide Sebina the Priest a las Fairy Elf. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60804" article="a" name="Soul of Wizard">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Alma de un antiguo mago. La pide Sebina the Priest a los Dark Wizard. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60805" article="an" name="Abyssal Eye">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Ojo del abismo. Lo pide Sebina the Priest a las Summoner. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
+		<attribute key="weight" value="10"/>
+	</item>
 </items>

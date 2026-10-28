@@ -1,4 +1,4 @@
--- Mubia Online: Zienna the Weapons Merchant (Devias), vende gratis las armas y escudos de MU de todas las clases.
+-- Mubia Online: Zienna the Weapons Merchant, armera de Devias: sets, armas y bastones con Luck, gratis.
 
 local npcType = Game.createNpcType("Zienna the Weapons Merchant")
 local npcConfig = {}
@@ -13,20 +13,8 @@ npcConfig.outfit = {
 	lookMount = 0,
 }
 
-local shop = {}
-local ids = {}
-for itemId, gear in pairs(Mubia.Gear) do
-	if gear.kind ~= "armor" then
-		ids[#ids + 1] = itemId
-	end
-end
-table.sort(ids)
-for _, itemId in ipairs(ids) do
-	shop[#shop + 1] = { itemName = Mubia.Gear[itemId].name:lower(), clientId = itemId, buy = 0 }
-end
-
 Mubia.registerShopNpc(npcType, npcConfig, {
-	shop = shop,
-	greeting = "¡Bienvenido a Devias, |PLAYERNAME|! Vendo armas y escudos para todas las clases. Di {trade}, son gratis.",
-	voice = "¡Armas y escudos para todas las clases! Di {trade}.",
+	shop = Mubia.Shop({ sets = { "Plate", "Sphinx", "Spirit" } }, { gear = { "Tiger Bow", "Serpent Crossbow", "Gorgon Staff", "Blade", "Salamander Sword", "Great Scythe" } }),
+	greeting = "¡Bienvenido a Devias, |PLAYERNAME|! Tengo sets, armas y bastones con Luck. Di {trade}, todo es gratis.",
+	voice = "¡Sets, armas y bastones con Luck! Di {trade}.",
 })

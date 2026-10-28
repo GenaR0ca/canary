@@ -242,6 +242,7 @@ function Mubia.recalc(player)
 		local attackSpeed = Mubia.getAttackSpeed(class, stats)
 		attackSpeed = math.floor(attackSpeed * (100 - (pet.attackSpeed or 0)) / 100)
 		attackSpeed = math.floor(attackSpeed * (100 - exc.attackSpeed) / 100) -- ASPD del arma
+		attackSpeed = math.floor(attackSpeed * (100 - Mubia.getBuff(player, "drinkSpeed")) / 100) -- Ale / Olive of Love
 		player:setAttackSpeed(math.max(Mubia.Config.minAttackSpeed, attackSpeed))
 	end
 	if player:getHealth() > maxHealth then

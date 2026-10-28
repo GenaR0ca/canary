@@ -43,7 +43,8 @@ local function checkCastSpeed(player, class, stats)
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		return false
 	end
-	Mubia.nextCast[playerId] = now + Mubia.getCastSpeed(class, stats)
+	-- Ale / Olive of Love: magias un % más rápidas
+	Mubia.nextCast[playerId] = now + math.floor(Mubia.getCastSpeed(class, stats) * (100 - Mubia.getBuff(player, "drinkSpeed")) / 100)
 	return true
 end
 

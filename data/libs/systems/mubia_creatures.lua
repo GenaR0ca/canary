@@ -300,7 +300,12 @@ Mubia.NpcPotions = {
 
 -- Compra en un NPC: el item va directo a la bolsa de inventario (tecla I), nunca al suelo.
 -- Si la bolsa no tiene casillas libres, no se cobra y no se compra nada.
-function Mubia.buyToInventory(npc, player, itemId, subType, amount, totalCost)
+-- entry (opcional) es la línea de la tienda: luck = true sale con Luck, stack = N da N por cada compra (flechas).
+function Mubia.buyToInventory(npc, player, itemId, subType, amount, totalCost, entry)
+	entry = entry or {}
+	if entry.stack then
+		amount = amount * entry.stack
+	end
 	local bag = player:getSlotItem(CONST_SLOT_BACKPACK)
 	if not bag or bag:getId() ~= Mubia.INVENTORY_BAG or not bag:isContainer() then
 		return npc:sellItem(player, itemId, amount, subType, 0, false, false)
@@ -311,9 +316,18 @@ function Mubia.buyToInventory(npc, player, itemId, subType, amount, totalCost)
 		return false
 	end
 
-	local stackSize = itemType:isStackable() and itemType:getStackSize() or 1
-	local slotsNeeded = math.ceil(amount / stackSize)
-	if bag:getEmptySlots(false) < slotsNeeded then
+	local stackable = itemType:isStackable()
+	local stackSize = stackable and itemType:getStackSize() or 1
+	-- lo que entra: casillas libres y, si se apila (joyas, pociones), lo que falta para llenar las pilas que ya tienes
+	local room = bag:getEmptySlots(false) * stackSize
+	if stackable then
+		for _, item in ipairs(bag:getItems(false)) do
+			if item:getId() == itemId then
+				room = room + math.max(0, stackSize - item:getCount())
+			end
+		end
+	end
+	if room < amount then
 		player:sendCancelMessage(Mubia.toLatin1("No tienes espacio en tu inventario (tecla I)."))
 		return false
 	end
@@ -334,12 +348,16 @@ function Mubia.buyToInventory(npc, player, itemId, subType, amount, totalCost)
 
 	local left = amount
 	while left > 0 do
-		local count = itemType:isStackable() and math.min(left, stackSize) or subType
-		-- -1 = cualquier casilla libre; sin apilar para no pasarse de las casillas contadas
-		if not bag:addItem(itemId, count, -1, FLAG_IGNOREAUTOSTACK) then
+		local count = stackable and math.min(left, stackSize) or subType
+		-- -1 = cualquier casilla; lo que se apila se junta con las pilas que ya hay (como en Tibia)
+		local item = bag:addItem(itemId, count, -1, stackable and 0 or FLAG_IGNOREAUTOSTACK)
+		if not item then
 			break
 		end
-		left = left - (itemType:isStackable() and count or 1)
+		if entry.luck and Mubia.setLuck and type(item) == "userdata" then
+			Mubia.setLuck(item, true)
+		end
+		left = left - (stackable and count or 1)
 	end
 
 	local bought = amount - left
@@ -356,19 +374,22 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 	npcConfig.description = npcConfig.name
 	npcConfig.health = 100
 	npcConfig.maxHealth = npcConfig.health
-	npcConfig.walkInterval = 0
-	npcConfig.walkRadius = 0
+	-- walkRadius > 0: el NPC camina (los guardias de la ciudad)
+	npcConfig.walkInterval = config.walkRadius and 2000 or 0
+	npcConfig.walkRadius = config.walkRadius or 0
 	npcConfig.flags = { floorchange = false }
 
 	local spells = config.classId and Mubia.getClassSpells(config.classId) or {}
 	local className = config.classId and Mubia.Classes[config.classId].name
 
 	npcConfig.shop = config.shop or {}
-	for _, def in ipairs(spells) do
-		table.insert(npcConfig.shop, { itemName = def.scrollName, clientId = def.scrollId, buy = 0 })
+	-- sin shop propio: scrolls y todo el equipo de la clase (los NPC nuevos usan Mubia.Shop, data/libs/systems/mubia_shops.lua)
+	if not config.shop then
+		for _, def in ipairs(spells) do
+			table.insert(npcConfig.shop, { itemName = def.scrollName, clientId = def.scrollId, buy = 0 })
+		end
 	end
-	-- sets, armas y escudos de MU de la clase (gratis para probar)
-	if config.classId then
+	if config.classId and not config.shop then
 		local gearIds = {}
 		for itemId, gear in pairs(Mubia.Gear) do
 			if table.contains(gear.classes, config.classId) then
@@ -418,8 +439,17 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 		npcHandler:onCloseChannel(npc, player)
 	end
 
+	local shopEntries = {}
+	for _, entry in ipairs(npcConfig.shop) do
+		shopEntries[entry.clientId] = entry
+	end
+
 	npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
-		Mubia.buyToInventory(npc, player, itemId, subType, amount, totalCost)
+		Mubia.buyToInventory(npc, player, itemId, subType, amount, totalCost, shopEntries[itemId])
+		-- la pestaña "Vender" muestra también lo que acabas de comprar
+		if Mubia.sendSellList then
+			Mubia.sendSellList(player)
+		end
 	end
 
 	npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name, totalCost) end

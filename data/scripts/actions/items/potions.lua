@@ -55,7 +55,25 @@ local potions = {
 	[7443] = { vocations = { VOCATION.BASE_ID.PALADIN }, condition = bullseye, effect = CONST_ME_MAGIC_GREEN, description = "Only paladins may drink this potion.", text = "You feel more accurate.", achievement = "Sharpshooter" },
 	[7642] = { health = { 250, 350 }, mana = { 100, 200 }, vocations = { VOCATION.BASE_ID.PALADIN, VOCATION.BASE_ID.MONK }, flask = 284, description = "Only paladins and monks of level 80 or above may drink this fluid." },
 	[7643] = { health = { 650, 850 }, vocations = { VOCATION.BASE_ID.KNIGHT }, flask = 284, description = "Only knights of level 130 or above may drink this fluid." },
-	[7644] = { combat = antidote, flask = 285 },
+	-- Mubia Online: Antidote quita todos los efectos negativos; Ale y Olive of Love dan velocidad (data/libs/systems/mubia_shops.lua)
+	[7644] = {
+		func = function(player)
+			Mubia.cleanse(player)
+		end,
+		effect = CONST_ME_MAGIC_GREEN,
+	},
+	[60701] = {
+		func = function(player)
+			Mubia.drink(player, 60701)
+		end,
+		effect = CONST_ME_MAGIC_RED,
+	},
+	[60702] = {
+		func = function(player)
+			Mubia.drink(player, 60702)
+		end,
+		effect = CONST_ME_MAGIC_RED,
+	},
 	[7876] = { health = { 60, 90 }, flask = 285 },
 	[23373] = { mana = { 425, 575 }, vocations = { VOCATION.BASE_ID.SORCERER, VOCATION.BASE_ID.DRUID }, flask = 284, description = "Only druids and sorcerers of level 130 or above may drink this fluid." },
 	[23374] = { health = { 420, 580 }, mana = { 250, 350 }, vocations = { VOCATION.BASE_ID.PALADIN, VOCATION.BASE_ID.MONK }, flask = 284, description = "Only paladins and monks of level 130 or above may drink this fluid." },

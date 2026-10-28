@@ -16,6 +16,12 @@ function scrollAction.onUse(player, item, fromPosition, target, toPosition, isHo
 		return true
 	end
 
+	if spell.evolution and not Mubia.isEvolved(player) then
+		Mubia.sendMessage(player, MESSAGE_FAILURE, string.format("%s es una magia de la segunda evolución (%s). Habla con Sebina the Priest en Devias.", spell.name, Mubia.getEvolutionName(player)))
+		player:getPosition():sendMagicEffect(CONST_ME_POFF)
+		return true
+	end
+
 	if player:getLevel() < spell.level then
 		Mubia.sendMessage(player, MESSAGE_FAILURE, string.format("Necesitas nivel %d para aprender %s.", spell.level, spell.name))
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
