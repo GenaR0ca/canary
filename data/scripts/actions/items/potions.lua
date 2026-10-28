@@ -80,7 +80,8 @@ local function onUsePotion(player, item, fromPosition, target, toPosition, isHot
 	end
 
 	local potion = potions[item:getId()]
-	if not player:getGroup():getAccess() and (potion.level and player:getLevel() < potion.level or potion.vocations and not table.contains(potion.vocations, player:getVocation():getBaseId())) then
+	-- Mubia: cualquier clase de MU puede tomar todas las pociones (solo se revisa el nivel)
+	if not player:getGroup():getAccess() and potion.level and player:getLevel() < potion.level then
 		player:say(potion.description, MESSAGE_POTION)
 		return true
 	end
