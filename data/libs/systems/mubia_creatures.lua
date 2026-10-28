@@ -298,6 +298,59 @@ Mubia.NpcPotions = {
 	{ itemName = "great mana potion", clientId = 238, buy = 0 },
 }
 
+-- Compra en un NPC: el item va directo a la bolsa de inventario (tecla I), nunca al suelo.
+-- Si la bolsa no tiene casillas libres, no se cobra y no se compra nada.
+function Mubia.buyToInventory(npc, player, itemId, subType, amount, totalCost)
+	local bag = player:getSlotItem(CONST_SLOT_BACKPACK)
+	if not bag or bag:getId() ~= Mubia.INVENTORY_BAG or not bag:isContainer() then
+		return npc:sellItem(player, itemId, amount, subType, 0, false, false)
+	end
+
+	local itemType = ItemType(itemId)
+	if itemType:getId() == 0 or amount < 1 then
+		return false
+	end
+
+	local stackSize = itemType:isStackable() and itemType:getStackSize() or 1
+	local slotsNeeded = math.ceil(amount / stackSize)
+	if bag:getEmptySlots(false) < slotsNeeded then
+		player:sendCancelMessage(Mubia.toLatin1("No tienes espacio en tu inventario (tecla I)."))
+		return false
+	end
+
+	local currency = npc:getCurrency()
+	if totalCost > 0 then
+		local paid
+		if currency == ITEM_GOLD_COIN then
+			paid = player:removeMoney(totalCost, 0, true)
+		else
+			paid = player:removeItem(currency, totalCost)
+		end
+		if not paid then
+			player:sendCancelMessage(Mubia.toLatin1("No tienes suficiente zen."))
+			return false
+		end
+	end
+
+	local left = amount
+	while left > 0 do
+		local count = itemType:isStackable() and math.min(left, stackSize) or subType
+		-- -1 = cualquier casilla libre; sin apilar para no pasarse de las casillas contadas
+		if not bag:addItem(itemId, count, -1, FLAG_IGNOREAUTOSTACK) then
+			break
+		end
+		left = left - (itemType:isStackable() and count or 1)
+	end
+
+	local bought = amount - left
+	local message = string.format("Compraste %dx %s", bought, itemType:getName())
+	if totalCost > 0 then
+		message = message .. string.format(" por %d %s", totalCost, currency == ITEM_GOLD_COIN and "zen" or ItemType(currency):getName())
+	end
+	player:sendTextMessage(MESSAGE_TRADE, Mubia.toLatin1(message .. "."))
+	return bought > 0
+end
+
 function Mubia.registerShopNpc(npcType, npcConfig, config)
 	npcConfig.name = npcType:name()
 	npcConfig.description = npcConfig.name
@@ -366,7 +419,7 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 	end
 
 	npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
-		npc:sellItem(player, itemId, amount, subType, 0, ignore, inBackpacks)
+		Mubia.buyToInventory(npc, player, itemId, subType, amount, totalCost)
 	end
 
 	npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name, totalCost) end
