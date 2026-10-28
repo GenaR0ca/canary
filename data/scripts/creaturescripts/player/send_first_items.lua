@@ -118,7 +118,8 @@ function sendFirstItems.onLogin(player)
 		end
 	end
 
-	local backpack = player:addItem(2854)
+	-- Mubia: el inventario de 40 lugares en vez de la mochila de Tibia
+	local backpack = player:getSlotItem(CONST_SLOT_BACKPACK) or player:addItem(Mubia and Mubia.INVENTORY_BAG or 2854)
 	if not backpack then
 		return true
 	end

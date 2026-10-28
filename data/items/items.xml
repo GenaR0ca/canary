@@ -84639,7 +84639,7 @@ Granted by TibiaGoals.com"/>
 	</item>
 	<item id="60301" article="a" name="jewel of soul">
 		<attribute key="primarytype" value="valuables"/>
-		<attribute key="description" value="Usalo sobre un item +6 o mas (Usar con...) para subirlo hasta +15. Puede fallar."/>
+		<attribute key="description" value="Usalo sobre un item +6 o mas (Usar con...) para subirlo hasta +9. De +10 a +15 se sube en la Chaos Machine. Puede fallar."/>
 		<attribute key="weight" value="10"/>
 	</item>
 	<item id="60302" article="a" name="jewel of life">
@@ -84652,6 +84652,100 @@ Granted by TibiaGoals.com"/>
 		<attribute key="description" value="Usalo sobre un item (Usar con...) para subirlo de +0 a +6. Exito 100%."/>
 		<attribute key="weight" value="10"/>
 	</item>
+	<item id="60304" article="a" name="jewel of chaos">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Joya de MU. Se usa en la Chaos Machine del Chaos Goblin para combinar items."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<!-- Mubia: items de la Chaos Machine (generado por tools/mubia/chaos_machine.py) -->
+	<item id="60305" article="a" name="jewel of creation">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Joya de MU. Se usa en la Chaos Machine para crear Fruits y alas de 3ra generacion."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60306" article="a" name="loch's feather">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pluma de MU. Con alas de 1ra generacion y una Jewel of Chaos crea alas de 2da generacion en la Chaos Machine."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60307" article="a" name="feather of condor">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Pluma de MU. Junto con la Flame of Condor crea alas de 3ra generacion en la Chaos Machine."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60308" article="a" name="flame of condor">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Llama de MU. Junto con la Feather of Condor crea alas de 3ra generacion en la Chaos Machine."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60309" name="bless bundle x10">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 10 Jewels of Bless. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60310" name="bless bundle x20">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 20 Jewels of Bless. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60311" name="bless bundle x30">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 30 Jewels of Bless. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60312" name="soul bundle x10">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 10 Jewels of Soul. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60313" name="soul bundle x20">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 20 Jewels of Soul. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60314" name="soul bundle x30">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Paquete de 30 Jewels of Soul. En la Chaos Machine se puede volver a desarmar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60315" article="a" name="fruit of strength">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Fruta de MU. Usala para sumar de 1 a 3 puntos de Strength."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60316" article="a" name="fruit of agility">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Fruta de MU. Usala para sumar de 1 a 3 puntos de Agility."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60317" article="a" name="fruit of vitality">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Fruta de MU. Usala para sumar de 1 a 3 puntos de Vitality."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60318" article="a" name="fruit of energy">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Fruta de MU. Usala para sumar de 1 a 3 puntos de Energy."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<!-- Mubia: fin de items de la Chaos Machine -->
+	<!-- Mubia: Jewel of Harmony, Luck y Excellent (generado por tools/mubia/jewels.py) -->
+	<item id="60319" article="a" name="jewel of harmony">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usala sobre un set, arma o escudo (Usar con...) para darle una opcion Harmony. Si ya tiene, la sube de nivel (hasta el nivel del item). Puede fallar."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60320" article="a" name="jewel of luck">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usala sobre un item de MU (Usar con...) para darle Luck."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<item id="60321" article="a" name="jewel of excellent">
+		<attribute key="primarytype" value="valuables"/>
+		<attribute key="description" value="Usala sobre un item Excellent (Usar con...) para sumarle una opcion Excellent nueva."/>
+		<attribute key="weight" value="10"/>
+	</item>
+	<!-- Mubia: fin de Jewel of Harmony, Luck y Excellent -->
 	<item id="60401" name="wings of satan">
 		<attribute key="primarytype" value="wings"/>
 		<attribute key="slottype" value="wings"/>
@@ -86117,4 +86211,76 @@ Granted by TibiaGoals.com"/>
 		<attribute key="weight" value="2000"/>
 	</item>
 	<!-- Mubia: fin de items de MU -->
+	<!-- Mubia: inventario y mascotas (generado por tools/mubia/pets.py) -->
+	<item id="60500" name="inventario">
+		<attribute key="primarytype" value="containers"/>
+		<attribute key="containersize" value="40"/>
+		<attribute key="description" value="Tu inventario de MU. Se abre con la tecla I."/>
+		<attribute key="weight" value="0"/>
+	</item>
+	<item id="60501" name="guardian angel">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60502" name="imp">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60503" name="horn of uniria">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60504" name="horn of dinorant">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60505" name="horn of fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60506" name="demon">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60507" name="spirit of guardian">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60508" name="pet skeleton">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60509" name="pet panda">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60510" name="dark horse">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60511" name="dark raven">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60512" name="black fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60513" name="blue fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60514" name="gold fenrir">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60515" name="pet rudolf">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<item id="60516" name="pet unicorn">
+		<attribute key="slottype" value="pet"/>
+		<attribute key="weight" value="100"/>
+	</item>
+	<!-- Mubia: fin de inventario y mascotas -->
 </items>

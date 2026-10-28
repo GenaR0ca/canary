@@ -139,6 +139,71 @@ function Mubia.registerSummon(mType, monster, cfg)
 	mType:register(monster)
 end
 
+-- Mascota de MU que sigue a su dueño (Guardian Angel, Imp, Dark Raven...). Es un "familiar":
+-- entra a las zonas seguras, se teletransporta con el dueño y nadie la puede atacar.
+-- cfg: damage = {min, max} solo si ataca al objetivo del dueño (Dark Raven)
+function Mubia.registerPet(mType, monster, cfg)
+	monster.description = "una mascota"
+	monster.experience = 0
+	monster.health = 1000
+	monster.maxHealth = 1000
+	monster.race = "undead"
+	monster.corpse = 0
+	monster.speed = 400
+	monster.manaCost = 0
+
+	monster.changeTarget = {
+		interval = 4000,
+		chance = 0,
+	}
+
+	monster.strategiesTarget = {
+		nearest = 100,
+	}
+
+	monster.flags = {
+		summonable = false,
+		attackable = false,
+		hostile = cfg.damage ~= nil,
+		convinceable = false,
+		pushable = false,
+		familiar = true,
+		rewardBoss = false,
+		illusionable = false,
+		canPushItems = false,
+		canPushCreatures = false,
+		staticAttackChance = 90,
+		targetDistance = 1,
+		runHealth = 0,
+		healthHidden = true,
+		isBlockable = false,
+		canWalkOnEnergy = true,
+		canWalkOnFire = true,
+		canWalkOnPoison = true,
+	}
+
+	monster.light = {
+		level = 0,
+		color = 0,
+	}
+
+	monster.loot = {}
+	monster.attacks = {}
+	if cfg.damage then
+		monster.attacks[1] = { name = "melee", interval = 1500, chance = 100, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2] }
+	end
+
+	monster.defenses = {
+		defense = 0,
+		armor = 0,
+	}
+
+	monster.elements = {}
+	monster.immunities = {}
+
+	mType:register(monster)
+end
+
 -- Training Monk inmortal: recibe el daño (se ven los números) y se cura enseguida.
 -- cfg: speed, leash (opcional: casillas máximas que se aleja de donde apareció)
 function Mubia.registerTrainingMonk(mType, monster, cfg)
@@ -327,6 +392,9 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 
 	npcHandler:setCallback(CALLBACK_GREET, function(npc, player)
 		npcHandler:setMessage(MESSAGE_GREET, Mubia.toLatin1(greeting))
+		if config.onGreet then
+			config.onGreet(npc, player)
+		end
 		return true
 	end)
 
@@ -336,6 +404,13 @@ function Mubia.registerShopNpc(npcType, npcConfig, config)
 		end
 		if className and (MsgContains(msg, "magias") or MsgContains(msg, "scrolls")) then
 			giveScrolls(npc, player)
+		end
+		-- palabras propias del NPC (ej. "chaos" en el Chaos Goblin)
+		for keyword, callback in pairs(config.keywords or {}) do
+			if MsgContains(msg, keyword) then
+				callback(npc, player)
+				break
+			end
 		end
 		return true
 	end)
