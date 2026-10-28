@@ -534,6 +534,11 @@ function Player:onGainExperience(target, exp, rawExp)
 		return exp
 	end
 
+	-- Mubia: experiencia como en MU (baja si el monstruo es mucho más débil que tú)
+	if Mubia and Mubia.getMonsterExpFactor then
+		exp = exp * Mubia.getMonsterExpFactor(self, target)
+	end
+
 	-- Soul regeneration
 	local vocation = self:getVocation()
 	if self:getSoul() < vocation:getMaxSoul() and exp >= self:getLevel() then

@@ -1,13 +1,18 @@
 -- Mubia Online: armado común de monstruos y NPCs. Cada criatura tiene su propio archivo
 -- (con Game.createMonsterType("Nombre") y monster.outfit) para que el editor de mapas la reconozca.
 
--- Monstruo salvaje de MU (Lorencia, Noria, etc.). cfg: level, health, damage = {min, max}, defense, speed, corpse,
--- magic (ataca con magia a distancia) o ranged (dispara flechas a distancia)
+-- Monstruo salvaje de MU (Lorencia, Noria, etc.). cfg: speed, corpse, magic (ataca con magia a distancia)
+-- o ranged (dispara flechas a distancia). Nivel, vida, daño y defensa salen del Monster.txt de MU
+-- (Mubia.MonsterStats); los de cfg (level, health, damage = {min, max}, defense) solo se usan si el
+-- monstruo no está en Monster.txt o si pones custom = true.
 function Mubia.registerWildMonster(mType, monster, cfg)
+	local mu = Mubia.getMonsterMuStats(mType:name(), cfg)
+	Mubia.WildMonsters[mType:name()] = mu
+
 	monster.description = monster.description or ("a " .. mType:name():lower())
-	monster.experience = cfg.level * 3
-	monster.health = cfg.health
-	monster.maxHealth = cfg.health
+	monster.experience = Mubia.getMonsterBaseExp(mu.level)
+	monster.health = mu.hp
+	monster.maxHealth = mu.hp
 	monster.race = "blood"
 	monster.corpse = cfg.corpse
 	monster.speed = cfg.speed
@@ -49,26 +54,27 @@ function Mubia.registerWildMonster(mType, monster, cfg)
 
 	-- zen (gold coin) como en MU
 	monster.loot = {
-		{ id = 3031, chance = 60000, maxCount = cfg.level * 5 },
+		{ id = 3031, chance = 60000, maxCount = mu.level * 5 },
 	}
 
 	if cfg.magic then
 		monster.attacks = {
-			{ name = "combat", interval = 2000, chance = 100, type = COMBAT_ENERGYDAMAGE, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2], range = 5, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = true },
+			{ name = "combat", interval = mu.attackSpeed, chance = 100, type = COMBAT_ENERGYDAMAGE, minDamage = -mu.minDamage, maxDamage = -mu.maxDamage, range = 5, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = true },
 		}
 	elseif cfg.ranged then
 		monster.attacks = {
-			{ name = "combat", interval = 2000, chance = 100, type = COMBAT_PHYSICALDAMAGE, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2], range = 5, shootEffect = CONST_ANI_ARROW, target = true },
+			{ name = "combat", interval = mu.attackSpeed, chance = 100, type = COMBAT_PHYSICALDAMAGE, minDamage = -mu.minDamage, maxDamage = -mu.maxDamage, range = 5, shootEffect = CONST_ANI_ARROW, target = true },
 		}
 	else
 		monster.attacks = {
-			{ name = "melee", interval = 2000, chance = 100, minDamage = -cfg.damage[1], maxDamage = -cfg.damage[2] },
+			{ name = "melee", interval = mu.attackSpeed, chance = 100, minDamage = -mu.minDamage, maxDamage = -mu.maxDamage },
 		}
 	end
 
+	-- la defensa y el bloqueo de MU se aplican en Mubia.modifyDamage (mubia_monsters.lua), no los de Tibia
 	monster.defenses = {
-		defense = cfg.defense,
-		armor = cfg.defense,
+		defense = 0,
+		armor = 0,
 	}
 
 	monster.elements = {}
