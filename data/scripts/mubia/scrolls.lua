@@ -10,7 +10,8 @@ function scrollAction.onUse(player, item, fromPosition, target, toPosition, isHo
 
 	local class = Mubia.getClass(player)
 	local spellClass = Mubia.Classes[spell.classId]
-	if not class or class ~= spellClass then
+	local sharedWithMG = spell.sharedWithMG and class == Mubia.Classes[Mubia.CLASS_MG]
+	if not class or (class ~= spellClass and not sharedWithMG) then
 		Mubia.sendMessage(player, MESSAGE_FAILURE, string.format("Solo un %s puede aprender %s.", spellClass.name, spell.name))
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		return true

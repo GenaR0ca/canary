@@ -1,8 +1,8 @@
 -- Mubia Online: segunda evolución con Sebina the Priest (Devias), como la misión de Sevina en MU.
 --   Desde nivel 150. Paso 1 (todas las clases): traer el Scroll of Emperor.
---   Paso 2 (según la clase): Broken Sword (DK), Soul of Wizard (DW), Tear of Elf (Elf), Abyssal Eye (Summoner, futura).
+--   Paso 2 (según la clase): Broken Sword (DK), Soul of Wizard (DW), Tear of Elf (Elf), Abyssal Eye (Summoner).
 --   Los items solo caen mientras el paso está activo y solo a quien hace la misión (data/scripts/mubia/sebina.lua).
---   Premio: la clase pasa a Blade Knight / Soul Master / Muse Elf (se mantiene al hacer reset) y puede usar
+--   Premio: la clase pasa a Blade Knight / Soul Master / Muse Elf / Bloody Summoner (se mantiene al hacer reset) y puede usar
 --   las alas de 2do y 3er nivel, las magias y los sets de la evolución.
 -- La ventana del cliente es el módulo game_mubia_sebina (opcode 91).
 
@@ -17,7 +17,7 @@ Mubia.Sebina = {
 	BROKEN_SWORD = 60802,
 	TEAR_OF_ELF = 60803,
 	SOUL_OF_WIZARD = 60804,
-	ABYSSAL_EYE = 60805, -- Summoner (todavía no está en el juego)
+	ABYSSAL_EYE = 60805, -- Summoner
 
 	-- Paso 1: monstruos que sueltan el Scroll of Emperor (en sus mapas normales, no en Devil Square / Blood Castle)
 	scrollMonsters = {
@@ -52,6 +52,7 @@ S.classItems = {
 	[Mubia.CLASS_DK] = S.BROKEN_SWORD,
 	[Mubia.CLASS_DW] = S.SOUL_OF_WIZARD,
 	[Mubia.CLASS_ELF] = S.TEAR_OF_ELF,
+	[Mubia.CLASS_SUMMONER] = S.ABYSSAL_EYE,
 }
 
 -- Items de la misión: no se venden, no se intercambian y no se tiran al piso
@@ -82,6 +83,9 @@ S.sets = {
 	["Divine"] = true,
 	["Red Spirit"] = true,
 	["Sylphid Ray"] = true,
+	["Demonic"] = true,
+	["Storm Blitz"] = true,
+	["Eternal Wing"] = true,
 }
 
 -- Magias que solo puede usar la evolución (por la clave de Mubia.SpellList)
@@ -92,12 +96,19 @@ S.spells = {
 	decay = true,
 	iceArrow = true,
 	starfall = true,
+	lightningShock = true,
+	innovation = true,
 }
 
--- ¿Ya hizo la segunda evolución? (Blade Knight, Soul Master, Muse Elf)
+-- ¿Ya hizo la segunda evolución? (Blade Knight, Soul Master, Muse Elf, Bloody Summoner)
+-- Las clases sin evolución (Magic Gladiator, Dark Lord) cuentan como evolucionadas para sus alas y sets.
 function Mubia.isEvolved(player)
 	local vocation = player:getVocation()
-	return vocation ~= nil and vocation:getId() ~= vocation:getBaseId()
+	if not vocation then
+		return false
+	end
+	local class = Mubia.Classes[vocation:getBaseId()]
+	return vocation:getId() ~= vocation:getBaseId() or (class ~= nil and class.noEvolution == true)
 end
 
 -- Nombre de la evolución de la clase del jugador ("Blade Knight"...)
@@ -253,6 +264,9 @@ end
 -- Lo que desbloquea la evolución para la clase del jugador
 local function rewardLines(player)
 	local classId = player:getVocation() and player:getVocation():getBaseId()
+	if not S.classItems[classId] then
+		return "[]"
+	end
 	local lines = { string.format("La clase %s (se mantiene al hacer reset).", Mubia.getEvolutionName(player)) }
 	local wings = {}
 	for _, wing in pairs(Mubia.Wings) do
@@ -312,6 +326,8 @@ function S.openWindow(player)
 
 	if not Mubia.getClass(player) then
 		text = "Lo siento, no puedo ayudar a tu clase."
+	elseif not S.classItems[classId] then
+		text = string.format("Tu poder ya está despierto, %s. Un %s no necesita segunda evolución.", name, evolution)
 	elseif step == S.STEP_DONE then
 		stepLabel = "Misión completada"
 		text = string.format("Ya despertaste tu verdadero poder, %s. Ahora eres %s. Que la luz te acompañe.", name, evolution)
@@ -371,7 +387,7 @@ end
 function S.onAction(player, action)
 	local step = S.getStep(player)
 	if action == "accept" then
-		if step ~= S.STEP_NONE or player:getLevel() < S.minLevel or not Mubia.getClass(player) then
+		if step ~= S.STEP_NONE or player:getLevel() < S.minLevel or not Mubia.getClass(player) or not S.classItems[player:getVocation():getBaseId()] then
 			return S.openWindow(player)
 		end
 		S.setStep(player, S.STEP_SCROLL)

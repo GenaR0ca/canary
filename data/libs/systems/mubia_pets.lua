@@ -11,7 +11,8 @@ Mubia.INVENTORY_BAG = 60500
 -- damage y absorb en %, hp suma vida máxima, attackSpeed baja el tiempo entre golpes en %,
 -- speed suma velocidad al caminar (monturas), exp da % de experiencia extra y zen % de zen extra.
 -- mount = montura de Tibia que se ve al equiparla (id de mounts.xml y su clientid).
--- follower = criatura que te sigue (data-canary/monster/mubia/pets). level = nivel mínimo.
+-- follower = criatura que te sigue (data-canary/monster/mubia/pets). level = nivel mínimo. classId = clase que puede usarla.
+-- hand = va en el slot de escudo en vez del de mascotas (se puede usar junto a otra mascota).
 Mubia.Pets = {
 	[60501] = { name = "Guardian Angel", absorb = 20, hp = 50, follower = "Guardian Angel" },
 	[60502] = { name = "Imp", damage = 30, follower = "Imp" },
@@ -22,9 +23,9 @@ Mubia.Pets = {
 	[60507] = { name = "Spirit of Guardian", absorb = 30, hp = 50, follower = "Spirit of Guardian" },
 	[60508] = { name = "Pet Skeleton", damage = 20, attackSpeed = 10, follower = "Pet Skeleton" },
 	[60509] = { name = "Pet Panda", exp = 50, follower = "Pet Panda" },
-	-- Dark Horse y Dark Raven son del Dark Lord: cuando exista la clase, se le puede limitar
-	[60510] = { name = "Dark Horse", absorb = 15, speed = 80, mount = { id = 17, look = 392 } }, -- War Horse
-	[60511] = { name = "Dark Raven", follower = "Dark Raven", attacks = true },
+	-- Dark Horse y Dark Raven son del Dark Lord
+	[60510] = { name = "Dark Horse", classId = Mubia.CLASS_DL, absorb = 15, speed = 80, mount = { id = 17, look = 392 } }, -- War Horse
+	[60511] = { name = "Dark Raven", classId = Mubia.CLASS_DL, hand = true, follower = "Dark Raven", attacks = true },
 	[60512] = { name = "Black Fenrir", damage = 10, speed = 100, level = 300, mount = { id = 32, look = 515 } }, -- Gnarlhound
 	[60513] = { name = "Blue Fenrir", absorb = 10, speed = 100, level = 300, mount = { id = 16, look = 390 } }, -- Crystal Wolf
 	[60514] = { name = "Gold Fenrir", damage = 10, absorb = 10, hp = 200, speed = 100, level = 300, mount = { id = 40, look = 571 } }, -- Noble Lion
@@ -34,9 +35,13 @@ Mubia.Pets = {
 
 -- Nombres de las criaturas que siguen a su dueño (para no confundirlas con las invocaciones de la elfa)
 Mubia.PetFollowers = {}
+Mubia.HandPetFollowers = {}
 for _, pet in pairs(Mubia.Pets) do
 	if pet.follower then
 		Mubia.PetFollowers[pet.follower] = true
+		if pet.hand then
+			Mubia.HandPetFollowers[pet.follower] = true
+		end
 	end
 end
 
@@ -45,7 +50,20 @@ local NO_PET = {}
 -- La mascota equipada (o una tabla vacía)
 function Mubia.getPet(player)
 	local item = player:getSlotItem(CONST_SLOT_PET)
-	return item and Mubia.Pets[item:getId()] or NO_PET
+	local pet = item and Mubia.Pets[item:getId()]
+	return pet and not pet.hand and pet or NO_PET
+end
+
+-- La mascota que va en el slot de escudo (Dark Raven) o una tabla vacía
+function Mubia.getHandPet(player)
+	for _, slot in ipairs({ CONST_SLOT_LEFT, CONST_SLOT_RIGHT }) do
+		local item = player:getSlotItem(slot)
+		local pet = item and Mubia.Pets[item:getId()]
+		if pet and pet.hand then
+			return pet
+		end
+	end
+	return NO_PET
 end
 
 -- Líneas de lo que hace la mascota (en UTF-8). withLevel: incluir "Nivel mínimo".
@@ -54,9 +72,9 @@ function Mubia.getPetLines(item, withLevel)
 	if not pet then
 		return nil
 	end
-	local lines = { pet.mount and "Montura. Va en el slot de mascotas." or "Mascota. Va en el slot de mascotas." }
+	local lines = { pet.hand and "Mascota. Va en el slot de escudo." or pet.mount and "Montura. Va en el slot de mascotas." or "Mascota. Va en el slot de mascotas." }
 	if pet.attacks then
-		lines[#lines + 1] = "Ataca a tu objetivo."
+		lines[#lines + 1] = "Ataca a tu objetivo. Su daño sube con tu Command."
 	end
 	if pet.damage then
 		lines[#lines + 1] = string.format("Aumenta el daño %d%%.", pet.damage)
@@ -92,16 +110,19 @@ end
 
 local PET_SPEED_SUBID = 60500
 
--- Revisa si el jugador puede equipar la mascota (por ahora solo el nivel)
+-- Revisa si el jugador puede equipar la mascota (clase y nivel)
 function Mubia.checkPetRequirements(player, itemId)
 	local pet = Mubia.Pets[itemId]
+	if pet and pet.classId and Mubia.getClass(player) ~= Mubia.Classes[pet.classId] then
+		return false, string.format("Solo un %s puede usar %s.", Mubia.Classes[pet.classId].name, pet.name)
+	end
 	if pet and pet.level and player:getLevel() < pet.level then
 		return false, string.format("Para usar %s necesitas nivel %d.", pet.name, pet.level)
 	end
 	return true
 end
 
--- Saca la montura de mascota anterior (si se la habíamos dado nosotros) y la criatura que lo seguía
+-- Saca la montura de mascota anterior (si se la habíamos dado nosotros) y la criatura que lo seguía (la del slot de escudo se queda)
 local function clearPet(player)
 	local kv = player:kv():scoped("mubia-pet")
 	local mountId = kv:get("mount")
@@ -120,7 +141,7 @@ local function clearPet(player)
 		kv:remove("addedMount")
 	end
 	for _, summon in ipairs(player:getSummons()) do
-		if Mubia.PetFollowers[summon:getName()] then
+		if Mubia.PetFollowers[summon:getName()] and not Mubia.HandPetFollowers[summon:getName()] then
 			summon:remove()
 		end
 	end
@@ -129,7 +150,7 @@ end
 -- Pone a la criatura de la mascota al lado del jugador
 local function spawnFollower(playerId, name)
 	local player = Player(playerId)
-	if not player or Mubia.getPet(player).follower ~= name then
+	if not player or (Mubia.getPet(player).follower ~= name and Mubia.getHandPet(player).follower ~= name) then
 		return
 	end
 	for _, summon in ipairs(player:getSummons()) do
@@ -140,6 +161,20 @@ local function spawnFollower(playerId, name)
 	local follower = Game.createMonster(name, player:getPosition(), true, true, player)
 	if follower then
 		follower:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	end
+end
+
+-- La criatura de la mascota del slot de escudo aparece o se va según lo que tengas en las manos
+function Mubia.syncHandPet(player)
+	local wanted = Mubia.getHandPet(player).follower
+	for _, summon in ipairs(player:getSummons()) do
+		local name = summon:getName()
+		if Mubia.HandPetFollowers[name] and name ~= wanted then
+			summon:remove()
+		end
+	end
+	if wanted then
+		addEvent(spawnFollower, 300, player:getId(), wanted)
 	end
 end
 
@@ -169,6 +204,7 @@ function Mubia.applyPet(player)
 	if pet.follower then
 		addEvent(spawnFollower, 300, player:getId(), pet.follower)
 	end
+	Mubia.syncHandPet(player)
 	Mubia.recalc(player)
 end
 

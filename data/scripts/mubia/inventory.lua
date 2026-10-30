@@ -24,9 +24,20 @@ local function fixHands(player)
 	end
 end
 
+-- Un Dark Raven que quedó en el slot de mascotas (antes iba ahí) vuelve al inventario
+local function fixPetSlot(player)
+	local item = player:getSlotItem(CONST_SLOT_PET)
+	local pet = item and Mubia.Pets[item:getId()]
+	local bag = player:getSlotItem(CONST_SLOT_BACKPACK)
+	if pet and pet.hand and bag then
+		item:moveTo(bag)
+	end
+end
+
 function inventoryLogin.onLogin(player)
 	Mubia.ensureInventory(player)
 	fixHands(player)
+	fixPetSlot(player)
 	Mubia.applyPet(player)
 	return true
 end
@@ -73,6 +84,8 @@ local petChange = EventCallback("MubiaPetChange")
 function petChange.playerOnItemMoved(player, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
 	if fromPosition.x == CONTAINER_POSITION and fromPosition.y == CONST_SLOT_PET or toPosition.x == CONTAINER_POSITION and toPosition.y == CONST_SLOT_PET then
 		Mubia.applyPet(player)
+	elseif fromPosition.x == CONTAINER_POSITION and (fromPosition.y == CONST_SLOT_LEFT or fromPosition.y == CONST_SLOT_RIGHT) or toPosition.x == CONTAINER_POSITION and (toPosition.y == CONST_SLOT_LEFT or toPosition.y == CONST_SLOT_RIGHT) then
+		Mubia.syncHandPet(player)
 	end
 end
 
