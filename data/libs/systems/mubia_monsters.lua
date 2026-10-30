@@ -132,7 +132,7 @@ function Mubia.monsterModifyDamage(target, attacker, typePrimary, damagePrimary,
 		local total = damagePrimary + damageSecondary
 		if total > 0 then
 			local minimum = math.ceil(total * Mubia.Config.minDamageAfterDefense)
-			local reduced = math.max(minimum, total - targetMu.defense)
+			local reduced = math.max(minimum, total - Mubia.reduceDefense(target, targetMu.defense))
 			local ratio = reduced / total
 			damagePrimary = math.floor(damagePrimary * ratio)
 			damageSecondary = reduced - damagePrimary

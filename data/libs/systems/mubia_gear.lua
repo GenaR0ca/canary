@@ -229,11 +229,72 @@ Mubia.Gear = {
 	[63014] = { name = "Grand Soul Shield", kind = "shield", classes = { Mubia.CLASS_DW }, defense = 33, str = 70, agi = 20 },
 	[63015] = { name = "Spiked Shield", kind = "shield", classes = { Mubia.CLASS_DK }, defense = 10, str = 85, agi = 0 },
 	[63016] = { name = "Round Shield", kind = "shield", classes = { Mubia.CLASS_DK, Mubia.CLASS_DW }, defense = 5, str = 65, agi = 0 },
+	-- Summoner: sets, varas y libros (valores de Data MU oficial; magic = la mitad de su magicPower)
+	[61141] = { name = "Violent Wind Helm", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "helm", set = "Violent Wind", defense = 13, str = 31, agi = 0 },
+	[61142] = { name = "Violent Wind Armor", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "armor", set = "Violent Wind", defense = 22, str = 39, agi = 0 },
+	[61143] = { name = "Violent Wind Pants", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "pants", set = "Violent Wind", defense = 16, str = 36, agi = 0 },
+	[61144] = { name = "Violent Wind Gloves", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "gloves", set = "Violent Wind", defense = 9, str = 22, agi = 0 },
+	[61145] = { name = "Violent Wind Boots", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "boots", set = "Violent Wind", defense = 11, str = 27, agi = 0 },
+	[61146] = { name = "Red Wing Helm", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "helm", set = "Red Wing", defense = 18, str = 26, agi = 4 },
+	[61147] = { name = "Red Wing Armor", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "armor", set = "Red Wing", defense = 28, str = 35, agi = 8 },
+	[61148] = { name = "Red Wing Pants", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "pants", set = "Red Wing", defense = 22, str = 35, agi = 7 },
+	[61149] = { name = "Red Wing Gloves", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "gloves", set = "Red Wing", defense = 13, str = 18, agi = 4 },
+	[61150] = { name = "Red Wing Boots", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "boots", set = "Red Wing", defense = 15, str = 25, agi = 4 },
+	[61151] = { name = "Ancient Helm", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "helm", set = "Ancient", defense = 24, str = 52, agi = 16 },
+	[61152] = { name = "Ancient Armor", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "armor", set = "Ancient", defense = 35, str = 52, agi = 16 },
+	[61153] = { name = "Ancient Pants", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "pants", set = "Ancient", defense = 28, str = 49, agi = 16 },
+	[61154] = { name = "Ancient Gloves", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "gloves", set = "Ancient", defense = 19, str = 52, agi = 16 },
+	[61155] = { name = "Ancient Boots", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "boots", set = "Ancient", defense = 21, str = 53, agi = 16 },
+	[61156] = { name = "Demonic Helm", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "helm", set = "Demonic", defense = 32, str = 60, agi = 20 },
+	[61157] = { name = "Demonic Armor", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "armor", set = "Demonic", defense = 45, str = 60, agi = 20 },
+	[61158] = { name = "Demonic Pants", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "pants", set = "Demonic", defense = 37, str = 60, agi = 20 },
+	[61159] = { name = "Demonic Gloves", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "gloves", set = "Demonic", defense = 26, str = 50, agi = 10 },
+	[61160] = { name = "Demonic Boots", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "boots", set = "Demonic", defense = 28, str = 60, agi = 10 },
+	[61161] = { name = "Storm Blitz Helm", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "helm", set = "Storm Blitz", defense = 43, str = 56, agi = 20, level = 380 },
+	[61162] = { name = "Storm Blitz Armor", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "armor", set = "Storm Blitz", defense = 56, str = 57, agi = 19, level = 380 },
+	[61163] = { name = "Storm Blitz Pants", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "pants", set = "Storm Blitz", defense = 49, str = 57, agi = 19, level = 380 },
+	[61164] = { name = "Storm Blitz Gloves", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "gloves", set = "Storm Blitz", defense = 34, str = 56, agi = 20, level = 380 },
+	[61165] = { name = "Storm Blitz Boots", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "boots", set = "Storm Blitz", defense = 38, str = 57, agi = 20, level = 380 },
+	[61166] = { name = "Eternal Wing Helm", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "helm", set = "Eternal Wing", defense = 35, str = 62, agi = 20, level = 380 },
+	[61167] = { name = "Eternal Wing Armor", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "armor", set = "Eternal Wing", defense = 49, str = 62, agi = 20, level = 380 },
+	[61168] = { name = "Eternal Wing Pants", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "pants", set = "Eternal Wing", defense = 41, str = 62, agi = 20, level = 380 },
+	[61169] = { name = "Eternal Wing Gloves", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "gloves", set = "Eternal Wing", defense = 29, str = 62, agi = 20, level = 380 },
+	[61170] = { name = "Eternal Wing Boots", kind = "armor", classes = { Mubia.CLASS_SUMMONER }, piece = "boots", set = "Eternal Wing", defense = 32, str = 62, agi = 20, level = 380 },
+	[62070] = { name = "Mystery Stick", kind = "staff", classes = { Mubia.CLASS_SUMMONER }, type = "staff", min = 17, max = 18, magic = 17, str = 34, agi = 14 },
+	[62071] = { name = "Violent Wind Stick", kind = "staff", classes = { Mubia.CLASS_SUMMONER }, type = "staff", min = 23, max = 25, magic = 23, str = 33, agi = 17 },
+	[62072] = { name = "Red Wing Stick", kind = "staff", classes = { Mubia.CLASS_SUMMONER }, type = "staff", min = 29, max = 31, magic = 30, str = 36, agi = 14 },
+	[62073] = { name = "Ancient Stick", kind = "staff", classes = { Mubia.CLASS_SUMMONER }, type = "staff", min = 38, max = 40, magic = 38, str = 50, agi = 19 },
+	[62074] = { name = "Demonic Stick", kind = "staff", classes = { Mubia.CLASS_SUMMONER }, type = "staff", min = 46, max = 48, magic = 46, str = 54, agi = 15 },
+	[62075] = { name = "Storm Blitz Stick", kind = "staff", classes = { Mubia.CLASS_SUMMONER }, type = "staff", min = 51, max = 53, magic = 55, str = 64, agi = 15, level = 380 },
+	[62076] = { name = "Eternal Wing Stick", kind = "staff", classes = { Mubia.CLASS_SUMMONER }, type = "staff", min = 66, max = 74, magic = 53, str = 57, agi = 13, level = 380 },
+	[63017] = { name = "Book of Samut", kind = "shield", classes = { Mubia.CLASS_SUMMONER }, magic = 23, str = 0, agi = 20 },
+	[63018] = { name = "Book of Neil", kind = "shield", classes = { Mubia.CLASS_SUMMONER }, magic = 30, str = 0, agi = 25 },
+	[63019] = { name = "Book of Lagle", kind = "shield", classes = { Mubia.CLASS_SUMMONER }, magic = 36, str = 0, agi = 30 },
 }
+
+-- El Magic Gladiator usa el equipo de DK y DW, menos los yelmos (como en MU)
+for _, gear in pairs(Mubia.Gear) do
+	if gear.piece ~= "helm" and (table.contains(gear.classes, Mubia.CLASS_DK) or table.contains(gear.classes, Mubia.CLASS_DW)) then
+		gear.classes[#gear.classes + 1] = Mubia.CLASS_MG
+	end
+end
+
+-- El Dark Lord usa todo el equipo de DK, con yelmos
+for _, gear in pairs(Mubia.Gear) do
+	if table.contains(gear.classes, Mubia.CLASS_DK) then
+		gear.classes[#gear.classes + 1] = Mubia.CLASS_DL
+	end
+end
+
+-- La Summoner también usa el Skull Staff
+table.insert(Mubia.Gear[62055].classes, Mubia.CLASS_SUMMONER)
 
 -- Set inicial de cada clase (se da una sola vez)
 Mubia.StarterGear = {
 	[Mubia.CLASS_DK] = { 61001, 61002, 61003, 61004, 61005, 62001 },
 	[Mubia.CLASS_DW] = { 61056, 61057, 61058, 61059, 61060, 62055 },
 	[Mubia.CLASS_ELF] = { 61096, 61097, 61098, 61099, 61100, 62038 },
+	[Mubia.CLASS_MG] = { 61002, 61003, 61004, 61005, 62001 },
+	[Mubia.CLASS_DL] = { 61001, 61002, 61003, 61004, 61005, 62001 },
+	[Mubia.CLASS_SUMMONER] = { 61141, 61142, 61143, 61144, 61145, 62070 },
 }

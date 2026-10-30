@@ -63,7 +63,7 @@ local function getSpellDamage(player, def)
 		minDamage, maxDamage = class.magic(stats)
 		-- nivel y opción adicional del bastón y de las alas, y el % de daño mágico del bastón
 		local bonus = Mubia.getEquipmentBonus(player)
-		local rise = (100 + bonus.magicRise) / 100
+		local rise = (100 + bonus.magicRise) / 100 * (100 + Mubia.getBuff(player, "berserker")) / 100
 		minDamage, maxDamage = (minDamage + def.base + bonus.wizardry) * rise, (maxDamage + def.base + bonus.wizardry) * rise
 	else
 		minDamage, maxDamage = class.damage(stats)
@@ -73,7 +73,7 @@ local function getSpellDamage(player, def)
 		maxDamage = (maxDamage + weaponMax + def.base) * multiplier
 	end
 
-	local bonus = Mubia.getBuff(player, "damage")
+	local bonus = Mubia.getBuff(player, "damage") + Mubia.getBuff(player, "criticalDamage")
 	return math.floor(minDamage + bonus), math.floor(maxDamage + bonus)
 end
 
@@ -200,6 +200,18 @@ local function newSpell(def, group, aggressive)
 	return spell
 end
 
+-- ¿Tiene este item de MU en alguna de las manos? (libros de la Summoner)
+local function hasGearInHand(player, name)
+	for _, slot in ipairs({ CONST_SLOT_LEFT, CONST_SLOT_RIGHT }) do
+		local item = player:getSlotItem(slot)
+		local gear = item and Mubia.Gear[item:getId()]
+		if gear and gear.name == name then
+			return true
+		end
+	end
+	return false
+end
+
 -- Magias de ataque
 local function registerAttack(def)
 	local combat = Combat()
@@ -233,7 +245,7 @@ local function registerAttack(def)
 	end
 
 	-- efectos extra sobre cada criatura golpeada
-	if def.slow or def.drunk or def.poison or def.burn or def.push or def.hits then
+	if def.slow or def.drunk or def.poison or def.burn or def.push or def.hits or def.drain then
 		local hitName = "mubiaSpellOnHit_" .. def.key
 		_G[hitName] = function(creature, target)
 			local player = creature and creature:getPlayer()
@@ -254,6 +266,10 @@ local function registerAttack(def)
 			end
 			if def.push then
 				pushAway(player, target)
+			end
+			if def.drain then
+				local minDamage, maxDamage = getSpellDamage(player, def)
+				player:addHealth(math.floor((minDamage + maxDamage) / 2 * def.drain / 100))
 			end
 			if def.hits then
 				local minDamage, maxDamage = getSpellDamage(player, def)
@@ -277,7 +293,22 @@ local function registerAttack(def)
 
 	local function onCastSpell(creature, variant)
 		local player = creature:getPlayer()
-		if not player or not startSpell(player, def) then
+		if not player then
+			return false
+		end
+		-- Earthshake: hay que tener puesto el Dark Horse (se revisa antes de gastar AG)
+		if def.requiresPet and Mubia.getPet(player).name ~= def.requiresPet then
+			Mubia.sendMessage(player, MESSAGE_FAILURE, string.format("Para usar %s necesitas tener puesto el %s.", def.name, def.requiresPet))
+			player:getPosition():sendMagicEffect(CONST_ME_POFF)
+			return false
+		end
+		-- Explosion, Requiem y Pollution: hay que tener puesto su libro
+		if def.requiresGear and not hasGearInHand(player, def.requiresGear) then
+			Mubia.sendMessage(player, MESSAGE_FAILURE, string.format("Para usar %s necesitas tener puesto el %s.", def.name, def.requiresGear))
+			player:getPosition():sendMagicEffect(CONST_ME_POFF)
+			return false
+		end
+		if not startSpell(player, def) then
 			return false
 		end
 
@@ -314,7 +345,7 @@ local function registerAttack(def)
 	spell:register()
 end
 
--- Buffs: Swell Life (vida máxima), Greater Defense, Greater Damage y Soul Barrier
+-- Buffs: Swell Life (vida máxima), Greater Defense, Greater Damage, Soul Barrier, Critical Damage, Berserker y Damage Reflection
 local BUFF_SUBID = 47100
 
 local function registerBuff(def)
@@ -350,6 +381,30 @@ local function registerBuff(def)
 				member:getPosition():sendMagicEffect(CONST_ME_ENERGYAREA)
 				Mubia.sendMessage(member, MESSAGE_STATUS, string.format("Soul Barrier: recibes %d%% menos de daño por %d segundos.", percent, duration / 1000))
 			end
+		elseif def.buff == "criticalDamage" then
+			local value = math.floor(stats.cmd / 25 + stats.ene / 30)
+			local duration = (60 + math.floor(stats.ene / 10)) * 1000
+			for _, member in ipairs(getPartyMembersInRange(player)) do
+				Mubia.setBuff(member, "criticalDamage", value, duration)
+				member:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
+				Mubia.sendMessage(member, MESSAGE_STATUS, string.format("Critical Damage: +%d de daño por %d segundos.", value, duration / 1000))
+			end
+		elseif def.buff == "berserker" then
+			local value = math.min(30, math.max(1, math.floor(stats.ene / 60)))
+			Mubia.setBuff(player, "berserker", value, 60000)
+			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
+			Mubia.sendMessage(player, MESSAGE_STATUS, string.format("Berserker: +%d%% de daño mágico y -%d%% de defensa por 60 segundos.", value, Mubia.Config.berserkerDefense))
+			Mubia.sendStats(player)
+			addEvent(function(playerId)
+				local caster = Player(playerId)
+				if caster then
+					Mubia.sendStats(caster)
+				end
+			end, 60100, player:getId())
+		elseif def.buff == "damageReflection" then
+			Mubia.setBuff(player, "damageReflection", 15, 60000)
+			player:getPosition():sendMagicEffect(CONST_ME_ENERGYAREA)
+			Mubia.sendMessage(player, MESSAGE_STATUS, "Damage Reflection: devuelves el 15% del daño que recibes por 60 segundos.")
 		else
 			local value, text
 			if def.buff == "defense" then
@@ -370,6 +425,47 @@ local function registerBuff(def)
 	spell.onCastSpell = onCastSpell
 	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
 
+	spell:register()
+end
+
+-- Sleep, Weakness e Innovation: afectan a un enemigo y no hacen daño
+local function registerDebuff(def)
+	local spell = newSpell(def, "attack", true)
+
+	local slowCondition
+	if def.slow then
+		slowCondition = Condition(CONDITION_PARALYZE)
+		slowCondition:setParameter(CONDITION_PARAM_TICKS, def.slow.ticks)
+		local factor = -def.slow.percent / 100
+		slowCondition:setFormula(factor, 0, factor, 0)
+	end
+
+	local function onCastSpell(creature, variant)
+		local player = creature:getPlayer()
+		if not player then
+			return false
+		end
+		local target = Creature(variant:getNumber())
+		if not target or not startSpell(player, def) then
+			return false
+		end
+
+		sendShoot(player, target:getPosition(), def.shootEffect)
+		if slowCondition then
+			target:addCondition(slowCondition)
+		else
+			Mubia.setBuff(target, def.debuff, def.value, def.duration)
+		end
+		target:getPosition():sendMagicEffect(def.effect)
+		Mubia.sendMessage(player, MESSAGE_STATUS, def.text)
+		return true
+	end
+	spell.onCastSpell = onCastSpell
+	Mubia.SpellCasters[def.key] = onCastSpell -- el Mubia Helper las lanza directo
+
+	spell:needTarget(true)
+	spell:range(def.range or 5)
+	spell:blockWalls(true)
 	spell:register()
 end
 
@@ -532,6 +628,7 @@ local registerByKind = {
 	recovery = registerRecovery,
 	summon = registerSummon,
 	teleport = registerTeleport,
+	debuff = registerDebuff,
 }
 
 for _, def in ipairs(Mubia.SpellList) do

@@ -18,26 +18,33 @@ Mubia.Config = {
 	attackSpeedBase = 2000,
 	castSpeedBase = 1500,
 	minAttackSpeed = 300,
+	ravenCommandDivisor = 8, -- el Dark Raven pega CMD / este número de daño extra
+	berserkerDefense = 25, -- % de defensa que se pierde con Berserker
 }
 
-Mubia.STATS = { "str", "agi", "vit", "ene" }
+Mubia.STATS = { "str", "agi", "vit", "ene", "cmd" }
 
 Mubia.STAT_NAMES = {
 	str = "Strength",
 	agi = "Agility",
 	vit = "Vitality",
 	ene = "Energy",
+	cmd = "Command",
 }
 
 -- Clases MU, indexadas por el baseid de vocations.xml
 Mubia.CLASS_DK = 4
 Mubia.CLASS_DW = 1
 Mubia.CLASS_ELF = 3
+Mubia.CLASS_MG = 11
+Mubia.CLASS_DL = 12
+Mubia.CLASS_SUMMONER = 13
+Mubia.CLASS_RF = 15
 
 Mubia.Classes = {
 	[Mubia.CLASS_DK] = {
 		name = "Dark Knight",
-		base = { str = 28, agi = 20, vit = 25, ene = 10 },
+		base = { str = 28, agi = 20, vit = 25, ene = 10, cmd = 0 },
 		hp = { base = 110, perLevel = 2, perVit = 3 },
 		mana = { base = 20, perLevel = 0.5, perEne = 1 },
 		-- daño físico (golpe normal y skills de arma)
@@ -56,7 +63,7 @@ Mubia.Classes = {
 	},
 	[Mubia.CLASS_DW] = {
 		name = "Dark Wizard",
-		base = { str = 18, agi = 18, vit = 15, ene = 30 },
+		base = { str = 18, agi = 18, vit = 15, ene = 30, cmd = 0 },
 		hp = { base = 60, perLevel = 1, perVit = 2 },
 		mana = { base = 60, perLevel = 2, perEne = 2 },
 		damage = function(s)
@@ -74,7 +81,7 @@ Mubia.Classes = {
 	},
 	[Mubia.CLASS_ELF] = {
 		name = "Fairy Elf",
-		base = { str = 22, agi = 25, vit = 20, ene = 15 },
+		base = { str = 22, agi = 25, vit = 20, ene = 15, cmd = 0 },
 		hp = { base = 80, perLevel = 1, perVit = 2 },
 		mana = { base = 30, perLevel = 1.5, perEne = 1.5 },
 		damage = function(s)
@@ -86,7 +93,92 @@ Mubia.Classes = {
 		attackSpeedDiv = 30,
 		magicSpeedDiv = 30,
 	},
+	[Mubia.CLASS_MG] = {
+		name = "Magic Gladiator",
+		base = { str = 26, agi = 26, vit = 26, ene = 26, cmd = 0 },
+		hp = { base = 110, perLevel = 1, perVit = 2 },
+		mana = { base = 60, perLevel = 1, perEne = 2 },
+		pointsPerLevel = 7,
+		noEvolution = true,
+		damage = function(s)
+			return math.floor(s.str / 6), math.floor(s.str / 4)
+		end,
+		magic = function(s)
+			return math.floor(s.ene / 9), math.floor(s.ene / 4)
+		end,
+		defense = function(s)
+			return math.floor(s.agi / 4)
+		end,
+		skillMultiplier = function(s)
+			return 2
+		end,
+		attackSpeedDiv = 15,
+		magicSpeedDiv = 20,
+	},
+	[Mubia.CLASS_DL] = {
+		name = "Dark Lord",
+		base = { str = 26, agi = 20, vit = 20, ene = 15, cmd = 25 },
+		hp = { base = 90, perLevel = 1.5, perVit = 2 },
+		mana = { base = 40, perLevel = 1, perEne = 1.5 },
+		pointsPerLevel = 7,
+		noEvolution = true,
+		damage = function(s)
+			return math.floor(s.str / 7 + s.ene / 14), math.floor(s.str / 5 + s.ene / 10)
+		end,
+		defense = function(s)
+			return math.floor(s.agi / 4)
+		end,
+		skillMultiplier = function(s)
+			return (200 + s.ene / 20) / 100
+		end,
+		attackSpeedDiv = 15,
+		magicSpeedDiv = 20,
+	},
+	[Mubia.CLASS_SUMMONER] = {
+		name = "Summoner",
+		base = { str = 21, agi = 21, vit = 18, ene = 23, cmd = 0 },
+		hp = { base = 70, perLevel = 1, perVit = 2 },
+		mana = { base = 40, perLevel = 1.5, perEne = 2 },
+		damage = function(s)
+			return math.floor(s.str / 8), math.floor(s.str / 4)
+		end,
+		-- en MU tiene daño de Curse aparte; acá es el mismo daño mágico
+		magic = function(s)
+			return math.floor(s.ene / 9), math.floor(s.ene / 4)
+		end,
+		defense = function(s)
+			return math.floor(s.agi / 4)
+		end,
+		attackSpeedDiv = 20,
+		magicSpeedDiv = 15,
+	},
+	[Mubia.CLASS_RF] = {
+		name = "Rage Fighter",
+		base = { str = 32, agi = 27, vit = 25, ene = 20, cmd = 0 },
+		hp = { base = 100, perLevel = 1.3, perVit = 2 },
+		mana = { base = 40, perLevel = 1, perEne = 1.3 },
+		pointsPerLevel = 7,
+		noEvolution = true,
+		damage = function(s)
+			return math.floor(s.str / 7 + s.vit / 15), math.floor(s.str / 5 + s.vit / 12)
+		end,
+		defense = function(s)
+			return math.floor(s.agi / 4)
+		end,
+		attackSpeedDiv = 15,
+		magicSpeedDiv = 20,
+	},
 }
+
+-- Puntos de stats por nivel de la clase (si no tiene los suyos, los de Mubia.Config)
+function Mubia.getPointsPerLevel(class)
+	return class.pointsPerLevel or Mubia.Config.pointsPerLevel
+end
+
+-- Command solo lo usa la clase que empieza con Command (Dark Lord)
+function Mubia.classUsesStat(class, stat)
+	return stat ~= "cmd" or class.base.cmd > 0
+end
 
 -- El cliente muestra los textos en Latin-1: convierte las letras con tilde y la ñ desde UTF-8.
 function Mubia.toLatin1(text)
@@ -144,7 +236,7 @@ function Mubia.initPlayer(player)
 	end
 
 	local stats = {
-		points = (player:getLevel() - 1) * Mubia.Config.pointsPerLevel,
+		points = (player:getLevel() - 1) * Mubia.getPointsPerLevel(class),
 		resets = 0,
 	}
 	for _, key in ipairs(Mubia.STATS) do
@@ -174,7 +266,7 @@ function Mubia.applyStartLevel(player)
 	for _, key in ipairs(Mubia.STATS) do
 		stats[key] = class.base[key]
 	end
-	stats.points = (player:getLevel() - 1) * Mubia.Config.pointsPerLevel
+	stats.points = (player:getLevel() - 1) * Mubia.getPointsPerLevel(class)
 	Mubia.saveStats(player, stats)
 	return true
 end
@@ -262,10 +354,13 @@ end
 -- Reparte puntos en un stat. Devuelve true o false y un mensaje.
 function Mubia.addStat(player, stat, amount)
 	if not Mubia.STAT_NAMES[stat] then
-		return false, "Stat desconocido. Usa str, agi, vit o ene."
+		return false, "Stat desconocido. Usa str, agi, vit, ene o cmd."
 	end
 	if not Mubia.getClass(player) then
 		return false, "Tu clase no usa stats."
+	end
+	if not Mubia.classUsesStat(Mubia.getClass(player), stat) then
+		return false, string.format("Tu clase no usa %s.", Mubia.STAT_NAMES[stat])
 	end
 
 	amount = math.floor(tonumber(amount) or 0)
@@ -303,7 +398,20 @@ function Mubia.getDefense(player)
 		return 0
 	end
 	-- defensa por AGI + armaduras, escudo y alas equipados (con su nivel y opción)
-	return class.defense(Mubia.getStats(player)) + Mubia.getEquipmentBonus(player).defense
+	local defense = class.defense(Mubia.getStats(player)) + Mubia.getEquipmentBonus(player).defense
+	if Mubia.getBuff(player, "berserker") > 0 then
+		defense = math.floor(defense * (100 - Mubia.Config.berserkerDefense) / 100)
+	end
+	return defense
+end
+
+-- Innovation: el objetivo pierde un % de su defensa
+function Mubia.reduceDefense(target, defense)
+	local innovation = Mubia.getBuff(target, "innovation")
+	if innovation > 0 then
+		return math.floor(defense * (100 - innovation) / 100)
+	end
+	return defense
 end
 
 -- Daño mínimo y máximo del arma de MU equipada, con su nivel (+1 a +15) y opción adicional (Jewel of Life) y las alas
@@ -328,6 +436,18 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 		return damagePrimary, damageSecondary
 	end
 
+	-- Vida que se saca a sí mismo (REF, ARR y Damage Reflection del que lo golpeó): ya viene calculada
+	if attacker:getId() == target:getId() then
+		return damagePrimary, damageSecondary
+	end
+
+	-- Dark Raven: su golpe sube con el Command del dueño
+	local master = attacker:getMaster()
+	local ravenOwner = master and attacker:getName() == "Dark Raven" and master:getPlayer()
+	if ravenOwner and damagePrimary > 0 then
+		damagePrimary = damagePrimary + math.floor(Mubia.getStats(ravenOwner).cmd / Mubia.Config.ravenCommandDivisor)
+	end
+
 	local attackerPlayer = attacker:getPlayer()
 	local isMuSpell = attackerPlayer and Mubia.castingSpell[attackerPlayer:getId()]
 	if attackerPlayer and not isMuSpell and Mubia.getClass(attackerPlayer) and damagePrimary > 0 then
@@ -338,7 +458,7 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 		damagePrimary = math.random(math.max(1, minDamage), math.max(1, maxDamage))
 		-- golpe excelente (EXE) y crítico (Luck): daño máximo
 		damagePrimary = Mubia.applyExcellentHit(Mubia.getEquipmentBonus(attackerPlayer), damagePrimary, math.max(1, maxDamage), target)
-		damagePrimary = damagePrimary + Mubia.getBuff(attackerPlayer, "damage")
+		damagePrimary = damagePrimary + Mubia.getBuff(attackerPlayer, "damage") + Mubia.getBuff(attackerPlayer, "criticalDamage")
 		damageSecondary = 0
 	elseif isMuSpell and damagePrimary > 0 then
 		local bonus = Mubia.getEquipmentBonus(attackerPlayer)
@@ -353,7 +473,7 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 		-- la defensa de los monstruos de MU se resta después (mubia_monsters.lua): se compensa acá
 		local wild = Mubia.WildMonsters and target:getMonster() and not target:getMaster() and Mubia.WildMonsters[target:getName()]
 		if wild and wild.defense then
-			damagePrimary = damagePrimary + wild.defense
+			damagePrimary = damagePrimary + Mubia.reduceDefense(target, wild.defense)
 		end
 	end
 
@@ -368,11 +488,18 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 		end
 	end
 
+	-- Weakness: el atacante pega un % menos
+	local weakness = Mubia.getBuff(attacker, "weakness")
+	if weakness > 0 then
+		damagePrimary = math.floor(damagePrimary * (100 - weakness) / 100)
+		damageSecondary = math.floor(damageSecondary * (100 - weakness) / 100)
+	end
+
 	local targetPlayer = target:getPlayer()
 	if targetPlayer and Mubia.getClass(targetPlayer) then
 		local total = damagePrimary + damageSecondary
 		if total > 0 then
-			local defense = ignoreDefense and 0 or Mubia.getDefense(targetPlayer) + Mubia.getBuff(targetPlayer, "defense")
+			local defense = ignoreDefense and 0 or Mubia.reduceDefense(targetPlayer, Mubia.getDefense(targetPlayer) + Mubia.getBuff(targetPlayer, "defense"))
 			local minimum = math.ceil(total * Mubia.Config.minDamageAfterDefense)
 			local reduced = math.max(minimum, total - defense)
 			-- Soul Barrier: quita un % del daño que queda
@@ -391,6 +518,11 @@ function Mubia.modifyDamage(target, attacker, typePrimary, damagePrimary, typeSe
 			reduced = math.max(1, reduced - bonus.harmony.damageDecrease)
 			-- opciones Excellent: DD, REF, ARR y recuperar vida / mana (alas)
 			reduced = Mubia.applyExcellentDefense(targetPlayer, attacker, reduced)
+			-- Damage Reflection: devuelve un % al atacante (sin matarlo, como REF)
+			local reflection = Mubia.getBuff(targetPlayer, "damageReflection")
+			if reflection > 0 then
+				Mubia.hurtAttacker(attacker, reduced * reflection / 100)
+			end
 			-- SD: si te pega otro jugador, el escudo se lleva la mayor parte del golpe
 			if attackerPlayer and attackerPlayer ~= targetPlayer and Mubia.absorbWithSD then
 				reduced = Mubia.absorbWithSD(targetPlayer, reduced)
@@ -471,9 +603,13 @@ function Mubia.sendStats(player)
 		maxMana = player:getMaxMana(),
 	}
 
+	if Mubia.classUsesStat(class, "cmd") then
+		data.cmd = stats.cmd
+	end
+
 	if class.magic then
 		local minMagic, maxMagic = class.magic(stats)
-		local rise = (100 + equipment.magicRise) / 100
+		local rise = (100 + equipment.magicRise) / 100 * (100 + Mubia.getBuff(player, "berserker")) / 100
 		data.minMagic = math.floor((minMagic + equipment.wizardry) * rise)
 		data.maxMagic = math.floor((maxMagic + equipment.wizardry) * rise)
 	end
@@ -492,17 +628,21 @@ end
 -- Magias MU (se registran en data/scripts/mubia/spells.lua y se aprenden con scrolls.lua).
 -- Cada magia tiene su scroll; los scrolls de una misma clase comparten dibujo (ver Mubia.ScrollSprites).
 --
--- kind: "attack" (daño), "buff", "heal", "recovery", "summon" o "teleport"
+-- kind: "attack" (daño), "buff", "heal", "recovery", "summon", "teleport" o "debuff" (un enemigo, sin daño)
 -- power (solo attack): "skill" = daño físico + arma (DK con su multiplicador), "magic" = daño mágico (ENE)
 -- target = necesita objetivo (range casillas), direction = sale hacia donde mira el personaje
 -- area = área alrededor del personaje (o del objetivo si target = true)
--- slow / poison / burn / drunk / push / hits = efectos extra sobre los golpeados
+-- slow / poison / burn / drunk / push / hits / drain = efectos extra sobre los golpeados
+-- requiresPet / requiresGear = mascota o libro que hay que tener puesto
 
 -- Item del que copia el dibujo cada scroll de clase (el appearances.dat ya trae los scrolls nuevos)
 Mubia.ScrollSprites = {
 	[Mubia.CLASS_DK] = 347,
 	[Mubia.CLASS_DW] = 22865,
 	[Mubia.CLASS_ELF] = 28650,
+	[Mubia.CLASS_MG] = 347,
+	[Mubia.CLASS_DL] = 347,
+	[Mubia.CLASS_SUMMONER] = 22865,
 }
 
 -- Primer id de scroll de cada clase; los siguientes van en el orden de Mubia.SpellList.
@@ -512,12 +652,24 @@ Mubia.ScrollFirstId = {
 	[Mubia.CLASS_DK] = 60001,
 	[Mubia.CLASS_DW] = 60101,
 	[Mubia.CLASS_ELF] = 60201,
+	[Mubia.CLASS_MG] = 60901,
+	[Mubia.CLASS_DL] = 60911,
+	[Mubia.CLASS_SUMMONER] = 60921,
 }
 
 Mubia.ClassVocations = {
 	[Mubia.CLASS_DK] = { "dark knight;true", "blade knight;true" },
 	[Mubia.CLASS_DW] = { "dark wizard;true", "soul master;true" },
 	[Mubia.CLASS_ELF] = { "fairy elf;true", "muse elf;true" },
+	[Mubia.CLASS_MG] = { "magic gladiator;true" },
+	[Mubia.CLASS_DL] = { "dark lord;true" },
+	[Mubia.CLASS_SUMMONER] = { "summoner;true", "bloody summoner;true" },
+}
+
+-- Magias de DK y DW que también usa el Magic Gladiator (además de las suyas). Las de la evolución no van acá.
+Mubia.MGSharedSpells = {
+	"twistingSlash", "impale",
+	"energyBall", "fireBall", "powerWave", "lightning", "meteorite", "ice", "poison", "flame", "twister", "evilSpirit", "hellfire", "aquaBeam", "cometfall", "inferno",
 }
 
 Mubia.SpellList = {
@@ -582,6 +734,35 @@ Mubia.SpellList = {
 	{ key = "recovery", name = "Recovery", classId = Mubia.CLASS_ELF, mana = 40, kind = "recovery", description = "Recupera el mana tuyo y de tu party." },
 	{ key = "focusShot", name = "Focus Shot", classId = Mubia.CLASS_ELF, mana = 20, kind = "attack", power = "skill", base = 50, type = COMBAT_PHYSICALDAMAGE, effect = CONST_ME_HITAREA, shootEffect = CONST_ANI_ARROW, target = true, hits = { 3, 4 }, description = "Concentra el disparo en un objetivo y golpea 3 o 4 veces seguidas." },
 	{ key = "starfall", name = "Starfall", classId = Mubia.CLASS_ELF, mana = 30, kind = "attack", power = "skill", base = 120, type = COMBAT_HOLYDAMAGE, effect = CONST_ME_HOLYAREA, shootEffect = CONST_ANI_HOLY, target = true, description = "Rayo de energia del cielo muy poderoso." },
+
+	-- Magic Gladiator
+	{ key = "fireSlash", name = "Fire Slash", classId = Mubia.CLASS_MG, mana = 20, kind = "attack", power = "skill", base = 65, type = COMBAT_FIREDAMAGE, effect = CONST_ME_FIREAREA, target = true, range = 2, description = "Corte en llamas contra un objetivo cercano." },
+	{ key = "spiralSlash", name = "Spiral Slash", classId = Mubia.CLASS_MG, mana = 25, kind = "attack", power = "skill", base = 85, type = COMBAT_PHYSICALDAMAGE, effect = CONST_ME_HITAREA, area = "AREA_CIRCLE2X2", description = "Giro en espiral que golpea a todos alrededor." },
+	{ key = "flameStrike", name = "Flame Strike", classId = Mubia.CLASS_MG, mana = 35, kind = "attack", power = "skill", base = 140, type = COMBAT_FIREDAMAGE, effect = CONST_ME_FIREAREA, area = "AREA_WAVE4", direction = true, description = "Ola de fuego con el arma hacia donde miras." },
+	{ key = "giganticStorm", name = "Gigantic Storm", classId = Mubia.CLASS_MG, mana = 120, kind = "attack", power = "magic", base = 110, type = COMBAT_ENERGYDAMAGE, effect = CONST_ME_BIGCLOUDS, area = "AREA_CIRCLE3X3", description = "Tormenta de energia que golpea a todos alrededor." },
+	{ key = "manaRays", name = "Mana Rays", classId = Mubia.CLASS_MG, mana = 130, kind = "attack", power = "magic", base = 85, type = COMBAT_ENERGYDAMAGE, effect = CONST_ME_PURPLEENERGY, shootEffect = CONST_ANI_ENERGY, target = true, description = "Rayo de mana concentrado contra un objetivo." },
+
+	-- Dark Lord (de momento sus scrolls no se venden ni se dropean)
+	{ key = "force", name = "Force", classId = Mubia.CLASS_DL, mana = 10, kind = "attack", power = "skill", base = 30, type = COMBAT_ENERGYDAMAGE, effect = CONST_ME_ENERGYHIT, shootEffect = CONST_ANI_ENERGY, target = true, range = 4, description = "Onda de fuerza contra un objetivo." },
+	{ key = "fireBurst", name = "Fire Burst", classId = Mubia.CLASS_DL, mana = 25, kind = "attack", power = "skill", base = 80, type = COMBAT_FIREDAMAGE, effect = CONST_ME_FIREAREA, shootEffect = CONST_ANI_FIRE, target = true, area = "AREA_SQUARE1X1", description = "Explosion de fuego sobre el objetivo y los que estan a su lado." },
+	{ key = "fireScream", name = "Fire Scream", classId = Mubia.CLASS_DL, mana = 45, kind = "attack", power = "skill", base = 110, type = COMBAT_FIREDAMAGE, effect = CONST_ME_FIREAREA, area = "AREA_WAVE4", direction = true, description = "Grito de fuego hacia donde miras." },
+	{ key = "electricSpark", name = "Electric Spark", classId = Mubia.CLASS_DL, mana = 50, kind = "attack", power = "skill", base = 130, type = COMBAT_ENERGYDAMAGE, effect = CONST_ME_ENERGYAREA, area = "AREA_BEAM8", direction = true, description = "Rayo electrico que atraviesa a todos en linea recta." },
+	{ key = "earthshake", name = "Earthshake", classId = Mubia.CLASS_DL, mana = 40, kind = "attack", power = "skill", base = 150, type = COMBAT_EARTHDAMAGE, effect = CONST_ME_GROUNDSHAKER, area = "AREA_CIRCLE3X3", requiresPet = "Dark Horse", description = "Tu Dark Horse hace temblar la tierra alrededor tuyo. Necesitas tener el Dark Horse puesto." },
+	{ key = "chaoticDiseier", name = "Chaotic Diseier", classId = Mubia.CLASS_DL, mana = 60, kind = "attack", power = "skill", base = 170, type = COMBAT_DEATHDAMAGE, effect = CONST_ME_MORTAREA, shootEffect = CONST_ANI_DEATH, target = true, area = "AREA_CIRCLE2X2", description = "Energia caotica que golpea al objetivo y a los que lo rodean." },
+	{ key = "criticalDamage", name = "Critical Damage", classId = Mubia.CLASS_DL, mana = 50, kind = "buff", buff = "criticalDamage", description = "Aumenta el dano tuyo y de tu party segun tu Command y tu Energy." },
+
+	-- Summoner / Bloody Summoner (de momento sus scrolls no se venden ni se dropean)
+	{ key = "drainLife", name = "Drain Life", classId = Mubia.CLASS_SUMMONER, mana = 50, kind = "attack", power = "magic", base = 35, type = COMBAT_DEATHDAMAGE, effect = CONST_ME_SMALLCLOUDS, shootEffect = CONST_ANI_DEATH, target = true, drain = 25, description = "Golpea a un enemigo y recuperas parte del dano." },
+	{ key = "chainLightning", name = "Chain Lightning", classId = Mubia.CLASS_SUMMONER, mana = 85, kind = "attack", power = "magic", base = 70, type = COMBAT_ENERGYDAMAGE, effect = CONST_ME_ENERGYAREA, shootEffect = CONST_ANI_ENERGY, target = true, area = "AREA_SQUARE1X1", description = "Rayo que golpea al objetivo y a los que estan a su lado." },
+	{ key = "lightningShock", name = "Lightning Shock", classId = Mubia.CLASS_SUMMONER, mana = 115, kind = "attack", power = "magic", base = 95, type = COMBAT_ENERGYDAMAGE, effect = CONST_ME_PURPLEENERGY, area = "AREA_CIRCLE3X3", description = "Descarga electrica que golpea a todos a tu alrededor." },
+	{ key = "explosion", name = "Explosion", classId = Mubia.CLASS_SUMMONER, mana = 90, kind = "attack", power = "magic", base = 40, type = COMBAT_FIREDAMAGE, effect = CONST_ME_EXPLOSIONAREA, shootEffect = CONST_ANI_FIRE, target = true, area = "AREA_SQUARE1X1", requiresGear = "Book of Samut", description = "Explosion sobre el objetivo. Necesitas el Book of Samut." },
+	{ key = "requiem", name = "Requiem", classId = Mubia.CLASS_SUMMONER, mana = 110, kind = "attack", power = "magic", base = 65, type = COMBAT_DEATHDAMAGE, effect = CONST_ME_MORTAREA, area = "AREA_BEAM8", direction = true, requiresGear = "Book of Neil", description = "Espiritus que atraviesan en linea recta. Necesitas el Book of Neil." },
+	{ key = "pollution", name = "Pollution", classId = Mubia.CLASS_SUMMONER, mana = 120, kind = "attack", power = "magic", base = 80, type = COMBAT_EARTHDAMAGE, effect = CONST_ME_POISONAREA, shootEffect = CONST_ANI_POISON, target = true, area = "AREA_CIRCLE2X2", poison = { rounds = 4, interval = 2000, percent = 15 }, requiresGear = "Book of Lagle", description = "Nube venenosa sobre el objetivo. Necesitas el Book of Lagle." },
+	{ key = "sleep", name = "Sleep", classId = Mubia.CLASS_SUMMONER, mana = 20, kind = "debuff", effect = CONST_ME_SLEEP, shootEffect = CONST_ANI_SMALLSTONE, slow = { ticks = 4000, percent = 90 }, text = "Sleep: el enemigo casi no se mueve por 4 segundos.", description = "Casi inmoviliza a un enemigo por unos segundos." },
+	{ key = "weakness", name = "Weakness", classId = Mubia.CLASS_SUMMONER, mana = 50, kind = "debuff", effect = CONST_ME_MAGIC_RED, shootEffect = CONST_ANI_DEATH, debuff = "weakness", value = 15, duration = 10000, text = "Weakness: el enemigo pega 15% menos por 10 segundos.", description = "Un enemigo pega menos por unos segundos." },
+	{ key = "innovation", name = "Innovation", classId = Mubia.CLASS_SUMMONER, mana = 70, kind = "debuff", effect = CONST_ME_MAGIC_BLUE, shootEffect = CONST_ANI_ENERGY, debuff = "innovation", value = 25, duration = 10000, text = "Innovation: el enemigo pierde 25% de defensa por 10 segundos.", description = "Un enemigo pierde defensa por unos segundos." },
+	{ key = "berserker", name = "Berserker", classId = Mubia.CLASS_SUMMONER, mana = 100, kind = "buff", buff = "berserker", description = "Mas dano magico a cambio de menos defensa." },
+	{ key = "damageReflection", name = "Damage Reflection", classId = Mubia.CLASS_SUMMONER, mana = 40, kind = "buff", buff = "damageReflection", description = "Devuelve parte del dano que recibes." },
 }
 
 -- Completa cada magia: palabras, nivel, vocaciones y su scroll; indexa por key en Mubia.Spells
@@ -600,6 +781,11 @@ do
 		def.scrollName = "scroll of " .. def.name:lower()
 		nextScroll[def.classId] = def.scrollId + 1
 		Mubia.Spells[def.key] = def
+	end
+	for _, key in ipairs(Mubia.MGSharedSpells) do
+		local def = Mubia.Spells[key]
+		def.sharedWithMG = true
+		def.vocations = { def.vocations[1], def.vocations[2], Mubia.ClassVocations[Mubia.CLASS_MG][1] }
 	end
 end
 

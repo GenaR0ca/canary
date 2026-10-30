@@ -138,8 +138,10 @@ for itemId in pairs(Mubia.Wings) do
 	table.insert(idsBySlot.wings, itemId)
 end
 for itemId, pet in pairs(Mubia.Pets) do
-	if pet.level then
-		table.insert(idsBySlot.pet, itemId)
+	if pet.level or pet.classId then
+		local slot = pet.hand and "hand" or "pet"
+		idsBySlot[slot] = idsBySlot[slot] or {}
+		table.insert(idsBySlot[slot], itemId)
 	end
 end
 for itemId, gear in pairs(Mubia.Gear) do

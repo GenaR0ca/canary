@@ -15,7 +15,8 @@ function mubiaLogin.onLogin(player)
 		Mubia.recalc(player)
 		local stats = Mubia.getStats(player)
 		if stats.points > 0 then
-			Mubia.sendMessage(player, MESSAGE_LOGIN, string.format("Tienes %d puntos para repartir. Usa /addstr, /addagi, /addvit o /addene (ejemplo: /addstr 10). Escribe /stats para ver tus stats.", stats.points))
+			local commands = Mubia.classUsesStat(Mubia.getClass(player), "cmd") and "/addstr, /addagi, /addvit, /addene o /addcmd" or "/addstr, /addagi, /addvit o /addene"
+			Mubia.sendMessage(player, MESSAGE_LOGIN, string.format("Tienes %d puntos para repartir. Usa %s (ejemplo: /addstr 10). Escribe /stats para ver tus stats.", stats.points, commands))
 		end
 		addEvent(function(playerId)
 			local p = Player(playerId)
@@ -44,7 +45,7 @@ function mubiaAdvance.onAdvance(player, skill, oldLevel, newLevel)
 	end
 
 	if newLevel > oldLevel then
-		local gained = (newLevel - oldLevel) * Mubia.Config.pointsPerLevel
+		local gained = (newLevel - oldLevel) * Mubia.getPointsPerLevel(Mubia.getClass(player))
 		Mubia.addPoints(player, gained)
 		Mubia.sendMessage(player, MESSAGE_EVENT_ADVANCE, string.format("Has ganado %d puntos de stats.", gained))
 	end

@@ -354,6 +354,7 @@ local function hurtAttacker(attacker, amount)
 		attacker:getPosition():sendMagicEffect(CONST_ME_HITAREA)
 	end
 end
+Mubia.hurtAttacker = hurtAttacker
 
 -- Después de calcular el daño que recibe un jugador: DD, REF, ARR y recuperar vida/mana (alas)
 function Mubia.applyExcellentDefense(targetPlayer, attacker, damage)

@@ -15,6 +15,10 @@ Mubia.SDAGConfig = {
 		[Mubia.CLASS_DK] = { str = 0.15, agi = 0.2, vit = 0.3, ene = 1.0 },
 		[Mubia.CLASS_DW] = { str = 0.2, agi = 0.4, vit = 0.3, ene = 0.2 },
 		[Mubia.CLASS_ELF] = { str = 0.3, agi = 0.2, vit = 0.1, ene = 0.15 },
+		[Mubia.CLASS_MG] = { str = 0.2, agi = 0.25, vit = 0.3, ene = 0.15 },
+		[Mubia.CLASS_DL] = { str = 0.3, agi = 0.2, vit = 0.1, ene = 0.15, cmd = 0.3 },
+		[Mubia.CLASS_SUMMONER] = { str = 0.2, agi = 0.25, vit = 0.3, ene = 0.15 },
+		[Mubia.CLASS_RF] = { str = 0.15, agi = 0.2, vit = 0.3, ene = 1.0 },
 	},
 }
 
@@ -32,6 +36,26 @@ Mubia.SpellAG = {
 	iceArrow = 12,
 	focusShot = 10,
 	starfall = 15,
+	fireSlash = 12,
+	spiralSlash = 15,
+	flameStrike = 20,
+	giganticStorm = 10,
+	manaRays = 7,
+	force = 5,
+	fireBurst = 10,
+	fireScream = 15,
+	electricSpark = 15,
+	earthshake = 20,
+	chaoticDiseier = 20,
+	lightningShock = 7,
+	explosion = 5,
+	requiem = 10,
+	pollution = 15,
+	sleep = 3,
+	weakness = 15,
+	innovation = 15,
+	berserker = 50,
+	damageReflection = 10,
 }
 
 -- SD y AG actuales de cada jugador conectado (se guardan al salir)
@@ -49,7 +73,7 @@ end
 function Mubia.getMaxSD(player)
 	local stats = Mubia.getStats(player)
 	local level = player:getLevel()
-	local sd = (stats.str + stats.agi + stats.vit + stats.ene) * 1.2 + level * level / 30 + Mubia.getDefense(player)
+	local sd = (stats.str + stats.agi + stats.vit + stats.ene + stats.cmd) * 1.2 + level * level / 30 + Mubia.getDefense(player)
 	local percent = excellent(player).maxSd or 0
 	return math.floor(sd * (100 + percent) / 100)
 end
@@ -66,7 +90,7 @@ function Mubia.getMaxAG(player)
 		return 0
 	end
 	local stats = Mubia.getStats(player)
-	local ag = stats.str * formula.str + stats.agi * formula.agi + stats.vit * formula.vit + stats.ene * formula.ene
+	local ag = stats.str * formula.str + stats.agi * formula.agi + stats.vit * formula.vit + stats.ene * formula.ene + stats.cmd * (formula.cmd or 0)
 	return math.floor(ag) + (excellent(player).wingAg or 0)
 end
 

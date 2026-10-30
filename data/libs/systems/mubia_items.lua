@@ -44,7 +44,18 @@ Mubia.Wings = {
 	[60407] = { name = "Wings of Storm", classId = Mubia.CLASS_DK, tier = 3 },
 	[60408] = { name = "Wings of Eternal", classId = Mubia.CLASS_DW, tier = 3 },
 	[60409] = { name = "Wings of Illusion", classId = Mubia.CLASS_ELF, tier = 3 },
+	[60410] = { name = "Wings of Darkness", classId = Mubia.CLASS_MG, tier = 2 },
+	[60411] = { name = "Cape of Lord", classId = Mubia.CLASS_DL, tier = 2 },
+	[60412] = { name = "Cape of Emperor", classId = Mubia.CLASS_DL, tier = 3 },
+	[60413] = { name = "Wings of Curse", classId = Mubia.CLASS_SUMMONER, tier = 1 },
+	[60414] = { name = "Wings of Despair", classId = Mubia.CLASS_SUMMONER, tier = 2 },
+	[60415] = { name = "Wings of Dimension", classId = Mubia.CLASS_SUMMONER, tier = 3 },
 }
+
+-- El Magic Gladiator también usa las alas de DK y DW
+for _, wing in pairs(Mubia.Wings) do
+	wing.sharedWithMG = wing.classId == Mubia.CLASS_DK or wing.classId == Mubia.CLASS_DW
+end
 
 -- Por generación: % de daño extra y % de absorción (base + por nivel) y defensa base
 Mubia.WingTiers = {
@@ -57,6 +68,11 @@ local ATTR_LEVEL = "muLevel"
 local ATTR_OPTION = "muOption"
 
 -- Qué tipo de item MU es: "weapon", "staff", "armor", "shield", "wings" o nil (los items de Tibia no se mejoran)
+function Mubia.isMagicGear(item)
+	local gear = Mubia.Gear[item:getId()]
+	return gear ~= nil and gear.magic ~= nil
+end
+
 function Mubia.getItemKind(item)
 	if Mubia.Wings[item:getId()] then
 		return "wings"
@@ -107,7 +123,7 @@ function Mubia.getItemStatLines(item)
 		lines[#lines + 1] = string.format("Absorbe el %d%% del daño recibido.", wingStats.absorb)
 		lines[#lines + 1] = string.format("Defensa: %d.", wingStats.defense)
 	elseif level > 0 then
-		local what = kind == "staff" and "Daño mágico" or kind == "weapon" and "Daño" or "Defensa"
+		local what = Mubia.isMagicGear(item) and "Daño mágico" or kind == "weapon" and "Daño" or "Defensa"
 		lines[#lines + 1] = string.format("Nivel +%d: %s +%d.", level, what, Mubia.getLevelBonus(level))
 	end
 	return lines
@@ -119,7 +135,7 @@ function Mubia.getItemOptionLines(item)
 	local option = Mubia.getItemOption(item)
 	if option > 0 then
 		local kind = Mubia.getItemKind(item)
-		local what = kind == "staff" and "Daño mágico" or (kind == "weapon" or kind == "wings") and "Daño" or "Defensa"
+		local what = Mubia.isMagicGear(item) and "Daño mágico" or (kind == "weapon" or kind == "wings") and "Daño" or "Defensa"
 		lines[#lines + 1] = string.format("Opción adicional: %s +%d.", what, option * Mubia.ItemConfig.optionStep)
 	end
 	for _, getLines in ipairs({ Mubia.getExcellentLines, Mubia.getHarmonyLines }) do
@@ -197,7 +213,7 @@ function Mubia.getEquipmentBonus(player)
 			local optionBonus = Mubia.getItemOption(item) * Mubia.ItemConfig.optionStep
 			if kind == "weapon" then
 				bonus.attack = bonus.attack + levelBonus + optionBonus
-			elseif kind == "staff" then
+			elseif kind == "staff" or (gear and gear.magic) then -- bastones, varas y libros
 				bonus.wizardry = bonus.wizardry + levelBonus + optionBonus
 				bonus.magicRise = bonus.magicRise + (gear.magic or 0)
 			elseif kind == "shield" or kind == "armor" then
@@ -388,8 +404,16 @@ function Mubia.getItemLookMarkup(player, item)
 		end
 	elseif wing then
 		className = Mubia.Classes[wing.classId].name
-	elseif pet and pet.level then
-		requirements[#requirements + 1] = { text = "Nivel " .. pet.level, ok = player:getLevel() >= pet.level }
+		if wing.sharedWithMG then
+			className = className .. ", " .. Mubia.Classes[Mubia.CLASS_MG].name
+		end
+	elseif pet then
+		if pet.level then
+			requirements[#requirements + 1] = { text = "Nivel " .. pet.level, ok = player:getLevel() >= pet.level }
+		end
+		if pet.classId then
+			className = Mubia.Classes[pet.classId].name
+		end
 	end
 	-- requisitos anteúltimos y la clase al final
 	addRequirements(parts, requirements)
@@ -405,7 +429,7 @@ local GEAR_SLOTS = { CONST_SLOT_HEAD, CONST_SLOT_ARMOR, CONST_SLOT_LEGS, CONST_S
 
 -- ¿Es un casco, armadura, pantalón, botas, arma o escudo de Tibia?
 function Mubia.isTibiaGear(itemId)
-	if Mubia.Gear[itemId] or Mubia.Wings[itemId] then
+	if Mubia.Gear[itemId] or Mubia.Wings[itemId] or (Mubia.Pets and Mubia.Pets[itemId]) then
 		return false
 	end
 	local itemType = ItemType(itemId)
@@ -439,17 +463,23 @@ function Mubia.giveStarterGear(player)
 	if not class or store:get("starterGear") then
 		return false
 	end
-	store:set("starterGear", true)
-	for classId, ids in pairs(Mubia.StarterGear or {}) do
+	-- Las clases sin set todavía no se marcan: lo reciben cuando se agregue
+	local ids
+	for classId, list in pairs(Mubia.StarterGear or {}) do
 		if Mubia.Classes[classId] == class then
-			for _, itemId in ipairs(ids) do
-				local gear = Mubia.Gear[itemId]
-				local ok = Mubia.checkGearRequirements(player, itemId)
-				local slot = ({ helm = CONST_SLOT_HEAD, armor = CONST_SLOT_ARMOR, pants = CONST_SLOT_LEGS, gloves = CONST_SLOT_GLOVES, boots = CONST_SLOT_FEET })[gear.piece] or CONST_SLOT_LEFT
-				if not ok or player:getSlotItem(slot) or not player:addItem(itemId, 1, false, 1, slot) then
-					player:addItem(itemId, 1)
-				end
-			end
+			ids = list
+		end
+	end
+	if not ids then
+		return false
+	end
+	store:set("starterGear", true)
+	for _, itemId in ipairs(ids) do
+		local gear = Mubia.Gear[itemId]
+		local ok = Mubia.checkGearRequirements(player, itemId)
+		local slot = ({ helm = CONST_SLOT_HEAD, armor = CONST_SLOT_ARMOR, pants = CONST_SLOT_LEGS, gloves = CONST_SLOT_GLOVES, boots = CONST_SLOT_FEET })[gear.piece] or CONST_SLOT_LEFT
+		if not ok or player:getSlotItem(slot) or not player:addItem(itemId, 1, false, 1, slot) then
+			player:addItem(itemId, 1)
 		end
 	end
 	return true
@@ -462,7 +492,7 @@ function Mubia.canUseWings(player, item)
 		return true
 	end
 	local class = Mubia.getClass(player)
-	return class ~= nil and Mubia.Classes[wing.classId] == class
+	return class ~= nil and (Mubia.Classes[wing.classId] == class or (wing.sharedWithMG and class == Mubia.Classes[Mubia.CLASS_MG]))
 end
 
 -- ¿Puede el jugador ponerse este item de MU (set, arma, escudo, alas o mascota)? Devuelve false y el motivo si no.

@@ -9,7 +9,11 @@ function playerLoginGlobal.onLogin(player)
 	local loginStr
 	if player:getLastLoginSaved() == 0 then
 		loginStr = "Please choose your outfit."
-		player:sendOutfitWindow()
+		-- Mubia: las clases nuevas (id de vocacion mayor a 10: Dark Lord, Summoner, Rage Fighter)
+		-- rompen el canary.exe viejo al abrir la ventana de outfit. Con el canary.exe nuevo ya no hace falta.
+		if player:getVocation():getId() <= 10 then
+			player:sendOutfitWindow()
+		end
 		local startStreakLevel = configManager.getNumber(configKeys.START_STREAK_LEVEL)
 		if startStreakLevel > 0 then
 			player:setStreakLevel(startStreakLevel)

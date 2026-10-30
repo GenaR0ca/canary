@@ -84640,6 +84640,121 @@ Granted by TibiaGoals.com"/>
 		<attribute key="description" value="Fairy Elf. Rayo de energia del cielo muy poderoso. Usalo para aprender Starfall. Palabras: starfall"/>
 		<attribute key="weight" value="50"/>
 	</item>
+	<item id="60901" article="a" name="scroll of fire slash">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Magic Gladiator. Corte en llamas contra un objetivo cercano. Usalo para aprender Fire Slash."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60902" article="a" name="scroll of spiral slash">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Magic Gladiator. Giro en espiral que golpea a todos alrededor. Usalo para aprender Spiral Slash."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60903" article="a" name="scroll of flame strike">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Magic Gladiator. Ola de fuego con el arma hacia donde miras. Usalo para aprender Flame Strike."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60904" article="a" name="scroll of gigantic storm">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Magic Gladiator. Tormenta de energia que golpea a todos alrededor. Usalo para aprender Gigantic Storm."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60905" article="a" name="scroll of mana rays">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Magic Gladiator. Rayo de mana concentrado contra un objetivo. Usalo para aprender Mana Rays."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60911" article="a" name="scroll of force">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Lord. Onda de fuerza contra un objetivo. Usalo para aprender Force."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60912" article="a" name="scroll of fire burst">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Lord. Explosion de fuego sobre el objetivo y los que estan a su lado. Usalo para aprender Fire Burst."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60913" article="a" name="scroll of fire scream">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Lord. Grito de fuego hacia donde miras. Usalo para aprender Fire Scream."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60914" article="a" name="scroll of electric spark">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Lord. Rayo electrico que atraviesa a todos en linea recta. Usalo para aprender Electric Spark."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60915" article="a" name="scroll of earthshake">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Lord. Tu Dark Horse hace temblar la tierra alrededor tuyo. Necesitas tener el Dark Horse puesto. Usalo para aprender Earthshake."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60916" article="a" name="scroll of chaotic diseier">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Lord. Energia caotica que golpea al objetivo y a los que lo rodean. Usalo para aprender Chaotic Diseier."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60917" article="a" name="scroll of critical damage">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Dark Lord. Aumenta el dano tuyo y de tu party segun tu Command y tu Energy. Usalo para aprender Critical Damage."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60921" article="a" name="scroll of drain life">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Summoner. Golpea a un enemigo y recuperas parte del dano. Usalo para aprender Drain Life."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60922" article="a" name="scroll of chain lightning">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Summoner. Rayo que golpea al objetivo y a los que estan a su lado. Usalo para aprender Chain Lightning."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60923" article="a" name="scroll of lightning shock">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Summoner. Descarga electrica que golpea a todos a tu alrededor. Solo la segunda evolucion. Usalo para aprender Lightning Shock."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60924" article="a" name="scroll of explosion">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Summoner. Explosion sobre el objetivo. Necesitas tener puesto el Book of Samut. Usalo para aprender Explosion."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60925" article="a" name="scroll of requiem">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Summoner. Espiritus que atraviesan en linea recta. Necesitas tener puesto el Book of Neil. Usalo para aprender Requiem."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60926" article="a" name="scroll of pollution">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Summoner. Nube venenosa sobre el objetivo. Necesitas tener puesto el Book of Lagle. Usalo para aprender Pollution."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60927" article="a" name="scroll of sleep">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Summoner. Casi inmoviliza a un enemigo por unos segundos. Usalo para aprender Sleep."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60928" article="a" name="scroll of weakness">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Summoner. Un enemigo pega menos por unos segundos. Usalo para aprender Weakness."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60929" article="a" name="scroll of innovation">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Summoner. Un enemigo pierde defensa por unos segundos. Solo la segunda evolucion. Usalo para aprender Innovation."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60930" article="a" name="scroll of berserker">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Summoner. Mas dano magico a cambio de menos defensa. Usalo para aprender Berserker."/>
+		<attribute key="weight" value="50"/>
+	</item>
+	<item id="60931" article="a" name="scroll of damage reflection">
+		<attribute key="primarytype" value="documents and papers"/>
+		<attribute key="description" value="Summoner. Devuelve parte del dano que recibes. Usalo para aprender Damage Reflection."/>
+		<attribute key="weight" value="50"/>
+	</item>
 	<item id="60301" article="a" name="jewel of soul">
 		<attribute key="primarytype" value="valuables"/>
 		<attribute key="description" value="Usalo sobre un item +6 o mas (Usar con...) para subirlo hasta +9. De +10 a +15 se sube en la Chaos Machine. Puede fallar."/>
@@ -85045,6 +85160,42 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="wings"/>
 		<attribute key="slottype" value="wings"/>
 		<attribute key="description" value="Alas de 3ra generacion de la Fairy Elf."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60410" name="wings of darkness">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 2da generacion del Magic Gladiator."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60411" name="cape of lord">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Capa de 2da generacion del Dark Lord."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60412" name="cape of emperor">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Capa de 3ra generacion del Dark Lord."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60413" name="wings of curse">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 1ra generacion de la Summoner."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60414" name="wings of despair">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 2da generacion de la Summoner."/>
+		<attribute key="weight" value="500"/>
+	</item>
+	<item id="60415" name="wings of dimension">
+		<attribute key="primarytype" value="wings"/>
+		<attribute key="slottype" value="wings"/>
+		<attribute key="description" value="Alas de 3ra generacion de la Summoner."/>
 		<attribute key="weight" value="500"/>
 	</item>
 	<!-- Mubia: items de MU (generado por tools/mubia/gear.py) -->
@@ -86474,6 +86625,245 @@ Granted by TibiaGoals.com"/>
 		<attribute key="weaponType" value="shield"/>
 		<attribute key="weight" value="2000"/>
 	</item>
+	<item id="61141" name="violent wind helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61142" name="violent wind armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61143" name="violent wind pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61144" name="violent wind gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61145" name="violent wind boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61146" name="red wing helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61147" name="red wing armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61148" name="red wing pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61149" name="red wing gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61150" name="red wing boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61151" name="ancient helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61152" name="ancient armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61153" name="ancient pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61154" name="ancient gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61155" name="ancient boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61156" name="demonic helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61157" name="demonic armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61158" name="demonic pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61159" name="demonic gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61160" name="demonic boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61161" name="storm blitz helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61162" name="storm blitz armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61163" name="storm blitz pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61164" name="storm blitz gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61165" name="storm blitz boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61166" name="eternal wing helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61167" name="eternal wing armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61168" name="eternal wing pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61169" name="eternal wing gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61170" name="eternal wing boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="62070" name="mystery stick">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="17"/>
+			<attribute key="toDamage" value="18"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62071" name="violent wind stick">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="23"/>
+			<attribute key="toDamage" value="25"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62072" name="red wing stick">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="29"/>
+			<attribute key="toDamage" value="31"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62073" name="ancient stick">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="38"/>
+			<attribute key="toDamage" value="40"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62074" name="demonic stick">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="46"/>
+			<attribute key="toDamage" value="48"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62075" name="storm blitz stick">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="51"/>
+			<attribute key="toDamage" value="53"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="62076" name="eternal wing stick">
+		<attribute key="primarytype" value="wands"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="energy"/>
+		<attribute key="range" value="4"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="script" value="weapon">
+			<attribute key="mana" value="0"/>
+			<attribute key="fromDamage" value="66"/>
+			<attribute key="toDamage" value="74"/>
+			<attribute key="weaponType" value="wand"/>
+			<attribute key="wandType" value="energy"/>
+		</attribute>
+	</item>
+	<item id="63017" name="book of samut">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63018" name="book of neil">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
+	<item id="63019" name="book of lagle">
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="weight" value="2000"/>
+	</item>
 	<!-- Mubia: fin de items de MU -->
 	<!-- Mubia: inventario y mascotas (generado por tools/mubia/pets.py) -->
 	<item id="60500" name="inventario">
@@ -86523,7 +86913,8 @@ Granted by TibiaGoals.com"/>
 		<attribute key="weight" value="100"/>
 	</item>
 	<item id="60511" name="dark raven">
-		<attribute key="slottype" value="pet"/>
+		<attribute key="primarytype" value="shields"/>
+		<attribute key="weaponType" value="shield"/>
 		<attribute key="weight" value="100"/>
 	</item>
 	<item id="60512" name="black fenrir">

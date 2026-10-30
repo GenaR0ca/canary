@@ -9,7 +9,7 @@ local function getTargetSlot(itemId)
 	if Mubia.Wings[itemId] then
 		return CONST_SLOT_WINGS
 	elseif Mubia.Pets[itemId] then
-		return CONST_SLOT_PET
+		return Mubia.Pets[itemId].hand and CONST_SLOT_RIGHT or CONST_SLOT_PET
 	end
 	local gear = Mubia.Gear[itemId]
 	if not gear then
@@ -56,6 +56,8 @@ local function refresh(player, slot)
 	Mubia.sendStats(player)
 	if slot == CONST_SLOT_PET then
 		Mubia.applyPet(player)
+	elseif slot == CONST_SLOT_LEFT or slot == CONST_SLOT_RIGHT then
+		Mubia.syncHandPet(player)
 	end
 end
 
