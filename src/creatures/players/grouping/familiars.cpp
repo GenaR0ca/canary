@@ -29,6 +29,13 @@ bool Familiars::reload() {
 }
 
 std::vector<std::shared_ptr<Familiar>> &Familiars::getFamiliars(uint16_t vocation) {
+	// Custom vocations (ids above VOCATION_LAST, e.g. Mubia classes) have no familiars.
+	// Indexing the array with them reads out of bounds and crashes the login/outfit window.
+	if (vocation > VOCATION_LAST) {
+		static std::vector<std::shared_ptr<Familiar>> noFamiliars;
+		noFamiliars.clear();
+		return noFamiliars;
+	}
 	return familiars[vocation];
 }
 
@@ -80,6 +87,9 @@ bool Familiars::loadFromXml() {
 }
 
 std::shared_ptr<Familiar> Familiars::getFamiliarByLookType(uint16_t vocation, uint16_t lookType) const {
+	if (vocation > VOCATION_LAST) {
+		return nullptr;
+	}
 	if (auto it = std::ranges::find_if(familiars[vocation], [lookType](const auto &familiar_it) {
 			return familiar_it->lookType == lookType;
 		});
