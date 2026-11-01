@@ -556,6 +556,49 @@ function Mubia.helperPickup(player, corpse)
 	end
 end
 
+-- Igual que helperPickup, pero con los items que cayeron al piso (data/libs/systems/mubia_drops.lua)
+function Mubia.helperPickupItems(player, items, position)
+	local helper = Mubia.helpers[player:getId()]
+	if not helper or #items == 0 then
+		return
+	end
+	local config = helper.config
+	local from = player:getPosition()
+	if from.z ~= position.z or math.max(math.abs(from.x - position.x), math.abs(from.y - position.y)) > config.pickRange then
+		return
+	end
+	local bag = player:getSlotItem(CONST_SLOT_BACKPACK)
+	if not bag or not bag:isContainer() then
+		return
+	end
+
+	local picked = {}
+	local fits = true
+	for _, item in ipairs(items) do
+		if wantsItem(config, item) then
+			if bag:getEmptySlots() <= 0 and not ItemType(item:getId()):isStackable() then
+				fits = false
+				break
+			end
+			local name = item:getName()
+			if item:moveTo(bag) then
+				if Mubia.clearDropMarks then
+					Mubia.clearDropMarks(item)
+				end
+				picked[#picked + 1] = name
+			end
+		end
+	end
+	if #picked > 0 then
+		position:sendMagicEffect(CONST_ME_MAGIC_GREEN)
+		Mubia.sendMessage(player, MESSAGE_LOOT, "Mubia Helper recogió: " .. table.concat(picked, ", ") .. ".")
+	end
+	if not fits and not helper.fullWarned then
+		helper.fullWarned = true
+		Mubia.sendMessage(player, MESSAGE_FAILURE, "Mubia Helper: tu inventario está lleno, ya no puede recoger más items.")
+	end
+end
+
 -- Con el Helper prendido y el zen sin marcar, las monedas quedan en el cuerpo (data/scripts/mubia/zen.lua)
 function Mubia.helperWantsZen(player)
 	local helper = player and Mubia.helpers[player:getId()]

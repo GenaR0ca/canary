@@ -25,8 +25,13 @@ local zenLoot = EventCallback("MubiaZenLoot")
 
 function zenLoot.monsterPostDropLoot(monster, corpse)
 	local player = Player(corpse:getCorpseOwner())
+	-- drops de MU: items y jewels al piso, zen al cuerpo (data/libs/systems/mubia_drops.lua)
+	local dropped = Mubia.dropMonsterLoot and Mubia.dropMonsterLoot(monster, corpse, player) or {}
 	-- items de MU del botín: Luck, opción y Excellent al azar
 	local excellent = Mubia.rollContainerOptions(corpse)
+	for _, name in ipairs(dropped) do
+		excellent[#excellent + 1] = name
+	end
 	if player then
 		for _, name in ipairs(excellent) do
 			Mubia.sendMessage(player, MESSAGE_LOOT, string.format("¡Cayó un item Excellent: %s!", name))
