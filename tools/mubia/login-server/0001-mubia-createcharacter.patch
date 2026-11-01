@@ -1,0 +1,311 @@
+From aab6a1eab697be48dee73a2b90cf9af50bff9bc2 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Sun, 1 Nov 2026 03:35:43 +0000
+Subject: [PATCH] Mubia: createcharacter request
+
+---
+ go.mod                           |   2 +-
+ src/api/login.go                 |  21 ++++
+ src/api/models/payloads.go       |  35 +++---
+ src/database/create_character.go | 188 +++++++++++++++++++++++++++++++
+ 4 files changed, 229 insertions(+), 17 deletions(-)
+ create mode 100644 src/database/create_character.go
+
+diff --git a/go.mod b/go.mod
+index 71fe3de..c5b5d89 100644
+--- a/go.mod
++++ b/go.mod
+@@ -6,7 +6,7 @@ require (
+ 	bou.ke/monkey v1.0.2
+ 	github.com/DATA-DOG/go-sqlmock v1.5.2
+ 	github.com/antonfisher/nested-logrus-formatter v1.3.1
+-	github.com/gin-contrib/cors v1.7.2 // indirect
++	github.com/gin-contrib/cors v1.7.2
+ 	github.com/gin-gonic/gin v1.9.1
+ 	github.com/go-sql-driver/mysql v1.6.0
+ 	github.com/joho/godotenv v1.3.0
+diff --git a/src/api/login.go b/src/api/login.go
+index 8d4398f..810a7cb 100644
+--- a/src/api/login.go
++++ b/src/api/login.go
+@@ -2,6 +2,7 @@ package api
+ 
+ import (
+ 	"context"
++	"errors"
+ 	"fmt"
+ 	"net/http"
+ 
+@@ -64,6 +65,26 @@ func (_api *Api) login(c *gin.Context) {
+ 		response := buildPayloadFromMessage(res, payload)
+ 		response.Session.SessionKey = buildSessionKey(response.Session.SessionKey, _api.authTypeIsPassword(), payload.Email, payload.Password)
+ 		c.JSON(http.StatusOK, response)
++	case "createcharacter":
++		// Mubia Online: crear personaje desde la pantalla "Create" del cliente
++		acc, err := database.LoadAccount(payload.Email, payload.Password, _api.DB)
++		if err != nil {
++			c.JSON(http.StatusOK, models.LoginErrorPayload{ErrorCode: 3, ErrorMessage: "Cuenta o contrasena incorrecta."})
++			return
++		}
++		name, err := database.CreateCharacter(_api.DB, acc, payload.CharacterName, payload.Vocation)
++		if err != nil {
++			var userErr *database.CreateCharacterError
++			if errors.As(err, &userErr) {
++				c.JSON(http.StatusOK, models.LoginErrorPayload{ErrorCode: 3, ErrorMessage: userErr.Message})
++				return
++			}
++			logger.Error(err)
++			c.JSON(http.StatusOK, models.LoginErrorPayload{ErrorCode: 2, ErrorMessage: "No se pudo crear el personaje (error interno, mira la ventana del login-server)."})
++			return
++		}
++		logger.Info(fmt.Sprintf("Personaje creado: %s (cuenta %d, vocacion %d)", name, acc.ID, payload.Vocation))
++		c.JSON(http.StatusOK, gin.H{"success": true, "name": name})
+ 	default:
+ 		writePublicError(c, serviceerrors.LoginService(
+ 			serviceerrors.CodeUnsupportedRequestType,
+diff --git a/src/api/models/payloads.go b/src/api/models/payloads.go
+index 0c11a99..3956750 100644
+--- a/src/api/models/payloads.go
++++ b/src/api/models/payloads.go
+@@ -1,25 +1,28 @@
+ package models
+ 
+ type RequestPayload struct {
+-	AssetVersion string `json:"assetversion"`
+-	ClientType uint32 `json:"clienttype"`
+-	ClientVersion string `json:"clientversion"`
+-	DeviceCookie string `json:"devicecookie"`
+-	Email string `json:"email"`
+-	FromTimestamp uint64 `json:"fromtimestamp"`
+-	IsReturner bool `json:"isreturner"`
+-	Password string `json:"password"`
+-	ShowRewardNews bool `json:"showrewardnews"`
+-	StayLoggedIn bool `json:"stayloggedin"`
+-	Type string `json:"type"`
+-	ViewedID uint32 `json:"viewedid"`
++	AssetVersion   string `json:"assetversion"`
++	ClientType     uint32 `json:"clienttype"`
++	ClientVersion  string `json:"clientversion"`
++	DeviceCookie   string `json:"devicecookie"`
++	Email          string `json:"email"`
++	FromTimestamp  uint64 `json:"fromtimestamp"`
++	IsReturner     bool   `json:"isreturner"`
++	Password       string `json:"password"`
++	ShowRewardNews bool   `json:"showrewardnews"`
++	StayLoggedIn   bool   `json:"stayloggedin"`
++	Type           string `json:"type"`
++	ViewedID       uint32 `json:"viewedid"`
++	// Mubia Online: crear personaje
++	CharacterName string `json:"charactername"`
++	Vocation      uint32 `json:"vocation"`
+ }
+ 
+ type ResponsePayload struct {
+-	DeviceCookie string `json:"devicecookie"`
+-	LoginEmail string `json:"loginemail"`
+-	PlayData PlayData `json:"playdata"`
+-	Session Session `json:"session"`
++	DeviceCookie string   `json:"devicecookie"`
++	LoginEmail   string   `json:"loginemail"`
++	PlayData     PlayData `json:"playdata"`
++	Session      Session  `json:"session"`
+ }
+ 
+ type LoginErrorPayload struct {
+diff --git a/src/database/create_character.go b/src/database/create_character.go
+new file mode 100644
+index 0000000..f97dce5
+--- /dev/null
++++ b/src/database/create_character.go
+@@ -0,0 +1,188 @@
++package database
++
++// Mubia Online: crear personajes desde el cliente (pantalla "Create" estilo MU).
++// El personaje nuevo es una copia del "<Clase> Sample" de esa vocación, con otro nombre y cuenta.
++
++import (
++	"database/sql"
++	"errors"
++	"fmt"
++	"regexp"
++	"strings"
++)
++
++// MaxCharactersPerAccount es el máximo de personajes por cuenta (como en MU).
++const MaxCharactersPerAccount = 5
++
++// CreatableVocations son las clases que se pueden crear (id de vocations.xml).
++var CreatableVocations = map[uint32]string{
++	1:  "Dark Wizard",
++	3:  "Fairy Elf",
++	4:  "Dark Knight",
++	11: "Magic Gladiator",
++	12: "Dark Lord",
++	13: "Summoner",
++	15: "Rage Fighter",
++}
++
++// CreateCharacterError es un error que se le muestra tal cual al jugador.
++type CreateCharacterError struct {
++	Message string
++}
++
++func (e *CreateCharacterError) Error() string { return e.Message }
++
++func userError(format string, args ...interface{}) error {
++	return &CreateCharacterError{Message: fmt.Sprintf(format, args...)}
++}
++
++var nameRegexp = regexp.MustCompile(`^[A-Za-z]+( [A-Za-z]+)*$`)
++var forbiddenWords = []string{"sample", "god", "gm", "cm", "admin", "gamemaster", "tutor", "staff"}
++
++// NormalizeCharacterName valida el nombre y lo deja con mayúscula en cada palabra.
++func NormalizeCharacterName(raw string) (string, error) {
++	name := strings.Join(strings.Fields(raw), " ")
++	if len(name) < 3 || len(name) > 20 {
++		return "", userError("El nombre debe tener entre 3 y 20 letras.")
++	}
++	if !nameRegexp.MatchString(name) {
++		return "", userError("El nombre solo puede tener letras (sin numeros ni simbolos).")
++	}
++	words := strings.Split(name, " ")
++	if len(words) > 3 {
++		return "", userError("El nombre puede tener como maximo 3 palabras.")
++	}
++	for i, w := range words {
++		lw := strings.ToLower(w)
++		for _, bad := range forbiddenWords {
++			if lw == bad {
++				return "", userError("Ese nombre no esta permitido.")
++			}
++		}
++		if len(w) < 2 {
++			return "", userError("Cada palabra del nombre debe tener al menos 2 letras.")
++		}
++		words[i] = strings.ToUpper(lw[:1]) + lw[1:]
++	}
++	return strings.Join(words, " "), nil
++}
++
++// CreateCharacter crea el personaje y devuelve el nombre final.
++func CreateCharacter(db *sql.DB, acc *Account, rawName string, vocation uint32) (string, error) {
++	if db == nil || acc == nil {
++		return "", errors.New("database or account is nil")
++	}
++	className, ok := CreatableVocations[vocation]
++	if !ok {
++		return "", userError("Esa clase no existe.")
++	}
++	name, err := NormalizeCharacterName(rawName)
++	if err != nil {
++		return "", err
++	}
++
++	tx, err := db.Begin()
++	if err != nil {
++		return "", err
++	}
++	defer tx.Rollback()
++
++	var count int
++	if err := tx.QueryRow("SELECT COUNT(*) FROM players WHERE account_id = ?", acc.ID).Scan(&count); err != nil {
++		return "", err
++	}
++	if count >= MaxCharactersPerAccount {
++		return "", userError("Ya tenes %d personajes. Es el maximo por cuenta.", MaxCharactersPerAccount)
++	}
++
++	var exists int
++	if err := tx.QueryRow("SELECT COUNT(*) FROM players WHERE name = ?", name).Scan(&exists); err != nil {
++		return "", err
++	}
++	if exists > 0 {
++		return "", userError("Ya existe un personaje llamado %s.", name)
++	}
++
++	var templateID int64
++	err = tx.QueryRow(
++		"SELECT id FROM players WHERE vocation = ? AND name LIKE '% Sample' ORDER BY id LIMIT 1",
++		vocation,
++	).Scan(&templateID)
++	if errors.Is(err, sql.ErrNoRows) {
++		return "", userError("Falta el personaje modelo \"%s Sample\" en la base de datos.", className)
++	}
++	if err != nil {
++		return "", err
++	}
++
++	rows, err := tx.Query(`SELECT COLUMN_NAME FROM information_schema.COLUMNS
++		WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'players' AND EXTRA NOT LIKE '%auto_increment%'
++		ORDER BY ORDINAL_POSITION`)
++	if err != nil {
++		return "", err
++	}
++	var columns []string
++	for rows.Next() {
++		var c string
++		if err := rows.Scan(&c); err != nil {
++			rows.Close()
++			return "", err
++		}
++		columns = append(columns, c)
++	}
++	rows.Close()
++	if err := rows.Err(); err != nil {
++		return "", err
++	}
++
++	// columnas que no se copian del modelo (si existen en la tabla)
++	overrides := map[string]string{
++		"name":        "?",
++		"account_id":  "?",
++		"level":       "1",
++		"experience":  "0",
++		"posx":        "0", // 0,0,0 = aparece en el templo de su ciudad
++		"posy":        "0",
++		"posz":        "0",
++		"conditions":  "''",
++		"balance":     "0",
++		"skull":       "0",
++		"skulltime":   "0",
++		"lastlogin":   "0",
++		"lastlogout":  "0",
++		"lastip":      "0",
++		"onlinetime":  "0",
++		"deletion":    "0",
++		"create_date": "UNIX_TIMESTAMP()",
++	}
++	var insertCols, selectExprs []string
++	for _, c := range columns {
++		insertCols = append(insertCols, "`"+c+"`")
++		if expr, ok := overrides[c]; ok {
++			selectExprs = append(selectExprs, expr)
++		} else {
++			selectExprs = append(selectExprs, "`"+c+"`")
++		}
++	}
++	// los parámetros "?" van en el orden de las columnas
++	var args []interface{}
++	for _, c := range columns {
++		switch c {
++		case "name":
++			args = append(args, name)
++		case "account_id":
++			args = append(args, acc.ID)
++		}
++	}
++	args = append(args, templateID)
++
++	statement := fmt.Sprintf("INSERT INTO players (%s) SELECT %s FROM players WHERE id = ?",
++		strings.Join(insertCols, ", "), strings.Join(selectExprs, ", "))
++	if _, err := tx.Exec(statement, args...); err != nil {
++		return "", err
++	}
++	if err := tx.Commit(); err != nil {
++		return "", err
++	}
++	return name, nil
++}
+-- 
+2.43.0
+
