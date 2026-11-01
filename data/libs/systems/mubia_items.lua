@@ -484,8 +484,7 @@ function Mubia.giveStarterGear(player)
 	for _, itemId in ipairs(ids) do
 		local gear = Mubia.Gear[itemId]
 		local ok = Mubia.checkGearRequirements(player, itemId)
-		local slot = ({ helm = CONST_SLOT_HEAD, armor = CONST_SLOT_ARMOR, pants = CONST_SLOT_LEGS, gloves = CONST_SLOT_GLOVES, boots = CONST_SLOT_FEET })[gear.piece]
-			or (gear.kind == "shield" and CONST_SLOT_RIGHT or CONST_SLOT_LEFT)
+		local slot = ({ helm = CONST_SLOT_HEAD, armor = CONST_SLOT_ARMOR, pants = CONST_SLOT_LEGS, gloves = CONST_SLOT_GLOVES, boots = CONST_SLOT_FEET })[gear.piece] or (gear.kind == "shield" and CONST_SLOT_RIGHT or CONST_SLOT_LEFT)
 		if not ok or player:getSlotItem(slot) or not player:addItem(itemId, 1, false, 1, slot) then
 			player:addItem(itemId, 1)
 		end
