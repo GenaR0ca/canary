@@ -166,8 +166,9 @@ local function rollCount(list)
 end
 
 -- Tira los dados de un item nuevo: Luck, opción adicional y Excellent. Solo una vez por item.
+-- excellentChance (opcional): % de Excellent en lugar del de la config (puede tener decimales: 0.1).
 -- Devuelve true si salió Excellent.
-function Mubia.rollItemOptions(item)
+function Mubia.rollItemOptions(item, excellentChance)
 	local group = Mubia.getExcellentGroup(item)
 	if not Mubia.getItemKind(item) or item:getCustomAttribute(ATTR_ROLLED) then
 		return false
@@ -187,7 +188,7 @@ function Mubia.rollItemOptions(item)
 		return false
 	end
 
-	local excellent = group and math.random(100) <= config.excellentChance
+	local excellent = group and math.random() * 100 < (excellentChance or config.excellentChance)
 	local luckChance = excellent and config.excellentLuckChance or config.luckChance
 	if math.random(100) <= luckChance then
 		item:setCustomAttribute(ATTR_LUCK, 1)

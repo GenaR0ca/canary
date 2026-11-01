@@ -52,10 +52,8 @@ function Mubia.registerWildMonster(mType, monster, cfg)
 		color = 0,
 	}
 
-	-- zen (gold coin) como en MU
-	monster.loot = {
-		{ id = 3031, chance = 60000, maxCount = mu.level * 5 },
-	}
+	-- el zen, los items y las jewels los tira Mubia.dropMonsterLoot (mubia_drops.lua), como en MU
+	monster.loot = {}
 
 	if cfg.magic then
 		monster.attacks = {
