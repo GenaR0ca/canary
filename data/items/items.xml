@@ -87002,4 +87002,48 @@ Granted by TibiaGoals.com"/>
 		<attribute key="description" value="Ojo del abismo. Lo pide Sebina the Priest a las Summoner. Item de la quest de Sebina: no se puede vender, intercambiar ni tirar."/>
 		<attribute key="weight" value="10"/>
 	</item>
+	<!-- Light Plate / Male26: approved inventory sprites -->
+	<item id="61171" name="light plate helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61172" name="light plate armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61173" name="light plate pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61174" name="light plate gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61175" name="light plate boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<!-- Adamantine / Male27: approved inventory sprites -->
+	<item id="61176" name="adamantine helm">
+		<attribute key="primarytype" value="helmets"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61177" name="adamantine armor">
+		<attribute key="primarytype" value="armors"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61178" name="adamantine pants">
+		<attribute key="primarytype" value="legs"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61179" name="adamantine gloves">
+		<attribute key="primarytype" value="gloves"/>
+		<attribute key="slottype" value="gloves"/>
+		<attribute key="weight" value="1000"/>
+	</item>
+	<item id="61180" name="adamantine boots">
+		<attribute key="primarytype" value="boots"/>
+		<attribute key="weight" value="1000"/>
+	</item>
 </items>
