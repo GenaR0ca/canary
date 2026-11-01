@@ -105,7 +105,20 @@ local sendFirstItems = CreatureEvent("SendFirstItems")
 
 function sendFirstItems.onLogin(player)
 	local targetVocation = config[player:getVocation():getId()]
-	if not targetVocation or player:getLastLoginSaved() ~= 0 then
+	if player:getLastLoginSaved() ~= 0 then
+		return true
+	end
+
+	-- Mubia: los personajes nuevos no reciben nada de Tibia (ni scarf, ni pociones, ni soga):
+	-- solo el inventario de 40 lugares. Los items de cada clase los da data/scripts/mubia (Mubia.StarterGear).
+	if Mubia then
+		if not player:getSlotItem(CONST_SLOT_BACKPACK) then
+			player:addItem(Mubia.INVENTORY_BAG or 2854)
+		end
+		return true
+	end
+
+	if not targetVocation then
 		return true
 	end
 

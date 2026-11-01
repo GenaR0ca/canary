@@ -301,12 +301,34 @@ end
 -- La Summoner también usa el Skull Staff
 table.insert(Mubia.Gear[62055].classes, Mubia.CLASS_SUMMONER)
 
--- Set inicial de cada clase (se da una sola vez)
+-- Items con los que empieza cada clase (personajes nuevos). Lista vacía = sin items.
 Mubia.StarterGear = {
-	[Mubia.CLASS_DK] = { 61001, 61002, 61003, 61004, 61005, 62001 },
-	[Mubia.CLASS_DW] = { 61056, 61057, 61058, 61059, 61060, 62055 },
-	[Mubia.CLASS_ELF] = { 61096, 61097, 61098, 61099, 61100, 62038 },
-	[Mubia.CLASS_MG] = { 61002, 61003, 61004, 61005, 62001 },
-	[Mubia.CLASS_DL] = { 61001, 61002, 61003, 61004, 61005, 62001 },
-	[Mubia.CLASS_SUMMONER] = { 61141, 61142, 61143, 61144, 61145, 62070 },
+	[Mubia.CLASS_DK] = { 62016 }, -- Small Axe
+	[Mubia.CLASS_DW] = {},
+	[Mubia.CLASS_ELF] = { 62038 }, -- Short Bow (+ carcaj con flechas, ver Mubia.StarterAmmo)
+	[Mubia.CLASS_SUMMONER] = {},
+	[Mubia.CLASS_RF] = {},
+	[Mubia.CLASS_MG] = { 62001, 63001 }, -- Short Sword y Small Shield
+	[Mubia.CLASS_DL] = { 62001, 63001 }, -- Short Sword y Small Shield
+}
+
+-- Carcaj con flechas al empezar (va en la mano del escudo)
+Mubia.StarterAmmo = {
+	[Mubia.CLASS_ELF] = { ammo = 3447, count = 255 }, -- Arrow
+}
+
+-- Ciudad donde aparece cada clase al crearla (nombre del town del mapa y templo de respaldo)
+Mubia.StartTown = {
+	[Mubia.CLASS_DK] = "Lorencia",
+	[Mubia.CLASS_DW] = "Lorencia",
+	[Mubia.CLASS_ELF] = "Noria",
+	[Mubia.CLASS_SUMMONER] = "Elbeland",
+	[Mubia.CLASS_RF] = "Lorencia",
+	[Mubia.CLASS_MG] = "Lorencia",
+	[Mubia.CLASS_DL] = "Lorencia",
+}
+Mubia.StartTownTemple = {
+	Lorencia = Position(927, 654, 7),
+	Noria = Position(1257, 720, 7),
+	Elbeland = Position(3626, 1051, 7),
 }
