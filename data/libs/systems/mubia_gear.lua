@@ -270,6 +270,18 @@ Mubia.Gear = {
 	[63017] = { name = "Book of Samut", kind = "shield", classes = { Mubia.CLASS_SUMMONER }, magic = 23, str = 0, agi = 20 },
 	[63018] = { name = "Book of Neil", kind = "shield", classes = { Mubia.CLASS_SUMMONER }, magic = 30, str = 0, agi = 25 },
 	[63019] = { name = "Book of Lagle", kind = "shield", classes = { Mubia.CLASS_SUMMONER }, magic = 36, str = 0, agi = 30 },
+	-- Light Plate / Male26: Dark Lord; values approved by the user.
+	[61171] = { name = "Light Plate Helm", kind = "armor", classes = { Mubia.CLASS_DL }, piece = "helm", set = "Light Plate", defense = 20, str = 70, agi = 20 },
+	[61172] = { name = "Light Plate Armor", kind = "armor", classes = { Mubia.CLASS_DL }, piece = "armor", set = "Light Plate", defense = 25, str = 70, agi = 20 },
+	[61173] = { name = "Light Plate Pants", kind = "armor", classes = { Mubia.CLASS_DL }, piece = "pants", set = "Light Plate", defense = 21, str = 70, agi = 20 },
+	[61174] = { name = "Light Plate Gloves", kind = "armor", classes = { Mubia.CLASS_DL }, piece = "gloves", set = "Light Plate", defense = 12, str = 70, agi = 20 },
+	[61175] = { name = "Light Plate Boots", kind = "armor", classes = { Mubia.CLASS_DL }, piece = "boots", set = "Light Plate", defense = 13, str = 70, agi = 20 },
+	-- Adamantine / Male27: Dark Lord; values approved by the user.
+	[61176] = { name = "Adamantine Helm", kind = "armor", classes = { Mubia.CLASS_DL }, piece = "helm", set = "Adamantine", defense = 20, str = 70, agi = 20 },
+	[61177] = { name = "Adamantine Armor", kind = "armor", classes = { Mubia.CLASS_DL }, piece = "armor", set = "Adamantine", defense = 25, str = 70, agi = 20 },
+	[61178] = { name = "Adamantine Pants", kind = "armor", classes = { Mubia.CLASS_DL }, piece = "pants", set = "Adamantine", defense = 21, str = 70, agi = 20 },
+	[61179] = { name = "Adamantine Gloves", kind = "armor", classes = { Mubia.CLASS_DL }, piece = "gloves", set = "Adamantine", defense = 12, str = 70, agi = 20 },
+	[61180] = { name = "Adamantine Boots", kind = "armor", classes = { Mubia.CLASS_DL }, piece = "boots", set = "Adamantine", defense = 13, str = 70, agi = 20 },
 }
 
 -- El Magic Gladiator usa el equipo de DK y DW, menos los yelmos (como en MU)
