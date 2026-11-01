@@ -1,14 +1,16 @@
-From aab6a1eab697be48dee73a2b90cf9af50bff9bc2 Mon Sep 17 00:00:00 2001
+From 9daf43474fef0bf04d237404ac21b86f7ef831fa Mon Sep 17 00:00:00 2001
 From: Claude <noreply@anthropic.com>
 Date: Sun, 1 Nov 2026 03:35:43 +0000
-Subject: [PATCH] Mubia: createcharacter request
+Subject: [PATCH] Mubia: createcharacter/deletecharacter requests and MU
+ vocation names
 
 ---
  go.mod                           |   2 +-
- src/api/login.go                 |  21 ++++
- src/api/models/payloads.go       |  35 +++---
- src/database/create_character.go | 188 +++++++++++++++++++++++++++++++
- 4 files changed, 229 insertions(+), 17 deletions(-)
+ src/api/login.go                 |  40 ++++++
+ src/api/models/payloads.go       |  35 ++---
+ src/configs/game_server.go       |  24 ++--
+ src/database/create_character.go | 218 +++++++++++++++++++++++++++++++
+ 5 files changed, 292 insertions(+), 27 deletions(-)
  create mode 100644 src/database/create_character.go
 
 diff --git a/go.mod b/go.mod
@@ -25,7 +27,7 @@ index 71fe3de..c5b5d89 100644
  	github.com/go-sql-driver/mysql v1.6.0
  	github.com/joho/godotenv v1.3.0
 diff --git a/src/api/login.go b/src/api/login.go
-index 8d4398f..810a7cb 100644
+index 8d4398f..526cd6b 100644
 --- a/src/api/login.go
 +++ b/src/api/login.go
 @@ -2,6 +2,7 @@ package api
@@ -36,7 +38,7 @@ index 8d4398f..810a7cb 100644
  	"fmt"
  	"net/http"
  
-@@ -64,6 +65,26 @@ func (_api *Api) login(c *gin.Context) {
+@@ -64,6 +65,45 @@ func (_api *Api) login(c *gin.Context) {
  		response := buildPayloadFromMessage(res, payload)
  		response.Session.SessionKey = buildSessionKey(response.Session.SessionKey, _api.authTypeIsPassword(), payload.Email, payload.Password)
  		c.JSON(http.StatusOK, response)
@@ -60,6 +62,25 @@ index 8d4398f..810a7cb 100644
 +		}
 +		logger.Info(fmt.Sprintf("Personaje creado: %s (cuenta %d, vocacion %d)", name, acc.ID, payload.Vocation))
 +		c.JSON(http.StatusOK, gin.H{"success": true, "name": name})
++	case "deletecharacter":
++		// Mubia Online: borrar personaje (boton "Delete" del cliente)
++		acc, err := database.LoadAccount(payload.Email, payload.Password, _api.DB)
++		if err != nil {
++			c.JSON(http.StatusOK, models.LoginErrorPayload{ErrorCode: 3, ErrorMessage: "Cuenta o contrasena incorrecta."})
++			return
++		}
++		if err := database.DeleteCharacter(_api.DB, acc, payload.CharacterName); err != nil {
++			var userErr *database.CreateCharacterError
++			if errors.As(err, &userErr) {
++				c.JSON(http.StatusOK, models.LoginErrorPayload{ErrorCode: 3, ErrorMessage: userErr.Message})
++				return
++			}
++			logger.Error(err)
++			c.JSON(http.StatusOK, models.LoginErrorPayload{ErrorCode: 2, ErrorMessage: "No se pudo borrar el personaje (error interno, mira la ventana del login-server)."})
++			return
++		}
++		logger.Info(fmt.Sprintf("Personaje borrado: %s (cuenta %d)", payload.CharacterName, acc.ID))
++		c.JSON(http.StatusOK, gin.H{"success": true})
  	default:
  		writePublicError(c, serviceerrors.LoginService(
  			serviceerrors.CodeUnsupportedRequestType,
@@ -112,12 +133,51 @@ index 0c11a99..3956750 100644
  }
  
  type LoginErrorPayload struct {
+diff --git a/src/configs/game_server.go b/src/configs/game_server.go
+index ea95bc3..8e06af3 100644
+--- a/src/configs/game_server.go
++++ b/src/configs/game_server.go
+@@ -175,20 +175,24 @@ func GetServerVocations() []string {
+ 	vocations := strings.Split(vocationsStr, ",")
+ 
+ 	if len(vocationsStr) == 0 || len(vocations) == 0 {
++		// Mubia Online: nombres de las clases de vocations.xml (en orden de id)
+ 		return []string{
+ 			"None",
+-			"Sorcerer",
++			"Dark Wizard",
+ 			"Druid",
+-			"Paladin",
+-			"Knight",
+-			"Master Sorcerer",
++			"Fairy Elf",
++			"Dark Knight",
++			"Soul Master",
+ 			"Elder Druid",
+-			"Royal Paladin",
+-			"Elite Knight",
+-			"Sorcerer Dawnport",
+-			"Druid Dawnport",
+-			"Paladin Dawnport",
+-			"Knight Dawnport",
++			"Muse Elf",
++			"Blade Knight",
++			"Monk",
++			"Exalted Monk",
++			"Magic Gladiator",
++			"Dark Lord",
++			"Summoner",
++			"Bloody Summoner",
++			"Rage Fighter",
+ 		}
+ 	}
+ 
 diff --git a/src/database/create_character.go b/src/database/create_character.go
 new file mode 100644
-index 0000000..f97dce5
+index 0000000..d60584b
 --- /dev/null
 +++ b/src/database/create_character.go
-@@ -0,0 +1,188 @@
+@@ -0,0 +1,218 @@
 +package database
 +
 +// Mubia Online: crear personajes desde el cliente (pantalla "Create" estilo MU).
@@ -156,35 +216,32 @@ index 0000000..f97dce5
 +	return &CreateCharacterError{Message: fmt.Sprintf(format, args...)}
 +}
 +
-+var nameRegexp = regexp.MustCompile(`^[A-Za-z]+( [A-Za-z]+)*$`)
++var nameRegexp = regexp.MustCompile(`^[A-Za-z][A-Za-z0-9]*( [A-Za-z0-9]+)*$`)
 +var forbiddenWords = []string{"sample", "god", "gm", "cm", "admin", "gamemaster", "tutor", "staff"}
 +
-+// NormalizeCharacterName valida el nombre y lo deja con mayúscula en cada palabra.
++// NormalizeCharacterName valida el nombre. Se respetan las mayusculas y los numeros
++// que elija el jugador (por ejemplo "VeGeTTitA777").
 +func NormalizeCharacterName(raw string) (string, error) {
 +	name := strings.Join(strings.Fields(raw), " ")
 +	if len(name) < 3 || len(name) > 20 {
-+		return "", userError("El nombre debe tener entre 3 y 20 letras.")
++		return "", userError("El nombre debe tener entre 3 y 20 caracteres.")
 +	}
 +	if !nameRegexp.MatchString(name) {
-+		return "", userError("El nombre solo puede tener letras (sin numeros ni simbolos).")
++		return "", userError("El nombre solo puede tener letras y numeros, y debe empezar con una letra.")
 +	}
 +	words := strings.Split(name, " ")
 +	if len(words) > 3 {
 +		return "", userError("El nombre puede tener como maximo 3 palabras.")
 +	}
-+	for i, w := range words {
++	for _, w := range words {
 +		lw := strings.ToLower(w)
 +		for _, bad := range forbiddenWords {
 +			if lw == bad {
 +				return "", userError("Ese nombre no esta permitido.")
 +			}
 +		}
-+		if len(w) < 2 {
-+			return "", userError("Cada palabra del nombre debe tener al menos 2 letras.")
-+		}
-+		words[i] = strings.ToUpper(lw[:1]) + lw[1:]
 +	}
-+	return strings.Join(words, " "), nil
++	return name, nil
 +}
 +
 +// CreateCharacter crea el personaje y devuelve el nombre final.
@@ -305,6 +362,39 @@ index 0000000..f97dce5
 +		return "", err
 +	}
 +	return name, nil
++}
++
++// DeleteCharacter borra un personaje de la cuenta. El jugador tiene que escribir el nombre exacto.
++func DeleteCharacter(db *sql.DB, acc *Account, name string) error {
++	if db == nil || acc == nil {
++		return errors.New("database or account is nil")
++	}
++	name = strings.TrimSpace(name)
++
++	var id int64
++	var realName string
++	err := db.QueryRow("SELECT id, name FROM players WHERE account_id = ? AND name = ?", acc.ID, name).Scan(&id, &realName)
++	if errors.Is(err, sql.ErrNoRows) || (err == nil && realName != name) {
++		return userError("El nombre no coincide con ningun personaje de tu cuenta. Escribilo exacto (con mayusculas).")
++	}
++	if err != nil {
++		return err
++	}
++
++	var online int
++	if err := db.QueryRow("SELECT COUNT(*) FROM players_online WHERE player_id = ?", id).Scan(&online); err == nil && online > 0 {
++		return userError("%s esta conectado. Sali del juego antes de borrarlo.", realName)
++	}
++
++	var guilds int
++	if err := db.QueryRow("SELECT COUNT(*) FROM guilds WHERE ownerid = ?", id).Scan(&guilds); err == nil && guilds > 0 {
++		return userError("%s es lider de una guild. Primero deshace la guild.", realName)
++	}
++
++	if _, err := db.Exec("DELETE FROM players WHERE id = ? AND account_id = ?", id, acc.ID); err != nil {
++		return err
++	}
++	return nil
 +}
 -- 
 2.43.0

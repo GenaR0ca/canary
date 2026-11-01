@@ -7,9 +7,13 @@ asi que usamos uno compilado con este parche.
 - Base: https://github.com/opentibiabr/login-server commit `2612930de4d97123a397f8f2cd0d5f784094af40`
   (la misma version que tenia instalada Mubia).
 - Parche: `0001-mubia-createcharacter.patch`.
-- Reglas: maximo 5 personajes por cuenta; nombre de 3 a 20 letras, hasta 3 palabras;
-  el personaje nuevo copia al `<Clase> Sample` de su vocacion (nivel 1, en el templo).
-  Las stats iniciales las pone el servidor al primer login (Mubia.initPlayer).
+- Pedidos nuevos: `createcharacter` y `deletecharacter` (hay que escribir el nombre exacto).
+- Reglas: maximo 5 personajes por cuenta; nombre de 3 a 20 caracteres (letras y numeros,
+  empieza con letra, se respetan las mayusculas), hasta 3 palabras.
+  El personaje nuevo copia al `<Clase> Sample` de su vocacion (nivel 1).
+  Al primer login el servidor lo manda a la ciudad de su clase (Mubia.StartTown), le da los
+  items iniciales (Mubia.StarterGear / Mubia.StarterAmmo) y las stats base (Mubia.initPlayer).
+- Los nombres de las clases de la lista de personajes salen de este exe (o de VOCATIONS en .env).
 
 ## Compilar (Linux o Windows con Go 1.24)
 

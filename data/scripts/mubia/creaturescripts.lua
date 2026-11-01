@@ -5,6 +5,7 @@ local mubiaLogin = CreatureEvent("MubiaLogin")
 function mubiaLogin.onLogin(player)
 	player:registerEvent("MubiaAdvance")
 	player:registerEvent("MubiaExtendedOpcode")
+	Mubia.applyStartTown(player)
 	if Mubia.initPlayer(player) then
 		if Mubia.applyStartLevel(player) then
 			Mubia.sendMessage(player, MESSAGE_LOGIN, string.format("Mubia ahora empieza en nivel %d: tu personaje volvió a ese nivel con los stats base de su clase.", Mubia.Config.startLevel))
@@ -26,7 +27,7 @@ function mubiaLogin.onLogin(player)
 					Mubia.sendMessage(p, MESSAGE_LOGIN, "Los sets y armas de Tibia ya no existen en Mubia: se sacaron de tu equipo.")
 				end
 				if Mubia.giveStarterGear(p) then
-					Mubia.sendMessage(p, MESSAGE_LOGIN, "Recibiste el set inicial de MU de tu clase. Si no se equipó, está en tu mochila: necesitas más STR o AGI.")
+					Mubia.sendMessage(p, MESSAGE_LOGIN, "Recibiste los items iniciales de tu clase. Si alguno no se equipó, está en tu mochila (te falta STR o AGI).")
 				end
 				Mubia.sendStats(p)
 			end

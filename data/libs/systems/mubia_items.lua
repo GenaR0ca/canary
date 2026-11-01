@@ -457,30 +457,80 @@ function Mubia.removeTibiaGear(player)
 end
 
 -- Una sola vez por personaje: set inicial de MU de su clase (va a la mochila si el slot está ocupado)
-function Mubia.giveStarterGear(player)
+-- id de la clase del jugador (Mubia.CLASS_DK, ...)
+function Mubia.getClassId(player)
 	local class = Mubia.getClass(player)
-	local store = player:kv():scoped("mubia")
-	if not class or store:get("starterGear") then
-		return false
-	end
-	-- Las clases sin set todavía no se marcan: lo reciben cuando se agregue
-	local ids
-	for classId, list in pairs(Mubia.StarterGear or {}) do
-		if Mubia.Classes[classId] == class then
-			ids = list
+	for classId, data in pairs(Mubia.Classes) do
+		if data == class then
+			return classId
 		end
 	end
+	return nil
+end
+
+-- Items iniciales de la clase (se dan una sola vez). Lo que no se puede equipar va a la mochila.
+function Mubia.giveStarterGear(player)
+	local classId = Mubia.getClassId(player)
+	local store = player:kv():scoped("mubia")
+	if not classId or store:get("starterGear") then
+		return false
+	end
+	local ids = Mubia.StarterGear and Mubia.StarterGear[classId]
 	if not ids then
 		return false
 	end
 	store:set("starterGear", true)
+	local gave = false
 	for _, itemId in ipairs(ids) do
 		local gear = Mubia.Gear[itemId]
 		local ok = Mubia.checkGearRequirements(player, itemId)
-		local slot = ({ helm = CONST_SLOT_HEAD, armor = CONST_SLOT_ARMOR, pants = CONST_SLOT_LEGS, gloves = CONST_SLOT_GLOVES, boots = CONST_SLOT_FEET })[gear.piece] or CONST_SLOT_LEFT
+		local slot = ({ helm = CONST_SLOT_HEAD, armor = CONST_SLOT_ARMOR, pants = CONST_SLOT_LEGS, gloves = CONST_SLOT_GLOVES, boots = CONST_SLOT_FEET })[gear.piece]
+			or (gear.kind == "shield" and CONST_SLOT_RIGHT or CONST_SLOT_LEFT)
 		if not ok or player:getSlotItem(slot) or not player:addItem(itemId, 1, false, 1, slot) then
 			player:addItem(itemId, 1)
 		end
+		gave = true
+	end
+
+	local ammo = Mubia.StarterAmmo and Mubia.StarterAmmo[classId]
+	if ammo then
+		local quiver = Game.createItem(Mubia.QUIVER or 35562, 1)
+		if quiver then
+			quiver:addItem(ammo.ammo, ammo.count)
+			if player:getSlotItem(CONST_SLOT_RIGHT) or player:addItemEx(quiver, false, CONST_SLOT_RIGHT) ~= RETURNVALUE_NOERROR then
+				player:addItemEx(quiver, true)
+			end
+		else
+			player:addItem(ammo.ammo, ammo.count)
+		end
+		gave = true
+	end
+	return gave
+end
+
+-- Personajes nuevos: aparecen en la ciudad de su clase (Mubia.StartTown). Se hace una sola vez.
+function Mubia.applyStartTown(player)
+	local store = player:kv():scoped("mubia")
+	if store:get("startTown") then
+		return false
+	end
+	store:set("startTown", true)
+	if player:getLastLoginSaved() ~= 0 then
+		return false -- personaje viejo: se queda donde está
+	end
+	local classId = Mubia.getClassId(player)
+	local townName = classId and Mubia.StartTown and Mubia.StartTown[classId]
+	if not townName then
+		return false
+	end
+	local town = Town(townName)
+	local temple = town and town:getTemplePosition() or Mubia.StartTownTemple[townName]
+	if town then
+		player:setTown(town)
+	end
+	if temple then
+		player:teleportTo(temple)
+		temple:sendMagicEffect(CONST_ME_TELEPORT)
 	end
 	return true
 end
